@@ -85,7 +85,8 @@ class db_generator:
         equip_database = self.equip_database
         for i in equip_database.values():
             if('Locations' in i):
-                if(((('Head_Top' or 'Head_Mid') or 'Head_Low') in i['Locations']) == True):
+                combinations = ({'Head_Top': True}, {'Head_Mid': True}, {'Head_Low': True}, {'Head_Mid': True, 'Head_Top': True}, {'Head_Low': True, 'Head_Mid': True}, {'Head_Low': True, 'Head_Mid': True, 'Head_Top': True})
+                if((i['Locations'] in combinations) == True):
                     hat_database[i['Id']] = self.normalize_missing_params(i)
         return hat_database
     
