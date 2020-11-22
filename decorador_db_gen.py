@@ -1,16 +1,20 @@
 class db_generator:
     def __init__(self):
         import yaml
-        import math
-        import pandas as pd
-        
-        with open(r'C:\Pythonfundamentos\Remember\calculadora\item_db_equip.yml') as file:
-            equip_list = yaml.load(file, Loader=yaml.FullLoader)
-            equip_main_dict = equip_list['Body']
-            equip_database = dict()
+        import os
+
+        def open_json(filename):
+            foldername = 'resources'
+            dir_path = os.path.dirname(os.path.realpath(filename)) + '\\{}\\'.format(foldername)
+            with open(r'{}\\{}'.format(dir_path, filename)) as file:
+                return yaml.load(file, Loader=yaml.FullLoader)
+
+        equip_list = open_json('item_db_equip.yml')
+        equip_main_dict = equip_list['Body']
+        equip_database = dict()
             
-            for i in range(len(equip_main_dict)):
-                equip_database[equip_main_dict[i]['Id']] = equip_main_dict[i]
+        for i in range(len(equip_main_dict)):
+            equip_database[equip_main_dict[i]['Id']] = equip_main_dict[i]
                 
         self.equip_database = equip_database
         

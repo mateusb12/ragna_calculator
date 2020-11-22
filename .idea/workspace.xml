@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1dc11ee9-5b10-4653-9f0f-9a26840bb0c6" name="Default Changelist" comment="" />
+    <list default="true" id="1dc11ee9-5b10-4653-9f0f-9a26840bb0c6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/calculadora-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/calculadora-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculadora.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/calculadora.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/decorador_db_gen.py" beforeDir="false" afterPath="$PROJECT_DIR$/decorador_db_gen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fruits.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/input.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/item_db_equip.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/job_bonuses.yml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1kd7Bz2nP7YhkTYhPnVtQR76XL6" />
   <component name="ProjectViewState">
@@ -14,6 +35,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager" selected="Python.ide">
