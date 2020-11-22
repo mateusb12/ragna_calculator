@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 BASE_LEVEL: 99
 JOB_LEVEL: 50
 JOB: 'knight'
@@ -6,4 +7,14 @@ AGI: 1
 VIT: 1
 INT: 1
 DEX: 1
+=======
+BASE_LEVEL: 99
+JOB_LEVEL: 50
+JOB: 'knight'
+STR: 1
+AGI: 1
+VIT: 1
+INT: 1
+DEX: 1
+>>>>>>> bcbc4776cac1d7b3e3d99ab9706df07b0356f221
 LUK: 1
