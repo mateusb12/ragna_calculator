@@ -18,7 +18,15 @@ class db_generator:
         
     def normalize_missing_params(self, input_db):
         copy_db = input_db
-        checklist = {'Id': 0, 'Name': '', 'Weight': 0, 'Defense': 0, 'Slots': 0, 'Jobs': {'All': True}, 'Classes': {'All': True}, 'Gender': 'Both', 'Locations': 'None', 'EquipLevelMin': 0, 'Refineable': False, 'View': 0, 'Script': 0}
+        checklist = {'Id': 0, 'Name': '', 'Weight': 0, 'Defense': 0, 'Slots': 0, 'Jobs': {'All': True}, 'Classes': {'All': True}, 'Gender': 'Both', 'Locations': 'None', 'EquipLevelMin': 0, 'Refineable': False, 'View': 0, 'Script': 0, 'Refining': 0}
+        for i in checklist.keys():
+            if(i not in input_db):
+                copy_db[i] = checklist[i]
+        return copy_db
+    
+    def normalize_weapon_params(self, input_db):
+        copy_db = input_db
+        checklist = {'Id': 0, 'Name': '', 'Type': 'Undefined', 'SubType': 'Undefined', 'Weight': 0, 'Attack': 0, 'Range': 0, 'Slots': 0, 'Jobs': {'All': True}, 'Classes': {'All': True}, 'Gender': 'Both', 'Locations': 'None', 'WeaponLevel': 0, 'EquipLevelMin': 0, 'Refineable': False, 'View': 0, 'Script': 0, 'Refining': 0}
         for i in checklist.keys():
             if(i not in input_db):
                 copy_db[i] = checklist[i]
@@ -77,6 +85,16 @@ class db_generator:
         equip_database = self.equip_database
         for i in equip_database.values():
             if('Locations' in i):
-                if(((('Head_Top' or 'Head_Mid') or 'Head_Low') in i['Locations']) == True):
+                combinations = ({'Head_Top': True}, {'Head_Mid': True}, {'Head_Low': True}, {'Head_Mid': True, 'Head_Top': True}, {'Head_Low': True, 'Head_Mid': True}, {'Head_Low': True, 'Head_Mid': True, 'Head_Top': True})
+                if((i['Locations'] in combinations) == True):
                     hat_database[i['Id']] = self.normalize_missing_params(i)
         return hat_database
+    
+    def getWeapon_DB(self):
+        weapon_database = {}
+        equip_database = self.equip_database
+        for i in equip_database.values():
+            if('Locations' in i):
+                if(i['Type'] == 'Weapon'):
+                    weapon_database[i['Id']] = self.normalize_weapon_params(i)
+        return weapon_database
