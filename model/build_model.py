@@ -30,7 +30,7 @@ class PlayerBuild:
         self.core_luk = self.luk
 
         # arquivos
-        self.hp_df = pd.read_csv('max_hp_table.csv')
+        self.hp_df = pd.read_csv('resources/max_hp_table.csv')
         self.job_bonuses = self.job_bonuses_list[current_job]['FULL_BONUSES']
         self.max_job = self.job_bonuses_list[current_job]['MAX_JOB']
 
@@ -59,7 +59,7 @@ class PlayerBuild:
 
         # cálculo do HP
         self.trans_mod = self.job_bonuses_list[current_job]['TRANS_MOD']
-        self.aditive_modifiers = 0
+        self.additive_modifiers = 0
         self.multiplicative_modifiers = 0
         self.base_hp = list(self.hp_df[self.current_job])[self.base_level]
         self.max_hp = self.calculate_max_hp()
@@ -105,7 +105,7 @@ class PlayerBuild:
 
     def calculate_max_hp(self):
         max_hp = math.floor(self.base_hp * (1 + (0.01 * self.vit)))
-        max_hp += self.aditive_modifiers
+        max_hp += self.additive_modifiers
         max_hp = math.floor(max_hp * (1 + (self.multiplicative_modifiers * 0.01)))
         return max_hp
 
