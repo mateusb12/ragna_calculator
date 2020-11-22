@@ -1,4 +1,4 @@
-from decorador_db_gen import db_generator
+from decorador_db_gen import DbGenerator
 import yaml
 import math
 import pandas as pd
@@ -10,7 +10,7 @@ dir_path = os.path.dirname(os.path.realpath('job_bonuses.yml'))
 with open(r'{}\\job_bonuses.yml'.format(dir_path)) as file:
     job_bonuses_list = yaml.load(file, Loader=yaml.FullLoader)
 
-dbg = db_generator()
+dbg = DbGenerator()
 
 equip_db = dbg.getEquip_DB()
 
