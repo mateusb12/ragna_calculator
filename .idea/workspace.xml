@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dc11ee9-5b10-4653-9f0f-9a26840bb0c6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/model/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/build_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/calculadora-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/calculadora-checkpoint.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calculadora.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/calculadora.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/decorador_db_gen.py" beforeDir="false" afterPath="$PROJECT_DIR$/decorador_db_gen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/decorador_db_gen.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/decorador_db_gen.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ide.py" beforeDir="false" afterPath="$PROJECT_DIR$/ide.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +34,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\model" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.ide">
     <configuration name="ide" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -102,22 +109,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="741" y="332" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606018589436" />
-    <state width="1645" height="232" key="GridCell.Tab.0.bottom" timestamp="1606019313802">
+    <state width="1645" height="232" key="GridCell.Tab.0.bottom" timestamp="1606028588889">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1645" height="232" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606019313802" />
-    <state width="1645" height="232" key="GridCell.Tab.0.center" timestamp="1606019313802">
+    <state width="1645" height="232" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606028588889" />
+    <state width="1645" height="232" key="GridCell.Tab.0.center" timestamp="1606028588889">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1645" height="232" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606019313802" />
-    <state width="1645" height="232" key="GridCell.Tab.0.left" timestamp="1606019313802">
+    <state width="1645" height="232" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606028588889" />
+    <state width="1645" height="232" key="GridCell.Tab.0.left" timestamp="1606028588889">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1645" height="232" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606019313802" />
-    <state width="1645" height="232" key="GridCell.Tab.0.right" timestamp="1606019313802">
+    <state width="1645" height="232" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606028588889" />
+    <state width="1645" height="232" key="GridCell.Tab.0.right" timestamp="1606028588889">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1645" height="232" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606019313802" />
+    <state width="1645" height="232" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606028588889" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
