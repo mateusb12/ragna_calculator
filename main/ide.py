@@ -1,6 +1,7 @@
 # %run gear_db.ipynb
 from model.build_model import PlayerBuild
 from model.decorador_db_gen import DbGenerator
+from tkinter import *
 import yaml
 import os
 
@@ -29,5 +30,8 @@ accessory_db = dbg.get_accessory_db()
 
 db_package = (weapon_db, hat_db, shield_db, robe_db, armor_db, shoes_db, accessory_db)
 
+
 p1 = PlayerBuild(jbl, 99, 50, 'knight', [1, 1, 1, 1, 1, 1])
 p1.print_build()
+
+
