@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dc11ee9-5b10-4653-9f0f-9a26840bb0c6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pyflask/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pyflask/flasq.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/testecalc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/testecalc.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pyflask/app/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pyflask/app/controllers/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pyflask/app/controllers/default.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pyflask/app/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pyflask/app/static/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pyflask/app/templates/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pyflask/run.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/ide.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/ide.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/interface.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/flasq.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/flasq.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,13 +40,14 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\pyflask\app" />
       <recent name="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\flasktest" />
       <recent name="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\view" />
       <recent name="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\main" />
       <recent name="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\model" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.flasq">
+  <component name="RunManager" selected="Python.run">
     <configuration name="flasq" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testecalc" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -58,7 +60,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyflask/flasq.py" />
+      <option name="SCRIPT_NAME" value="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\pyflask\app\flasq.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -88,12 +90,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="testecalc" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyflask" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyflask/run.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.main" />
       <item itemvalue="Python.flasq" />
+      <item itemvalue="Python.run" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.run" />
         <item itemvalue="Python.flasq" />
       </list>
     </recent_temporary>
@@ -128,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606863731549</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Included Interface image files">
+      <created>1606869509794</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1606869509794</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -140,30 +172,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="454" y="203" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606869198655" />
-    <state x="628" y="117" key="CommitChangelistDialog2" timestamp="1606863730592">
+    <state x="628" y="117" key="CommitChangelistDialog2" timestamp="1606869506629">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="628" y="117" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1606863730592" />
+    <state x="628" y="117" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1606869506629" />
     <state x="741" y="332" key="FileChooserDialogImpl" timestamp="1606018589436">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="741" y="332" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606018589436" />
-    <state width="1645" height="232" key="GridCell.Tab.0.bottom" timestamp="1606869239904">
+    <state width="1645" height="232" key="GridCell.Tab.0.bottom" timestamp="1606881364459">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1645" height="232" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606869239904" />
-    <state width="1645" height="232" key="GridCell.Tab.0.center" timestamp="1606869239904">
+    <state width="1645" height="232" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606881364459" />
+    <state width="1645" height="232" key="GridCell.Tab.0.center" timestamp="1606881364458">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1645" height="232" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606869239904" />
-    <state width="1645" height="232" key="GridCell.Tab.0.left" timestamp="1606869239904">
+    <state width="1645" height="232" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606881364458" />
+    <state width="1645" height="232" key="GridCell.Tab.0.left" timestamp="1606881364458">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1645" height="232" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606869239904" />
-    <state width="1645" height="232" key="GridCell.Tab.0.right" timestamp="1606869239904">
+    <state width="1645" height="232" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606881364458" />
+    <state width="1645" height="232" key="GridCell.Tab.0.right" timestamp="1606881364458">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1645" height="232" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606869239904" />
+    <state width="1645" height="232" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606881364458" />
     <state x="501" y="193" key="SettingsEditor" timestamp="1606868424833">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
