@@ -30,7 +30,7 @@ class PlayerBuild:
         self.core_luk = self.luk
 
         # arquivos
-        self.hp_df = pd.read_csv('resources/max_hp_table.csv')
+        self.hp_df = pd.read_csv('../resources/max_hp_table.csv')
         self.job_bonuses = self.job_bonuses_list[current_job]['FULL_BONUSES']
         self.max_job = self.job_bonuses_list[current_job]['MAX_JOB']
 
