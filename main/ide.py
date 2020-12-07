@@ -1,21 +1,25 @@
 # %run gear_db.ipynb
 from model.build_model import PlayerBuild
 from model.decorador_db_gen import DbGenerator
-from view.interface import CalcInterface
-from tkinter import *
-import yaml
+# import yaml
 import os
+import pandas as pd
+
+# def open_yml(filename):
+#     folder_name = 'resources'
+#     dir_path = os.path.dirname(os.path.realpath(filename))[:-5] + '\\{}\\'.format(folder_name)
+#     with open(r'{}\\{}'.format(dir_path, filename)) as file:
+#         return yaml.load(file, Loader=yaml.FullLoader)
 
 
 def open_json(filename):
     folder_name = 'resources'
-    dir_path = os.path.dirname(os.path.realpath(filename))[:-5] + '\\{}\\'.format(folder_name)
-    with open(r'{}\\{}'.format(dir_path, filename)) as file:
-        return yaml.load(file, Loader=yaml.FullLoader)
+    dir_path = (os.path.dirname(os.path.realpath(filename))[:-5] + '\\{}\\'.format(folder_name)) + filename
+    return pd.read_json(r'{}'.format(dir_path))
 
 
-jbl = open_json('job_bonuses.yml')
-eql = open_json('item_db_equip.yml')
+jbl = open_json('job_bonuses.json')
+eql = open_json('item_db_equip.json')
 
 dbg = DbGenerator(eql)
 

@@ -1,6 +1,6 @@
 class DbGenerator:
     def __init__(self, equip_list):
-        equip_main_dict = equip_list['Body']
+        equip_main_dict = equip_list['Body']['Body2']
         equip_database = dict()
             
         for i in range(len(equip_main_dict)):
