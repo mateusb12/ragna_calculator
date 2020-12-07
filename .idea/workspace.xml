@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1dc11ee9-5b10-4653-9f0f-9a26840bb0c6" name="Default Changelist" comment="Fixed some errors with Packages" />
+    <list default="true" id="1dc11ee9-5b10-4653-9f0f-9a26840bb0c6" name="Default Changelist" comment="Fixed some errors with Packages">
+      <change afterPath="$PROJECT_DIR$/pyflask/app/models/tables.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/testecalc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/testecalc.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/controllers/default.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/controllers/default.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/venv/pyvenv.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/venv/pyvenv.cfg" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -166,11 +174,11 @@
     </configuration>
     <list>
       <item itemvalue="Python.main" />
-      <item itemvalue="Python.run" />
-      <item itemvalue="Python.ide" />
-      <item itemvalue="Python.check" />
-      <item itemvalue="Python.build_model" />
       <item itemvalue="Python.__init__" />
+      <item itemvalue="Python.build_model" />
+      <item itemvalue="Python.check" />
+      <item itemvalue="Python.ide" />
+      <item itemvalue="Python.run" />
     </list>
     <recent_temporary>
       <list>
@@ -240,43 +248,5 @@
     <MESSAGE value="Included Interface image files" />
     <MESSAGE value="Fixed some errors with Packages" />
     <option name="LAST_COMMIT_MESSAGE" value="Fixed some errors with Packages" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="454" y="203" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606884010743">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="454" y="203" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606884010743" />
-    <state x="786" y="365" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606884286782">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="786" y="365" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1606884286782" />
-    <state x="628" y="117" key="CommitChangelistDialog2" timestamp="1606886765235">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="628" y="117" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1606886765235" />
-    <state x="741" y="332" key="FileChooserDialogImpl" timestamp="1606882950744">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="741" y="332" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606882950744" />
-    <state width="1645" height="232" key="GridCell.Tab.0.bottom" timestamp="1606887158519">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1645" height="232" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606887158519" />
-    <state width="1645" height="232" key="GridCell.Tab.0.center" timestamp="1606887158519">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1645" height="232" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606887158519" />
-    <state width="1645" height="232" key="GridCell.Tab.0.left" timestamp="1606887158519">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1645" height="232" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606887158519" />
-    <state width="1645" height="232" key="GridCell.Tab.0.right" timestamp="1606887158519">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1645" height="232" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606887158519" />
-    <state x="548" y="211" key="SettingsEditor" timestamp="1606887478972">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="548" y="211" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606887478972" />
   </component>
 </project>
