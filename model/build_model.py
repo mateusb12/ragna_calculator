@@ -1,4 +1,5 @@
 import math
+from dataclasses import dataclass
 
 
 class PlayerBuild:
@@ -131,6 +132,11 @@ class PlayerBuild:
                 break
         return k
 
+    def export_build(self):
+        epb = BuildNuances(self.max_hp, self.max_sp, self.hpr, self.spr, self.hit,
+                           self.flee, self.perfect_flee, self.crit_rate, self.crit_shield)
+        return epb
+
     def print_build(self):
         print("Base level → {}".format(self.base_level))
         print("Job level → {}".format(self.job_level))
@@ -177,3 +183,16 @@ class PlayerBuild:
         print("flee → {} +{}      (true_pdodge → {})".format(self.flee, self.perfect_flee, self.true_perfect_flee))
         print("critical → {}       (true_critical → {})".format(self.crit_rate, self.crit_truerate))
         print('crit_shield → {}'.format(self.crit_shield))
+
+
+@dataclass
+class BuildNuances:
+    max_hp: int
+    max_sp: int
+    hp_regen: int
+    sp_regen: int
+    hit: int
+    flee: int
+    perfect_dodge: int
+    critical: int
+    critical_shield: float

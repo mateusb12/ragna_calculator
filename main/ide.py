@@ -4,6 +4,8 @@ from model.decorador_db_gen import DbGenerator
 # import yaml
 import os
 import pandas as pd
+import time
+start_time = time.time()
 
 # def open_yml(filename):
 #     folder_name = 'resources'
@@ -37,3 +39,13 @@ db_package = (weapon_db, hat_db, shield_db, robe_db, armor_db, shoes_db, accesso
 
 p1 = PlayerBuild(jbl, 99, 50, 'knight', [1, 1, 1, 1, 1, 1])
 p1.print_build()
+
+print(p1.export_build())
+
+print("\n\n")
+full_time = time.time() - start_time
+if full_time < 1:
+    full_time *= 1000
+    print("--- {} ms ---".format(round(full_time, 4)))
+else:
+    print("--- {} seconds ---".format(full_time))
