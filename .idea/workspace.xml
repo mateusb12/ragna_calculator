@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dc11ee9-5b10-4653-9f0f-9a26840bb0c6" name="Default Changelist" comment="Fixed some errors with Packages">
-      <change afterPath="$PROJECT_DIR$/model/player_unit_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pyflask/app/models/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pyflask/app/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/ide.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/ide.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/build_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/build_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/player_unit_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/player_unit_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/controllers/default.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/controllers/default.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +46,7 @@
       <recent name="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\model" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.player_unit_test">
+  <component name="RunManager" selected="Python.ide">
     <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testecalc" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -179,8 +183,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.player_unit_test" />
         <item itemvalue="Python.ide" />
+        <item itemvalue="Python.player_unit_test" />
         <item itemvalue="Python.run" />
         <item itemvalue="Python.__init__" />
         <item itemvalue="Python.check" />

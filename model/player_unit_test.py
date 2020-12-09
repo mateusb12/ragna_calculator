@@ -15,8 +15,14 @@ def open_json(filename):
 
 jbl = open_json('job_bonuses.json')
 
-test1 = (PlayerBuild(jbl, 99, 50, 'knight', [1, 1, 1, 1, 1, 1]).export_build(),
-         BuildNuances(8855, 310, 46, 4, 106, 102, 1, 2, 2.0))
+test1 = (PlayerBuild(jbl, 99, 50, 'monk', [89, 2, 73, 51, 48, 1]).export_build(),
+         BuildNuances(9195, 726, 60, 16, 151, 108, 1, 2, 1.8))
+
+test2 = (PlayerBuild(jbl, 99, 50, 'crusader', [9, 1, 99, 1, 99, 1]).export_build(),
+         BuildNuances(12724, 508, 84, 7, 201, 102, 1, 3, 2.2))
+
+test3 = (PlayerBuild(jbl, 99, 50, 'dancer', [30, 10, 91, 99, 1, 1]).export_build(),
+         BuildNuances(7868, 1232, 57, 30, 105, 116, 1, 4, 2.8))
 
 
 def player_test(kit):
@@ -34,6 +40,8 @@ def player_test(kit):
 
 
 player_test(test1)
+player_test(test2)
+player_test(test3)
 
 full_time = time.time() - start_time
 if full_time < 1:
