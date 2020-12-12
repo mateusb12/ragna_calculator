@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dc11ee9-5b10-4653-9f0f-9a26840bb0c6" name="Default Changelist" comment="Fixed some errors with Packages">
-      <change afterPath="$PROJECT_DIR$/pyflask/app/databases/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pyflask/app/databases/db_operations.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pyflask/app/databases/dbtest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pyflask/app/templates/sign_up.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pyflask/app/databases/testdb.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/ide.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/ide.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyflask/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyflask/app/controllers/default.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/controllers/default.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyflask/app/models/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/models/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/databases/db_operations.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/databases/db_operations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/databases/dbtest.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pyflask/app/models/tables.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/models/tables.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyflask/app/storage.db" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/storage.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyflask/app/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyflask/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/templates/sign_up.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/templates/sign_up.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +47,7 @@
       <recent name="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\model" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.db_operations">
+  <component name="RunManager" selected="Python.testdb">
     <configuration name="datadict" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testecalc" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -67,27 +61,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyflask/app/databases/datadict.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="db_config" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="testecalc" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyflask/app/databases" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\pyflask\app\databases\db_config.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -180,21 +153,42 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="testdb" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="testecalc" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyflask/app/databases" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyflask/app/databases/testdb.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.main" />
       <item itemvalue="Python.dbtest" />
       <item itemvalue="Python.tables" />
       <item itemvalue="Python.datadict" />
-      <item itemvalue="Python.db_config" />
       <item itemvalue="Python.db_operations" />
+      <item itemvalue="Python.testdb" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.testdb" />
         <item itemvalue="Python.db_operations" />
         <item itemvalue="Python.dbtest" />
         <item itemvalue="Python.datadict" />
         <item itemvalue="Python.tables" />
-        <item itemvalue="Python.db_config" />
       </list>
     </recent_temporary>
   </component>

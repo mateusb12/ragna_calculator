@@ -53,7 +53,6 @@ class Follow(db.Model):
 @dataclass
 class FireUser:
     id: int
-    name: str
     username: str
     password: str
     email: str

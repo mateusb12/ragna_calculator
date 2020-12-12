@@ -2,6 +2,7 @@ from app import app, db
 from flask import render_template, request, redirect
 from app.models.forms import LoginForm, RegisterForm
 from app.models.tables import User
+import app.databases.db_operations as dbo
 from sqlalchemy import exc
 
 
@@ -24,19 +25,27 @@ def login():
 @app.route("/sign_up", methods=["GET", "POST"])
 def sign_up():
     form = RegisterForm()
+    created = None
+    exist_email = None
+    exist_username = None
     if form.validate_on_submit():
-        print(form.username.data)
-        print(form.password.data)
-        print(form.email.data)
-
         if request.method == "POST":
-            # new_user = User(form.username.data, form.password.data, "Pedro", form.email.data)
-            # db.session.add(new_user)
-            # db.session.commit()
-            print("Adicionado ao database!")
-        else:
-            pass
-    return render_template('sign_up.html', form=form)
+            username = form.username.data
+            password = form.password.data
+            email = form.email.data
+            flag = dbo.create_user(username, password, email)
+            if type(flag) == bool and flag == True:
+                created = True
+                print("Cadastrado com sucesso!")
+            else:
+                created = False
+                print("Ocorreu um erro. {}".format(flag))
+                if 'email' in flag:
+                    exist_email = True
+                if 'username' in flag:
+                    exist_username = True
+
+    return render_template('sign_up.html', form=form, exist_email=exist_email, exist_username=exist_username)
 
 
 @app.route("/teste/<info>")
