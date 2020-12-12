@@ -2,13 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dc11ee9-5b10-4653-9f0f-9a26840bb0c6" name="Default Changelist" comment="Fixed some errors with Packages">
-      <change afterPath="$PROJECT_DIR$/pyflask/app/models/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pyflask/app/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pyflask/app/databases/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pyflask/app/databases/db_operations.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pyflask/app/databases/dbtest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pyflask/app/templates/sign_up.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/ide.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/ide.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/player_unit_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/player_unit_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyflask/app/controllers/default.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/controllers/default.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyflask/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/models/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/models/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/models/tables.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/models/tables.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/storage.db" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/storage.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyflask/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,6 +24,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Python Script" />
       </list>
     </option>
@@ -32,10 +38,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/datascience_whatsapp" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -46,8 +53,8 @@
       <recent name="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\model" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.ide">
-    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.db_operations">
+    <configuration name="datadict" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testecalc" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -55,11 +62,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyflask/app" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyflask/app/databases" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyflask/app/__init__.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyflask/app/databases/datadict.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -68,7 +75,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="check" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="db_config" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testecalc" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -76,11 +83,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyflask/app/databases" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/check.py" />
+      <option name="SCRIPT_NAME" value="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\pyflask\app\databases\db_config.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -89,7 +96,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="ide" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="db_operations" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testecalc" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -97,11 +104,32 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyflask/app/databases" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/ide.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyflask/app/databases/db_operations.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="dbtest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="testecalc" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyflask/app/databases" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyflask/app/databases/dbtest.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -131,7 +159,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="player_unit_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="tables" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testecalc" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -139,32 +167,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/model" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyflask/app/models" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/model/player_unit_test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="testecalc" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyflask" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyflask/run.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyflask/app/models/tables.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -175,19 +182,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.main" />
-      <item itemvalue="Python.__init__" />
-      <item itemvalue="Python.check" />
-      <item itemvalue="Python.ide" />
-      <item itemvalue="Python.run" />
-      <item itemvalue="Python.player_unit_test" />
+      <item itemvalue="Python.dbtest" />
+      <item itemvalue="Python.tables" />
+      <item itemvalue="Python.datadict" />
+      <item itemvalue="Python.db_config" />
+      <item itemvalue="Python.db_operations" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.ide" />
-        <item itemvalue="Python.player_unit_test" />
-        <item itemvalue="Python.run" />
-        <item itemvalue="Python.__init__" />
-        <item itemvalue="Python.check" />
+        <item itemvalue="Python.db_operations" />
+        <item itemvalue="Python.dbtest" />
+        <item itemvalue="Python.datadict" />
+        <item itemvalue="Python.tables" />
+        <item itemvalue="Python.db_config" />
       </list>
     </recent_temporary>
   </component>

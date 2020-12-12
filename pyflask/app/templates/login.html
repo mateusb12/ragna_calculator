@@ -4,15 +4,23 @@
     <div class="offset-md-4 col-md-4">
         <h2>Login</h2>
         <form action="" method="post">
+            {{ form.csrf_token }}
             <div class="form-group">
                 <label>Username</label>
                     {{ form.username(class="form-control",
                     placeholder="seu_usuario") }}
-                </div>
+
+                    {% if form.errors.username %}
+                    <div class="alert alert-danger" role="alert"> {{ form.errors.username}} </div>
+                    {% endif %}
 
             <div class="form-group">
                 <label>Password</label>
                     {{ form.password(class="form-control") }}
+
+                    {% if form.errors.password %}
+                    <div class="alert alert-danger" role="alert"> {{ form.errors.password}} </div>
+                    {% endif %}
                 </div>
 
             <div class="checkbox">

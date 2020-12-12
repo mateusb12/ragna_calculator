@@ -1,4 +1,6 @@
-from pyflask.app import db
+from dataclasses import dataclass
+
+from app import db
 
 
 class User(db.Model):
@@ -46,3 +48,12 @@ class Follow(db.Model):
 
     user = db.relationship('User', foreign_keys=user_id)
     follower = db.relationship('User', foreign_keys=follower_id)
+
+
+@dataclass
+class FireUser:
+    id: int
+    name: str
+    username: str
+    password: str
+    email: str
