@@ -1,6 +1,7 @@
 # %run gear_db.ipynb
 from model.build_model import PlayerBuild
-from model.decorador_db_gen import DbGenerator
+from model.decorador_db_gen  import DbGenerator
+
 # import yaml
 import os
 import pandas as pd

@@ -2,15 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dc11ee9-5b10-4653-9f0f-9a26840bb0c6" name="Default Changelist" comment="Fixed some errors with Packages">
-      <change afterPath="$PROJECT_DIR$/pyflask/app/templates/calculator.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ragnarok/view/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/testecalc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/testecalc.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyflask/app/controllers/default.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/controllers/default.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyflask/app/databases/testdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/databases/testdb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyflask/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyflask/app/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyflask/app/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyflask/app/templates/sign_up.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/templates/sign_up.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyflask/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/check.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/main/check.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/ide.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/main/ide.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/main/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/build_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/model/build_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/decorador_db_gen.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/model/decorador_db_gen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/player_unit_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/model/player_unit_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/model/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/input.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/resources/input.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/interface/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/resources/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/interface/homuninfo_bg.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/resources/interface/homuninfo_bg.bmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/interface/lv_up_on.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/resources/interface/lv_up_on.bmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/interface/statwin_bg.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/resources/interface/statwin_bg.bmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/item_db_equip.json" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/resources/item_db_equip.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/item_db_equip.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/resources/item_db_equip.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/job_bonuses.json" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/resources/job_bonuses.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/job_bonuses.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/resources/job_bonuses.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/max_hp_table.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/resources/max_hp_table.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/stat_points_table.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/resources/stat_points_table.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes unitarios/hp_max.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/testes unitarios/hp_max.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes unitarios/hp_sp.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/testes unitarios/hp_sp.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/resources/interface/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/view/interface.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +37,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -42,15 +59,15 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\ragnarok" />
       <recent name="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\pyflask\app" />
       <recent name="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\flasktest" />
       <recent name="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\view" />
       <recent name="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\main" />
-      <recent name="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\model" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.testdb">
-    <configuration name="db_operations" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.player_unit_test">
+    <configuration name="check (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testecalc" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -58,11 +75,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyflask/app/databases" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ragnarok/main" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyflask/app/databases/db_operations.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ragnarok/main/check.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -71,7 +88,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="dbtest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="check" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testecalc" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -79,11 +96,53 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyflask/app/databases" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyflask/app/databases/dbtest.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/check.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ide (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="testecalc" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ragnarok/main" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ragnarok/main/ide.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ide" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="testecalc" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/ide.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -113,7 +172,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="player_unit_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testecalc" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -121,53 +180,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyflask" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ragnarok/model" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyflask/run.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="tables" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="testecalc" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyflask/app/models" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyflask/app/models/tables.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="testdb" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="testecalc" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyflask/app/databases" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyflask/app/databases/testdb.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ragnarok/model/player_unit_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -178,19 +195,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.main" />
-      <item itemvalue="Python.dbtest" />
-      <item itemvalue="Python.tables" />
-      <item itemvalue="Python.db_operations" />
-      <item itemvalue="Python.testdb" />
-      <item itemvalue="Python.run" />
+      <item itemvalue="Python.ide" />
+      <item itemvalue="Python.check" />
+      <item itemvalue="Python.ide (1)" />
+      <item itemvalue="Python.check (1)" />
+      <item itemvalue="Python.player_unit_test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.testdb" />
-        <item itemvalue="Python.run" />
-        <item itemvalue="Python.tables" />
-        <item itemvalue="Python.db_operations" />
-        <item itemvalue="Python.dbtest" />
+        <item itemvalue="Python.player_unit_test" />
+        <item itemvalue="Python.ide (1)" />
+        <item itemvalue="Python.check (1)" />
+        <item itemvalue="Python.ide" />
+        <item itemvalue="Python.check" />
       </list>
     </recent_temporary>
   </component>
