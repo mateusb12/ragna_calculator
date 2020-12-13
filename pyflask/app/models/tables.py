@@ -5,12 +5,28 @@ from app import db
 
 class User(db.Model):
     __tablename__ = "users"
+    __table_args__ = {'extend_existing': True}
 
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String, unique=True)
     password = db.Column(db.String)
     name = db.Column(db.String)
     email = db.Column(db.String, unique=True)
+
+    @property
+    def is_authenticated(self):
+        return True
+
+    @property
+    def is_active(self):
+        return True
+
+    @property
+    def is_anonymous(self):
+        return False
+
+    def get_id(self):
+        return str(self.id)
 
     def __init__(self, username, password, name, email):
         self.username = username
@@ -21,9 +37,14 @@ class User(db.Model):
     def __repr__(self):
         return "<User %r>" % self.username
 
+    def __str__(self):
+        return "id: {} username: {} password: {} email: {}"\
+            .format(self.id, self.username, self.password, self.email)
+
 
 class Post(db.Model):
     __tablename__ = "posts"
+    __table_args__ = {'extend_existing': True}
 
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.Text)
@@ -41,6 +62,7 @@ class Post(db.Model):
 
 class Follow(db.Model):
     __tablename__ = "follow"
+    __table_args__ = {'extend_existing': True}
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))

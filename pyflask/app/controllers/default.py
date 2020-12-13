@@ -19,6 +19,8 @@ def login():
     if form.validate_on_submit():
         print(form.username.data)
         print(form.password.data)
+    else:
+        print(form.errors)
     return render_template('login.html', form=form)
 
 
@@ -33,7 +35,7 @@ def sign_up():
             username = form.username.data
             password = form.password.data
             email = form.email.data
-            flag = dbo.create_user(username, password, email)
+            flag = dbo.User.create(username, password, email)
             if type(flag) == bool and flag == True:
                 created = True
                 print("Cadastrado com sucesso!")
