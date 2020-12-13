@@ -7,6 +7,4 @@ from os.path import abspath, dirname
 # python -m comando
 
 if __name__ == "__main__":
-    # app.run()
-    sys.path.insert(0, dirname(dirname(abspath(__file__))))
-    manager.run()
+    app.run(host="localhost")

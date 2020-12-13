@@ -16,10 +16,9 @@
     <div class="main-body">
         <nav aria-label="breadcrumb" class="main-breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item"><a href="javascript:void(0)">User</a></li>
+                <li class="breadcrumb-item"><a href="http://localhost:5000/protected/calc">Calculator</a></li>
                 <li class="breadcrumb-item active" aria-current="page">User Profile</li>
-                <li class="breadcrumb-item"><a href="http://127.0.0.1:5000/dropsession">Logout</a></li>
+                <li class="breadcrumb-item"><a href="http://localhost:5000/dropsession">Logout</a></li>
             </ol>
         </nav>
 
@@ -69,10 +68,10 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-3">
-                                <h6 class="mb-0">Full Name</h6>
+                                <h6 class="mb-0">ID</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                Kenneth Valdez
+                                {{info['id']}}
                             </div>
                         </div>
                         <hr>
@@ -81,7 +80,7 @@
                                 <h6 class="mb-0">Email</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                fip@jukmuh.al
+                                {{info['email']}}
                             </div>
                         </div>
                         <hr>

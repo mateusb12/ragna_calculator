@@ -17,4 +17,4 @@ from app.models.tables import User
 
 # print(dbo.UserDB.login("charlesthompson", "afbdmx28m"))
 
-print(dbo.UserDB.get_by_id('500'))
+print(dbo.UserDB.user_query('username', 'mateusb12')[0])

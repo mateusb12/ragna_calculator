@@ -22,6 +22,8 @@ def index(user):
 @app.route("/login", methods=["GET", "POST"])
 def login():
     form = LoginForm()
+    login_error = None
+    info = None
     if form.validate_on_submit():
         if request.method == "POST":
             session.pop('user', None)
@@ -29,16 +31,27 @@ def login():
             print(flag)
             if flag:
                 session['user'] = request.form['username']
+                # info = dbo.UserDB.user_query('username', form.username.data)[0]
                 return redirect(url_for('protected'))
+            else:
+                login_error = True
     else:
         print(form.errors)
-    return render_template('login.html', form=form)
+    return render_template('login.html', form=form, login_error=login_error)
 
 
 @app.route("/protected")
 def protected():
     if g.user:
-        return render_template('profile.html', user=session['user'])
+        info = dbo.UserDB.user_query('username', session['user'])[0]
+        return render_template('profile.html', user=session['user'], info=info)
+    return redirect(url_for('index'))
+
+
+@app.route("/protected/calc")
+def calculator():
+    if g.user:
+        return render_template('calculator.html', user=session['user'])
     return redirect(url_for('index'))
 
 
@@ -71,7 +84,7 @@ def sign_up():
             if type(flag) == bool and flag == True:
                 created = True
                 print("Cadastrado com sucesso!")
-                return redirect(url_for('index'))
+                return redirect(url_for('login'))
             else:
                 created = False
                 print("Ocorreu um erro. {}".format(flag))
@@ -80,7 +93,8 @@ def sign_up():
                 if 'username' in flag:
                     exist_username = True
 
-    return render_template('sign_up.html', form=form, exist_email=exist_email, exist_username=exist_username)
+    return render_template('sign_up.html', form=form, exist_email=exist_email,
+                           exist_username=exist_username, created=created)
 
 
 @app.route("/teste/<info>")
