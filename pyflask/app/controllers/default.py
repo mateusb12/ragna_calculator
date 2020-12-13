@@ -1,5 +1,5 @@
 from app import app, db
-from flask import render_template, request, redirect
+from flask import render_template, request, redirect, session, url_for, g
 from app.models.forms import LoginForm, RegisterForm
 from app.models.tables import User
 import app.databases.db_operations as dbo
@@ -13,15 +13,47 @@ def index(user):
                            user=user)
 
 
+# @app.route("/profile/<user>")
+# def profile(user):
+#     return render_template('profile.html',
+#                            user=user)
+
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        print(form.username.data)
-        print(form.password.data)
+        if request.method == "POST":
+            session.pop('user', None)
+            flag = dbo.UserDB.login(form.username.data, form.password.data)
+            print(flag)
+            if flag:
+                session['user'] = request.form['username']
+                return redirect(url_for('protected'))
     else:
         print(form.errors)
     return render_template('login.html', form=form)
+
+
+@app.route("/protected")
+def protected():
+    if g.user:
+        return render_template('profile.html', user=session['user'])
+    return redirect(url_for('index'))
+
+
+@app.before_request
+def before_request():
+    g.user = None
+
+    if 'user' in session:
+        g.user = session['user']
+
+
+@app.route("/dropsession")
+def dropsession():
+    session.pop('user', None)
+    return redirect(url_for('index'))
 
 
 @app.route("/sign_up", methods=["GET", "POST"])
@@ -39,6 +71,7 @@ def sign_up():
             if type(flag) == bool and flag == True:
                 created = True
                 print("Cadastrado com sucesso!")
+                return redirect(url_for('index'))
             else:
                 created = False
                 print("Ocorreu um erro. {}".format(flag))

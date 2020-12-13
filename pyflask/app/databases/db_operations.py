@@ -99,6 +99,21 @@ class UserDB:
                 query_list.append(i)
         return query_list
 
+    @staticmethod
+    def get_by_id(input_id: str):
+        for i in db_list.values():
+            if i['id'] == int(input_id):
+                return i
+        return None
+
+    @staticmethod
+    def login(input_username: str, input_password: str):
+        for i in list(db_list.values()):
+            if input_username in i.values() and input_password in i.values():
+                return True
+        else:
+            return False
+
 
 class UserTools:
     @staticmethod

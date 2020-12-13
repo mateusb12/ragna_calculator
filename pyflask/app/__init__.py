@@ -2,7 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
-from flask_login import LoginManager, login_manager, UserMixin, login_required
+from flask_login import LoginManager, login_manager as lmg, UserMixin, login_required
 from datetime import datetime
 
 app = Flask(__name__)
@@ -14,10 +14,7 @@ migrate = Migrate(app, db)
 manager = Manager(app)
 manager.add_command('db', MigrateCommand)
 
-lm = LoginManager(app)
+# lm = LoginManager(app)
 
 from app.controllers import default
-
-
-
 
