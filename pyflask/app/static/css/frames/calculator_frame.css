@@ -1,0 +1,38 @@
+.main-label{
+    text-align:center;
+    margin:0;
+    color: white;
+    border-radius:20px 20px 0 0;
+    background: url('/static/assets/sunset.jpeg');
+    background-color:#466;
+    padding-left:20px;
+    padding-top:5px;
+    height:52px;
+    font-family:sans-serif;
+    font-size:1.65em;
+    letter-spacing:0.3px;
+    font-variant:inherit;
+    line-height:200%;
+}
+
+.main-card{
+	border:1px solid #999;
+	background-color:#FFF;
+	padding:15px;
+	border-radius: 0 0 20px 20px;
+}
+
+.full-card{
+    padding-top:20px;
+    padding-down:20px;
+
+    padding-left:100px;
+    padding-right:100px;
+}
+
+.select{
+    border:0 none;
+    margin:1px;
+    background-color:#FC8;
+    border-radius:7px;
+}

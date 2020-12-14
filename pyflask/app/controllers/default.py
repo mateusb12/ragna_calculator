@@ -99,3 +99,13 @@ def sign_up():
 @app.route("/about")
 def about():
     return "<h1 style='color: red'>About!!!!</h1>"
+
+
+@app.route("/calcframe")
+def calcframe():
+    return render_template('frames/calculator_frame.html')
+
+
+@app.route("/loginframe")
+def loginframe():
+    return render_template('frames/login_frame.html')

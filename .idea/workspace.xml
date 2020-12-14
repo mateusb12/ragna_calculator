@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dc11ee9-5b10-4653-9f0f-9a26840bb0c6" name="Default Changelist" comment="Fixed some errors with Packages">
+      <change afterPath="$PROJECT_DIR$/pyflask/app/static/css/frames/login_frame.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pyflask/app/templates/frames/login_frame.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/controllers/default.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/controllers/default.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyflask/app/static/css/calculator.css" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/static/css/calculator.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyflask/app/templates/calculator.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/templates/calculator.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ragnarok/main/check.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/main/check.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ragnarok/main/ide.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/main/ide.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ragnarok/model/build_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/model/build_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ragnarok/model/decorador_db_gen.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/model/decorador_db_gen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/templates/profile.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
