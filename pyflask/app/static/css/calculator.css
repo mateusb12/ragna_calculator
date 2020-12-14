@@ -52,17 +52,51 @@ body{
     box-shadow: none!important;
 }
 
-.dropdown-menu {
-    max-height: 200px;
-    overflow-y: auto;
-    background-color: black;
-}
-
-.dropdown-item{
-    background-color: black !important;
-    color: orange;
-}
 
 .myclass{
-    color: #2222FF;
+    color: #329ba8FF;
 }
+
+.bs-example{
+    margin: 50px;
+}
+
+.small-item{
+    display: inline-block;
+    width: 100%;
+    padding: 0.05rem 1.0rem;
+    clear: both;
+    font-weight: 400;
+    color:  rgba(200,20,0,1);
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+
+.select{
+    border:0 none;
+    margin:1px;
+    background-color:#FC8;
+    border-radius:7px;
+}
+
+.main-card{
+    text-align:center;
+    margin:0;
+    color: white;
+    border-radius:20px 20px 0 0;
+    background:linear-gradient(to bottom, #355 , #477);
+    background-color:#466;
+    background-image: linear-gradient(rgb(51, 85, 85), rgb(68, 119, 119))
+    padding-left:20px;
+    height:52px;
+    font-family:Arial;
+    font-size:1.65em;
+    letter-spacing:1px;
+    font-variant:small-caps;
+    line-height:200%;
+}
+
+
+

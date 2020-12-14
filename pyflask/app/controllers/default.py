@@ -13,10 +13,9 @@ def index(user):
                            user=user)
 
 
-# @app.route("/profile/<user>")
-# def profile(user):
-#     return render_template('profile.html',
-#                            user=user)
+@app.route("/base")
+def base():
+    return render_template('base.html')
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -95,21 +94,6 @@ def sign_up():
 
     return render_template('sign_up.html', form=form, exist_email=exist_email,
                            exist_username=exist_username, created=created)
-
-
-@app.route("/teste/<info>")
-@app.route("/teste", defaults={"info": None})
-def teste(info):
-    i = User("juliarizza2", "1234", "Julia Rizza3", "julia.rizza@gmail.com")
-    db.session.add(i)
-    db.session.commit()
-    # try:
-    #     db.session.add(i)
-    #     return db.session.commit()
-    # except exc.IntegrityError:
-    #     print("houve exceção")
-    #     db.session.rollback()
-    return "ok"
 
 
 @app.route("/about")

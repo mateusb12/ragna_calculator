@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dc11ee9-5b10-4653-9f0f-9a26840bb0c6" name="Default Changelist" comment="Fixed some errors with Packages">
+      <change afterPath="$PROJECT_DIR$/pyflask/app/static/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pyflask/app/templates/footer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calculadora.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gear_db.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/controllers/default.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/controllers/default.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/static/css/calculator.css" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/static/css/calculator.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyflask/app/templates/calculator.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/templates/calculator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/templates/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -38,11 +41,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\pyflask\app\assets" />
       <recent name="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\ragnarok" />
       <recent name="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\pyflask\app" />
       <recent name="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\flasktest" />
       <recent name="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\view" />
-      <recent name="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\main" />
     </key>
   </component>
   <component name="RunManager" selected="Python.player_unit_test">
@@ -173,11 +176,11 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.main" />
       <item itemvalue="Python.check (1)" />
       <item itemvalue="Python.check" />
       <item itemvalue="Python.ide (1)" />
       <item itemvalue="Python.ide" />
-      <item itemvalue="Python.main" />
       <item itemvalue="Python.player_unit_test" />
     </list>
     <recent_temporary>
