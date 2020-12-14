@@ -1,10 +1,12 @@
 import math
 from dataclasses import dataclass
+import pandas as pd
+from typing import List
 
 
 class PlayerBuild:
-    def __init__(self, job_bonuses_list, base_level, job_level, current_job, stat_build):
-        import pandas as pd
+    def __init__(self, job_bonuses_list: pd.DataFrame, base_level: int, job_level: int,
+                 current_job: str, stat_build: List[int]):
 
         self.job_bonuses_list = job_bonuses_list
         self.base_level = base_level
@@ -104,13 +106,13 @@ class PlayerBuild:
             base_hp = base_hp + round(hp_job_a * i)
         return base_hp
 
-    def calculate_max_hp(self):
+    def calculate_max_hp(self) -> int:
         max_hp = math.floor(self.base_hp * (1 + (0.01 * self.vit)))
         max_hp += self.additive_modifiers
         max_hp = math.floor(max_hp * (1 + (self.multiplicative_modifiers * 0.01)))
         return max_hp
 
-    def calculate_max_sp(self):
+    def calculate_max_sp(self) -> int:
         base_sp = 10
         base_sp += math.floor(self.base_level * self.job_bonuses_list[self.current_job]['SP_JOB'])
         max_sp = base_sp
@@ -120,7 +122,7 @@ class PlayerBuild:
         return max_sp
 
     @staticmethod
-    def evaluate_stat_bonus(job_level, stat_array):
+    def evaluate_stat_bonus(job_level: int, stat_array: List[int]) -> int:
         global k
         if not stat_array:
             return 0

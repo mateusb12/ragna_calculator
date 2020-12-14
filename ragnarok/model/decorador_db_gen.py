@@ -33,10 +33,10 @@ class DbGenerator:
                 copy_db[i] = checklist[i]
         return copy_db
     
-    def get_equip_db(self):
+    def get_equip_db(self) -> dict:
         return self.equip_database
     
-    def get_shield_db(self):
+    def get_shield_db(self) -> dict:
         shield_database = {}
         equip_database = self.equip_database
         for i in equip_database.values():
@@ -45,7 +45,7 @@ class DbGenerator:
                     shield_database[i['Id']] = self.normalize_missing_params(i)
         return shield_database
     
-    def get_robe_db(self):
+    def get_robe_db(self) -> dict:
         robe_database = {}
         equip_database = self.equip_database
         for i in equip_database.values():
@@ -54,7 +54,7 @@ class DbGenerator:
                     robe_database[i['Id']] = self.normalize_missing_params(i)
         return robe_database
                     
-    def get_shoes_db(self):
+    def get_shoes_db(self) -> dict:
         shoes_database = {}
         equip_database = self.equip_database
         for i in equip_database.values():
@@ -63,7 +63,7 @@ class DbGenerator:
                     shoes_database[i['Id']] = self.normalize_missing_params(i)
         return shoes_database
     
-    def get_accessory_db(self):
+    def get_accessory_db(self) -> dict:
         accessory_database = {}
         equip_database = self.equip_database
         for i in equip_database.values():
@@ -72,7 +72,7 @@ class DbGenerator:
                     accessory_database[i['Id']] = self.normalize_missing_params(i)
         return accessory_database
     
-    def get_armor_db(self):
+    def get_armor_db(self) -> dict:
         armor_database = {}
         equip_database = self.equip_database
         for i in equip_database.values():
@@ -81,7 +81,7 @@ class DbGenerator:
                     armor_database[i['Id']] = self.normalize_missing_params(i)
         return armor_database
     
-    def get_hat_db(self):
+    def get_hat_db(self) -> dict:
         hat_database = {}
         equip_database = self.equip_database
         for i in equip_database.values():
@@ -93,7 +93,7 @@ class DbGenerator:
                     hat_database[i['Id']] = self.normalize_missing_params(i)
         return hat_database
     
-    def get_weapon_db(self):
+    def get_weapon_db(self) -> dict:
         weapon_database = {}
         equip_database = self.equip_database
         for i in equip_database.values():

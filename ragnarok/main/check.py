@@ -13,4 +13,9 @@ def open_json(filename):
 
 ab = pd.read_csv('../resources/max_hp_table.csv')
 
-print(ab)
+
+def soma(a: int, b: int) -> int:
+    return a + b
+
+
+print(soma.__annotations__)

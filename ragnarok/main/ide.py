@@ -15,7 +15,7 @@ start_time = time.time()
 #         return yaml.load(file, Loader=yaml.FullLoader)
 
 
-def open_json(filename):
+def open_json(filename: str) -> pd.DataFrame:
     folder_name = 'resources'
     dir_path = (os.path.dirname(os.path.realpath(filename))[:-5] + '\\{}\\'.format(folder_name)) + filename
     return pd.read_json(r'{}'.format(dir_path))
