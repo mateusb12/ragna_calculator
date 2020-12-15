@@ -3,6 +3,7 @@ from flask import render_template, request, redirect, session, url_for, g
 from app.models.forms import LoginForm, RegisterForm
 from app.models.tables import User
 import app.databases.db_operations as dbo
+from markupsafe import escape
 from sqlalchemy import exc
 
 
@@ -20,6 +21,8 @@ def base():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    if g.user:
+        return redirect(url_for('protected'))
     form = LoginForm()
     login_error = None
     info = None
@@ -103,7 +106,7 @@ def about():
 
 @app.route("/calcframe")
 def calcframe():
-    return render_template('frames/calculator_frame.html')
+    return render_template('calculator_frame.html')
 
 
 @app.route("/loginframe")
