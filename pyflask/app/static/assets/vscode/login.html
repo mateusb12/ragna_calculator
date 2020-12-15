@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link href="{{ url_for('static', filename='css/frames/login_frame.css') }}" rel="stylesheet">
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-{% extends 'base.html' %}
-
-{% block content %}
-
 <div class="login page background">
+
 	<div class="login-container">
+		<img id='login-logo' src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_Black.png" />
+
 		<p>Pronto para ouvir novas playlists?</p>
 		<div class="login-user-info">
 
@@ -37,11 +28,3 @@
 		</div>
 	</div>
 </div>
-
-<!--<h2 style="color: #222">{{ url_for('static', filename='css/login.css') }}</h2>-->
-<!--<h2 style="color: #222">{{ url_for('static', filename='css/login_frame.css') }}</h2>-->
-
-{% endblock %}
-
-</body>
-</html>

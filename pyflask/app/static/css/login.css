@@ -1,3 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+* {
+	font-family: Inter, Roboto, sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+	outline: none;
+}
+
+.page {
+	animation: fade-in 500ms forwards;
+}
+
+.background {
+	min-height: 100vh;
+	font-size: 1em;
+	scroll-behavior: smooth;
+	padding: 20px;
+	text-align: center;
+	font-weight: 500;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+html, body {
+	height: 100%;
+}
+
+:root {
+	--main-color: #1ED760;
+	--secondary-color: #2d46b9;
+}
+
 .login {
 	background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), url('/static/assets/sunset.jpeg') fixed no-repeat center/cover;
 }
