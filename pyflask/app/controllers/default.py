@@ -6,8 +6,7 @@ import app.databases.db_operations as dbo
 from markupsafe import escape
 from sqlalchemy import exc
 import pandas as pd
-import os
-
+import sys, os
 
 
 @app.route("/index/<user>")
@@ -110,6 +109,7 @@ def about():
 @app.route("/calcframe")
 def calcframe():
     jobnamelist = list(pd.read_csv('../ragnarok/resources/max_hp_table.csv').columns)[1:]
+    print("caminho = {}".format(sys.path))
     return render_template('calculator_frame.html', jobnamelist=jobnamelist)
 
 
