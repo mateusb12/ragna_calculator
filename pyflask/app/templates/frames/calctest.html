@@ -3,24 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="static/js/carros.js"></script>
+    <script src="static/js/selection_rules.js"></script>
 </head>
 
 <body>
 {% block content %}
 
 <h2>Choose your car</h2>
-<select id="slct1" onchange="populate(this.id, 'slct2')">
+<select id="slct1" onchange="populate(this.id, 'select-joblevel')">
     <option value=""></option>
-    <option value="Brazil">Brazil</option>
-    <option value="International">International</option>
-    <option value="Ford">Ford</option>
+    {% for item in joblist %}
+        <option value="{{item}}">{{item}}</option>
+    {% endfor %}
 </select>
 
 <h2>Choose car model</h2>
 
-<select id="slct2">
-</select>
+<select id="select-joblevel" class="droplist">
+
+<h2>{{joblist}}</h2>
+
+<h1>{{dynamic_choose()}}</h1>
 
 {% endblock %}
 </body>

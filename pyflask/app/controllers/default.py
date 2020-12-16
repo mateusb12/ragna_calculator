@@ -6,7 +6,8 @@ import app.databases.db_operations as dbo
 from markupsafe import escape
 from sqlalchemy import exc
 import pandas as pd
-# from ragnarok.model.csv_exporter import joblist
+import os
+
 
 
 @app.route("/index/<user>")
@@ -108,7 +109,8 @@ def about():
 
 @app.route("/calcframe")
 def calcframe():
-    return render_template('calculator_frame.html')
+    jobnamelist = list(pd.read_csv('../ragnarok/resources/max_hp_table.csv').columns)[1:]
+    return render_template('calculator_frame.html', jobnamelist=jobnamelist)
 
 
 @app.route("/loginframe")
@@ -118,5 +120,7 @@ def loginframe():
 
 @app.route("/calctest")
 def calctest():
-    joblist = 3;
-    return render_template('frames/calctest.html', joblist=joblist)
+    from app.controllers.html_functions import dynamic_choose
+    joblist = list(pd.read_csv('../ragnarok/resources/max_hp_table.csv').columns)[1:]
+    return render_template('frames/calctest.html',
+                           joblist=joblist, dynamic_choose=dynamic_choose)
