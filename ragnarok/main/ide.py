@@ -41,6 +41,8 @@ db_package = (weapon_db, hat_db, shield_db, robe_db, armor_db, shoes_db, accesso
 p1 = PlayerBuild(jbl, 99, 50, 'monk', [89, 2, 73, 51, 48, 1])
 p1.print_build()
 
+print(list(pd.read_csv('../resources/max_hp_table.csv').columns))
+
 print(p1.export_build())
 
 print("\n\n")

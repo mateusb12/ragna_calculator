@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="static/js/carros.js"></script>
+</head>
+
+<body>
+{% block content %}
+
+<h2>Choose your car</h2>
+<select id="slct1" onchange="populate(this.id, 'slct2')">
+    <option value=""></option>
+    <option value="Brazil">Brazil</option>
+    <option value="International">International</option>
+    <option value="Ford">Ford</option>
+</select>
+
+<h2>Choose car model</h2>
+
+<select id="slct2">
+</select>
+
+{% endblock %}
+</body>
+</html>

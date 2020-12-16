@@ -5,6 +5,8 @@ from app.models.tables import User
 import app.databases.db_operations as dbo
 from markupsafe import escape
 from sqlalchemy import exc
+import pandas as pd
+# from ragnarok.model.csv_exporter import joblist
 
 
 @app.route("/index/<user>")
@@ -112,3 +114,9 @@ def calcframe():
 @app.route("/loginframe")
 def loginframe():
     return render_template('frames/login_frame.html')
+
+
+@app.route("/calctest")
+def calctest():
+    joblist = 3;
+    return render_template('frames/calctest.html', joblist=joblist)

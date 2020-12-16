@@ -126,3 +126,16 @@ td {
     border-radius: 20px 20px 0 0;
 }
 
+.status-content{
+    height: 200%;
+}
+
+.tableframe-title{
+    text-align:center;
+    font-variant: small-caps;
+}
+
+.droplist{
+    background-color: #e0dada;
+}
+
