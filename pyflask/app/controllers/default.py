@@ -1,12 +1,18 @@
-from app import app, db
-from flask import render_template, request, redirect, session, url_for, g
-from app.models.forms import LoginForm, RegisterForm
-from app.models.tables import User
-import app.databases.db_operations as dbo
-from markupsafe import escape
-from sqlalchemy import exc
+import os
+import sys
+
+sys.path.append(sys.path[0][:-7] + 'ragnarok')
+
+sys.path.append(sys.path[0][:-7] + 'ragnarok\model')
+
 import pandas as pd
-import sys, os
+from flask import render_template, request, redirect, session, url_for, g
+
+import app.databases.db_operations as dbo
+from app import app
+from app.models.forms import LoginForm, RegisterForm
+
+# from ragnarok.model.statuspoints_evaluator import attribute_balance
 
 
 @app.route("/index/<user>")
@@ -109,7 +115,10 @@ def about():
 @app.route("/calcframe")
 def calcframe():
     jobnamelist = list(pd.read_csv('../ragnarok/resources/max_hp_table.csv').columns)[1:]
-    print("caminho = {}".format(sys.path))
+    for i in sys.path:
+        print(i)
+    # print("caminho = {}".format(sys.path[0][:-7] + 'ragnarok'))
+    print("caminho atual = {}".format(os.path.abspath(os.path.join('..', 'default'))))
     return render_template('calculator_frame.html', jobnamelist=jobnamelist)
 
 
