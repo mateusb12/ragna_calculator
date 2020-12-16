@@ -1,9 +1,7 @@
 import os
 import sys
 
-sys.path.append(sys.path[0][:-7] + 'ragnarok')
-
-sys.path.append(sys.path[0][:-7] + 'ragnarok\model')
+sys.path.append(sys.path[0][:-7])
 
 import pandas as pd
 from flask import render_template, request, redirect, session, url_for, g
@@ -12,7 +10,7 @@ import app.databases.db_operations as dbo
 from app import app
 from app.models.forms import LoginForm, RegisterForm
 
-# from ragnarok.model.statuspoints_evaluator import attribute_balance
+from ragnarok.model.statuspoints_evaluator import attribute_balance
 
 
 @app.route("/index/<user>")

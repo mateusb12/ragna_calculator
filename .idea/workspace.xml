@@ -4,6 +4,7 @@
     <list default="true" id="1dc11ee9-5b10-4653-9f0f-9a26840bb0c6" name="Default Changelist" comment="Fixed some errors with Packages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyflask/app/controllers/default.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/controllers/default.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ragnarok/model/statuspoints_evaluator.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/model/statuspoints_evaluator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +44,7 @@
       <recent name="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\view" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.default">
+  <component name="RunManager" selected="Python.statuspoints_evaluator">
     <configuration name="csv_exporter" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testecalc" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -180,8 +181,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.default" />
         <item itemvalue="Python.statuspoints_evaluator" />
+        <item itemvalue="Python.default" />
         <item itemvalue="Python.ide (1)" />
         <item itemvalue="Python.tested" />
         <item itemvalue="Python.csv_exporter" />
