@@ -3,8 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="1dc11ee9-5b10-4653-9f0f-9a26840bb0c6" name="Default Changelist" comment="Fixed some errors with Packages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyflask/app/controllers/default.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/controllers/default.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ragnarok/model/statuspoints_evaluator.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/model/statuspoints_evaluator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/controllers/html_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/controllers/html_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/static/css/frames/calculator_frame.css" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/static/css/frames/calculator_frame.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/templates/calculator.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/templates/calculator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/templates/calculator_frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/templates/calculator_frame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/templates/frames/calctest.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/templates/frames/calctest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/templates/sign_up.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/templates/sign_up.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,12 +179,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.main" />
-      <item itemvalue="Python.ide (1)" />
       <item itemvalue="Python.csv_exporter" />
-      <item itemvalue="Python.tested" />
       <item itemvalue="Python.default" />
+      <item itemvalue="Python.ide (1)" />
+      <item itemvalue="Python.main" />
       <item itemvalue="Python.statuspoints_evaluator" />
+      <item itemvalue="Python.tested" />
     </list>
     <recent_temporary>
       <list>

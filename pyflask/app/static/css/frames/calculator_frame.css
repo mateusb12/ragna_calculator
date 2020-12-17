@@ -18,7 +18,7 @@
 .main-card{
 	border:1px solid #999;
 	background-color:#FFF;
-	padding: 15px;
+	padding: 15px 25px 15px 25px;
 	border-radius: 0 0 20px 20px;
 	box-shadow: 5px 15px 5px 0px #888888 !important;
 	position: relative;
@@ -40,17 +40,32 @@
     border-radius:7px;
 }
 
+.status-title{
+    opacity: 1;
+    margin-down: 5px;
+    vertical-align: baseline;
+}
+
+.status-body{
+    opacity: 1;
+}
+
+.main-table{
+    opacity: 1;
+    border: 0px ridge;
+    padding: 100px 0px 100px 0px;
+}
+
 
 .status-label{
+    margin: 0px;
     text-align:center;
-    margin:0;
     color: white;
     border-radius:20px 20px 0 0;
     background: None;
     background-color: #466;
     opacity: 0.6;
     font-size:1.35em;
-    padding-left:20px;
     padding-top:0px;
     padding-down:0px;
     height:42px;
@@ -61,12 +76,6 @@
     line-height:180%;
 }
 
-tr{
-    display: table-row;
-    vertical-align: inherit;
-    border-color: inherit;
-}
-
 .data {
     border-right: 1px dotted #999;
     padding-right: 2px;
@@ -74,7 +83,6 @@ tr{
 
 table{
     width: 100%;
-    margin-right: 4px;
     border-spacing: 0;
     border: 2px ridge;
 }
@@ -89,6 +97,12 @@ td {
     padding: 0 0 0 4px;
     margin: 0;
     vertical-align: middle;
+}
+
+tr{
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
 }
 
 .thin select{
@@ -128,6 +142,12 @@ td {
 
 .status-content{
     height: 200%;
+    border: 2px solid;
+    margin-top: 5px;
+}
+
+.level-content{
+    padding: 0px 10px 0px 10px;
 }
 
 .tableframe-title{
@@ -137,5 +157,30 @@ td {
 
 .droplist{
     background-color: #e0dada;
+}
+
+.complex-table{
+    border: 0px ridge;
+}
+
+.complex-content{
+    padding-right: 20px;
+}
+
+.attribute-content{
+    padding: 10px 5px 10px 5px;
+}
+
+.complex-c3{
+    padding-right: 25px;
+}
+
+.complex-c2{
+    padding-right: 25px;
+}
+
+.complex-c1{
+    padding-right: 25px;
+    padding-left: 10px;
 }
 

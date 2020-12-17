@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="shortcut icon" href="#"/>
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="static/js/selection_rules.js"></script>
+
+    <script>
+        function myNewFunction(sel) {
+            alert(sel.options[sel.selectedIndex].text);
+        }
+
+    </script>
 </head>
 
 <body>
@@ -13,17 +21,24 @@
 <select id="slct1" onchange="populate(this.id, 'select-joblevel')">
     <option value=""></option>
     {% for item in joblist %}
-        <option value="{{item}}">{{item}}</option>
+    <option value="{{item}}">{{item}}</option>
     {% endfor %}
 </select>
 
 <h2>Choose car model</h2>
 
-<select id="select-joblevel" class="droplist">
+<select id="select-joblevel" class="droplist"></select>
 
 <h2>{{joblist}}</h2>
 
-<h1>{{dynamic_choose()}}</h1>
+<!--<h1>{{dynamic_choose()}}</h1>-->
+
+<!--<select id="box1" onChange="myNewFunction(this);">-->
+<select id="box1" onChange="{{dynamic_choose()}};">
+    <option value="98">dog</option>
+    <option value="7122">cat</option>
+    <option value="142">bird</option>
+</select>
 
 {% endblock %}
 </body>

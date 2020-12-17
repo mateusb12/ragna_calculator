@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="shortcut icon" href="#"/>
     <link href="{{ url_for('static', filename='css/frames/calculator_frame.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/bstrap/bootstrap.min.css') }}" rel="stylesheet">
     <meta charset="UTF-8">
@@ -68,13 +69,13 @@
 
     <div class="main-card">
         <table class="main-table">
-            <tbody>
-            <tr id="status-title">
+            <tbody class="status-body">
+            <tr class="status-title">
                 <td colspan="6" class="tableframe-title">Remaining points: 50</td>
             </tr>
 
             <tr class="status-content">
-                <td id="level-content">
+                <td class="level-content">
                     <table class="level-list">
                         <tbody>
                         <tr class="level-item">
@@ -116,7 +117,7 @@
                         </tbody>
                     </table>
                 </td>
-                <td id="attribute-content">
+                <td class="attribute-content">
                     <table class="status-list">
                         <tbody>
                         <tr class="attribute-item">
@@ -198,51 +199,83 @@
                     </table>
                 </td>
 
-                <td id="complex-content">
-                    <table>
+                <td class="complex-c1">
+                    <table class="c1-list">
                         <tbody>
-                        <tr class="complex-item">
-                            <td>ATK</td>
-                            <td id="atk-value">30+0</td>
-                            <td id="def-value">DEF</td>
-                            <td>10+5</td>
-                            <td id="maxhp-value">Max HP</td>
-                            <td>4500</td>
+                        <tr class="c1-item">
+                            <td class="c1-line-left">ATK</td>
+                            <td class="c1-line-right"><b>30+0</b></td>
                         </tr>
-                        <tr class="complex-item">
-                            <td>MATK</td>
-                            <td id="matk-value">40~80</td>
-                            <td>MDEF</td>
-                            <td id="mdef-value">2+15</td>
-                            <td>Max SP</td>
-                            <td id="maxsp-value">1450</td>
+                        <tr class="c1-item">
+                            <td class="c1-line-left">MATK</td>
+                            <td class="c1-line-right"><b>40~80</b></td>
                         </tr>
-                        <tr class="complex-item">
-                            <td>Hit</td>
-                            <td id="hit-value">149</td>
-                            <td>Flee</td>
-                            <td id="flee-value">127</td>
-                            <td>HP regen</td>
-                            <td id="hpregen-value">34</td>
+                        <tr class="c1-item">
+                            <td class="c1-line-left">Hit</td>
+                            <td class="c1-line-right"><b>149</b></td>
                         </tr>
-                        <tr class="complex-item">
-                            <td>Crit</td>
-                            <td id="critical-value">4</td>
-                            <td>Aspd</td>
-                            <td id="aspd-value">168</td>
-                            <td>SP regen</td>
-                            <td id="spregen-value">22</td>
+                        <tr class="c1-item">
+                            <td class="c1-line-left">Crit</td>
+                            <td class="c1-line-right"><b>149</b></td>
                         </tr>
-                        <tr class="complex-item">
-                            <td>Crit</td>
-                            <td id="critshield-value">1.6</td>
-                            <td>Aspd</td>
-                            <td id="pdodge-value">4</td>
-                            <td>SP regen</td>
-                            <td id="movspeed-value">140%</td>
+                        <tr class="c1-item">
+                            <td class="c1-line-left">CritShi</td>
+                            <td class="c1-line-right"><b>1.5</b></td>
                         </tr>
-                        <tr class="complex-item"></tr>
-                        <tr class="complex-item"></tr>
+                        </tbody>
+                    </table>
+                </td>
+
+                <td class="complex-c2">
+                    <table class="c2-list">
+                        <tbody>
+                        <tr class="c2-item">
+                            <td class="c2-line-left">DEF</td>
+                            <td class="c2-line-right"><b>10+5</b></td>
+                        </tr>
+                        <tr class="c2-item">
+                            <td class="c2-line-left">MDEF</td>
+                            <td class="c2-line-right"><b>2+15</b></td>
+                        </tr>
+                        <tr class="c2-item">
+                            <td class="c2-line-left">Flee</td>
+                            <td class="c2-line-right"><b>127</b></td>
+                        </tr>
+                        <tr class="c2-item">
+                            <td class="c2-line-left">ASPD</td>
+                            <td class="c2-line-right"><b>168</b></td>
+                        </tr>
+                        <tr class="c2-item">
+                            <td class="c2-line-left">Pdodge</td>
+                            <td class="c2-line-right"><b>4</b></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+
+                <td class="complex-c3">
+                    <table class="c3-list">
+                        <tbody>
+                        <tr class="c3-item">
+                            <td class="c3-line-left">Max HP</td>
+                            <td class="c3-line-right"><b>4500</b></td>
+                        </tr>
+                        <tr class="c3-item">
+                            <td class="c3-line-left">Max SP</td>
+                            <td class="c3-line-right"><b>1450</b></td>
+                        </tr>
+                        <tr class="c3-item">
+                            <td class="c3-line-left">HP Regen</td>
+                            <td class="c3-line-right"><b>34</b></td>
+                        </tr>
+                        <tr class="c3-item">
+                            <td class="c3-line-left">SP Regen</td>
+                            <td class="c3-line-right"><b>22</b></td>
+                        </tr>
+                        <tr class="c3-item">
+                            <td class="c3-line-left">Mov speed</td>
+                            <td class="c3-line-right"><b>140%</b></td>
+                        </tr>
                         </tbody>
                     </table>
                 </td>
