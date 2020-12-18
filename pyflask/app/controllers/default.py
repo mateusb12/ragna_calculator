@@ -125,9 +125,32 @@ def loginframe():
     return render_template('frames/login_frame.html')
 
 
-@app.route("/calctest")
+@app.route("/csvtest")
+def csvtest():
+    return render_template('frames/csvtest.html')
+
+
+@app.route("/calctest", methods=["POST", "GET"])
 def calctest():
-    from app.controllers.html_functions import dynamic_choose
+    from app.controllers.html_functions import dynamic_choose, test_function
+    export_list = []
+
+    # print("KASINAOO {}".format(request.form["carro"]))
+    if request.method == 'POST':
+        language = request.form.get('language')
+        build = request.form['build']
+        print("AE KASINAOOO")
+        for i in request.form.keys():
+            print("i = {}, value = {}".format(i, request.form[i]))
+        print("linguagem: {}".format(language))
+        print("build: {}".format(build))
+        export_list.append(build)
+
+    gerinaldo = 'caralho'
     joblist = list(pd.read_csv('../ragnarok/resources/max_hp_table.csv').columns)[1:]
     return render_template('frames/calctest.html',
-                           joblist=joblist, dynamic_choose=dynamic_choose)
+                           joblist=joblist,
+                           dynamic_choose=dynamic_choose,
+                           gerinaldo=gerinaldo,
+                           test_function=test_function,
+                           build=export_list)

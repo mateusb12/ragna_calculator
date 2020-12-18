@@ -7,18 +7,37 @@
     <script src="static/js/selection_rules.js"></script>
 
     <script>
+
+
         function myNewFunction(sel) {
             alert(sel.options[sel.selectedIndex].text);
         }
 
+        function showSelectedCar() {
+            var obterId = document.getElementsByClassName('testObter');
+            const id = obterId[0].id
+
+            var car_model = document.getElementById('select-joblevel')
+            var selected = document.getElementById('view_selected')
+
+            if(car_model && selected) {
+                var car_model_text = car_model.options[car_model.selectedIndex].value;
+                selected.innerHTML = `car model: ${car_model_text} id: ${id}`;
+            }
+
+            return JSON.stringify({id, car_model});
+        }
+
+
     </script>
+
 </head>
 
 <body>
 {% block content %}
 
 <h2>Choose your car</h2>
-<select id="slct1" onchange="populate(this.id, 'select-joblevel')">
+<select id="slct1" onchange="populate(this.id, 'select-joblevel')" name="carro">
     <option value=""></option>
     {% for item in joblist %}
     <option value="{{item}}">{{item}}</option>
@@ -27,18 +46,32 @@
 
 <h2>Choose car model</h2>
 
-<select id="select-joblevel" class="droplist"></select>
 
-<h2>{{joblist}}</h2>
+<form action="" method="post">
 
-<!--<h1>{{dynamic_choose()}}</h1>-->
+</form>
 
-<!--<select id="box1" onChange="myNewFunction(this);">-->
-<select id="box1" onChange="{{dynamic_choose()}};">
-    <option value="98">dog</option>
-    <option value="7122">cat</option>
-    <option value="142">bird</option>
-</select>
+<!--<h2>{{joblist}}</h2>-->
+
+<h2>como eu faço pra aparecer o 4 aqui</h2>
+
+<h2>{{dynamic_choose(gerinaldo)}}</h2>
+
+<h2 id="view_selected"></h2>
+
+<div class="testObter" id={{gerinaldo}}></div>
+
+<!--<button onClick="{{test_function()}}">aeaeae</button>-->
+
+<form method="POST">
+    Language: <input type="text" name="language"><br>
+<!--    Framework: <input type="text" name="framework"><br>-->
+    Calculator: <select id="select-joblevel" class="droplist" name="build" onchange="showSelectedCar()"></select><br>
+    <input type="submit" value="Submit"><br>
+</form>
+
+<h2> TO CONFIANTE </h2>
+<h2>{{build[0]}}</h2>
 
 {% endblock %}
 </body>
