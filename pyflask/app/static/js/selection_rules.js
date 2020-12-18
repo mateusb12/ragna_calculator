@@ -38,3 +38,7 @@ function populate(s1,s2){
         s2.options.add(newOption);
         }
 }
+
+function default_job_level(s1){
+    console.log("oi")
+}

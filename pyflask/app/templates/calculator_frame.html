@@ -10,6 +10,7 @@
 </head>
 
 <body style="background-color:#96897f;">
+{% block content %}
 
 <div class="full-card">
     <h1 class="main-label">
@@ -62,7 +63,13 @@
     </div>
 </div>
 
+<form action="" method="POST">
+
 <div class="full-card">
+<!--    Language: <input type="text" name="language"><br>-->
+<!--    Country: <input type="text" name="country"><br>-->
+    <input type="submit" value="Submit" onclick=""><br>
+
     <h1 class="status-label">
         <div class="status-title>">Status</div>
     </h1>
@@ -81,9 +88,13 @@
                         <tr class="level-item">
                             <td>Base lvl</td>
                             <td>
-                                <select id="select-baselevel" class="droplist">
+                                <select id="select-baselevel" name='base_level' class="droplist">
                                     {% for i in range(1, 100) %}
-                                    <option value="{{i}}">{{i}}</option>
+                                    {% if i|string() == player_info['base_level'] %}
+                                        <option value="{{i}}" selected="selected">{{i}}</option>
+                                    {% else %}
+                                        <option value="{{i}}">{{i}}</option>
+                                    {% endif %}
                                     {% endfor %}
                                 </select>
                             </td>
@@ -91,17 +102,22 @@
                         <tr class="level-item">
                             <td>Job lvl</td>
                             <td>
-                                <select id="select-joblevel" class="droplist">
+                                <select id="select-joblevel" name='job_level' class="droplist">
+                                    <option value="1">1</option>
                                 </select>
                             </td>
                         </tr>
                         <tr class="level-item">
                             <td>Class</td>
                             <td>
-                                <select id="select-class" class="droplist"
+                                <select id="select-class" class="droplist" name="class_name"
                                         onchange="populate(this.id, 'select-joblevel')">
                                     {% for item in jobnamelist %}
-                                    <option value="{{item}}">{{item.capitalize()}}</option>
+                                    {% if item == player_info['class_name'] %}
+                                        <option value="{{item}}" selected="selected">{{item.capitalize()}}
+                                    {% else %}
+                                        <option value="{{item}}">{{item.capitalize()}}</option>
+                                    {% endif %}
                                     {% endfor %}
                                 </select>
                             </td>
@@ -287,13 +303,11 @@
     </div>
 </div>
 
-<select id="droplist">
-    <option value="0">Original</option>
-    <option value="1">Blue</option>
-    <option value="2">Cake</option>
-    <option value="3">Niff</option>
-</select>
+</form>
 
+<br><br>
+<h3>{{player_info}}</h3>
 
+{% endblock %}
 </body>
 </html>

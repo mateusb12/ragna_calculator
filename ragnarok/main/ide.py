@@ -1,12 +1,15 @@
 # %run gear_db.ipynb
-from model.build_model import PlayerBuild
-from model.decorador_db_gen  import DbGenerator
+from ragnarok.model.build_model import PlayerBuild
+from ragnarok.model.decorador_db_gen import DbGenerator
 
 # import yaml
 import os
+import sys
 import pandas as pd
 import time
+
 start_time = time.time()
+
 
 # def open_yml(filename):
 #     folder_name = 'resources'
@@ -17,7 +20,7 @@ start_time = time.time()
 
 def open_json(filename: str) -> pd.DataFrame:
     folder_name = 'resources'
-    dir_path = (os.path.dirname(os.path.realpath(filename))[:-5] + '\\{}\\'.format(folder_name)) + filename
+    dir_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', folder_name, filename))
     return pd.read_json(r'{}'.format(dir_path))
 
 
@@ -40,8 +43,6 @@ db_package = (weapon_db, hat_db, shield_db, robe_db, armor_db, shoes_db, accesso
 
 p1 = PlayerBuild(jbl, 99, 50, 'monk', [89, 2, 73, 51, 48, 1])
 p1.print_build()
-
-print(list(pd.read_csv('../resources/max_hp_table.csv').columns))
 
 print(p1.export_build())
 

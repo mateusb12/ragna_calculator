@@ -2,6 +2,12 @@ import math
 from dataclasses import dataclass
 import pandas as pd
 from typing import List
+import os
+
+# folder_name = 'pasta'
+# filename = 'arquivo'
+# dir_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'resources', 'max_hp_table.csv'))
+# print(dir_path)
 
 
 class PlayerBuild:
@@ -33,7 +39,8 @@ class PlayerBuild:
         self.core_luk = self.luk
 
         # arquivos
-        self.hp_df = pd.read_csv('../resources/max_hp_table.csv')
+        self.hp_df = pd.read_csv(os.path.abspath(
+            os.path.join(os.path.dirname(__file__), '..', 'resources', 'max_hp_table.csv')))
         self.job_bonuses = self.job_bonuses_list[current_job]['FULL_BONUSES']
         self.max_job = self.job_bonuses_list[current_job]['MAX_JOB']
 

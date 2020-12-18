@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dc11ee9-5b10-4653-9f0f-9a26840bb0c6" name="Default Changelist" comment="Fixed some errors with Packages">
-      <change afterPath="$PROJECT_DIR$/pyflask/app/templates/frames/csvtest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ragnarok/main/exporter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyflask/app/controllers/default.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/controllers/default.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyflask/app/controllers/html_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/controllers/html_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/static/js/selection_rules.js" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/static/js/selection_rules.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/templates/calculator_frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/templates/calculator_frame.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyflask/app/templates/frames/calctest.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/templates/frames/calctest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ragnarok/main/ide.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/main/ide.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ragnarok/model/build_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/model/build_model.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -46,8 +49,8 @@
       <recent name="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\view" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.ide (1)">
-    <configuration name="csv_exporter" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.exporter">
+    <configuration name="build_model" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testecalc" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -59,7 +62,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ragnarok/model/csv_exporter.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ragnarok/model/build_model.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -68,7 +71,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="default" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="exporter" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testecalc" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -76,11 +79,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyflask/app/controllers" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ragnarok/main" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyflask/app/controllers/default.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ragnarok/main/exporter.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -131,7 +134,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="statuspoints_evaluator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="player_unit_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testecalc" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -143,7 +146,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ragnarok/model/statuspoints_evaluator.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ragnarok/model/player_unit_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -152,7 +155,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="tested" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="ragnawiki" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testecalc" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -160,11 +163,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyflask/app/controllers" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyflask/app/models" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyflask/app/controllers/tested.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyflask/app/models/ragnawiki.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -175,19 +178,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.main" />
-      <item itemvalue="Python.csv_exporter" />
-      <item itemvalue="Python.default" />
       <item itemvalue="Python.ide (1)" />
-      <item itemvalue="Python.statuspoints_evaluator" />
-      <item itemvalue="Python.tested" />
+      <item itemvalue="Python.ragnawiki" />
+      <item itemvalue="Python.player_unit_test" />
+      <item itemvalue="Python.build_model" />
+      <item itemvalue="Python.exporter" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.exporter" />
         <item itemvalue="Python.ide (1)" />
-        <item itemvalue="Python.statuspoints_evaluator" />
-        <item itemvalue="Python.default" />
-        <item itemvalue="Python.tested" />
-        <item itemvalue="Python.csv_exporter" />
+        <item itemvalue="Python.build_model" />
+        <item itemvalue="Python.player_unit_test" />
+        <item itemvalue="Python.ragnawiki" />
       </list>
     </recent_temporary>
   </component>

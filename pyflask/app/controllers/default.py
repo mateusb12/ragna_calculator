@@ -1,5 +1,6 @@
 import os
 import sys
+from pathlib import Path
 
 sys.path.append(sys.path[0][:-7])
 
@@ -11,6 +12,17 @@ from app import app
 from app.models.forms import LoginForm, RegisterForm
 
 from ragnarok.model.statuspoints_evaluator import attribute_balance
+from ragnarok.model.build_model import PlayerBuild
+
+# cur_path = os.path.abspath(os.curdir)
+
+
+def open_json(filename):
+    cur_path = str(Path(__file__).parents[3]) + "\\ragnarok\\resources\\" + filename
+    return pd.read_json(cur_path)
+
+
+from ragnarok.main.exporter import jbl
 
 
 @app.route("/index/<user>")
@@ -110,14 +122,18 @@ def about():
     return "<h1 style='color: red'>About!!!!</h1>"
 
 
-@app.route("/calcframe")
+@app.route("/calcframe", methods=["POST", "GET"])
 def calcframe():
+    player_info = []
+    if request.method == 'POST' and request.form:
+        for i in request.form.keys():
+            player_info.append(request.form[i])
     jobnamelist = list(pd.read_csv('../ragnarok/resources/max_hp_table.csv').columns)[1:]
-    for i in sys.path:
-        print(i)
-    # print("caminho = {}".format(sys.path[0][:-7] + 'ragnarok'))
-    print("caminho atual = {}".format(os.path.abspath(os.path.join('..', 'default'))))
-    return render_template('calculator_frame.html', jobnamelist=jobnamelist)
+    open_dict = request.form.to_dict()
+    open_dict['base_level'] = 1
+    return render_template('calculator_frame.html',
+                           jobnamelist=jobnamelist,
+                           player_info=request.form.to_dict())
 
 
 @app.route("/loginframe")
@@ -137,14 +153,10 @@ def calctest():
 
     # print("KASINAOO {}".format(request.form["carro"]))
     if request.method == 'POST':
-        language = request.form.get('language')
-        build = request.form['build']
         print("AE KASINAOOO")
         for i in request.form.keys():
+            export_list.append(request.form[i])
             print("i = {}, value = {}".format(i, request.form[i]))
-        print("linguagem: {}".format(language))
-        print("build: {}".format(build))
-        export_list.append(build)
 
     gerinaldo = 'caralho'
     joblist = list(pd.read_csv('../ragnarok/resources/max_hp_table.csv').columns)[1:]
