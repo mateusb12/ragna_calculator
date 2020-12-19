@@ -159,6 +159,14 @@ tr{
     background-color: #e0dada;
 }
 
+class_name{
+    background-color: #e0dada;
+}
+
+.form-control{
+    background-color: #e0dada;
+}
+
 .complex-table{
     border: 0px ridge;
 }
@@ -183,4 +191,9 @@ tr{
     padding-right: 25px;
     padding-left: 10px;
 }
+
+.form-control{
+    background-color: #e0dada;
+}
+
 

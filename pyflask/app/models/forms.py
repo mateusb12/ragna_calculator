@@ -1,7 +1,8 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField
+from wtforms import StringField, PasswordField, BooleanField, SelectField
 from wtforms.validators import DataRequired, Email, Length, EqualTo
 from wtforms.fields.html5 import EmailField
+from ragnarok.main.exporter import jobname_list, job10, job50, job99
 
 
 class LoginForm(FlaskForm):
@@ -26,3 +27,23 @@ class RegisterForm(FlaskForm):
     email = StringField("email", validators=[DataRequired(), Email(message="Please type a valid email")])
     email_confirm = StringField("email_confirm", validators=[DataRequired(),
                                                              EqualTo("email", "Emails do not match")])
+
+
+class CalculatorForm(FlaskForm):
+    baselevel_choices = list(range(1, 100))
+    joblevel_choices = [1]
+    class_choices = [i.capitalize() for i in jobname_list]
+
+    base_level = SelectField('base_level', choices=baselevel_choices)
+    job_level = SelectField('job_level', choices=joblevel_choices)
+    class_name = SelectField('class_name', choices=class_choices)
+
+
+def calc_dynamic_select(input_form):
+    form = input_form
+    if form.class_name.data in [i.capitalize() for i in job10]:
+        form.job_level.choices = list(range(1, 11))
+    if form.class_name.data in [i.capitalize() for i in job50]:
+        form.job_level.choices = list(range(1, 51))
+    if form.class_name.data in [i.capitalize() for i in job99]:
+        form.job_level.choices = list(range(1, 100))

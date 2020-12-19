@@ -10,6 +10,16 @@ def open_json(filename: str) -> pd.DataFrame:
 
 jbl = open_json('job_bonuses.json')
 
+jobname_list = list(jbl.columns.values)
+
+aux = jobname_list.copy()
+aux.remove('novice')
+aux.remove('super_novice')
+
+job10 = ['novice']
+job50 = aux
+job99 = ['super_novice']
+
 
 maxjob_table = {'novice': 10,
                 'super_novice': 99,

@@ -7,302 +7,299 @@
     <meta charset="UTF-8">
     <title>Calculator frame</title>
     <script src="static/js/selection_rules.js"></script>
+    <script>
+        function forceSubmit(){
+             document.getElementById("submit").click()
+        }
+    </script>
 </head>
 
 <body style="background-color:#96897f;">
 {% block content %}
 
-<div class="full-card">
-    <h1 class="main-label">
-        Ragnarok calculator
-    </h1>
-    <div class="main-card">
-
-        <table class="tborder">
-            <tbody>
-            <tr></tr>
-
-            <tr>
-                <td class="data">
-                    <table>
-                        <tbody>
-                        <tr class="thin">
-                            <td class="right">Placeholder</td>
-                        </tr>
-
-                        <tr class="thin">
-                            <td class="right">Placeholder</td>
-                            <td> Select Placeholder</td>
-                        </tr>
-
-                        <tr>
-                            <td class="right">Placeholder</td>
-                            <td> Select Placeholder</td>
-                        </tr>
-                        <tr>
-
-                            <td class="right">Placeholder</td>
-                            <td> Select Placeholder</td>
-                        </tr>
-
-                        <tr>
-                            <td class="right">Placeholder</td>
-                            <td> Placeholder</td>
-                        </tr>
-
-                        <tr>
-                            <td class="right">Placeholder</td>
-                            <td> Placeholder</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
-
 <form action="" method="POST">
+    {{form.csrf_token}}
 
-<div class="full-card">
-<!--    Language: <input type="text" name="language"><br>-->
-<!--    Country: <input type="text" name="country"><br>-->
-    <input type="submit" value="Submit" onclick=""><br>
+    <div class="form-group">
+        <div class="full-card">
+            <h1 class="main-label">
+                Ragnarok calculator
+            </h1>
+            <div class="main-card">
 
-    <h1 class="status-label">
-        <div class="status-title>">Status</div>
-    </h1>
+                <table class="tborder">
+                    <tbody>
+                    <tr></tr>
 
-    <div class="main-card">
-        <table class="main-table">
-            <tbody class="status-body">
-            <tr class="status-title">
-                <td colspan="6" class="tableframe-title">Remaining points: 50</td>
-            </tr>
+                    <tr>
+                        <td class="data">
+                            <table>
+                                <tbody>
+                                <tr class="thin">
+                                    <td class="right">Placeholder</td>
+                                </tr>
 
-            <tr class="status-content">
-                <td class="level-content">
-                    <table class="level-list">
-                        <tbody>
-                        <tr class="level-item">
-                            <td>Base lvl</td>
-                            <td>
-                                <select id="select-baselevel" name='base_level' class="droplist">
-                                    {% for i in range(1, 100) %}
-                                    {% if i|string() == player_info['base_level'] %}
-                                        <option value="{{i}}" selected="selected">{{i}}</option>
-                                    {% else %}
-                                        <option value="{{i}}">{{i}}</option>
-                                    {% endif %}
-                                    {% endfor %}
-                                </select>
-                            </td>
-                        </tr>
-                        <tr class="level-item">
-                            <td>Job lvl</td>
-                            <td>
-                                <select id="select-joblevel" name='job_level' class="droplist">
-                                    <option value="1">1</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr class="level-item">
-                            <td>Class</td>
-                            <td>
-                                <select id="select-class" class="droplist" name="class_name"
-                                        onchange="populate(this.id, 'select-joblevel')">
-                                    {% for item in jobnamelist %}
-                                    {% if item == player_info['class_name'] %}
-                                        <option value="{{item}}" selected="selected">{{item.capitalize()}}
-                                    {% else %}
-                                        <option value="{{item}}">{{item.capitalize()}}</option>
-                                    {% endif %}
-                                    {% endfor %}
-                                </select>
-                            </td>
-                        </tr>
-                        <tr class="level-item">
-                            <td>Null</td>
-                            <td>Select null</td>
-                        </tr>
-                        <tr class="level-item">
-                            <td>Null</td>
-                            <td>Select null</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </td>
-                <td class="attribute-content">
-                    <table class="status-list">
-                        <tbody>
-                        <tr class="attribute-item">
-                            <td class="str-text">STR</td>
-                            <td class="str-select">
-                                <select id="select-str" class="droplist">
-                                    {% for i in range(1, 100) %}
-                                    <option value="{{i}}">{{i}}</option>
-                                    {% endfor %}
-                                </select>
-                            </td>
-                            <td class="str-bonus">+0</td>
-                        </tr>
-                        <tr class="attribute-item">
-                            <td class="agi-text">
-                                AGI
-                            </td>
-                            <td class="agi-select">
-                                <select id="select-agi" class="droplist">
-                                    {% for i in range(1, 100) %}
-                                    <option value="{{i}}">{{i}}</option>
-                                    {% endfor %}
-                                </select>
-                            </td>
-                            <td class="agi-bonus">+0</td>
-                        </tr>
-                        <tr class="attribute-item">
-                            <td class="vit-text">
-                                VIT
-                            </td>
-                            <td class="vit-select">
-                                <select id="select-vit" class="droplist">
-                                    {% for i in range(1, 100) %}
-                                    <option value="{{i}}">{{i}}</option>
-                                    {% endfor %}
-                                </select>
-                            </td>
-                            <td class="vit-bonus">+0</td>
-                        </tr>
-                        <tr class="attribute-item">
-                            <td class="int-text">
-                                INT
-                            </td>
-                            <td class="int-select">
-                                <select id="select-int" class="droplist">
-                                    {% for i in range(1, 100) %}
-                                    <option value="{{i}}">{{i}}</option>
-                                    {% endfor %}
-                                </select>
-                            </td>
-                            <td class="int-bonus">+0</td>
-                        </tr>
-                        <tr class="attribute-item">
-                            <td class="dex-text">
-                                DEX
-                            </td>
-                            <td class="dex-select">
-                                <select id="select-dex" class="droplist">
-                                    {% for i in range(1, 100) %}
-                                    <option value="{{i}}">{{i}}</option>
-                                    {% endfor %}
-                                </select>
-                            </td>
-                            <td class="dex-bonus">+0</td>
-                        </tr>
-                        <tr class="attribute-item">
-                            <td class="luk-text">
-                                LUK
-                            </td>
-                            <td class="luk-select">
-                                <select id="select-luk" class="droplist">
-                                    {% for i in range(1, 100) %}
-                                    <option value="{{i}}">{{i}}</option>
-                                    {% endfor %}
-                                </select></td>
-                            <td class="luk-bonus">+0</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </td>
+                                <tr class="thin">
+                                    <td class="right">Placeholder</td>
+                                    <td> Select Placeholder</td>
+                                </tr>
 
-                <td class="complex-c1">
-                    <table class="c1-list">
-                        <tbody>
-                        <tr class="c1-item">
-                            <td class="c1-line-left">ATK</td>
-                            <td class="c1-line-right"><b>30+0</b></td>
-                        </tr>
-                        <tr class="c1-item">
-                            <td class="c1-line-left">MATK</td>
-                            <td class="c1-line-right"><b>40~80</b></td>
-                        </tr>
-                        <tr class="c1-item">
-                            <td class="c1-line-left">Hit</td>
-                            <td class="c1-line-right"><b>149</b></td>
-                        </tr>
-                        <tr class="c1-item">
-                            <td class="c1-line-left">Crit</td>
-                            <td class="c1-line-right"><b>149</b></td>
-                        </tr>
-                        <tr class="c1-item">
-                            <td class="c1-line-left">CritShi</td>
-                            <td class="c1-line-right"><b>1.5</b></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </td>
+                                <tr>
+                                    <td class="right">Placeholder</td>
+                                    <td> Select Placeholder</td>
+                                </tr>
+                                <tr>
 
-                <td class="complex-c2">
-                    <table class="c2-list">
-                        <tbody>
-                        <tr class="c2-item">
-                            <td class="c2-line-left">DEF</td>
-                            <td class="c2-line-right"><b>10+5</b></td>
-                        </tr>
-                        <tr class="c2-item">
-                            <td class="c2-line-left">MDEF</td>
-                            <td class="c2-line-right"><b>2+15</b></td>
-                        </tr>
-                        <tr class="c2-item">
-                            <td class="c2-line-left">Flee</td>
-                            <td class="c2-line-right"><b>127</b></td>
-                        </tr>
-                        <tr class="c2-item">
-                            <td class="c2-line-left">ASPD</td>
-                            <td class="c2-line-right"><b>168</b></td>
-                        </tr>
-                        <tr class="c2-item">
-                            <td class="c2-line-left">Pdodge</td>
-                            <td class="c2-line-right"><b>4</b></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </td>
+                                    <td class="right">Placeholder</td>
+                                    <td> Select Placeholder</td>
+                                </tr>
 
-                <td class="complex-c3">
-                    <table class="c3-list">
-                        <tbody>
-                        <tr class="c3-item">
-                            <td class="c3-line-left">Max HP</td>
-                            <td class="c3-line-right"><b>4500</b></td>
-                        </tr>
-                        <tr class="c3-item">
-                            <td class="c3-line-left">Max SP</td>
-                            <td class="c3-line-right"><b>1450</b></td>
-                        </tr>
-                        <tr class="c3-item">
-                            <td class="c3-line-left">HP Regen</td>
-                            <td class="c3-line-right"><b>34</b></td>
-                        </tr>
-                        <tr class="c3-item">
-                            <td class="c3-line-left">SP Regen</td>
-                            <td class="c3-line-right"><b>22</b></td>
-                        </tr>
-                        <tr class="c3-item">
-                            <td class="c3-line-left">Mov speed</td>
-                            <td class="c3-line-right"><b>140%</b></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+                                <tr>
+                                    <td class="right">Placeholder</td>
+                                    <td> Placeholder</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="right">Placeholder</td>
+                                    <td> Placeholder</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="full-card">
+
+            <h1 class="status-label">
+                <div class="status-title>">Status</div>
+            </h1>
+
+            <div class="main-card">
+                <table class="main-table">
+                    <tbody class="status-body">
+                    <tr class="status-title">
+                        <td colspan="6" class="tableframe-title">Remaining points: 50</td>
+                    </tr>
+
+                    <tr class="status-content">
+                        <td class="level-content">
+                            <table class="level-list">
+                                <tbody>
+                                <tr class="level-item">
+                                    <td>Base level:</td>
+                                    <td class="droplist">
+                                        {{form.base_level(class="form-control", onchange="forceSubmit()")}}
+                                    </td>
+                                </tr>
+                                <tr class="level-item">
+                                    <td>Job lvl</td>
+                                    <td>
+                                        <select id="select-joblevel" name='job_level' class="droplist">
+                                            <option value="1">1</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr class="level-item">
+                                    <td>Class</td>
+                                    <td>
+                                        <select id="select-class" class="droplist" name="class_name"
+                                                onchange="populate(this.id, 'select-joblevel')">
+                                            {% for item in jobnamelist %}
+                                            {% if item == player_info['class_name'] %}
+                                            <option value="{{item}}" selected="selected">{{item.capitalize()}}
+                                                {% else %}
+                                            <option value="{{item}}">{{item.capitalize()}}</option>
+                                            {% endif %}
+                                            {% endfor %}
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr class="level-item">
+                                    <td>Null</td>
+                                    <td>Select null</td>
+                                </tr>
+                                <tr class="level-item">
+                                    <td>Null</td>
+                                    <td>Select null</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="attribute-content">
+                            <table class="status-list">
+                                <tbody>
+                                <tr class="attribute-item">
+                                    <td class="str-text">STR</td>
+                                    <td class="str-select">
+                                        <select id="select-str" class="droplist">
+                                            {% for i in range(1, 100) %}
+                                            <option value="{{i}}">{{i}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </td>
+                                    <td class="str-bonus">+0</td>
+                                </tr>
+                                <tr class="attribute-item">
+                                    <td class="agi-text">
+                                        AGI
+                                    </td>
+                                    <td class="agi-select">
+                                        <select id="select-agi" class="droplist">
+                                            {% for i in range(1, 100) %}
+                                            <option value="{{i}}">{{i}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </td>
+                                    <td class="agi-bonus">+0</td>
+                                </tr>
+                                <tr class="attribute-item">
+                                    <td class="vit-text">
+                                        VIT
+                                    </td>
+                                    <td class="vit-select">
+                                        <select id="select-vit" class="droplist">
+                                            {% for i in range(1, 100) %}
+                                            <option value="{{i}}">{{i}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </td>
+                                    <td class="vit-bonus">+0</td>
+                                </tr>
+                                <tr class="attribute-item">
+                                    <td class="int-text">
+                                        INT
+                                    </td>
+                                    <td class="int-select">
+                                        <select id="select-int" class="droplist">
+                                            {% for i in range(1, 100) %}
+                                            <option value="{{i}}">{{i}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </td>
+                                    <td class="int-bonus">+0</td>
+                                </tr>
+                                <tr class="attribute-item">
+                                    <td class="dex-text">
+                                        DEX
+                                    </td>
+                                    <td class="dex-select">
+                                        <select id="select-dex" class="droplist">
+                                            {% for i in range(1, 100) %}
+                                            <option value="{{i}}">{{i}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </td>
+                                    <td class="dex-bonus">+0</td>
+                                </tr>
+                                <tr class="attribute-item">
+                                    <td class="luk-text">
+                                        LUK
+                                    </td>
+                                    <td class="luk-select">
+                                        <select id="select-luk" class="droplist">
+                                            {% for i in range(1, 100) %}
+                                            <option value="{{i}}">{{i}}</option>
+                                            {% endfor %}
+                                        </select></td>
+                                    <td class="luk-bonus">+0</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="complex-c1">
+                            <table class="c1-list">
+                                <tbody>
+                                <tr class="c1-item">
+                                    <td class="c1-line-left">ATK</td>
+                                    <td class="c1-line-right"><b>30+0</b></td>
+                                </tr>
+                                <tr class="c1-item">
+                                    <td class="c1-line-left">MATK</td>
+                                    <td class="c1-line-right"><b>40~80</b></td>
+                                </tr>
+                                <tr class="c1-item">
+                                    <td class="c1-line-left">Hit</td>
+                                    <td class="c1-line-right"><b>149</b></td>
+                                </tr>
+                                <tr class="c1-item">
+                                    <td class="c1-line-left">Crit</td>
+                                    <td class="c1-line-right"><b>149</b></td>
+                                </tr>
+                                <tr class="c1-item">
+                                    <td class="c1-line-left">CritShi</td>
+                                    <td class="c1-line-right"><b>1.5</b></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="complex-c2">
+                            <table class="c2-list">
+                                <tbody>
+                                <tr class="c2-item">
+                                    <td class="c2-line-left">DEF</td>
+                                    <td class="c2-line-right"><b>10+5</b></td>
+                                </tr>
+                                <tr class="c2-item">
+                                    <td class="c2-line-left">MDEF</td>
+                                    <td class="c2-line-right"><b>2+15</b></td>
+                                </tr>
+                                <tr class="c2-item">
+                                    <td class="c2-line-left">Flee</td>
+                                    <td class="c2-line-right"><b>127</b></td>
+                                </tr>
+                                <tr class="c2-item">
+                                    <td class="c2-line-left">ASPD</td>
+                                    <td class="c2-line-right"><b>168</b></td>
+                                </tr>
+                                <tr class="c2-item">
+                                    <td class="c2-line-left">Pdodge</td>
+                                    <td class="c2-line-right"><b>4</b></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+                        <td class="complex-c3">
+                            <table class="c3-list">
+                                <tbody>
+                                <tr class="c3-item">
+                                    <td class="c3-line-left">Max HP</td>
+                                    <td class="c3-line-right"><b>4500</b></td>
+                                </tr>
+                                <tr class="c3-item">
+                                    <td class="c3-line-left">Max SP</td>
+                                    <td class="c3-line-right"><b>1450</b></td>
+                                </tr>
+                                <tr class="c3-item">
+                                    <td class="c3-line-left">HP Regen</td>
+                                    <td class="c3-line-right"><b>34</b></td>
+                                </tr>
+                                <tr class="c3-item">
+                                    <td class="c3-line-left">SP Regen</td>
+                                    <td class="c3-line-right"><b>22</b></td>
+                                </tr>
+                                <tr class="c3-item">
+                                    <td class="c3-line-left">Mov speed</td>
+                                    <td class="c3-line-right"><b>140%</b></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
 
 
+            </div>
+        </div>
     </div>
-</div>
 
+    <input type="submit" id="submit" value="Submit" onclick=""><br>
 </form>
 
 <br><br>

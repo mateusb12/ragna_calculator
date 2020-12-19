@@ -28,8 +28,23 @@
             return JSON.stringify({id, car_model});
         }
 
-
+        function forceSubmit(){
+             document.getElementById("submit").click()
+        }
     </script>
+
+    <style>
+        .select{
+            border:0 none;
+            margin:1px;
+            background-color:#FC8;
+            border-radius:7px;
+        }
+
+        .droplist{
+            background-color: #e0dada;
+        }
+    </style>
 
 </head>
 
@@ -37,9 +52,8 @@
 {% block content %}
 
 
-
 <h2>Choose your car</h2>
-<select id="slct1" onchange="populate(this.id, 'select-joblevel')" name="carro">
+<select id="slct1" onchange="populate(this.id, 'select-joblevel')" name="carro" class="drop-list">
     <option value=""></option>
     {% for item in joblist %}
     <option value="{{item}}">{{item}}</option>
@@ -50,31 +64,40 @@
 
 <!--<h2>{{joblist}}</h2>-->
 
-<h2>como eu faço pra aparecer o 4 aqui</h2>
-
 <h2>{{dynamic_choose(gerinaldo)}}</h2>
 
 <h2 id="view_selected"></h2>
 
 <div class="testObter" id={{gerinaldo}}></div>
 
-<!--<button onClick="{{test_function()}}">aeaeae</button>-->
+Calculator: <select id="select-joblevel" class="droplist" name="build" onchange="showSelectedCar()"></select><br>
 
+<br>
+<br>
 
+<select id="class_name" name="class_name" style="background-color: #e0dada;">
+    <option value="Novice">Novice</option>
+    <option value="Super_novice">SUPERR</option>
+</select>
 
-<h2>BARREIRA</h2>
+<form action="" method="POST">
+    {{form.csrf_token}}
+    <div class="form-group">
+        <label>Base level:</label>
+        {{form.base_level(class="form-control", onchange="forceSubmit()")}}<br>
+        <label>Class:</label>
+        {{form.class_name(class="form-control",  onchange="forceSubmit()")}}<br>
+        <label>Job level:</label>
+        {{form.job_level(class="form-control",  onchange="forceSubmit()")}}<br>
+    </div>
+    <input type="submit" id="submit" class="btn btn-success">
+</form>
 
-    Calculator: <select id="select-joblevel" class="droplist" name="build" onchange="showSelectedCar()"></select><br>
-    Vitality: <input type="text" name="vitality"><br>
+<h2>{{exports}}</h2>
 
-    <form method="POST">
-        Language: <input type="text" name="language"><br>
+<h3>{{form}}</h3>
 
-    <input type="submit" value="Submit"><br>
-
-
-<h2> TO CONFIANTE </h2>
-<h2>{{build}}</h2>
+<button onclick="forceSubmit()">Botao inocente</button>
 
 {% endblock %}
 </body>

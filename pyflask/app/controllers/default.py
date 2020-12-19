@@ -9,10 +9,11 @@ from flask import render_template, request, redirect, session, url_for, g
 
 import app.databases.db_operations as dbo
 from app import app
-from app.models.forms import LoginForm, RegisterForm
+from app.models.forms import LoginForm, RegisterForm, CalculatorForm, calc_dynamic_select
 
 from ragnarok.model.statuspoints_evaluator import attribute_balance
 from ragnarok.model.build_model import PlayerBuild
+
 
 # cur_path = os.path.abspath(os.curdir)
 
@@ -124,16 +125,19 @@ def about():
 
 @app.route("/calcframe", methods=["POST", "GET"])
 def calcframe():
-    player_info = []
+    form = CalculatorForm()
+    player_info = request.form.to_dict()
+    if 'csrf_token' in player_info:
+        del player_info['csrf_token']
     if request.method == 'POST' and request.form:
-        for i in request.form.keys():
-            player_info.append(request.form[i])
+        pass
     jobnamelist = list(pd.read_csv('../ragnarok/resources/max_hp_table.csv').columns)[1:]
     open_dict = request.form.to_dict()
     open_dict['base_level'] = 1
     return render_template('calculator_frame.html',
+                           form=form,
                            jobnamelist=jobnamelist,
-                           player_info=request.form.to_dict())
+                           player_info=player_info)
 
 
 @app.route("/loginframe")
@@ -149,20 +153,17 @@ def csvtest():
 @app.route("/calctest", methods=["POST", "GET"])
 def calctest():
     from app.controllers.html_functions import dynamic_choose, test_function
-    export_list = []
+    form = CalculatorForm()
+    exports = request.form.to_dict()
+    if 'csrf_token' in exports:
+        del exports['csrf_token']
+    if request.method == 'POST' and request.form:
+        calc_dynamic_select(form)
+        print(form.class_name)
 
-    # print("KASINAOO {}".format(request.form["carro"]))
-    if request.method == 'POST':
-        print("AE KASINAOOO")
-        for i in request.form.keys():
-            export_list.append(request.form[i])
-            print("i = {}, value = {}".format(i, request.form[i]))
-
-    gerinaldo = 'caralho'
     joblist = list(pd.read_csv('../ragnarok/resources/max_hp_table.csv').columns)[1:]
     return render_template('frames/calctest.html',
+                           form=form,
                            joblist=joblist,
                            dynamic_choose=dynamic_choose,
-                           gerinaldo=gerinaldo,
-                           test_function=test_function,
-                           build=export_list)
+                           exports=exports)
