@@ -16,13 +16,13 @@ def open_json(filename):
 jbl = open_json('job_bonuses.json')
 
 test1 = (PlayerBuild(jbl, 99, 50, 'monk', [89, 2, 73, 51, 48, 1]).export_build(),
-         BuildNuances(9195, 726, 60, 16, 151, 108, 1, 2, 1.8))
+         BuildNuances(9195, 726, 60, 16, 151, 108, 1, 2, 1.8, 8, 7, 6, 2, 4, 3, 1))
 
 test2 = (PlayerBuild(jbl, 99, 50, 'crusader', [9, 1, 99, 1, 99, 1]).export_build(),
-         BuildNuances(12724, 508, 84, 7, 201, 102, 1, 3, 2.2))
+         BuildNuances(12724, 508, 84, 7, 201, 102, 1, 3, 2.2, 7, 2, 7, 6, 3, 5, 1))
 
 test3 = (PlayerBuild(jbl, 99, 50, 'dancer', [30, 10, 91, 99, 1, 1]).export_build(),
-         BuildNuances(7868, 1232, 57, 30, 105, 116, 1, 4, 2.8))
+         BuildNuances(7868, 1232, 57, 30, 105, 116, 1, 4, 2.8, 2, 7, 3, 5, 5, 8, 1))
 
 
 def player_test(kit):
@@ -37,6 +37,7 @@ def player_test(kit):
     assert unit_test.perfect_dodge == correct_value.perfect_dodge
     assert unit_test.critical == correct_value.critical
     assert unit_test.critical_shield == correct_value.critical_shield
+    assert unit_test.str_bonus == correct_value.str_bonus
 
 
 player_test(test1)

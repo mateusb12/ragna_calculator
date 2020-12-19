@@ -38,6 +38,13 @@ class CalculatorForm(FlaskForm):
     job_level = SelectField('job_level', choices=joblevel_choices)
     class_name = SelectField('class_name', choices=class_choices)
 
+    player_str = SelectField('player_str', choices=list(range(1, 100)))
+    player_agi = SelectField('player_agi', choices=list(range(1, 100)))
+    player_vit = SelectField('player_vit', choices=list(range(1, 100)))
+    player_int = SelectField('player_int', choices=list(range(1, 100)))
+    player_dex = SelectField('player_int', choices=list(range(1, 100)))
+    player_luk = SelectField('player_int', choices=list(range(1, 100)))
+
 
 def calc_dynamic_select(input_form):
     form = input_form

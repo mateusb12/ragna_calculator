@@ -192,8 +192,30 @@ class_name{
     padding-left: 10px;
 }
 
-.form-control{
-    background-color: #e0dada;
+.status-list{
+    border-collapse: separate;
+    border-spacing: 0px 0px;
 }
+
+.stat-bonus{
+    font-weight: bold;
+    padding-left: 0px;
+    text-align: left;
+    width: 1px
+}
+
+.stat-text{
+    width: 1px;
+}
+
+.stat-select{
+    width: 1px;
+}
+
+.attribute-item{
+    width: 100px;
+}
+
+
 
 

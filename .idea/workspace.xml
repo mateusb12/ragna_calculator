@@ -7,8 +7,9 @@
       <change beforePath="$PROJECT_DIR$/pyflask/app/models/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/models/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyflask/app/static/css/frames/calculator_frame.css" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/static/css/frames/calculator_frame.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyflask/app/templates/calculator_frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/templates/calculator_frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyflask/app/templates/frames/calctest.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/templates/frames/calctest.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ragnarok/main/exporter.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/main/exporter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ragnarok/model/build_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/model/build_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ragnarok/model/player_unit_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/model/player_unit_test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +49,7 @@
       <recent name="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\view" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.exporter">
+  <component name="RunManager" selected="Python.player_unit_test">
     <configuration name="build_model" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testecalc" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -185,10 +186,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.exporter" />
-        <item itemvalue="Python.ide (1)" />
-        <item itemvalue="Python.build_model" />
         <item itemvalue="Python.player_unit_test" />
+        <item itemvalue="Python.ide (1)" />
+        <item itemvalue="Python.exporter" />
+        <item itemvalue="Python.build_model" />
         <item itemvalue="Python.ragnawiki" />
       </list>
     </recent_temporary>

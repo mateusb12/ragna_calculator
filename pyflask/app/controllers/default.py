@@ -23,7 +23,7 @@ def open_json(filename):
     return pd.read_json(cur_path)
 
 
-from ragnarok.main.exporter import jbl
+from ragnarok.main.exporter import jbl, uncapitalize
 
 
 @app.route("/index/<user>")
@@ -126,18 +126,19 @@ def about():
 @app.route("/calcframe", methods=["POST", "GET"])
 def calcframe():
     form = CalculatorForm()
-    player_info = request.form.to_dict()
-    if 'csrf_token' in player_info:
-        del player_info['csrf_token']
+    pi = request.form.to_dict()
+    complex_info = 0
+    if 'csrf_token' in pi:
+        del pi['csrf_token']
     if request.method == 'POST' and request.form:
-        pass
-    jobnamelist = list(pd.read_csv('../ragnarok/resources/max_hp_table.csv').columns)[1:]
-    open_dict = request.form.to_dict()
-    open_dict['base_level'] = 1
+        calc_dynamic_select(form)
+        p1 = PlayerBuild(jbl, int(pi['base_level']), int(pi['job_level']), uncapitalize(pi['class_name']),
+                         [int(pi['player_str']), int(pi['player_agi']), int(pi['player_vit']),
+                          int(pi['player_int']), int(pi['player_dex']), int(pi['player_luk'])])
+        pi['complex_info'] = p1.export_build()
     return render_template('calculator_frame.html',
                            form=form,
-                           jobnamelist=jobnamelist,
-                           player_info=player_info)
+                           player_info=pi)
 
 
 @app.route("/loginframe")

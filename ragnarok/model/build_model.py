@@ -4,11 +4,6 @@ import pandas as pd
 from typing import List
 import os
 
-# folder_name = 'pasta'
-# filename = 'arquivo'
-# dir_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'resources', 'max_hp_table.csv'))
-# print(dir_path)
-
 
 class PlayerBuild:
     def __init__(self, job_bonuses_list: pd.DataFrame, base_level: int, job_level: int,
@@ -41,6 +36,8 @@ class PlayerBuild:
         # arquivos
         self.hp_df = pd.read_csv(os.path.abspath(
             os.path.join(os.path.dirname(__file__), '..', 'resources', 'max_hp_table.csv')))
+        self.attribute_df = pd.read_csv(os.path.abspath(
+            os.path.join(os.path.dirname(__file__), '..', 'resources', 'stat_points_table.csv')))
         self.job_bonuses = self.job_bonuses_list[current_job]['FULL_BONUSES']
         self.max_job = self.job_bonuses_list[current_job]['MAX_JOB']
 
@@ -105,6 +102,13 @@ class PlayerBuild:
             spr += math.floor((self.int / 2) - 56)
         self.spr = math.floor(spr * (1 + (self.spr_mod * 0.01)))
 
+        # saldo de atributos
+        attribute_cost = 0
+        attribute_pool = self.attribute_df['points'][self.base_level]
+        for i in self.stat_build:
+            attribute_cost += self.attribute_df['single_cost'][i]
+        self.attribute_balance = attribute_pool - attribute_cost
+
     def calculate_base_hp(self):
         hp_job_a = self.job_bonuses_list[self.current_job]['HP_JOB_A']
         hp_job_b = self.job_bonuses_list[self.current_job]['HP_JOB_B']
@@ -143,7 +147,10 @@ class PlayerBuild:
 
     def export_build(self):
         epb = BuildNuances(self.max_hp, self.max_sp, self.hpr, self.spr, self.hit,
-                           self.flee, self.perfect_flee, self.crit_rate, self.crit_shield)
+                           self.flee, self.perfect_flee, self.crit_rate, round(self.crit_shield, 3),
+                           self.str_bonus, self.agi_bonus, self.vit_bonus,
+                           self.int_bonus, self.dex_bonus, self.luk_bonus,
+                           self.attribute_balance)
         return epb
 
     def print_build(self):
@@ -205,3 +212,11 @@ class BuildNuances:
     perfect_dodge: int
     critical: int
     critical_shield: float
+    str_bonus: int
+    agi_bonus: int
+    vit_bonus: int
+    int_bonus: int
+    dex_bonus: int
+    luk_bonus: int
+    attribute_balance: int
+
