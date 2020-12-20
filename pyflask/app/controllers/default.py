@@ -13,6 +13,7 @@ from app.models.forms import LoginForm, RegisterForm, CalculatorForm, calc_dynam
 
 from ragnarok.model.statuspoints_evaluator import attribute_balance
 from ragnarok.model.build_model import PlayerBuild
+from ragnarok.resources.interface.interface_generator import InterfaceGenerator
 
 
 # cur_path = os.path.abspath(os.curdir)
@@ -137,9 +138,12 @@ def calcframe():
                          [int(pi['player_str']), int(pi['player_agi']), int(pi['player_vit']),
                           int(pi['player_int']), int(pi['player_dex']), int(pi['player_luk'])])
         pi['complex_info'] = p1.export_build()
+        igen = InterfaceGenerator(p1)
+        igen.generate_interface()
     return render_template('calculator_frame.html',
                            form=form,
-                           player_info=pi)
+                           player_info=pi,
+                           image_url='static/assets/custom.png')
 
 
 @app.route("/loginframe")

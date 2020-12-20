@@ -7,8 +7,8 @@ import sys
 import os
 import math
 
-from main.exporter import jbl
-from model.build_model import PlayerBuild
+from ragnarok.main.exporter import jbl
+from ragnarok.model.build_model import PlayerBuild
 
 
 class InterfaceGenerator:
@@ -31,7 +31,8 @@ class InterfaceGenerator:
         build = p1.export_build()
 
         in_file = (os.path.abspath(os.path.join(os.path.dirname(__file__), 'blank_interface.png')))
-        out_file = (os.path.abspath(os.path.join(os.path.dirname(__file__), 'custom.png')))
+        out_file = (os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..',
+                                                 'pyflask', 'app', 'static', 'assets', 'custom.png')))
         font_file = (os.path.abspath(os.path.join(os.path.dirname(__file__), 'Sans-serif.ttf')))
 
         font = ImageFont.truetype(font_file, 10)
@@ -86,12 +87,8 @@ class InterfaceGenerator:
         draw.text((x + 300, y + 32), "{}".format(build.hp_regen), "black", font=font)
         draw.text((x + 300, y + 48), "{}".format(build.sp_regen), "black", font=font)
         draw.text((x + 300, y + 64), "100%", "black", font=font)
-        img.show()
         img.save(out_file)
 
 
-# p1 = PlayerBuild(jbl, 99, 50, 'dancer', [30, 10, 91, 99, 1, 1])
-# build = p1.export_build()
-
-igen = InterfaceGenerator(PlayerBuild(jbl, 99, 50, 'dancer', [30, 10, 91, 99, 1, 1]))
+igen = InterfaceGenerator(PlayerBuild(jbl, 99, 50, 'crusader', [9, 1, 99, 1, 99, 1]))
 igen.generate_interface()
