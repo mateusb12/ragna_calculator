@@ -1,3 +1,5 @@
+from typing import List
+
 import pandas as pd
 import os
 
@@ -24,17 +26,8 @@ job10 = ['novice']
 job50 = aux
 job99 = ['super_novice']
 
-testedf = pd.read_csv(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'resources', 'stat_points_table.csv')))
-
-build = [45, 35, 25, 15, 59, 60]
-level = 96
-attribute_cost = 0
-attribute_pool = testedf['points'][level]
-for i in build:
-    attribute_cost += testedf['single_cost'][i]
-attribute_balance = attribute_pool - attribute_cost
-print('balanço: {}'.format(attribute_balance))
-
+testedf = pd.read_csv(
+    os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'resources', 'stat_points_table.csv')))
 
 maxjob_table = {'novice': 10,
                 'super_novice': 99,
@@ -47,3 +40,5 @@ maxjob_table = {'novice': 10,
                 'knight': 50,
                 'priest': 50,
                 }
+
+import math

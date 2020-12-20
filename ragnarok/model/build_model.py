@@ -109,6 +109,25 @@ class PlayerBuild:
             attribute_cost += self.attribute_df['single_cost'][i]
         self.attribute_balance = attribute_pool - attribute_cost
 
+        # ASPD
+        self.aspd = 172
+
+        # Ataque
+        self.atk_base = 109
+        self.atk_bonus = 0
+
+        # Defesa
+        self.def_hard = 22
+        self.def_soft = 100
+
+        # Ataque mágico
+        self.matk_min = 20
+        self.matk_max = 25
+
+        # Defesa mágica
+        self.mdef_hard = 2
+        self.mdef_soft = 5
+
     def calculate_base_hp(self):
         hp_job_a = self.job_bonuses_list[self.current_job]['HP_JOB_A']
         hp_job_b = self.job_bonuses_list[self.current_job]['HP_JOB_B']
@@ -150,7 +169,9 @@ class PlayerBuild:
                            self.flee, self.perfect_flee, self.crit_rate, round(self.crit_shield, 3),
                            self.str_bonus, self.agi_bonus, self.vit_bonus,
                            self.int_bonus, self.dex_bonus, self.luk_bonus,
-                           self.attribute_balance)
+                           self.attribute_balance, self.aspd, self.atk_base, self.atk_bonus,
+                           self.def_hard, self.def_soft, self.matk_min, self.matk_max,
+                           self.mdef_hard, self.mdef_soft)
         return epb
 
     def print_build(self):
@@ -219,4 +240,13 @@ class BuildNuances:
     dex_bonus: int
     luk_bonus: int
     attribute_balance: int
+    aspd: int
+    atk_base: int
+    atk_bonus: int
+    def_hard: int
+    def_soft: int
+    matk_min: int
+    matk_max: int
+    mdef_hard: int
+    mdef_soft: int
 

@@ -11,6 +11,8 @@
         function forceSubmit(){
              document.getElementById("submit").click()
         }
+
+
     </script>
 </head>
 
@@ -81,7 +83,9 @@
                 <table class="main-table">
                     <tbody class="status-body">
                     <tr class="status-title">
-                        <td colspan="6" class="tableframe-title">Remaining points: {{player_info['complex_info'].attribute_balance}}</td>
+                        <td colspan="6" class="tableframe-title">Remaining points:
+                            {{player_info['complex_info'].attribute_balance}}
+                        </td>
                     </tr>
 
                     <tr class="status-content">
@@ -174,61 +178,6 @@
                                 </tbody>
                             </table>
                         </td>
-
-                        <td class="complex-c1">
-                            <table class="c1-list">
-                                <tbody>
-                                <tr class="c1-item">
-                                    <td class="c1-line-left">ATK</td>
-                                    <td class="c1-line-right"><b>30+0</b></td>
-                                </tr>
-                                <tr class="c1-item">
-                                    <td class="c1-line-left">MATK</td>
-                                    <td class="c1-line-right"><b>40~80</b></td>
-                                </tr>
-                                <tr class="c1-item">
-                                    <td class="c1-line-left">Hit</td>
-                                    <td class="c1-line-right"><b>{{player_info['complex_info'].hit}}</b></td>
-                                </tr>
-                                <tr class="c1-item">
-                                    <td class="c1-line-left">Crit</td>
-                                    <td class="c1-line-right"><b>{{player_info['complex_info'].critical}}</b></td>
-                                </tr>
-                                <tr class="c1-item">
-                                    <td class="c1-line-left">CritShi</td>
-                                    <td class="c1-line-right"><b>{{player_info['complex_info'].critical_shield}}</b></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </td>
-
-                        <td class="complex-c2">
-                            <table class="c2-list">
-                                <tbody>
-                                <tr class="c2-item">
-                                    <td class="c2-line-left">DEF</td>
-                                    <td class="c2-line-right"><b>10+5</b></td>
-                                </tr>
-                                <tr class="c2-item">
-                                    <td class="c2-line-left">MDEF</td>
-                                    <td class="c2-line-right"><b>2+15</b></td>
-                                </tr>
-                                <tr class="c2-item">
-                                    <td class="c2-line-left">Flee</td>
-                                    <td class="c2-line-right"><b>{{player_info['complex_info'].flee}}</b></td>
-                                </tr>
-                                <tr class="c2-item">
-                                    <td class="c2-line-left">ASPD</td>
-                                    <td class="c2-line-right"><b>168</b></td>
-                                </tr>
-                                <tr class="c2-item">
-                                    <td class="c2-line-left">Pdodge</td>
-                                    <td class="c2-line-right"><b>{{player_info['complex_info'].perfect_dodge}}</b></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </td>
-
                         <td class="complex-c3">
                             <table class="c3-list">
                                 <tbody>
@@ -255,6 +204,63 @@
                                 </tbody>
                             </table>
                         </td>
+                        <td class="complex-c1">
+                            <table class="c1-list">
+                                <tbody>
+                                <tr class="c1-item">
+                                    <td class="c1-line-left">ATK</td>
+                                    <td class="c1-line-right"><b>30+0</b></td>
+                                </tr>
+                                <tr class="c1-item">
+                                    <td class="c1-line-left">MATK</td>
+                                    <td class="c1-line-right"><b>40~80</b></td>
+                                </tr>
+                                <tr class="c1-item">
+                                    <td class="c1-line-left">Hit</td>
+                                    <td class="c1-line-right"><b>{{player_info['complex_info'].hit}}</b></td>
+                                </tr>
+                                <tr class="c1-item">
+                                    <td class="c1-line-left">Crit</td>
+                                    <td class="c1-line-right"><b>{{player_info['complex_info'].critical}}</b></td>
+                                </tr>
+                                <tr class="c1-item">
+                                    <td class="c1-line-left">CritShi</td>
+                                    <td class="c1-line-right"><b>{{player_info['complex_info'].critical_shield}}</b>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="complex-c2">
+                            <table class="c2-list">
+                                <tbody>
+                                <tr class="c2-item">
+                                    <td class="c2-line-left">DEF</td>
+                                    <td class="c2-line-right"><b>10+5</b></td>
+                                </tr>
+                                <tr class="c2-item">
+                                    <td class="c2-line-left">MDEF</td>
+                                    <td class="c2-line-right"><b>2+15</b></td>
+                                </tr>
+                                <tr class="c2-item">
+                                    <td class="c2-line-left">Flee</td>
+                                    <td class="c2-line-right"><b>{{player_info['complex_info'].flee}}</b></td>
+                                </tr>
+                                <tr class="c2-item">
+                                    <td class="c2-line-left">ASPD</td>
+                                    <td class="c2-line-right"><b>168</b></td>
+                                </tr>
+                                <tr class="c2-item">
+                                    <td class="c2-line-left">Pdodge</td>
+                                    <td class="c2-line-right"><b>{{player_info['complex_info'].perfect_dodge}}</b>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+
+
+
                     </tr>
                     </tbody>
                 </table>

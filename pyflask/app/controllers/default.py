@@ -130,6 +130,7 @@ def calcframe():
     complex_info = 0
     if 'csrf_token' in pi:
         del pi['csrf_token']
+    pi['complex_info'] = 'none'
     if request.method == 'POST' and request.form:
         calc_dynamic_select(form)
         p1 = PlayerBuild(jbl, int(pi['base_level']), int(pi['job_level']), uncapitalize(pi['class_name']),
