@@ -74,7 +74,7 @@ class InterfaceGenerator:
         draw.text((x + 200, y + 32), "{} +{}".format(build.flee, build.perfect_dodge), "black", font=font)
         draw.text((x + 215, y + 48), "177".format(build.aspd), "black", font=font)
 
-        draw.text((x + 220, y + 64), "{}".format(build.attribute_balance), "black", font=font)
+        draw.text((x + 215, y + 64), "{}".format(build.attribute_balance), "black", font=font)
 
         draw.text((x + 242, y - 1), "MaxHP", (68, 91, 131), font=font_tahoma_bold)
         draw.text((x + 242, y + 15), "MaxSP", (68, 91, 131), font=font_tahoma_bold)
@@ -89,6 +89,9 @@ class InterfaceGenerator:
         draw.text((x + 300, y + 64), "100%", "black", font=font)
         img.save(out_file)
 
+    def generate_equip_details(self):
+        pass
+
 
 igen = InterfaceGenerator(PlayerBuild(jbl, 99, 50, 'crusader', [9, 1, 99, 1, 99, 1]))
-igen.generate_interface()
+# igen.generate_interface()

@@ -3,6 +3,8 @@ from typing import List
 import pandas as pd
 import os
 
+from model.decorador_db_gen import DbGenerator
+
 
 def open_json(filename: str) -> pd.DataFrame:
     folder_name = 'resources'
@@ -26,19 +28,19 @@ job10 = ['novice']
 job50 = aux
 job99 = ['super_novice']
 
-testedf = pd.read_csv(
-    os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'resources', 'stat_points_table.csv')))
+eql = open_json('item_db_equip.json')
+dbg = DbGenerator(eql)
 
-maxjob_table = {'novice': 10,
-                'super_novice': 99,
-                'swordsman': 50,
-                'mage': 50,
-                'archer': 50,
-                'acolyte': 50,
-                'merchant': 50,
-                'thief': 50,
-                'knight': 50,
-                'priest': 50,
-                }
+equip_db = dbg.get_equip_db()
+
+weapon_db = dbg.get_weapon_db()
+hat_db = dbg.get_hat_db()
+shield_db = dbg.get_shield_db()
+robe_db = dbg.get_robe_db()
+armor_db = dbg.get_armor_db()
+shoes_db = dbg.get_shoes_db()
+accessory_db = dbg.get_accessory_db()
+
+db_package = (weapon_db, hat_db, shield_db, robe_db, armor_db, shoes_db, accessory_db, equip_db)
 
 import math
