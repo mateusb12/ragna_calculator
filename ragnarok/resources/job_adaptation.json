@@ -1,0 +1,17 @@
+{
+	"Body": {
+		"lord_knight": "knight",
+		"high_priest": "priest",
+		"high_wizard": "wizard",
+		"whitesmith": "blacksmith",
+		"sniper": "hunter",
+		"assassin_cross": "assassin",
+		"paladin": "crusader",
+		"stalker": "rogue",
+		"professor": "sage",
+		"creator": "alchemist",
+		"champion": "monk",
+		"clown": "bard",
+		"gypsy": "dancer",
+	}
+}

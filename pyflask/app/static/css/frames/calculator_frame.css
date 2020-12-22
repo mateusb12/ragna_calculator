@@ -40,6 +40,8 @@
     border-radius:7px;
 }
 
+
+
 .status-title{
     opacity: 1;
     margin-down: 5px;
@@ -215,6 +217,7 @@ class_name{
 .attribute-item{
     width: 100px;
 }
+
 
 
 

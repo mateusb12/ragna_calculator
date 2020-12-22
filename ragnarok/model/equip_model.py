@@ -1,3 +1,6 @@
+from ragnarok.main.exporter import db_package, equip_db, job70
+
+
 class PlayerGear:
     def __init__(self, package: dict, job: str, base_level: int):
         self.armor = '(No Armor)'
@@ -20,6 +23,10 @@ class PlayerGear:
         self.full_db = package[7]
         self.job = job
         self.base_level = base_level
+        if job in job70:
+            self.is_transclass = True
+        else:
+            self.is_transclass = False
 
     def equip(self, gear: dict):
         gear_id = gear['Id']
@@ -102,6 +109,8 @@ class PlayerGear:
     def refine_single_gear(self, chosen_gear: str, amount: int):
         if amount > 10 or amount < 0:
             raise ValueError('Invalid refine value +{} for {}.'.format(amount, chosen_gear))
+        if amount == 0:
+            pass
         if chosen_gear == 'armor':
             self.armor['Refining'] = amount
         if chosen_gear == 'shield':
@@ -113,58 +122,98 @@ class PlayerGear:
         if chosen_gear == 'weapon':
             self.weapon['Refining'] = amount
 
+    @staticmethod
+    def adapt_class(input_class: str) -> str:
+        class_table = {
+            "lord_knight": "knight", "high_priest": "priest", "high_wizard": "wizard",
+            "whitesmith": "blacksmith", "sniper": "hunter", "assassin_cross": "assassin",
+            "paladin": "crusader", "stalker": "rogue", "professor": "sage",
+            "creator": "alchemist", "champion": "monk", "clown": "bard", "gypsy": "dancer",
+        }
+        if input_class in class_table:
+            return class_table[input_class.lower()]
+        else:
+            raise ValueError('[{}] is not a transclass, so it cant be adapted'.format(input_class))
+
     def is_equipable(self, chosen_id: int):
         chosen_gear = self.full_db[chosen_id]
         job_restriction = chosen_gear['Jobs']
         level_restriction = chosen_gear['EquipLevelMin']
         transclass_restriction = chosen_gear['Classes']
+        adapted_job = self.job
+        if self.is_transclass:
+            adapted_job = self.adapt_class(self.job)
 
         result = {'job': True, 'level': True, 'trans': True}
 
-        if self.job in job_restriction:
-            if job_restriction[self.job]:
-                result['job'] = True
-            else:
+        if 'All' not in job_restriction:
+            if adapted_job not in job_restriction:
                 result['job'] = False
+        else:
+            if adapted_job in job_restriction:
+                result['job'] = False
+
         if self.base_level >= level_restriction:
             result['level'] = True
         else:
             result['level'] = False
 
-        for i in result.values():
-            if not i:
+        if not self.is_transclass and transclass_restriction == {'Upper': True}:
+            result['trans'] = False
+
+        for q in result.values():
+            if not q:
                 return False, result
         return True, result
 
 
-from ragnarok.main.exporter import db_package, equip_db
+pe = PlayerGear(db_package, 'champion', 94)
 
-pe = PlayerGear(db_package, 'monk', 44)
-pe.equip(equip_db[2504])
-pe.refine_single_gear('robe', 5)
+gear_queue = {'robe': (2504, 5),
+              'shoes': (2407, 7),
+              'shield': (2102, 7),
+              'armor': (2322, 7),
+              'acessory1': (2626, 0),
+              'acessory2': (2607, 0),
+              }
 
-pe.equip(equip_db[2407])
-pe.refine_single_gear('shoes', 7)
+hat_queue = [5353, 2269]
 
-pe.equip(equip_db[2102])
-pe.refine_single_gear('shield', 7)
+for i, j in gear_queue.items():
+    pe.equip(equip_db[j[0]])
+    pe.refine_single_gear(i, j[1])
 
-pe.equip(equip_db[2322])
-pe.refine_single_gear('armor', 7)
+for i in hat_queue:
+    pe.equip(equip_db[i])
 
-pe.equip(equip_db[5353])  # sun god
-pe.equip(equip_db[2269])  # romantic flower
-pe.equip(equip_db[2626])  # rosary
-pe.equip(equip_db[2607])  # clip
-
-pe.equip(equip_db[1471])
+# pe.equip(equip_db[2504])
+# pe.refine_single_gear('robe', 5)
+#
+# pe.equip(equip_db[2407])
+# pe.refine_single_gear('shoes', 7)
+#
+# pe.equip(equip_db[2102])
+# pe.refine_single_gear('shield', 7)
+#
+# pe.equip(equip_db[2322])
+# pe.refine_single_gear('armor', 7)
+#
+# pe.equip(equip_db[5353])  # sun god
+# pe.equip(equip_db[2269])  # romantic flower
+# pe.equip(equip_db[2626])  # rosary
+# pe.equip(equip_db[2607])  # clip
+#
+# pe.equip(equip_db[1471])
 
 print("")
 pe.print_gear()
 print("")
-print("")
 
-for i, j in equip_db[1471].items():
-    print(i, j)
-
-print(pe.is_equipable(1471))
+# print("")
+# print("")
+#
+# # 1471
+# for i, j in equip_db[1185].items():
+#     print(i, j)
+#
+# print(pe.is_equipable(1185))

@@ -43,7 +43,6 @@ class PlayerBuild:
 
         # classes
 
-
         # incremento dos atributos de acordo com o nível atual de classe
         self.str_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['STR'])
         self.agi_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['AGI'])
@@ -253,4 +252,3 @@ class BuildNuances:
     matk_max: int
     mdef_hard: int
     mdef_soft: int
-
