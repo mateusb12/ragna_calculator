@@ -48,5 +48,13 @@ armor_db = dbg.get_armor_db()
 shoes_db = dbg.get_shoes_db()
 accessory_db = dbg.get_accessory_db()
 
-db_package = (weapon_db, hat_db, shield_db, robe_db, armor_db, shoes_db, accessory_db, equip_db)
-import math
+cdb = open_json('item_db_etc.json')
+
+card_db = dict()
+
+for i in cdb['Body']['Body2']:
+    if i['Type'] == 'Card':
+        card_db[int(i['Id'])] = i
+
+db_package = (weapon_db, hat_db, shield_db, robe_db, armor_db, shoes_db, accessory_db, equip_db, card_db)
+
