@@ -3,7 +3,7 @@ from typing import List
 import pandas as pd
 import os
 
-from model.decorador_db_gen import DbGenerator
+from ragnarok.model.decorador_db_gen import DbGenerator
 
 
 def open_json(filename: str) -> pd.DataFrame:
@@ -25,8 +25,15 @@ aux.remove('novice')
 aux.remove('super_novice')
 
 job10 = ['novice']
-job50 = aux
+job50 = []
+job70 = []
 job99 = ['super_novice']
+
+for i, j in jbl.items():
+    if j['MAX_JOB'] == 50:
+        job50.append(i)
+    if j['MAX_JOB'] == 70:
+        job70.append(i)
 
 eql = open_json('item_db_equip.json')
 dbg = DbGenerator(eql)
@@ -42,5 +49,4 @@ shoes_db = dbg.get_shoes_db()
 accessory_db = dbg.get_accessory_db()
 
 db_package = (weapon_db, hat_db, shield_db, robe_db, armor_db, shoes_db, accessory_db, equip_db)
-
 import math

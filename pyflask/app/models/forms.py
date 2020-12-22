@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SelectField
 from wtforms.validators import DataRequired, Email, Length, EqualTo
 from wtforms.fields.html5 import EmailField
-from ragnarok.main.exporter import jobname_list, job10, job50, job99
+from ragnarok.main.exporter import jobname_list, job10, job50, job70, job99
 
 
 class LoginForm(FlaskForm):
@@ -52,5 +52,7 @@ def calc_dynamic_select(input_form):
         form.job_level.choices = list(range(1, 11))
     if form.class_name.data in [i.capitalize() for i in job50]:
         form.job_level.choices = list(range(1, 51))
+    if form.class_name.data in [i.capitalize() for i in job70]:
+        form.job_level.choices = list(range(1, 71))
     if form.class_name.data in [i.capitalize() for i in job99]:
         form.job_level.choices = list(range(1, 100))

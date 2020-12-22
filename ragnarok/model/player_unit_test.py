@@ -17,15 +17,19 @@ jbl = open_json('job_bonuses.json')
 
 test1 = (PlayerBuild(jbl, 99, 50, 'monk', [89, 2, 73, 51, 48, 1]).export_build(),
          BuildNuances(9195, 726, 60, 16, 151, 108, 1, 2, 1.8, 8, 7, 6, 2, 4, 3, 1,
-                      172, 109, 0, 22, 100, 20, 25))
+                      172, 109, 0, 22, 100, 20, 25, 2, 5))
 
 test2 = (PlayerBuild(jbl, 99, 50, 'crusader', [9, 1, 99, 1, 99, 1]).export_build(),
          BuildNuances(12724, 508, 84, 7, 201, 102, 1, 3, 2.2, 7, 2, 7, 6, 3, 5, 1,
-                      172, 109, 0, 22, 100, 20, 25))
+                      172, 109, 0, 22, 100, 20, 25, 2, 5))
 
 test3 = (PlayerBuild(jbl, 99, 50, 'dancer', [30, 10, 91, 99, 1, 1]).export_build(),
          BuildNuances(7868, 1232, 57, 30, 105, 116, 1, 4, 2.8, 2, 7, 3, 5, 5, 8, 1,
-                      172, 109, 0, 22, 100, 20, 25))
+                      172, 109, 0, 22, 100, 20, 25, 2, 5))
+
+test4 = (PlayerBuild(jbl, 99, 50, 'knight', [92, 3, 99, 1, 31, 1]).export_build(),
+         BuildNuances(16674, 310, 104, 4, 136, 104, 1, 2, 2.0, 8, 2, 10, 0, 6, 4, 0,
+                      172, 109, 0, 22, 100, 20, 25, 2, 5))
 
 
 def player_test(kit):
@@ -54,11 +58,14 @@ def player_test(kit):
     assert unit_test.def_soft == correct_value.def_soft
     assert unit_test.matk_min == correct_value.matk_min
     assert unit_test.matk_max == correct_value.matk_max
+    assert unit_test.mdef_hard == correct_value.mdef_hard
+    assert unit_test.mdef_soft == correct_value.mdef_soft
 
 
 player_test(test1)
 player_test(test2)
 player_test(test3)
+player_test(test4)
 
 full_time = time.time() - start_time
 if full_time < 1:

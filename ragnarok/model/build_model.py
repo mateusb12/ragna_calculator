@@ -41,6 +41,9 @@ class PlayerBuild:
         self.job_bonuses = self.job_bonuses_list[current_job]['FULL_BONUSES']
         self.max_job = self.job_bonuses_list[current_job]['MAX_JOB']
 
+        # classes
+
+
         # incremento dos atributos de acordo com o nível atual de classe
         self.str_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['STR'])
         self.agi_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['AGI'])
@@ -137,7 +140,7 @@ class PlayerBuild:
         return base_hp
 
     def calculate_max_hp(self) -> int:
-        max_hp = math.floor(self.base_hp * (1 + (0.01 * self.vit)))
+        max_hp = math.floor(self.base_hp * (1 + (0.01 * self.vit)) * self.trans_mod)
         max_hp += self.additive_modifiers
         max_hp = math.floor(max_hp * (1 + (self.multiplicative_modifiers * 0.01)))
         return max_hp
@@ -149,6 +152,7 @@ class PlayerBuild:
         max_sp = math.floor(max_sp * (1 + (self.int * 0.01)))
         max_sp += self.sp_mod_a
         max_sp = math.floor(max_sp * (1 + (self.sp_mod_b * 0.01)))
+        max_sp = math.floor(max_sp * self.trans_mod)
         return max_sp
 
     @staticmethod
