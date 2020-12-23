@@ -7,7 +7,8 @@ import sys
 import os
 import math
 
-from ragnarok.main.exporter import jbl
+from model.equip_model import Armor
+from ragnarok.main.exporter import jbl, equip_db
 from ragnarok.model.build_model import PlayerBuild
 
 
@@ -36,8 +37,8 @@ class InterfaceGenerator:
         font_file = (os.path.abspath(os.path.join(os.path.dirname(__file__), 'Sans-serif.ttf')))
 
         font = ImageFont.truetype(font_file, 10)
-        font_tahoma_bold = ImageFont.truetype((os.path.abspath(os.path.join(os.path.dirname(__file__), 'Tahoma-bold.ttf'))),
-                                          10)
+        font_tahoma_bold = ImageFont.truetype((
+            os.path.abspath(os.path.join(os.path.dirname(__file__), 'Tahoma-bold.ttf'))), 10)
 
         img = Image.open(in_file)
         draw = ImageDraw.Draw(img)
@@ -90,8 +91,35 @@ class InterfaceGenerator:
         img.save(out_file)
 
     def generate_equip_details(self):
-        pass
+        armor1 = Armor(equip_db[2322])
+        armor1.refine(4)
+        armor1.insert_card(4105)
+
+        in_file = (os.path.abspath(os.path.join(os.path.dirname(__file__), 'equip_window.png')))
+        out_file = (os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..',
+                                                 'pyflask', 'app', 'static', 'assets', 'equip_custom.png')))
+
+        font_file = (os.path.abspath(os.path.join(os.path.dirname(__file__), 'Sans-serif.ttf')))
+        font_db = []
+        font_10pt = ImageFont.truetype(font_file, 15)
+        for i in range(0, 11):
+            font_db.append(None)
+        for i in range(10, 21):
+            font_db.append(ImageFont.truetype(font_file, i))
+
+        font_tahoma_bold = ImageFont.truetype((
+            os.path.abspath(os.path.join(os.path.dirname(__file__), 'Tahoma-bold.ttf'))), 10)
+
+        img = Image.open(in_file)
+        draw = ImageDraw.Draw(img)
+        x = 38
+        y = 6
+
+        draw.text((x + 55, y + 4), "Silk Robe", "black", font=font_db[12])
+
+        img.show()
 
 
 igen = InterfaceGenerator(PlayerBuild(jbl, 99, 50, 'crusader', [9, 1, 99, 1, 99, 1]))
+igen.generate_equip_details()
 # igen.generate_interface()

@@ -57,4 +57,3 @@ for i in cdb['Body']['Body2']:
         card_db[int(i['Id'])] = i
 
 db_package = (weapon_db, hat_db, shield_db, robe_db, armor_db, shoes_db, accessory_db, equip_db, card_db)
-

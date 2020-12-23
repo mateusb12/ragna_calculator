@@ -1,4 +1,6 @@
-from ragnarok.main.exporter import db_package, equip_db, job70, shield_db, shoes_db
+from typing import List
+
+from ragnarok.main.exporter import db_package, equip_db, job70, shield_db, shoes_db, armor_db, robe_db
 
 
 class PlayerGear:
@@ -317,20 +319,24 @@ class BaseGear:
 
     def insert_card(self, card_id: int):
         from ragnarok.main.exporter import card_db
+        if card_id == 0:
+            return False
         card = card_db[card_id]
         if self.slots == 0:
             raise Exception('Impossible to insert card. '
                             'The equipment [{}] {} has zero slots'.format(self.id, self.name))
         if self.gear_type.lower() not in list(card["Locations"].keys())[0].lower():
             raise Exception('Impossible to insert card. '
-                            '[{}] cannot be inserted into a [{}]'.format(card['Name'], self.class_type))
+                            '[{}] cannot be inserted into a [{}]. Required: {}'
+                            .format(card['Name'], self.class_type, list(card["Locations"].keys())[0]))
         self.card = card
 
 
 class Shield(BaseGear):
     def __init__(self, gd: dict):
         if gd['Id'] not in shield_db:
-            raise Exception('INSTANTIATION ERROR. The equipment [{}] cannot be a Shield'.format(gd['Name']))
+            raise Exception('INSTANTIATION ERROR. The equipment [{}] ({}) cannot be a Shield'
+                            .format(gd['Name'], list(gd['Locations'].keys())[0]))
         super().__init__(gd)
         self.gear_type = "left_hand"
         self.class_type = "Shield"
@@ -339,22 +345,82 @@ class Shield(BaseGear):
 class Shoes(BaseGear):
     def __init__(self, gd: dict):
         if gd['Id'] not in shoes_db:
-            raise Exception('INSTANTIATION ERROR. The equipment [{}] cannot be a Shoes'.format(gd['Name']))
+            raise Exception('INSTANTIATION ERROR. The equipment [{}] ({}) cannot be a Shoes'
+                            .format(gd['Name'], list(gd['Locations'].keys())[0]))
         super().__init__(gd)
         self.gear_type = "shoes"
         self.class_type = "Shoes"
 
 
+class Armor(BaseGear):
+    def __init__(self, gd: dict):
+        if gd['Id'] not in armor_db:
+            raise Exception('INSTANTIATION ERROR. The equipment [{}] ({}) cannot be a Armor'
+                            .format(gd['Name'], list(gd['Locations'].keys())[0]))
+        super().__init__(gd)
+        self.gear_type = "armor"
+        self.class_type = "Armor"
+
+
+class Robe(BaseGear):
+    def __init__(self, gd: dict):
+        if gd['Id'] not in robe_db:
+            raise Exception('INSTANTIATION ERROR. The equipment [{}] ({}) cannot be a Robe'
+                            .format(gd['Name'], list(gd['Locations'].keys())[0]))
+        super().__init__(gd)
+        self.gear_type = "Garment"
+        self.class_type = "Robe"
+
+
 pe = PlayerGear(db_package, 'champion', 94)
 
-shield1 = Shield(equip_db[2104])
-shield1.refine(7)
-shield1.insert_card(4058)
-print(shield1)
+gear_dict = {"shield": (2104, 5, 4058),
+             "shoes": (2407, 7, 0),
+             "armor": (2322, 4, 4105),
+             "robe": (2504, 5, 4133)}
 
-shoes1 = Shoes(equip_db[2407])
-shoes1.refine(7)
-print(shoes1)
+
+def create_gear_table(input_dict: dict) -> List[BaseGear]:
+    gear_table = []
+    for k, v in input_dict.items():
+        aux = None
+        if k == "shield":
+            aux = Shield(equip_db[v[0]])
+        if k == "shoes":
+            aux = Shoes(equip_db[v[0]])
+        if k == "armor":
+            aux = Armor(equip_db[v[0]])
+        if k == "robe":
+            aux = Robe(equip_db[v[0]])
+        aux.refine(v[1])
+        aux.insert_card(v[2])
+        gear_table.append(aux)
+    return gear_table
+
+
+gear1 = create_gear_table(gear_dict)
+for i in gear1:
+    print(i)
+
+# shield1 = Shield(equip_db[2104])
+# shield1.refine(5)
+# shield1.insert_card(4058)
+# # shield1.insert_card(0)
+# print(shield1)
+#
+# shoes1 = Shoes(equip_db[2407])
+# shoes1.refine(7)
+# print(shoes1)
+#
+# armor1 = Armor(equip_db[2322])
+# armor1.refine(4)
+# armor1.insert_card(4105)
+# print(armor1)
+#
+# robe1 = Robe(equip_db[2504])
+# robe1.refine(5)
+# robe1.insert_card(4133)
+# print(robe1)
 
 gear_queue = {'robe': (2504, 5, 0),
               'shoes': (2407, 7, 0),
