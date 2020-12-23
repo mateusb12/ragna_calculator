@@ -7,7 +7,7 @@ import sys
 import os
 import math
 
-from model.equip_model import Armor
+from ragnarok.model.equip_model import Armor
 from ragnarok.main.exporter import jbl, equip_db
 from ragnarok.model.build_model import PlayerBuild
 
@@ -120,6 +120,6 @@ class InterfaceGenerator:
         img.show()
 
 
-igen = InterfaceGenerator(PlayerBuild(jbl, 99, 50, 'crusader', [9, 1, 99, 1, 99, 1]))
-igen.generate_equip_details()
+# igen = InterfaceGenerator(PlayerBuild(jbl, 99, 50, 'crusader', [9, 1, 99, 1, 99, 1]))
+# igen.generate_equip_details()
 # igen.generate_interface()

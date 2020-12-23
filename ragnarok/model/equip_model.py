@@ -1,9 +1,10 @@
 from typing import List
 
-from ragnarok.main.exporter import db_package, equip_db, job70, shield_db, shoes_db, armor_db, robe_db
+from ragnarok.main.exporter import db_package, equip_db, job70, shield_db, shoes_db, armor_db, robe_db, accessory_db, \
+    hat_db, weapon_db
 
 
-class PlayerGear:
+class OldPlayerGear:
     def __init__(self, package: dict, job: str, base_level: int):
         self.armor = {'Type': None, 'Slots': 0}
         self.weapon = {'Type': None, 'Slots': 0}
@@ -283,7 +284,9 @@ class BaseGear:
         self.name = gd['Name']
         self.type = gd['Type']
         self.buying_price = gd['Buy']
-        self.defense = gd['Defense']
+        self.defense = 0
+        if 'Defense' in gd:
+            self.defense = gd['Defense']
         self.locations = gd['Locations']
         self.script = gd['Script']
         self.weight = gd['Weight']
@@ -298,6 +301,9 @@ class BaseGear:
             self.is_refineable = False
         self.refining = 0
         self.card = None
+        self.card2 = None
+        self.card3 = None
+        self.card4 = None
 
     def __str__(self):
         str_base = "[{}] → ".format(self.class_type)
@@ -308,11 +314,18 @@ class BaseGear:
             str_base += " [{}]".format(self.slots)
         if self.card:
             str_base += " {}".format(self.card['Name'])
+        if self.card2:
+            str_base += ", {}".format(self.card2['Name'])
+        if self.card3:
+            str_base += ", {}".format(self.card3['Name'])
+        if self.card4:
+            str_base += " {}".format(self.card4['Name'])
         return str_base
 
     def refine(self, amount: int) -> bool:
         if not self.is_refineable:
-            raise Exception('The equipment [{}] {} is not refineable'.format(self.id, self.name))
+            if amount != 0:
+                raise Exception('The equipment [{}] {} is not refineable'.format(self.id, self.name))
         else:
             self.refining = amount
             return True
@@ -325,10 +338,20 @@ class BaseGear:
         if self.slots == 0:
             raise Exception('Impossible to insert card. '
                             'The equipment [{}] {} has zero slots'.format(self.id, self.name))
-        if self.gear_type.lower() not in list(card["Locations"].keys())[0].lower():
-            raise Exception('Impossible to insert card. '
-                            '[{}] cannot be inserted into a [{}]. Required: {}'
-                            .format(card['Name'], self.class_type, list(card["Locations"].keys())[0]))
+        if type(self.gear_type) is not list:
+            if self.gear_type.lower() not in list(card["Locations"].keys())[0].lower():
+                raise Exception('Impossible to insert card. '
+                                '[{}] cannot be inserted into a [{}] ("{}"). Required: {}'
+                                .format(card['Name'], self.class_type, self.name, list(card["Locations"].keys())[0]))
+        else:
+            card_positions = list(card["Locations"].keys())
+            equip_positions = list(self.locations.keys())
+            has_intersection = bool(set(card_positions) & set(equip_positions))
+            if not has_intersection:
+                raise Exception('Impossible to insert card. '
+                                '[{}] cannot be inserted into a [{}] ("{}"). Required: {}'
+                                .format(card['Name'], self.class_type, self.name, list(card["Locations"].keys())[0]))
+
         self.card = card
 
 
@@ -372,33 +395,138 @@ class Robe(BaseGear):
         self.class_type = "Robe"
 
 
-pe = PlayerGear(db_package, 'champion', 94)
+class Accessory(BaseGear):
+    def __init__(self, gd: dict):
+        if gd['Id'] not in accessory_db:
+            raise Exception('INSTANTIATION ERROR. The equipment [{}] ({}) cannot be a Robe'
+                            .format(gd['Name'], list(gd['Locations'].keys())[0]))
+        super().__init__(gd)
+        self.gear_type = "right_accessory"
+        self.class_type = "Accessory"
 
-gear_dict = {"shield": (2104, 5, 4058),
+
+class Headgear(BaseGear):
+    def __init__(self, gd: dict):
+        if gd['Id'] not in hat_db:
+            raise Exception('INSTANTIATION ERROR. The equipment [{}] ({}) cannot be a Robe'
+                            .format(gd['Name'], list(gd['Locations'].keys())[0]))
+        super().__init__(gd)
+        self.gear_type = ["Head_Top", "Head_Mid", "Head_Low"]
+        self.class_type = "Headgear"
+
+
+class Weapon(BaseGear):
+    def __init__(self, gd: dict):
+        if gd['Id'] not in weapon_db:
+            raise Exception('INSTANTIATION ERROR. The equipment [{}] ({}) cannot be a Robe'
+                            .format(gd['Name'], list(gd['Locations'].keys())[0]))
+        super().__init__(gd)
+        self.gear_type = "right_hand"
+        self.class_type = "Weapon"
+
+    def remaining_slots(self):
+        cardlist = []
+        if self.card:
+            cardlist.append(True)
+        if self.card2:
+            cardlist.append(True)
+        if self.card3:
+            cardlist.append(True)
+        if self.card4:
+            cardlist.append(True)
+        return self.slots - len(cardlist)
+
+    def insert_card(self, card_id: int):
+        from ragnarok.main.exporter import card_db
+        if card_id == 0:
+            return False
+        card = card_db[card_id]
+        if self.slots == 0:
+            raise Exception('Impossible to insert card. '
+                            'The equipment [{}] {} has zero slots'.format(self.id, self.name))
+        else:
+            w_error = 'Impossible to insert card. The equipment [{}] already has 4/4 cards'.format(self.id, self.name)
+            if self.card:
+                if self.card2:
+                    if self.card3:
+                        if self.card4:
+                            raise Exception("Impossible to insert [{}]. The weapon [{}] has already {}/{} cards"
+                                            .format(card['Name'], self.name, self.slots, self.slots))
+                        else:
+                            if self.remaining_slots() > 0:
+                                self.card4 = card
+                            else:
+                                raise Exception("Impossible to insert [{}]. The weapon [{}] has already {}/{} cards"
+                                                .format(card['Name'], self.name, self.slots, self.slots))
+                    else:
+                        if self.remaining_slots() > 0:
+                            self.card3 = card
+                        else:
+                            raise Exception("Impossible to insert [{}]. The weapon [{}] has already {}/{} cards"
+                                            .format(card['Name'], self.name, self.slots, self.slots))
+                else:
+                    if self.remaining_slots() > 0:
+                        self.card2 = card
+                    else:
+                        raise Exception("Impossible to insert [{}]. The weapon [{}] has already {}/{} cards"
+                                        .format(card['Name'], self.name, self.slots, self.slots))
+            else:
+                self.card = card
+
+
+class PlayerGear:
+    def __init__(self, gear_input: dict, job: str, base_level: int):
+        self.gear_input: dict
+        self.job = job
+        self.base_level = base_level
+        gt = self.create_gear_table(gear_input)
+
+    def equip_item(self, item_id: input):
+        pass
+
+    @staticmethod
+    def create_gear_table(input_dict: dict) -> List[BaseGear]:
+        gear_table = []
+        for k, v in input_dict.items():
+            aux = None
+            if v is not None:
+                if k == "shield" and v is not None:
+                    aux = Shield(equip_db[v[0]])
+                if k == "weapon" and v is not None:
+                    aux = Weapon(equip_db[v[0]])
+                    for t in v[2]:
+                        aux.insert_card(t)
+                if k == "shoes" and v is not None:
+                    aux = Shoes(equip_db[v[0]])
+                if k == "armor" and v is not None:
+                    aux = Armor(equip_db[v[0]])
+                if k == "robe" and v is not None:
+                    aux = Robe(equip_db[v[0]])
+                if k in ["accessory1", "accessory2"] and v is not None:
+                    aux = Accessory(equip_db[v[0]])
+                if k in ["headgear1", "headgear2", "headgear3"] and v is not None:
+                    aux = Headgear(equip_db[v[0]])
+                aux.refine(v[1])
+                if k is not 'weapon':
+                    aux.insert_card(v[2])
+            gear_table.append(aux)
+        return gear_table
+
+
+gear_dict = {"headgear1": (5093, 9, 4288),  # carta 4288
+             # "headgear2": (2202, 0, 0), #carta 4127
+             "headgear3": (2269, 0, 0),
+             "weapon": (1220, 7, [4035, 4035, 4092]), #gladius - 1220
+             "shield": (2104, 5, 4058),
              "shoes": (2407, 7, 0),
              "armor": (2322, 4, 4105),
-             "robe": (2504, 5, 4133)}
+             "robe": (2504, 5, 4133),
+             "accessory1": (2607, 0, 0),
+             "accessory2": (2626, 0, 0)}
 
+pe = PlayerGear(gear_dict, 'champion', 94)
+gear1 = pe.create_gear_table(gear_dict)
 
-def create_gear_table(input_dict: dict) -> List[BaseGear]:
-    gear_table = []
-    for k, v in input_dict.items():
-        aux = None
-        if k == "shield":
-            aux = Shield(equip_db[v[0]])
-        if k == "shoes":
-            aux = Shoes(equip_db[v[0]])
-        if k == "armor":
-            aux = Armor(equip_db[v[0]])
-        if k == "robe":
-            aux = Robe(equip_db[v[0]])
-        aux.refine(v[1])
-        aux.insert_card(v[2])
-        gear_table.append(aux)
-    return gear_table
-
-
-gear1 = create_gear_table(gear_dict)
 for i in gear1:
     print(i)
 
@@ -422,6 +550,8 @@ for i in gear1:
 # robe1.insert_card(4133)
 # print(robe1)
 
+peq = OldPlayerGear(db_package, 'champion', 94)
+
 gear_queue = {'robe': (2504, 5, 0),
               'shoes': (2407, 7, 0),
               'shield': (2102, 7, 0),
@@ -437,11 +567,11 @@ hat_queue = {'hat1': 5353,
 # Tentar validar as coisas através de classes
 
 for i, j in gear_queue.items():
-    pe.equip(equip_db[j[0]])
-    pe.refine_single_gear(i, j[1])
+    peq.equip(equip_db[j[0]])
+    peq.refine_single_gear(i, j[1])
 
 for i in hat_queue.values():
-    pe.equip(equip_db[i])
+    peq.equip(equip_db[i])
 
 # # marc
 # pe.equip_card(4105)
@@ -481,7 +611,7 @@ for i in hat_queue.values():
 # pe.equip(equip_db[1471])
 
 print("")
-pe.print_gear()
+peq.print_gear()
 print("")
 
 # for i, j in pe.armor.items():
