@@ -1,5 +1,6 @@
 from typing import List, Tuple
 
+import requests
 from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw
@@ -7,7 +8,7 @@ import sys
 import os
 import math
 
-from ragnarok.model.equip_model import Armor
+from ragnarok.model.equip_model import Armor, PlayerGear
 from ragnarok.main.exporter import jbl, equip_db
 from ragnarok.model.build_model import PlayerBuild
 
@@ -90,14 +91,50 @@ class InterfaceGenerator:
         draw.text((x + 300, y + 64), "100%", "black", font=font)
         img.save(out_file)
 
+    @staticmethod
+    def download_icons(icon_list: List[int]):
+        for icon_id in icon_list:
+            icon_path = os.path.abspath(os.path.join(os.path.dirname(__file__),
+                                                     'interface', 'icon_{}.png'.format(icon_id)))
+            if not os.path.isfile(icon_path):
+                response = requests.get("https://file5s.ratemyserver.net/items/small/{}.gif".format(icon_id))
+                file = open("icons/icon_{}.png".format(icon_id), "wb")
+                file.write(response.content)
+                file.close()
+
+    @staticmethod
+    def check_icons(icon_list: List[int]):
+        need_download = []
+        for qw in icon_list:
+            icon_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'icons', 'icon_{}.png'.format(qw)))
+            if not os.path.isfile(icon_path):
+                need_download.append(qw)
+        if not need_download:
+            return False
+        else:
+            return need_download
+
     def generate_equip_details(self):
-        armor1 = Armor(equip_db[2322])
-        armor1.refine(4)
-        armor1.insert_card(4105)
+        gear_dict = {"headgear1": (5093, 9, 4288),
+                     "headgear2": None,
+                     "headgear3": (2269, 0, 0),
+                     "weapon": (1550, 7, [4035, 4035, 4092]),
+                     "shield": (2104, 5, 4058),
+                     "shoes": (2407, 7, 0),
+                     "armor": (2322, 4, 4105),
+                     "robe": (2504, 5, 4133),
+                     "accessory1": (2607, 0, 0),
+                     "accessory2": (2626, 0, 0)}
+
+        pe = PlayerGear(gear_dict, 'priest', 94)
 
         in_file = (os.path.abspath(os.path.join(os.path.dirname(__file__), 'equip_window.png')))
         out_file = (os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..',
                                                  'pyflask', 'app', 'static', 'assets', 'equip_custom.png')))
+
+        img = Image.open(in_file).convert("RGBA")
+        img.putalpha(255)
+        draw = ImageDraw.Draw(img)
 
         font_file = (os.path.abspath(os.path.join(os.path.dirname(__file__), 'Sans-serif.ttf')))
         font_db = []
@@ -110,16 +147,55 @@ class InterfaceGenerator:
         font_tahoma_bold = ImageFont.truetype((
             os.path.abspath(os.path.join(os.path.dirname(__file__), 'Tahoma-bold.ttf'))), 10)
 
-        img = Image.open(in_file)
-        draw = ImageDraw.Draw(img)
-        x = 38
-        y = 6
+        import textwrap
 
-        draw.text((x + 55, y + 4), "Silk Robe", "black", font=font_db[12])
+        def old_draw_multiline(textstring: str, tx: int, ty: int, breakwidth: int, tfont: ImageFont):
+            lines = textwrap.wrap(textstring, width=breakwidth)
+            for line in lines:
+                draw.text((tx, ty), line, font=tfont, fill="#000000")
+                ty += font_db[12].getsize(line)[1]
+
+        def draw_multiline(textstring: str, tx: int, ty: int, tfont: ImageFont):
+            if len(textstring) <= 11:
+                lines = [textstring]
+            else:
+                lines = [textstring[:11], textstring[11:]]
+            for line in lines:
+                draw.text((tx, ty), line, font=tfont, fill="#000000")
+                ty += font_db[12].getsize(line)[1]
+
+        draw_multiline('+7 Insomniac Ribbon', 35, 0, font_db[12])
+        draw_multiline('Flu Mask', 35, 28, font_db[12])
+        draw_multiline('+10 Quadruple Vital Faca', 35, 52, font_db[12])
+        draw_multiline('+7 Genie`s Hood', 35, 80, font_db[12])
+        draw_multiline('Hiding Rosary', 35, 105, font_db[12])
+
+        draw_multiline('Butterfly mask', 175, 0, font_db[12])
+        draw_multiline('+7 Unfrozen Formal Suit', 175, 27, font_db[12])
+        draw_multiline('+7 Cranial Guard', 175, 53, font_db[12])
+        draw_multiline('+7 Green Shoes', 175, 79, font_db[12])
+        draw_multiline('Rosary', 175, 105, font_db[12])
+
+        # self.download_icons([2209, 2291, 2218, 2320, 1202, 2102, 2502, 2404, 2608, 2626])
+        icons_to_be_downloaded = self.check_icons([2610, 2209])
+        if icons_to_be_downloaded is not False:
+            self.download_icons(icons_to_be_downloaded)
+
+
+        # icon_id = 2209
+        # icon_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'interface', 'icon_{}.png'.format(icon_id)))
+        # if not os.path.isfile(icon_path):
+        #     response = requests.get("https://file5s.ratemyserver.net/items/small/2209.gif")
+        #     file = open("icons/icon_{}.png".format(icon_id), "wb")
+        #     file.write(response.content)
+        #     file.close()
+
+        # foreground = Image.open('icons/icon_{}.png'.format(icon_id)).convert("RGBA")
+        # img.paste(foreground, (0, 5), foreground)
 
         img.show()
 
 
-# igen = InterfaceGenerator(PlayerBuild(jbl, 99, 50, 'crusader', [9, 1, 99, 1, 99, 1]))
-# igen.generate_equip_details()
+igen = InterfaceGenerator(PlayerBuild(jbl, 99, 50, 'crusader', [9, 1, 99, 1, 99, 1]))
+igen.generate_equip_details()
 # igen.generate_interface()

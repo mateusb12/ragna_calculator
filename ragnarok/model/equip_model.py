@@ -22,8 +22,8 @@ class BaseGear:
         self.slots = gd['Slots']
         self.jobs = gd['Jobs']
         self.classes = None
-        if 'classes' in gd:
-            self.classes = gd['classes']
+        if 'Classes' in gd:
+            self.classes = gd['Classes']
         self.levelmin = gd['EquipLevelMin']
         self.is_refineable = gd['Refineable']
         if 'Refineable' not in gd:
@@ -68,10 +68,14 @@ class BaseGear:
             raise Exception('Impossible to insert card. '
                             'The equipment [{}] {} has zero slots'.format(self.id, self.name))
         if type(self.gear_type) is not list:
-            if self.gear_type.lower() not in list(card["Locations"].keys())[0].lower():
+            type_check = self.gear_type.lower()
+            if type_check in ['right_accessory', 'left_accessory']:
+                type_check = 'both_accessory'
+            if type_check not in list(card["Locations"].keys())[0].lower():
                 raise Exception('Impossible to insert card. '
-                                '[{}] cannot be inserted into a [{}] ("{}"). Required: {}'
-                                .format(card['Name'], self.class_type, self.name, list(card["Locations"].keys())[0]))
+                                '[{}] cannot be inserted into a [{}] ("{}"). Required: {}. Found: {}'
+                                .format(card['Name'], self.class_type, self.name,
+                                        list(card["Locations"].keys())[0], self.gear_type.lower()))
         else:
             card_positions = list(card["Locations"].keys())
             equip_positions = list(self.locations.keys())
@@ -218,11 +222,18 @@ class PlayerGear:
         self.accessory1 = None
         self.accessory2 = None
 
+        if self.job.lower() == 'super_novice':
+            self.job = 'SuperNovice'
+
         self.gt = self.create_gear_table(gear_input)
         for w in self.gt:
             self.equip_item(w)
 
     def equip_item(self, item: BaseGear):
+        equipable = self.is_equipable(item)
+        if not equipable[0]:
+            raise Exception("{}".format(equipable[1]))
+
         if isinstance(item, Weapon):
             self.weapon = item
         if isinstance(item, Shield):
@@ -255,7 +266,22 @@ class PlayerGear:
                 self.headlow = item
                 self.headmid = item
                 self.headtop = item
-        
+
+    def is_equipable(self, item: BaseGear):
+        if item:
+            if 'Upper' in item.classes.keys():
+                if self.job.lower() not in job70:
+                    return False, 'Cannot equip the transclass-only item [{}] ({}) in a {}' \
+                        .format(item.name, item.id, self.job)
+            if 'All' in item.jobs.keys():
+                if self.job.lower() in map(lambda x: x.lower(), item.jobs.keys()):
+                    return False, 'Cannot equip the item [{}] ({}) in a {}'\
+                        .format(item.name, item.id, self.job)
+            else:
+                if self.job.lower() not in map(lambda x: x.lower(), item.jobs.keys()):
+                    return False, 'Cannot equip the item [{}] ({}) in a {}'\
+                        .format(item.name, item.id, self.job.capitalize())
+        return True, 'equipable'
 
     def print_gear(self):
         print(self.headtop)
@@ -298,16 +324,18 @@ class PlayerGear:
         return gear_table
 
 
-gear_dict = {"headgear1": (5093, 9, 4288),
-             "headgear2": None,
-             "headgear3": (2269, 0, 0),
-             "weapon": (1220, 7, [4035, 4035, 4092]),
-             "shield": (2104, 5, 4058),
-             "shoes": (2407, 7, 0),
-             "armor": (2322, 4, 4105),
-             "robe": (2504, 5, 4133),
-             "accessory1": (2607, 0, 0),
-             "accessory2": (2626, 0, 0)}
+gear_dict = {"headgear1": (2209, 7, 4127),
+             "headgear2": (2291, 0, 0),
+             "headgear3": (2218, 0, 0),
+             "weapon": (1202, 10, [4002, 4002, 4002, 4002]),
+             "shield": (2102, 7, 4058),
+             "shoes": (2404, 7, 4097),
+             "armor": (2320, 7, 4105),
+             "robe": (2502, 7, 4133),
+             "accessory1": (2626, 0, 4044),
+             "accessory2": (2608, 0, 0)}
 
-pe = PlayerGear(gear_dict, 'champion', 94)
+pe = PlayerGear(gear_dict, 'hunter', 99)
 pe.print_gear()
+
+
