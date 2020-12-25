@@ -164,36 +164,53 @@ class InterfaceGenerator:
                 draw.text((tx, ty), line, font=tfont, fill="#000000")
                 ty += font_db[12].getsize(line)[1]
 
-        draw_multiline('+7 Insomniac Ribbon', 35, 0, font_db[12])
-        draw_multiline('Flu Mask', 35, 28, font_db[12])
-        draw_multiline('+10 Quadruple Vital Faca', 35, 52, font_db[12])
-        draw_multiline('+7 Genie`s Hood', 35, 80, font_db[12])
-        draw_multiline('Hiding Rosary', 35, 105, font_db[12])
+        if pe.headtop:
+            draw_multiline('{}'.format(pe.headtop.export_text()), 35, 0, font_db[12])
+        if pe.headlow:
+            draw_multiline('{}'.format(pe.headlow.export_text()), 35, 28, font_db[12])
+        if pe.weapon:
+            draw_multiline('{}'.format(pe.weapon.export_text()), 35, 52, font_db[12])
+        if pe.robe:
+            draw_multiline('{}'.format(pe.robe.export_text()), 35, 80, font_db[12])
+        if pe.accessory1:
+            draw_multiline('{}'.format(pe.accessory1.export_text()), 35, 105, font_db[12])
 
-        draw_multiline('Butterfly mask', 175, 0, font_db[12])
-        draw_multiline('+7 Unfrozen Formal Suit', 175, 27, font_db[12])
-        draw_multiline('+7 Cranial Guard', 175, 53, font_db[12])
-        draw_multiline('+7 Green Shoes', 175, 79, font_db[12])
-        draw_multiline('Rosary', 175, 105, font_db[12])
+        if pe.headmid:
+            draw_multiline('{}'.format(pe.headmid.export_text()), 175, 0, font_db[12])
+        if pe.armor:
+            draw_multiline('{}'.format(pe.armor.export_text()), 175, 27, font_db[12])
+        if pe.shield:
+            draw_multiline('{}'.format(pe.shield.export_text()), 175, 53, font_db[12])
+        if pe.shoes:
+            draw_multiline('{}'.format(pe.shoes.export_text()), 175, 79, font_db[12])
+        if pe.accessory2:
+            draw_multiline('{}'.format(pe.accessory2.export_text()), 175, 105, font_db[12])
 
-        # self.download_icons([2209, 2291, 2218, 2320, 1202, 2102, 2502, 2404, 2608, 2626])
-        icons_to_be_downloaded = self.check_icons([2610, 2209])
-        if icons_to_be_downloaded is not False:
-            self.download_icons(icons_to_be_downloaded)
+        download_queue = self.check_icons(list(pe.export_id_table().values()))
+        if download_queue is not False:
+            self.download_icons(download_queue)
 
+        gear_ids = pe.export_id_table()
 
-        # icon_id = 2209
-        # icon_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'interface', 'icon_{}.png'.format(icon_id)))
-        # if not os.path.isfile(icon_path):
-        #     response = requests.get("https://file5s.ratemyserver.net/items/small/2209.gif")
-        #     file = open("icons/icon_{}.png".format(icon_id), "wb")
-        #     file.write(response.content)
-        #     file.close()
+        def draw_icon(icon_id: int, icon_x: int, icon_y: int):
+            # icon_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'interface', 'icon_{}.png'
+            #                                      .format(icon_id)))
+            if icon_id is not None:
+                foreground = Image.open('icons/icon_{}.png'.format(icon_id)).convert("RGBA")
+                img.paste(foreground, (icon_x, icon_y), foreground)
 
-        # foreground = Image.open('icons/icon_{}.png'.format(icon_id)).convert("RGBA")
-        # img.paste(foreground, (0, 5), foreground)
+        draw_icon(gear_ids['headtop'], 5, 3)
+        draw_icon(gear_ids['headmid'], 250, 3)
+        draw_icon(gear_ids['headlow'], 5, 25)
+        draw_icon(gear_ids['armor'], 250, 27)
+        draw_icon(gear_ids['weapon'], 5, 52)
+        draw_icon(gear_ids['shield'], 252, 53)
+        draw_icon(gear_ids['robe'], 5, 79)
+        draw_icon(gear_ids['shoes'], 250, 79)
+        draw_icon(gear_ids['accessory1'], 5, 107)
+        draw_icon(gear_ids['accessory2'], 248, 104)
 
-        img.show()
+        img.save(out_file)
 
 
 igen = InterfaceGenerator(PlayerBuild(jbl, 99, 50, 'crusader', [9, 1, 99, 1, 99, 1]))

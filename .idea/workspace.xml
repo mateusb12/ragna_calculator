@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dc11ee9-5b10-4653-9f0f-9a26840bb0c6" name="Default Changelist" comment="Fixed some errors with Packages">
-      <change afterPath="$PROJECT_DIR$/ragnarok/resources/interface/card_desc.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ragnarok/main/exporter.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/main/exporter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ragnarok/model/equip_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/model/equip_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ragnarok/resources/interface/interface_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/resources/interface/interface_generator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +44,7 @@
       <recent name="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\view" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.exporter">
+  <component name="RunManager" selected="Python.interface_generator">
     <configuration name="card_desc (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testecalc" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -181,11 +181,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.interface_generator" />
+        <item itemvalue="Python.equip_model" />
         <item itemvalue="Python.exporter" />
         <item itemvalue="Python.card_desc (1)" />
         <item itemvalue="Python.card_desc" />
-        <item itemvalue="Python.equip_model" />
-        <item itemvalue="Python.interface_generator" />
       </list>
     </recent_temporary>
   </component>

@@ -1,7 +1,7 @@
 from typing import List
 
 from ragnarok.main.exporter import equip_db, job70, shield_db, shoes_db, armor_db, robe_db, accessory_db, \
-    hat_db, weapon_db
+    hat_db, weapon_db, adjective_list
 
 
 class BaseGear:
@@ -49,6 +49,15 @@ class BaseGear:
             str_base += ", {}".format(self.card3['Name'])
         if self.card4:
             str_base += " {}".format(self.card4['Name'])
+        return str_base
+
+    def export_text(self) -> str:
+        str_base = ""
+        if self.refining != 0:
+            str_base += "+{} ".format(self.refining)
+        if self.card:
+            str_base += "{} ".format(adjective_list[self.card['Id']])
+        str_base += self.name
         return str_base
 
     def refine(self, amount: int) -> bool:
@@ -323,10 +332,54 @@ class PlayerGear:
             gear_table.append(aux)
         return gear_table
 
+    def export_id_table(self) -> dict:
+        id_dict = dict()
+        if self.headtop:
+            id_dict['headtop'] = self.headtop.id
+        else:
+            id_dict['headtop'] = None
+        if self.headmid:
+            id_dict['headmid'] = self.headmid.id
+        else:
+            id_dict['headmid'] = None
+        if self.headlow:
+            id_dict['headlow'] = self.headlow.id
+        else:
+            id_dict['headlow'] = None
+        if self.armor:
+            id_dict['armor'] = self.armor.id
+        else:
+            id_dict['armor'] = None
+        if self.weapon:
+            id_dict['weapon'] = self.weapon.id
+        else:
+            id_dict['weapon'] = None
+        if self.shield:
+            id_dict['shield'] = self.shield.id
+        else:
+            id_dict['shield'] = None
+        if self.robe:
+            id_dict['robe'] = self.robe.id
+        else:
+            id_dict['robe'] = None
+        if self.shoes:
+            id_dict['shoes'] = self.shoes.id
+        else:
+            id_dict['shoes'] = None
+        if self.accessory1:
+            id_dict['accessory1'] = self.accessory1.id
+        else:
+            id_dict['accessory1'] = None
+        if self.accessory2:
+            id_dict['accessory2'] = self.accessory2.id
+        else:
+            id_dict['accessory2'] = None
+        return id_dict
+
 
 gear_dict = {"headgear1": (2209, 7, 4127),
              "headgear2": (2291, 0, 0),
-             "headgear3": (2218, 0, 0),
+             "headgear3": None, #2218
              "weapon": (1202, 10, [4002, 4002, 4002, 4002]),
              "shield": (2102, 7, 4058),
              "shoes": (2404, 7, 4097),
@@ -337,5 +390,11 @@ gear_dict = {"headgear1": (2209, 7, 4127),
 
 pe = PlayerGear(gear_dict, 'hunter', 99)
 pe.print_gear()
+
+# print(pe.export_id_table().values())
+
+# print(list(pe.export_id_table().values()))
+
+# print(pe.weapon.export_text())
 
 
