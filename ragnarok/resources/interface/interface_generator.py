@@ -114,7 +114,8 @@ class InterfaceGenerator:
         else:
             return need_download
 
-    def generate_equip_details(self):
+    def generate_equip_details(self, sex: str):
+
         gear_dict = {"headgear1": (5093, 9, 4288),
                      "headgear2": None,
                      "headgear3": (2269, 0, 0),
@@ -196,7 +197,9 @@ class InterfaceGenerator:
             # icon_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'interface', 'icon_{}.png'
             #                                      .format(icon_id)))
             if icon_id is not None:
-                foreground = Image.open('icons/icon_{}.png'.format(icon_id)).convert("RGBA")
+                icon_path = (os.path.abspath(os.path.join(os.path.dirname(__file__), 'icons', 'icon_{}.png'.format(icon_id))))
+                # foreground = Image.open('icons/icon_{}.png'.format(icon_id)).convert("RGBA")
+                foreground = Image.open(icon_path).convert("RGBA")
                 img.paste(foreground, (icon_x, icon_y), foreground)
 
         draw_icon(gear_ids['headtop'], 5, 3)
@@ -210,9 +213,28 @@ class InterfaceGenerator:
         draw_icon(gear_ids['accessory1'], 5, 107)
         draw_icon(gear_ids['accessory2'], 248, 104)
 
+        chosen_sex = sex
+        job = pe.job
+        sprite_path = (os.path.abspath(os.path.join(os.path.dirname(__file__), 'sprites',
+                                                    '{}'.format(chosen_sex), '{}.png'.format(job))))
+        sprite = Image.open(sprite_path).convert("RGBA")
+        pixel_data = sprite.getdata()
+        new_data = []
+        for item in pixel_data:
+            if item[0] == 255 and item[1] == 255 and item[2] == 255:
+                new_data.append((255, 255, 255, 0))
+            else:
+                new_data.append(item)
+        sprite.putdata(new_data)
+        sprite_x = 42
+        sprite_y = -27
+        img.paste(sprite, (sprite_x, sprite_y), sprite)
+
+        img.show()
+
         img.save(out_file)
 
 
-igen = InterfaceGenerator(PlayerBuild(jbl, 99, 50, 'crusader', [9, 1, 99, 1, 99, 1]))
-igen.generate_equip_details()
+# igen = InterfaceGenerator(PlayerBuild(jbl, 99, 50, 'crusader', [9, 1, 99, 1, 99, 1]))
+# igen.generate_equip_details('female')
 # igen.generate_interface()

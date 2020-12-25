@@ -17,6 +17,12 @@
             var src = "static/assets/custom.png?t=" + timestamp
             return src;
         }
+
+
+
+
+
+
     </script>
 </head>
 
@@ -182,101 +188,122 @@
                                 </tbody>
                             </table>
                         </td>
-
-                        <td class="complex-image" style="display:block; margin-top: 20px;">
+                        <td class="complex-image" style="display:block; margin-top: 20px; margin-right: 10px;">
                             <img id="target_image" src=a" onerror="this.src=forceRender()" width="100%" height="100%">
-<!--                            <img id="target_image" width="100%" height="100%">-->
                         </td>
-
-<!--                        <td class="complex-c3">-->
-<!--                            <table class="c3-list">-->
-<!--                                <tbody>-->
-<!--                                <tr class="c3-item">-->
-<!--                                    <td class="c3-line-left">Max HP</td>-->
-<!--                                    <td class="c3-line-right"><b>{{player_info['complex_info'].max_hp}}</b></td>-->
-<!--                                </tr>-->
-<!--                                <tr class="c3-item">-->
-<!--                                    <td class="c3-line-left">Max SP</td>-->
-<!--                                    <td class="c3-line-right"><b>{{player_info['complex_info'].max_sp}}</b></td>-->
-<!--                                </tr>-->
-<!--                                <tr class="c3-item">-->
-<!--                                    <td class="c3-line-left">HP Regen</td>-->
-<!--                                    <td class="c3-line-right"><b>{{player_info['complex_info'].hp_regen}}</b></td>-->
-<!--                                </tr>-->
-<!--                                <tr class="c3-item">-->
-<!--                                    <td class="c3-line-left">SP Regen</td>-->
-<!--                                    <td class="c3-line-right"><b>{{player_info['complex_info'].sp_regen}}</b></td>-->
-<!--                                </tr>-->
-<!--                                <tr class="c3-item">-->
-<!--                                    <td class="c3-line-left">Mov speed</td>-->
-<!--                                    <td class="c3-line-right"><b>140%</b></td>-->
-<!--                                </tr>-->
-<!--                                </tbody>-->
-<!--                            </table>-->
-<!--                        </td>-->
-<!--                        <td class="complex-c1">-->
-<!--                            <table class="c1-list">-->
-<!--                                <tbody>-->
-<!--                                <tr class="c1-item">-->
-<!--                                    <td class="c1-line-left">ATK</td>-->
-<!--                                    <td class="c1-line-right"><b>30+0</b></td>-->
-<!--                                </tr>-->
-<!--                                <tr class="c1-item">-->
-<!--                                    <td class="c1-line-left">MATK</td>-->
-<!--                                    <td class="c1-line-right"><b>40~80</b></td>-->
-<!--                                </tr>-->
-<!--                                <tr class="c1-item">-->
-<!--                                    <td class="c1-line-left">Hit</td>-->
-<!--                                    <td class="c1-line-right"><b>{{player_info['complex_info'].hit}}</b></td>-->
-<!--                                </tr>-->
-<!--                                <tr class="c1-item">-->
-<!--                                    <td class="c1-line-left">Crit</td>-->
-<!--                                    <td class="c1-line-right"><b>{{player_info['complex_info'].critical}}</b></td>-->
-<!--                                </tr>-->
-<!--                                <tr class="c1-item">-->
-<!--                                    <td class="c1-line-left">CritShi</td>-->
-<!--                                    <td class="c1-line-right"><b>{{player_info['complex_info'].critical_shield}}</b>-->
-<!--                                    </td>-->
-<!--                                </tr>-->
-<!--                                </tbody>-->
-<!--                            </table>-->
-<!--                        </td>-->
-<!--                        <td class="complex-c2">-->
-<!--                            <table class="c2-list">-->
-<!--                                <tbody>-->
-<!--                                <tr class="c2-item">-->
-<!--                                    <td class="c2-line-left">DEF</td>-->
-<!--                                    <td class="c2-line-right"><b>10+5</b></td>-->
-<!--                                </tr>-->
-<!--                                <tr class="c2-item">-->
-<!--                                    <td class="c2-line-left">MDEF</td>-->
-<!--                                    <td class="c2-line-right"><b>2+15</b></td>-->
-<!--                                </tr>-->
-<!--                                <tr class="c2-item">-->
-<!--                                    <td class="c2-line-left">Flee</td>-->
-<!--                                    <td class="c2-line-right"><b>{{player_info['complex_info'].flee}}</b></td>-->
-<!--                                </tr>-->
-<!--                                <tr class="c2-item">-->
-<!--                                    <td class="c2-line-left">ASPD</td>-->
-<!--                                    <td class="c2-line-right"><b>168</b></td>-->
-<!--                                </tr>-->
-<!--                                <tr class="c2-item">-->
-<!--                                    <td class="c2-line-left">Pdodge</td>-->
-<!--                                    <td class="c2-line-right"><b>{{player_info['complex_info'].perfect_dodge}}</b>-->
-<!--                                    </td>-->
-<!--                                </tr>-->
-<!--                                </tbody>-->
-<!--                            </table>-->
-<!--                        </td>-->
-
-
-
                     </tr>
                     </tbody>
                 </table>
 
-
+                <table class="gear-table">
+                    <tbody class="gear-body">
+                    <tr class="gear-title">
+                        <td colspan="6" class="gearframe-title">
+                            Remaining points: This is a placeholder
+                        </td>
+                    </tr>
+                    <tr class="gear-content">
+                        <td class="level-content">
+                            <table class="level-list">
+                                <tbody>
+                                <tr class="gear-item">
+                                    <td class="">
+                                        {{form.headtop_item(class="droplist", onchange="forceSubmit()")}}
+                                    </td>
+                                </tr>
+                                <tr class="gear-item">
+                                    <td>
+                                        {{form.headmid_item(class="droplist", onchange="forceSubmit()")}}
+                                    </td>
+                                </tr>
+                                <tr class="gear-item">
+                                    <td>
+                                        {{form.headlow_item(class="droplist", onchange="forceSubmit()")}}
+                                    </td>
+                                </tr>
+                                <tr class="gear-item">
+                                    <td>{{form.shield_item(class="droplist", onchange="forceSubmit()")}}</td>
+                                </tr>
+                                <tr class="gear-item">
+                                    <td>{{form.shoes_item(class="droplist", onchange="forceSubmit()")}}</td>
+                                </tr>
+                                <tr class="gear-item">
+                                    <td>{{form.armor_item(class="droplist", onchange="forceSubmit()")}}</td>
+                                </tr>
+                                <tr class="gear-item">
+                                    <td>{{form.robe_item(class="droplist", onchange="forceSubmit()")}}</td>
+                                </tr>
+                                <tr class="gear-item">
+                                    <td>{{form.accessory1_item(class="droplist", onchange="forceSubmit()")}}</td>
+                                </tr>
+                                <tr class="gear-item">
+                                    <td>{{form.accessory2_item(class="droplist", onchange="forceSubmit()")}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td class="attribute-content">
+                            <table class="status-list">
+                                <tbody>
+                                <tr class="attribute-item">
+                                    <td class="stat-text">STR</td>
+                                    <td class="stat-select">
+                                        {{form.player_str(class="droplist", onchange="forceSubmit()")}}
+                                    </td>
+                                    <td class="stat-bonus">+{{player_info['complex_info'].str_bonus}}</td>
+                                </tr>
+                                <tr class="attribute-item">
+                                    <td class="stat-text">
+                                        AGI
+                                    </td>
+                                    <td class="stat-select">
+                                        {{form.player_agi(class="droplist", onchange="forceSubmit()")}}
+                                    </td>
+                                    <td class="stat-bonus">+{{player_info['complex_info'].agi_bonus}}</td>
+                                </tr>
+                                <tr class="attribute-item">
+                                    <td class="stat-text">
+                                        VIT
+                                    </td>
+                                    <td class="stat-select">
+                                        {{form.player_vit(class="droplist", onchange="forceSubmit()")}}
+                                    </td>
+                                    <td class="stat-bonus">+{{player_info['complex_info'].vit_bonus}}</td>
+                                </tr>
+                                <tr class="attribute-item">
+                                    <td class="stat-text">
+                                        INT
+                                    </td>
+                                    <td class="stat-select">
+                                        {{form.player_int(class="droplist", onchange="forceSubmit()")}}
+                                    </td>
+                                    <td class="stat-bonus">+{{player_info['complex_info'].int_bonus}}</td>
+                                </tr>
+                                <tr class="attribute-item">
+                                    <td class="stat-text">
+                                        DEX
+                                    </td>
+                                    <td class="stat-select">
+                                        {{form.player_dex(class="droplist", onchange="forceSubmit()")}}
+                                    </td>
+                                    <td class="stat-bonus">+{{player_info['complex_info'].dex_bonus}}</td>
+                                </tr>
+                                <tr class="attribute-item">
+                                    <td class="stat-text">
+                                        LUK
+                                    </td>
+                                    <td class="stat-select">
+                                        {{form.player_luk(class="droplist", onchange="forceSubmit()")}}
+                                    <td class="stat-bonus">+{{player_info['complex_info'].luk_bonus}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
+
         </div>
     </div>
 

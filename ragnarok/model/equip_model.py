@@ -388,8 +388,8 @@ gear_dict = {"headgear1": (2209, 7, 4127),
              "accessory1": (2626, 0, 4044),
              "accessory2": (2608, 0, 0)}
 
-pe = PlayerGear(gear_dict, 'hunter', 99)
-pe.print_gear()
+# pe = PlayerGear(gear_dict, 'hunter', 99)
+# pe.print_gear()
 
 # print(pe.export_id_table().values())
 

@@ -48,6 +48,12 @@
     vertical-align: baseline;
 }
 
+.gear-title{
+    opacity: 1;
+    margin-down: 5px;
+    vertical-align: baseline;
+}
+
 .status-body{
     opacity: 1;
 }
@@ -56,6 +62,11 @@
     opacity: 1;
     border: 0px ridge;
     padding: 100px 0px 100px 0px;
+}
+
+.gear-table{
+    border: 0px ridge;
+    margin-top: 30px;
 }
 
 
@@ -127,6 +138,17 @@ tr{
     border-radius: 20px 20px 0 0;
 }
 
+.gearframe-title{
+    padding: 2px 6px 2px 6px;
+    line-height: 1.7em;
+    letter-spacing: 1px;
+    font-weight: bold;
+    border-radius: 20px 20px 0 0;
+    margin-top: 5px;
+    background-color: #a5fa93;
+    text-align:center;
+}
+
 .tablecontent {
     padding: 30px 1px 1px 1px;
 }
@@ -143,6 +165,12 @@ tr{
 }
 
 .status-content{
+    height: 200%;
+    border: 2px solid;
+    margin-top: 5px;
+}
+
+.gear-content{
     height: 200%;
     border: 2px solid;
     margin-top: 5px;

@@ -20294,7 +20294,7 @@
 		{
 			"Id": 2396,
 			"AegisName": "Krieger_Suit3",
-			"Name": "Glorious Mass-Production Suit",
+			"Name": "Krieger Suit 3",
 			"Type": "Armor",
 			"Buy": 20,
 			"Jobs": {
@@ -20321,7 +20321,7 @@
 		{
 			"Id": 2397,
 			"AegisName": "Incredible_Coat",
-			"Name": "Incredible Event Resignation Coat",
+			"Name": "Incredible Coat",
 			"Type": "Armor",
 			"Buy": 10,
 			"Weight": 900,
@@ -21387,7 +21387,7 @@
 		{
 			"Id": 2446,
 			"AegisName": "Krieger_Shoes3",
-			"Name": "Glorious Mass-Production Shoes",
+			"Name": "Glorious Shoes",
 			"Type": "Armor",
 			"Buy": 20,
 			"Jobs": {
@@ -23970,7 +23970,7 @@
 		{
 			"Id": 2672,
 			"AegisName": "Anniversary_Ring",
-			"Name": "3rd Anniversary Celebration Ring",
+			"Name": "Anniversary Ring",
 			"Type": "Armor",
 			"Buy": 20,
 			"Weight": 100,
@@ -26209,7 +26209,7 @@
 		{
 			"Id": 2773,
 			"AegisName": "Krieger_Ring2",
-			"Name": "Glorious Mass-Production Ring",
+			"Name": "Glorious Ring",
 			"Type": "Armor",
 			"Buy": 20,
 			"Jobs": {
@@ -26389,7 +26389,7 @@
 		{
 			"Id": 2782,
 			"AegisName": "Ring_Of_Wise_King",
-			"Name": "Ring of the Ancient Wise King",
+			"Name": "Ancient Wise King R",
 			"Type": "Armor",
 			"Buy": 20,
 			"Weight": 100,
@@ -29831,7 +29831,7 @@
 		{
 			"Id": 5155,
 			"AegisName": "Granpa_Beard_F",
-			"Name": "Father's White Moustache",
+			"Name": "Father Moustache",
 			"Type": "Armor",
 			"Buy": 20,
 			"Weight": 100,
@@ -30508,7 +30508,7 @@
 		{
 			"Id": 5190,
 			"AegisName": "Baseball_Cap_",
-			"Name": "Independence Memorial Hat",
+			"Name": "Independence Memorial",
 			"Type": "Armor",
 			"Buy": 20,
 			"Weight": 20,
@@ -32955,7 +32955,7 @@
 		{
 			"Id": 5310,
 			"AegisName": "Bulb_Hairband",
-			"Name": "Shining Electric Bulb Hairband",
+			"Name": "Shining Hairband",
 			"Type": "Armor",
 			"Buy": 20,
 			"Weight": 100,
@@ -33318,7 +33318,7 @@
 		{
 			"Id": 5327,
 			"AegisName": "Orc_Hero_Helm_C",
-			"Name": "Refined Helmet of Orc Hero",
+			"Name": "Ref Helmet of Orc Hero",
 			"Type": "Armor",
 			"Buy": 1,
 			"Defense": 10,
@@ -34916,7 +34916,7 @@
 		{
 			"Id": 5407,
 			"AegisName": "Academy_Graduating_Cap",
-			"Name": "Academy Completion Hat",
+			"Name": "Academy Completion",
 			"Type": "Armor",
 			"Weight": 200,
 			"Defense": 2,
@@ -35253,7 +35253,7 @@
 		{
 			"Id": 5427,
 			"AegisName": "Royal_Milk_Tea_Hat",
-			"Name": "Black Tea Kochakaden Hat",
+			"Name": "Black Tea Kochakaden",
 			"Type": "Armor",
 			"Buy": 20,
 			"Weight": 100,
@@ -35269,7 +35269,7 @@
 		{
 			"Id": 5428,
 			"AegisName": "Bread_Bag1",
-			"Name": "RWC Anniversary Bread Envelope",
+			"Name": "RWC Bread Env",
 			"Type": "Armor",
 			"Weight": 100,
 			"Locations": {
@@ -35350,7 +35350,7 @@
 		{
 			"Id": 5432,
 			"AegisName": "Brazil_Baseball_Cap",
-			"Name": "bRO 4th Anniversary Hat",
+			"Name": "bRO Anniversary Hat",
 			"Type": "Armor",
 			"Buy": 20,
 			"Weight": 100,
