@@ -6,6 +6,7 @@ import pandas as pd
 import os
 
 from ragnarok.model.decorador_db_gen import DbGenerator
+from ragnarok.resources.interface.card_desc import pandas_to_dict
 
 
 def open_json(filename: str) -> pd.DataFrame:
@@ -19,6 +20,11 @@ def uncapitalize(s):
 
 
 jbl = open_json('job_bonuses.json')
+
+adjective_df = pd.read_csv(os.path.abspath(
+    os.path.join(os.path.dirname(__file__), '..', 'resources', 'card_adjectives.csv')))
+
+adjective_list = pandas_to_dict(adjective_df)
 
 jobname_list = list(jbl.columns.values)
 
