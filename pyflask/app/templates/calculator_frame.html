@@ -18,6 +18,14 @@
             return src;
         }
 
+        function forceRender2(){
+            var timestamp = new Date().getTime();
+            var src = "static/assets/equip_custom.png?t=" + timestamp
+            return src;
+        }
+
+
+
 
 
 
@@ -345,8 +353,19 @@
                                 </tbody>
                             </table>
                         </td>
-                        <td class="attribute-content">
-                        <td class="gear-image">a</td>
+                        <td class="attribute-content">a</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <table class="gear-image">
+                    <tbody class="gear-image-body">
+                    <tr class="complex-image" style="">
+                        <td>
+                            <img id="target_image2" src=a" onerror="this.src=forceRender2()" width="40%" height="5%"
+                            style="display:block; margin-top: 50px; margin-bottom: 50px;
+                             margin-right: auto; margin-left: auto; align: center;">
+                        </td>
                     </tr>
                     </tbody>
                 </table>

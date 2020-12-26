@@ -1,3 +1,5 @@
+from ragnarok.model.dead_gear import dead_gear_list as nullgear
+from ragnarok.model.dead_gear import dead_card as nullcard
 from ragnarok.main.exporter import hat_db, is_equipable, weapon_db, shield_db, shoes_db, armor_db, robe_db, \
     accessory_db, \
     equip_db, card_db
@@ -215,3 +217,47 @@ def dict_name_to_dict_id(dict_name: dict):
 
     return output_dict
 
+
+def is_id_dead_id(check_id: int) -> bool:
+    if check_id in nullgear:
+        return True
+    else:
+        return False
+
+
+def has_slots_by_name(item_name: str):
+    if equip_db[retrieve_id_by_name(item_name)]['Slots'] != 0:
+        return True
+    else:
+        return False
+
+
+def is_refineable_by_name(item_name: str):
+    if equip_db[retrieve_id_by_name(item_name)]['Refineable']:
+        return True
+    else:
+        return False
+
+
+def normalize_form_values(pi: dict) -> dict:
+    p1_gear = dict()
+    headtop_t = normalize_form_values_tuple_gen('headtop', 'headgear1', pi)
+    p1_gear[headtop_t['key']] = headtop_t['tuple']
+
+    for q in [('headgear1', 'headtop'), ('headgear2', 'headmid'), ('headgear3', 'headlow'),
+              ('shield', 'shield'), ('shoes', 'shoes'), ('armor', 'armor'), ('robe', 'robe'),
+              ('accessory1', 'accessory1'), ('accessory2', 'accessory2'), ('weapon', None)]:
+        if q[1] is not None:
+            item_t = normalize_form_values_tuple_gen(q[1], q[0], pi)
+            p1_gear[item_t['key']] = item_t['tuple']
+    return p1_gear
+
+
+def normalize_form_values_tuple_gen(pst: str, pst_key: str, dict_norm: dict):
+    pi = dict_norm
+    if ('{}_card_list'.format(pst) not in pi) or (not has_slots_by_name(pi['{}_item'.format(pst)])):
+        pi['{}_card_list'.format(pst)] = '(No Card)'
+    if ('{}_refine'.format(pst) not in pi) or (not is_refineable_by_name(pi['{}_item'.format(pst)])):
+        pi['{}_refine'.format(pst)] = 0
+    return {'tuple': (pi['{}_item'.format(pst)], pi['{}_refine'.format(pst)], pi['{}_card_list'.format(pst)]),
+            'key': pst_key}

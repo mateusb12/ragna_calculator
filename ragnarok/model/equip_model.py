@@ -4,8 +4,11 @@ from ragnarok.main.gear_query import get_item_type, retrieve_id_by_name, dict_na
 from ragnarok.main.exporter import equip_db, job70, shield_db, shoes_db, armor_db, robe_db, accessory_db, \
     hat_db, weapon_db, adjective_list
 
-nullcard = 4700
-nullgear = [2139, 2393, 2447, 2511, 2709, 5432, 5433, 5435]
+from ragnarok.model.dead_gear import dead_gear_list as nullgear
+from ragnarok.model.dead_gear import dead_card as nullcard
+
+# nullcard = 4700
+# nullgear = [2139, 2393, 2447, 2511, 2709, 5432, 5433, 5435]
 
 
 class BaseGear:
@@ -62,12 +65,18 @@ class BaseGear:
 
     def export_text(self) -> str:
         str_base = ""
-        if self.refining != 0:
+        if int(self.refining) != 0:
             str_base += "+{} ".format(self.refining)
         if self.card:
             str_base += "{} ".format(adjective_list[self.card['Id']])
         str_base += self.name
         return str_base
+
+    def is_dead_gear(self):
+        if self.id in nullgear:
+            return True
+        else:
+            return False
 
     def refine(self, amount: int) -> bool:
         if not self.is_refineable and amount is not None:
@@ -500,9 +509,11 @@ text_dict = {"headgear1": ('Diadem', 0, 0),
              "accessory1": ('Clip [1]', 0, 'Sage Worm Card'),
              "accessory2": ('Silver Ring', 0, 0)}
 
-# gear_dict = dict_name_to_dict_id(text_dict)
-#
-# pe = PlayerGear(gear_dict, 'knight', 99)
+
+gear_dict = dict_name_to_dict_id(text_dict)
+
+pe = PlayerGear(gear_dict, 'knight', 99)
+
 # # pe.equip_item(pe.create_item_with_id(2104))
 # pe.unequip_noble_hats()
 # pe.print_gear()

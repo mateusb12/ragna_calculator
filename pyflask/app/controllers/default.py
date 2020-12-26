@@ -11,7 +11,8 @@ import app.databases.db_operations as dbo
 from app import app
 from app.models.forms import LoginForm, RegisterForm, CalculatorForm, calc_dynamic_select
 
-from ragnarok.main.gear_query import is_refineable, has_slots
+from ragnarok.main.gear_query import is_refineable, has_slots, has_slots_by_name, is_refineable_by_name, \
+    normalize_form_values
 
 from ragnarok.model.statuspoints_evaluator import attribute_balance
 from ragnarok.model.build_model import PlayerBuild
@@ -139,9 +140,22 @@ def calcframe():
         p1 = PlayerBuild(jbl, int(pi['base_level']), int(pi['job_level']), uncapitalize(pi['class_name']),
                          [int(pi['player_str']), int(pi['player_agi']), int(pi['player_vit']),
                           int(pi['player_int']), int(pi['player_dex']), int(pi['player_luk'])])
+        gear_skeleton = normalize_form_values(pi)
         pi['complex_info'] = p1.export_build()
         igen = InterfaceGenerator(p1)
         igen.generate_interface()
+        # tt = {"headgear1": ('(No Headtop)', 0, 0),
+        #       "headgear2": ('Sunglasses [1]', 0, 'Willow Card'),
+        #       "headgear3": ('Cigarette', 0, 0),
+        #       "weapon": None,
+        #       "shield": ('Buckler [1]', 0, 'Thief Bug Egg Card'),
+        #       "shoes": ('Sandals [1]', 0, 'Matyr Card'),
+        #       "armor": ('Formal Suit [1]', 0, 'Dokebi Card'),
+        #       "robe": ('Hood [1]', 0, 'Condor Card'),
+        #       "accessory1": ('Clip [1]', 0, 'Sage Worm Card'),
+        #       "accessory2": ('Silver Ring', 0, 0)}
+        # igen.generate_equip_details(tt, 'female')
+        igen.generate_equip_details(gear_skeleton, 'female')
     return render_template('calculator_frame.html',
                            form=form,
                            player_info=pi,

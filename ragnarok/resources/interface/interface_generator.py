@@ -8,6 +8,7 @@ import sys
 import os
 import math
 
+from ragnarok.main.gear_query import dict_name_to_dict_id, is_id_dead_id
 from ragnarok.model.equip_model import Armor, PlayerGear
 from ragnarok.main.exporter import jbl, equip_db
 from ragnarok.model.build_model import PlayerBuild
@@ -98,7 +99,8 @@ class InterfaceGenerator:
                                                      'interface', 'icon_{}.png'.format(icon_id)))
             if not os.path.isfile(icon_path):
                 response = requests.get("https://file5s.ratemyserver.net/items/small/{}.gif".format(icon_id))
-                file = open("icons/icon_{}.png".format(icon_id), "wb")
+                icon_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'icons', 'icon_{}.png'.format(icon_id)))
+                file = open(icon_path, "wb")
                 file.write(response.content)
                 file.close()
 
@@ -114,20 +116,10 @@ class InterfaceGenerator:
         else:
             return need_download
 
-    def generate_equip_details(self, sex: str):
+    def generate_equip_details(self, text_dict: dict, sex: str):
+        gear_dict = dict_name_to_dict_id(text_dict)
 
-        gear_dict = {"headgear1": (5093, 9, 4288),
-                     "headgear2": None,
-                     "headgear3": (2269, 0, 0),
-                     "weapon": (1550, 7, [4035, 4035, 4092]),
-                     "shield": (2104, 5, 4058),
-                     "shoes": (2407, 7, 0),
-                     "armor": (2322, 4, 4105),
-                     "robe": (2504, 5, 4133),
-                     "accessory1": (2607, 0, 0),
-                     "accessory2": (2626, 0, 0)}
-
-        pe = PlayerGear(gear_dict, 'priest', 94)
+        pe = PlayerGear(gear_dict, self.input_player.current_job, self.input_player.base_level)
 
         in_file = (os.path.abspath(os.path.join(os.path.dirname(__file__), 'equip_window.png')))
         out_file = (os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..',
@@ -166,26 +158,35 @@ class InterfaceGenerator:
                 ty += font_db[12].getsize(line)[1]
 
         if pe.headtop:
-            draw_multiline('{}'.format(pe.headtop.export_text()), 35, 0, font_db[12])
+            if not pe.headtop.is_dead_gear():
+                draw_multiline('{}'.format(pe.headtop.export_text()), 35, 0, font_db[12])
         if pe.headlow:
-            draw_multiline('{}'.format(pe.headlow.export_text()), 35, 28, font_db[12])
+            if not pe.headlow.is_dead_gear():
+                draw_multiline('{}'.format(pe.headlow.export_text()), 35, 28, font_db[12])
         if pe.weapon:
-            draw_multiline('{}'.format(pe.weapon.export_text()), 35, 52, font_db[12])
+            if not pe.weapon.is_dead_gear():
+                draw_multiline('{}'.format(pe.weapon.export_text()), 35, 52, font_db[12])
         if pe.robe:
-            draw_multiline('{}'.format(pe.robe.export_text()), 35, 80, font_db[12])
+            if not pe.robe.is_dead_gear():
+                draw_multiline('{}'.format(pe.robe.export_text()), 35, 80, font_db[12])
         if pe.accessory1:
-            draw_multiline('{}'.format(pe.accessory1.export_text()), 35, 105, font_db[12])
-
+            if not pe.accessory1.is_dead_gear():
+                draw_multiline('{}'.format(pe.accessory1.export_text()), 35, 105, font_db[12])
         if pe.headmid:
-            draw_multiline('{}'.format(pe.headmid.export_text()), 175, 0, font_db[12])
+            if not pe.headmid.is_dead_gear():
+                draw_multiline('{}'.format(pe.headmid.export_text()), 175, 0, font_db[12])
         if pe.armor:
-            draw_multiline('{}'.format(pe.armor.export_text()), 175, 27, font_db[12])
+            if not pe.armor.is_dead_gear():
+                draw_multiline('{}'.format(pe.armor.export_text()), 175, 27, font_db[12])
         if pe.shield:
-            draw_multiline('{}'.format(pe.shield.export_text()), 175, 53, font_db[12])
+            if not pe.shield.is_dead_gear():
+                draw_multiline('{}'.format(pe.shield.export_text()), 175, 53, font_db[12])
         if pe.shoes:
-            draw_multiline('{}'.format(pe.shoes.export_text()), 175, 79, font_db[12])
+            if not pe.shoes.is_dead_gear():
+                draw_multiline('{}'.format(pe.shoes.export_text()), 175, 79, font_db[12])
         if pe.accessory2:
-            draw_multiline('{}'.format(pe.accessory2.export_text()), 175, 105, font_db[12])
+            if not pe.accessory2.is_dead_gear():
+                draw_multiline('{}'.format(pe.accessory2.export_text()), 175, 105, font_db[12])
 
         download_queue = self.check_icons(list(pe.export_id_table().values()))
         if download_queue is not False:
@@ -196,8 +197,9 @@ class InterfaceGenerator:
         def draw_icon(icon_id: int, icon_x: int, icon_y: int):
             # icon_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'interface', 'icon_{}.png'
             #                                      .format(icon_id)))
-            if icon_id is not None:
-                icon_path = (os.path.abspath(os.path.join(os.path.dirname(__file__), 'icons', 'icon_{}.png'.format(icon_id))))
+            if icon_id is not None and not is_id_dead_id(icon_id):
+                icon_path = (
+                    os.path.abspath(os.path.join(os.path.dirname(__file__), 'icons', 'icon_{}.png'.format(icon_id))))
                 # foreground = Image.open('icons/icon_{}.png'.format(icon_id)).convert("RGBA")
                 foreground = Image.open(icon_path).convert("RGBA")
                 img.paste(foreground, (icon_x, icon_y), foreground)
@@ -230,11 +232,20 @@ class InterfaceGenerator:
         sprite_y = -27
         img.paste(sprite, (sprite_x, sprite_y), sprite)
 
-        img.show()
-
         img.save(out_file)
 
 
-# igen = InterfaceGenerator(PlayerBuild(jbl, 99, 50, 'crusader', [9, 1, 99, 1, 99, 1]))
-# igen.generate_equip_details('female')
+igen = InterfaceGenerator(PlayerBuild(jbl, 96, 50, 'crusader', [9, 1, 99, 1, 99, 1]))
+# tt = {"headgear1": ('(No Headtop)', 0, 0),
+#       "headgear2": ('Sunglasses [1]', 0, 'Willow Card'),
+#       "headgear3": ('Cigarette', 0, 0),
+#       "weapon": None,
+#       "shield": ('Buckler [1]', 0, 'Thief Bug Egg Card'),
+#       "shoes": ('Sandals [1]', 0, 'Matyr Card'),
+#       "armor": ('Formal Suit [1]', 0, 'Dokebi Card'),
+#       "robe": ('Hood [1]', 0, 'Condor Card'),
+#       "accessory1": ('Clip [1]', 0, 'Sage Worm Card'),
+#       "accessory2": ('Silver Ring', 0, 0)}
+# igen.generate_equip_details(tt, 'female')
 # igen.generate_interface()
+

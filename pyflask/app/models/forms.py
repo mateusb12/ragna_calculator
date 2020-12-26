@@ -4,7 +4,8 @@ from wtforms.validators import DataRequired, Email, Length, EqualTo
 from wtforms.fields.html5 import EmailField
 
 from ragnarok.model.equip_model import PlayerGear, Headgear
-from ragnarok.main.gear_query import generate_equipable_gear, get_cardlist_by_name, dict_name_to_dict_id
+from ragnarok.main.gear_query import generate_equipable_gear, get_cardlist_by_name, dict_name_to_dict_id, \
+    has_slots_by_name
 from ragnarok.main.exporter import jobname_list, job10, job50, job70, job99, equip_db
 
 
@@ -133,7 +134,7 @@ def calc_dynamic_select(input_form):
     form.shoes_card_list.choices = sorted(get_cardlist_by_name(form.shoes_item.data))
     form.armor_card_list.choices = sorted(get_cardlist_by_name(form.armor_item.data))
     form.robe_card_list.choices = sorted(get_cardlist_by_name(form.robe_item.data))
-    form.accessory1_card_list.choices = sorted(get_cardlist_by_name(form.robe_item.data))
+    form.accessory1_card_list.choices = sorted(get_cardlist_by_name(form.accessory1_item.data))
     form.accessory2_card_list.choices = sorted(get_cardlist_by_name(form.accessory2_item.data))
 
     text_dict = {"headgear1": (form.headtop_item.data, form.headtop_refine.data, form.headtop_card_list.data),
@@ -158,9 +159,7 @@ def calc_dynamic_select(input_form):
 
     headnames = pe.return_hat_dict_names()
 
-    print('opsss {}'.format(headnames))
     if pe.has_noble_hats():
-        print('caiu aqui')
         form.headtop_item.data = headnames['headtop']
         form.headmid_item.data = headnames['headmid']
         form.headlow_item.data = headnames['headlow']

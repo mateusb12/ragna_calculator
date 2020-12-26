@@ -20,8 +20,8 @@ def get_adjective_by_id(card_id: int):
     return div_list[2].text
 
 
-def generate_csv(first_list: List[int], second_list: List[str]):
-    csv_file = "card_adjectives.csv"
+def generate_csv(first_list: List[int], second_list: List[str], csv_file: str):
+    # csv_file = "card_adjectives.csv"
     csv_path = (os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'interface', 'adjectives', csv_file)))
     df = pd.DataFrame({'card_id': first_list, 'adjective': second_list})
     df.to_csv(csv_path, index=False)
@@ -45,7 +45,7 @@ def run_scanner():
     else:
         print("--- {} seconds ---".format(full_time))
 
-    generate_csv(id_list, adjective_list)
+    generate_csv(id_list, adjective_list, 'card_adjectives.csv')
 
 
 def pandas_to_dict(input_dict: pd.DataFrame) -> dict:
