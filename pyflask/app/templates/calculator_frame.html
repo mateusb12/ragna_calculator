@@ -23,6 +23,8 @@
 
 
 
+
+
     </script>
 </head>
 
@@ -206,32 +208,49 @@
                         <td class="gear-content">
                             <table class="level-list">
                                 <tbody>
-                                <tr class="gear-item">
-                                    <td class = "gear-selection">
+                                <tr class="headtop">
+                                    <td class="gear-selection">
                                         {{form.headtop_item(class="gearlist", onchange="forceSubmit()")}}
                                     </td>
                                     <td style="width: 20px;">
                                         {% if is_refineable(form.headtop_item.data) %}
-                                            {{form.refine_list(class="gear_refine", onchange="forceSubmit()")}}
+                                        {{form.headtop_refine(class="gear_refine", onchange="forceSubmit()")}}
                                         {% endif %}
                                     </td>
                                     <td>
                                         {% if has_slots(form.headtop_item.data) %}
-                                            {{form.refine_list(class="gear_refine", onchange="forceSubmit()")}}
+                                        {{form.headtop_card_list(class="gear_card", onchange="forceSubmit()")}}
                                         {% endif %}
                                     </td>
                                 </tr>
-                                <tr class="gear-item">
+                                <tr class="headmid">
                                     <td>
                                         {{form.headmid_item(class="gearlist", onchange="forceSubmit()")}}
                                     </td>
                                     <td>
-                                        {{is_refineable(form.headtop_item.data)}}
+                                        {% if is_refineable(form.headmid_item.data) %}
+                                        {{form.headmid_refine(class="gear_refine", onchange="forceSubmit()")}}
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if has_slots(form.headmid_item.data) %}
+                                        {{form.headmid_card_list(class="gear_card", onchange="forceSubmit()")}}
+                                        {% endif %}
                                     </td>
                                 </tr>
-                                <tr class="gear-item">
+                                <tr class="headlow">
                                     <td>
                                         {{form.headlow_item(class="gearlist", onchange="forceSubmit()")}}
+                                    </td>
+                                    <td>
+                                        {% if is_refineable(form.headlow_item.data) %}
+                                        {{form.headlow_refine(class="gear_refine", onchange="forceSubmit()")}}
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if has_slots(form.headlow_item.data) %}
+                                        {{form.headlow_card_list(class="gear_card", onchange="forceSubmit()")}}
+                                        {% endif %}
                                     </td>
                                 </tr>
                                 <tr class="gear-item">

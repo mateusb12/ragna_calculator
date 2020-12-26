@@ -96,21 +96,4 @@ def is_equipable(player_job: str, player_level: int, ch: dict):
 
 # print(is_equipable('super_novice', 88, hat_db[2289]))
 
-def generate_equipable_card(gear_id: int):
-    if gear_id in hat_db:
-        pass
-    if gear_id in weapon_db:
-        pass
-    if gear_id in shield_db:
-        pass
-    if gear_id in shoes_db:
-        pass
-    if gear_id in armor_db:
-        pass
-    if gear_id in robe_db:
-        pass
-    if gear_id in accessory_db:
-        pass
-    return 15
-
 

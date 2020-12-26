@@ -196,7 +196,12 @@ tr{
 
 .gear_refine{
     background-color: #e0dada;
-    width: 40px;
+    width: 45px;
+}
+
+.gear_card{
+    background-color: #e0dada;
+    width: 170px;
 }
 
 .gear-selection{

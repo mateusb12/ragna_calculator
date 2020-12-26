@@ -101,3 +101,6 @@ class DbGenerator:
                 if i['Type'] == 'Weapon':
                     weapon_database[i['Id']] = self.normalize_weapon_params(i)
         return weapon_database
+
+
+
