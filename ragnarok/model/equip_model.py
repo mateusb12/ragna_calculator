@@ -1,5 +1,6 @@
 from typing import List
 
+from ragnarok.main.gear_query import get_item_type, retrieve_id_by_name, dict_name_to_dict_id
 from ragnarok.main.exporter import equip_db, job70, shield_db, shoes_db, armor_db, robe_db, accessory_db, \
     hat_db, weapon_db, adjective_list
 
@@ -156,6 +157,14 @@ class Headgear(BaseGear):
         self.gear_type = ["Head_Top", "Head_Mid", "Head_Low"]
         self.class_type = "Headgear"
 
+    def get_hat_priority(self):
+        if len(self.locations) == 1:
+            return 1
+        if len(self.locations) == 2:
+            return 2
+        if len(self.locations) == 3:
+            return 3
+
 
 class Weapon(BaseGear):
     def __init__(self, gd: dict):
@@ -236,7 +245,24 @@ class PlayerGear:
 
         self.gt = self.create_gear_table(gear_input)
         for w in self.gt:
-            self.equip_item(w)
+            if not isinstance(w, Headgear):
+                self.equip_item(w)
+
+        priority_ids = {'headtop': self.gt[0].id,
+                        'headmid': self.gt[1].id,
+                        'headlow': self.gt[2].id}
+
+        priority_dict = {'headtop': self.gt[0].get_hat_priority(),
+                         'headmid': self.gt[1].get_hat_priority(),
+                         'headlow': self.gt[2].get_hat_priority()}
+
+        priority_podium = sorted(priority_dict, key=priority_dict.get)
+        priority_queue = [priority_ids[priority_podium[0]],
+                          priority_ids[priority_podium[1]],
+                          priority_ids[priority_podium[2]]]
+
+        for h in priority_queue:
+            self.equip_item(Headgear(equip_db[h]))
 
     def equip_item(self, item: BaseGear):
         equipable = self.is_equipable(item)
@@ -284,11 +310,11 @@ class PlayerGear:
                         .format(item.name, item.id, self.job)
             if 'All' in item.jobs.keys():
                 if self.job.lower() in map(lambda x: x.lower(), item.jobs.keys()):
-                    return False, 'Cannot equip the item [{}] ({}) in a {}'\
+                    return False, 'Cannot equip the item [{}] ({}) in a {}' \
                         .format(item.name, item.id, self.job)
             else:
                 if self.job.lower() not in map(lambda x: x.lower(), item.jobs.keys()):
-                    return False, 'Cannot equip the item [{}] ({}) in a {}'\
+                    return False, 'Cannot equip the item [{}] ({}) in a {}' \
                         .format(item.name, item.id, self.job.capitalize())
         return True, 'equipable'
 
@@ -303,6 +329,9 @@ class PlayerGear:
         print(self.robe)
         print(self.accessory1)
         print(self.accessory2)
+
+    def return_hat_list(self):
+        return self.headtop, self.headmid, self.headlow
 
     @staticmethod
     def create_gear_table(input_dict: dict) -> List[BaseGear]:
@@ -377,24 +406,38 @@ class PlayerGear:
         return id_dict
 
 
-gear_dict = {"headgear1": (2209, 7, 4127),
-             "headgear2": (2291, 0, 0),
-             "headgear3": None, #2218
-             "weapon": (1202, 10, [4002, 4002, 4002, 4002]),
-             "shield": (2102, 7, 4058),
-             "shoes": (2404, 7, 4097),
-             "armor": (2320, 7, 4105),
-             "robe": (2502, 7, 4133),
-             "accessory1": (2626, 0, 4044),
-             "accessory2": (2608, 0, 0)}
+# gear_dict = {"headgear1": (2209, 7, 4127),
+#              "headgear2": (2291, 0, 0),
+#              "headgear3": None, #2218
+#              "weapon": (1202, 10, [4002, 4002, 4002, 4002]),
+#              "shield": (2102, 7, 4058),
+#              "shoes": (2404, 7, 4097),
+#              "armor": (2320, 7, 4105),
+#              "robe": (2502, 7, 4133),
+#              "accessory1": (2626, 0, 4044),
+#              "accessory2": (2608, 0, 0)}
 
-# pe = PlayerGear(gear_dict, 'hunter', 99)
-# pe.print_gear()
+text_dict = {"headgear1": ('Poo Poo Hat', 0, 0),
+             "headgear2": ('Sunglasses [1]', 0, 'Willow Card'),
+             "headgear3": ('Cigarette', 0, 0),
+             "weapon": None,
+             "shield": ('Buckler [1]', 0, 'Thief Bug Egg Card'),
+             "shoes": ('Boots', 0, 0),
+             "armor": ('Formal Suit [1]', 0, 'Dokebi Card'),
+             "robe": ('Hood [1]', 0, 'Condor Card'),
+             "accessory1": ('Clip [1]', 0, 'Sage Worm Card'),
+             "accessory2": ('Silver Ring', 0, 0)}
 
+gear_dict = dict_name_to_dict_id(text_dict)
+
+pe = PlayerGear(gear_dict, 'knight', 99)
+# pe.equip_item(pe.create_item_with_id(2104))
+#
+pe.print_gear()
+
+# print(pe.priority_queue)
 # print(pe.export_id_table().values())
 
 # print(list(pe.export_id_table().values()))
 
 # print(pe.weapon.export_text())
-
-

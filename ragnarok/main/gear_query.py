@@ -103,6 +103,12 @@ def retrieve_id_by_name(gear_name: str):
             return min(plausible_ids, key=plausible_ids.get)
 
 
+def retrieve_card_id_by_name(card_name: str):
+    for d in card_db.values():
+        if card_name.lower() == d['Name'].lower():
+            return d['Id']
+
+
 def adapt_slotted_name(input_name: str) -> str:
     if ' [1]' in input_name:
         return input_name[:-4]
@@ -191,3 +197,18 @@ def get_cardlist_by_name(gear_name: str):
         return possible_cards['robe_cards']
     if gear_type == 'armor':
         return possible_cards['armor_cards']
+
+
+def dict_name_to_dict_id(dict_name: dict):
+    output_dict = dict_name.copy()
+
+    for k, v in dict_name.items():
+        if v is not None:
+            if v[2] != 0:
+                adapt_void = [retrieve_id_by_name(v[0]), v[1], retrieve_card_id_by_name(v[2])]
+            else:
+                adapt_void = [retrieve_id_by_name(v[0]), v[1], v[2]]
+            output_dict[k] = adapt_void
+
+    return output_dict
+
