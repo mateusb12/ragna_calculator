@@ -151,10 +151,17 @@ def calc_dynamic_select(input_form):
     pe = PlayerGear(gear_dict, form.class_name.data, form.job_level.data)
     if '(No Headtop)' in form.headtop_item.data:
         pe.unequip_noble_hats()
+        headnames = pe.return_hat_dict_names()
+        form.headtop_item.data = headnames['headtop']
+        form.headmid_item.data = headnames['headmid']
+        form.headlow_item.data = headnames['headlow']
 
     headnames = pe.return_hat_dict_names()
 
-    form.headtop_item.data = headnames['headtop']
-    form.headmid_item.data = headnames['headmid']
-    form.headlow_item.data = headnames['headlow']
+    print('opsss {}'.format(headnames))
+    if pe.has_noble_hats():
+        print('caiu aqui')
+        form.headtop_item.data = headnames['headtop']
+        form.headmid_item.data = headnames['headmid']
+        form.headlow_item.data = headnames['headlow']
     # pe.print_gear()

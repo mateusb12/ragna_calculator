@@ -359,9 +359,7 @@ class PlayerGear:
             hat_c = self.headlow.get_hat_priority()
         else:
             hat_c = 1
-        noble_list = [hat_a,
-                      hat_b,
-                      hat_c]
+        noble_list = [hat_a, hat_b, hat_c]
 
         if noble_list[0] > 1:
             self.headtop = Headgear(equip_db[5432])
@@ -369,6 +367,25 @@ class PlayerGear:
             self.headmid = Headgear(equip_db[5433])
         if noble_list[2] > 1:
             self.headlow = Headgear(equip_db[5435])
+
+    def has_noble_hats(self):
+        if self.headtop:
+            hat_a = self.headtop.get_hat_priority()
+        else:
+            hat_a = 1
+        if self.headmid:
+            hat_b = self.headmid.get_hat_priority()
+        else:
+            hat_b = 1
+        if self.headlow:
+            hat_c = self.headlow.get_hat_priority()
+        else:
+            hat_c = 1
+
+        if max([hat_a, hat_b, hat_c]) == 1:
+            return False
+        else:
+            return True
 
     def return_hat_dict_names(self):
         out_dict = dict()
