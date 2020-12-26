@@ -4,16 +4,24 @@ from ragnarok.main.gear_query import get_item_type, retrieve_id_by_name, dict_na
 from ragnarok.main.exporter import equip_db, job70, shield_db, shoes_db, armor_db, robe_db, accessory_db, \
     hat_db, weapon_db, adjective_list
 
+nullcard = 4700
+nullgear = [2139, 2393, 2447, 2511, 2709, 5432, 5433, 5435]
+
 
 class BaseGear:
     def __init__(self, gd: dict):
+        self.nullcard = 4700
+        self.nullgear = [2139, 2393, 2447, 2511, 2709, 5432, 5433, 5435]
         self.gear_type = ""
         self.class_type = ""
         self.id = gd['Id']
         self.aegisname = gd['AegisName']
         self.name = gd['Name']
         self.type = gd['Type']
-        self.buying_price = gd['Buy']
+        if 'Buy' in gd:
+            self.buying_price = gd['Buy']
+        else:
+            self.buying_price = 40
         self.defense = 0
         if 'Defense' in gd:
             self.defense = gd['Defense']
@@ -62,9 +70,12 @@ class BaseGear:
         return str_base
 
     def refine(self, amount: int) -> bool:
-        if not self.is_refineable:
-            if amount != 0:
-                raise Exception('The equipment [{}] {} is not refineable'.format(self.id, self.name))
+        if not self.is_refineable and amount is not None:
+            if int(amount) != 0:
+                if self.id not in self.nullgear:
+                    pass
+                    # raise Exception('Impossible to refine to +{} '
+                    #                 'The equipment [{}] {} is not refineable'.format(amount, self.id, self.name))
         else:
             self.refining = amount
             return True
@@ -75,32 +86,37 @@ class BaseGear:
             return False
         card = card_db[card_id]
         if self.slots == 0:
-            raise Exception('Impossible to insert card. '
-                            'The equipment [{}] {} has zero slots'.format(self.id, self.name))
+            if card['Id'] != self.nullcard and self.id not in self.nullgear:
+                pass
+                # raise Exception('Impossible to insert card. '
+                #                 'The equipment [{}] {} has zero slots'.format(self.id, self.name))
         if type(self.gear_type) is not list:
             type_check = self.gear_type.lower()
             if type_check in ['right_accessory', 'left_accessory']:
                 type_check = 'both_accessory'
             if type_check not in list(card["Locations"].keys())[0].lower():
-                raise Exception('Impossible to insert card. '
-                                '[{}] cannot be inserted into a [{}] ("{}"). Required: {}. Found: {}'
-                                .format(card['Name'], self.class_type, self.name,
-                                        list(card["Locations"].keys())[0], self.gear_type.lower()))
+                if card['Id'] != self.nullcard:
+                    raise Exception('Impossible to insert card. '
+                                    '[{}] cannot be inserted into a [{}] ("{}"). Required: {}. Found: {}'
+                                    .format(card['Name'], self.class_type, self.name,
+                                            list(card["Locations"].keys())[0], self.gear_type.lower()))
         else:
             card_positions = list(card["Locations"].keys())
             equip_positions = list(self.locations.keys())
             has_intersection = bool(set(card_positions) & set(equip_positions))
             if not has_intersection:
-                raise Exception('Impossible to insert card. '
-                                '[{}] cannot be inserted into a [{}] ("{}"). Required: {}'
-                                .format(card['Name'], self.class_type, self.name, list(card["Locations"].keys())[0]))
+                if card['Id'] != self.nullcard:
+                    raise Exception('Impossible to insert card. '
+                                    '[{}] cannot be inserted into a [{}] ("{}"). Required: {}'
+                                    .format(card['Name'], self.class_type, self.name,
+                                            list(card["Locations"].keys())[0]))
 
         self.card = card
 
 
 class Shield(BaseGear):
     def __init__(self, gd: dict):
-        if gd['Id'] not in shield_db:
+        if gd['Id'] not in shield_db and gd['Id'] not in nullgear:
             raise Exception('INSTANTIATION ERROR. The equipment [{}] ({}) cannot be a Shield'
                             .format(gd['Name'], list(gd['Locations'].keys())[0]))
         super().__init__(gd)
@@ -110,7 +126,7 @@ class Shield(BaseGear):
 
 class Shoes(BaseGear):
     def __init__(self, gd: dict):
-        if gd['Id'] not in shoes_db:
+        if gd['Id'] not in shoes_db and gd['Id'] not in nullgear:
             raise Exception('INSTANTIATION ERROR. The equipment [{}] ({}) cannot be a Shoes'
                             .format(gd['Name'], list(gd['Locations'].keys())[0]))
         super().__init__(gd)
@@ -120,7 +136,7 @@ class Shoes(BaseGear):
 
 class Armor(BaseGear):
     def __init__(self, gd: dict):
-        if gd['Id'] not in armor_db:
+        if gd['Id'] not in armor_db and gd['Id'] not in nullgear:
             raise Exception('INSTANTIATION ERROR. The equipment [{}] ({}) cannot be a Armor'
                             .format(gd['Name'], list(gd['Locations'].keys())[0]))
         super().__init__(gd)
@@ -130,7 +146,7 @@ class Armor(BaseGear):
 
 class Robe(BaseGear):
     def __init__(self, gd: dict):
-        if gd['Id'] not in robe_db:
+        if gd['Id'] not in robe_db and gd['Id'] not in nullgear:
             raise Exception('INSTANTIATION ERROR. The equipment [{}] ({}) cannot be a Robe'
                             .format(gd['Name'], list(gd['Locations'].keys())[0]))
         super().__init__(gd)
@@ -140,7 +156,7 @@ class Robe(BaseGear):
 
 class Accessory(BaseGear):
     def __init__(self, gd: dict):
-        if gd['Id'] not in accessory_db:
+        if gd['Id'] not in accessory_db and gd['Id'] not in nullgear:
             raise Exception('INSTANTIATION ERROR. The equipment [{}] ({}) cannot be a Robe'
                             .format(gd['Name'], list(gd['Locations'].keys())[0]))
         super().__init__(gd)
@@ -150,7 +166,7 @@ class Accessory(BaseGear):
 
 class Headgear(BaseGear):
     def __init__(self, gd: dict):
-        if gd['Id'] not in hat_db:
+        if gd['Id'] not in hat_db and gd['Id'] not in nullgear:
             raise Exception('INSTANTIATION ERROR. The equipment [{}] ({}) cannot be a Robe'
                             .format(gd['Name'], list(gd['Locations'].keys())[0]))
         super().__init__(gd)
@@ -168,7 +184,7 @@ class Headgear(BaseGear):
 
 class Weapon(BaseGear):
     def __init__(self, gd: dict):
-        if gd['Id'] not in weapon_db:
+        if gd['Id'] not in weapon_db and gd['Id'] not in nullgear:
             raise Exception('INSTANTIATION ERROR. The equipment [{}] ({}) cannot be a Robe'
                             .format(gd['Name'], list(gd['Locations'].keys())[0]))
         super().__init__(gd)
@@ -330,8 +346,47 @@ class PlayerGear:
         print(self.accessory1)
         print(self.accessory2)
 
-    def return_hat_list(self):
-        return self.headtop, self.headmid, self.headlow
+    def unequip_noble_hats(self):
+        if self.headtop:
+            hat_a = self.headtop.get_hat_priority()
+        else:
+            hat_a = 1
+        if self.headmid:
+            hat_b = self.headmid.get_hat_priority()
+        else:
+            hat_b = 1
+        if self.headlow:
+            hat_c = self.headlow.get_hat_priority()
+        else:
+            hat_c = 1
+        noble_list = [hat_a,
+                      hat_b,
+                      hat_c]
+
+        if noble_list[0] > 1:
+            self.headtop = Headgear(equip_db[5432])
+        if noble_list[1] > 1:
+            self.headmid = Headgear(equip_db[5433])
+        if noble_list[2] > 1:
+            self.headlow = Headgear(equip_db[5435])
+
+    def return_hat_dict_names(self):
+        out_dict = dict()
+        if self.headtop:
+            out_dict['headtop'] = self.headtop.name
+        else:
+            out_dict['headtop'] = Headgear(equip_db[5432]).name
+
+        if self.headmid:
+            out_dict['headmid'] = self.headmid.name
+        else:
+            out_dict['headmid'] = Headgear(equip_db[5433]).name
+
+        if self.headlow:
+            out_dict['headlow'] = self.headlow.name
+        else:
+            out_dict['headlow'] = Headgear(equip_db[5435]).name
+        return out_dict
 
     @staticmethod
     def create_gear_table(input_dict: dict) -> List[BaseGear]:
@@ -417,7 +472,7 @@ class PlayerGear:
 #              "accessory1": (2626, 0, 4044),
 #              "accessory2": (2608, 0, 0)}
 
-text_dict = {"headgear1": ('Poo Poo Hat', 0, 0),
+text_dict = {"headgear1": ('Diadem', 0, 0),
              "headgear2": ('Sunglasses [1]', 0, 'Willow Card'),
              "headgear3": ('Cigarette', 0, 0),
              "weapon": None,
@@ -428,12 +483,12 @@ text_dict = {"headgear1": ('Poo Poo Hat', 0, 0),
              "accessory1": ('Clip [1]', 0, 'Sage Worm Card'),
              "accessory2": ('Silver Ring', 0, 0)}
 
-gear_dict = dict_name_to_dict_id(text_dict)
-
-pe = PlayerGear(gear_dict, 'knight', 99)
-# pe.equip_item(pe.create_item_with_id(2104))
+# gear_dict = dict_name_to_dict_id(text_dict)
 #
-pe.print_gear()
+# pe = PlayerGear(gear_dict, 'knight', 99)
+# # pe.equip_item(pe.create_item_with_id(2104))
+# pe.unequip_noble_hats()
+# pe.print_gear()
 
 # print(pe.priority_queue)
 # print(pe.export_id_table().values())

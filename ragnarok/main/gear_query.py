@@ -104,9 +104,12 @@ def retrieve_id_by_name(gear_name: str):
 
 
 def retrieve_card_id_by_name(card_name: str):
-    for d in card_db.values():
-        if card_name.lower() == d['Name'].lower():
-            return d['Id']
+    if card_name is not None:
+        for d in card_db.values():
+            if card_name.lower() == d['Name'].lower():
+                return d['Id']
+    else:
+        return 4700
 
 
 def adapt_slotted_name(input_name: str) -> str:
