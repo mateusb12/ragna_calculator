@@ -16448,26 +16448,17 @@
 		{
 			"Id": 2139,
 			"AegisName": "Flame_Thrower",
-			"Name": "Flame Thrower",
+			"Name": "(No Shield)",
 			"Type": "Armor",
-			"Buy": 20000,
-			"Weight": 2000,
-			"Defense": 60,
+			"Buy": 0,
+			"Weight": 0,
+			"Defense": 0,
 			"Jobs": {
-				"Blacksmith": true
-			},
-			"Classes": {
-				"Normal": true,
-				"Upper": true,
-				"Baby": true,
-				"Third": true,
-				"Third_Upper": true,
-				"Third_Baby": true
+				"All": true
 			},
 			"Locations": {
 				"Left_Hand": true
 			},
-			"EquipLevelMin": 99,
 			"View": 1
 		},
 		{
@@ -20029,22 +20020,11 @@
 		{
 			"Id": 2393,
 			"AegisName": "N_Adventurer's_Suit",
-			"Name": "Novice Adv Suit",
+			"Name": "(No Armor)",
 			"Type": "Armor",
-			"Defense": 8,
-			"Slots": 1,
+			"Defense": 0,
 			"Locations": {
 				"Armor": true
-			},
-			"Trade": {
-				"Override": 100,
-				"NoDrop": true,
-				"NoTrade": true,
-				"NoCart": true,
-				"NoStorage": true,
-				"NoGuildStorage": true,
-				"NoMail": true,
-				"NoAuction": true
 			}
 		},
 		{
@@ -21031,19 +21011,16 @@
 		{
 			"Id": 2447,
 			"AegisName": "Military_Boots",
-			"Name": "Army Boots",
+			"Name": "(No Shoes)",
 			"Type": "Armor",
-			"Weight": 1000,
-			"Defense": 5,
+			"Weight": 0,
+			"Defense": 0,
 			"Jobs": {
-				"All": true,
-				"Novice": false,
-				"SuperNovice": false
+				"All": true
 			},
 			"Locations": {
 				"Shoes": true
-			},
-			"Refineable": true
+			}
 		},
 		{
 			"Id": 2449,
@@ -21297,22 +21274,18 @@
 		{
 			"Id": 2511,
 			"AegisName": "Skeleton's_Cape",
-			"Name": "Skeleton Manteau",
+			"Name": "(No Robe)",
 			"Type": "Armor",
-			"Buy": 5000,
-			"Weight": 700,
-			"Defense": 1,
+			"Buy": 20,
+			"Weight": 0,
+			"Defense": 0,
 			"Jobs": {
-				"All": true,
-				"Novice": false,
-				"SuperNovice": false
+				"All": true
 			},
 			"Locations": {
 				"Garment": true
 			},
-			"EquipLevelMin": 75,
-			"Refineable": true,
-			"Script": "bonus bStr,2; bonus bInt,-3; bonus bDex,2; bonus bVit,-3; bonus bLuk,2; bonus bAgi,-4;\n"
+			"Script": ""
 		},
 		{
 			"Id": 2512,
@@ -24358,14 +24331,14 @@
 		{
 			"Id": 2709,
 			"AegisName": "5_Anniversary_Coin",
-			"Name": "5th Anniversary Coin",
+			"Name": "(No Accessory)",
 			"Type": "Armor",
 			"Buy": 2,
 			"Locations": {
 				"Right_Accessory": true,
 				"Left_Accessory": true
 			},
-			"Script": "bonus bAtkRate,5; bonus bMatkRate,5;\n"
+			"Script": ""
 		},
 		{
 			"Id": 2710,
@@ -34765,46 +34738,40 @@
 		{
 			"Id": 5432,
 			"AegisName": "Brazil_Baseball_Cap",
-			"Name": "bRO Anniversary Hat",
+			"Name": "(No Headtop)",
 			"Type": "Armor",
-			"Buy": 20,
-			"Weight": 100,
+			"Buy": 10,
+			"Weight": 0,
 			"Locations": {
 				"Head_Top": true
 			},
-			"Refineable": true,
 			"View": 433,
-			"Script": "if(gettime(DT_MONTH)==SEPTEMBER&&gettime(DT_DAYOFMONTH)>=10&&gettime(DT_DAYOFMONTH)<=24) bonus bAllStats, 4;\n"
+			"Script": ""
 		},
 		{
 			"Id": 5433,
 			"AegisName": "Golden_Wreath",
-			"Name": "Golden Laurel",
+			"Name": "(No Headmid)",
 			"Type": "Armor",
-			"Buy": 20,
-			"Weight": 100,
+			"Buy": 10,
+			"Weight": 0,
 			"Locations": {
-				"Head_Top": true
+				"Head_Mid": true
 			},
-			"Refineable": true,
 			"View": 434
 		},
 		{
 			"Id": 5435,
 			"AegisName": "Coke_Hat",
-			"Name": "Red Minstrel Hat",
+			"Name": "(No Headlow)",
 			"Type": "Armor",
-			"Buy": 20,
-			"Weight": 100,
-			"Defense": 1,
-			"Slots": 1,
+			"Buy": 10,
+			"Weight": 0,
 			"Locations": {
-				"Head_Top": true
+				"Head_Low": true
 			},
-			"EquipLevelMin": 40,
-			"Refineable": true,
 			"View": 436,
-			"Script": "bonus bInt,1; bonus bMaxSP,80; bonus bMdef,3; if(getrefine()>5) { bonus bMdef,getrefine()-5; bonus bMaxSP,(getrefine()-5)*10; }\n"
+			"Script": ""
 		},
 		{
 			"Id": 5436,
