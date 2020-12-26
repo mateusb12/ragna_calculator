@@ -189,6 +189,20 @@ tr{
     background-color: #e0dada;
 }
 
+.gearlist{
+    background-color: #e0dada;
+    width: 200px;
+}
+
+.gear_refine{
+    background-color: #e0dada;
+    width: 40px;
+}
+
+.gear-selection{
+    width: 200px;
+}
+
 class_name{
     background-color: #e0dada;
 }

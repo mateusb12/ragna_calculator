@@ -53,3 +53,5 @@ if full_time < 1:
     print("--- {} ms ---".format(round(full_time, 4)))
 else:
     print("--- {} seconds ---".format(full_time))
+
+import pyHook

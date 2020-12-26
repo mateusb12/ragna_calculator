@@ -69,6 +69,8 @@ class CalculatorForm(FlaskForm):
     accessory1_item = SelectField('armor_item', choices=accessory_choices)
     accessory2_item = SelectField('armor_item', choices=accessory_choices)
 
+    refine_list = SelectField('base_level', choices=list(range(1, 11)))
+
 
 def calc_dynamic_select(input_form):
     form = input_form

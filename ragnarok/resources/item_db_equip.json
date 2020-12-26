@@ -16223,29 +16223,6 @@
 			"Script": "bonus bMdef,3;\n"
 		},
 		{
-			"Id": 2127,
-			"AegisName": "Secular_Mission",
-			"Name": "Secular Mission",
-			"Type": "Armor",
-			"Buy": 20,
-			"Defense": 10,
-			"Locations": {
-				"Left_Hand": true
-			},
-			"View": 4,
-			"Trade": {
-				"Override": 100,
-				"NoDrop": true,
-				"NoTrade": true,
-				"NoSell": true,
-				"NoCart": true,
-				"NoGuildStorage": true,
-				"NoMail": true,
-				"NoAuction": true
-			},
-			"Script": "bonus2 bSubClass,Class_All,25;\n"
-		},
-		{
 			"Id": 2128,
 			"AegisName": "Herald_Of_GOD_",
 			"Name": "Sacred Mission",
@@ -16329,30 +16306,6 @@
 			"Script": "bonus bMdef,3; bonus bInt,2; bonus2 bAddEffWhenHit,Eff_Stun,1000;\n"
 		},
 		{
-			"Id": 2132,
-			"AegisName": "Shelter_Resistance",
-			"Name": "Shell Of Resistance",
-			"Type": "Armor",
-			"Buy": 20,
-			"Defense": 9,
-			"Locations": {
-				"Left_Hand": true
-			},
-			"View": 2,
-			"Trade": {
-				"Override": 100,
-				"NoDrop": true,
-				"NoTrade": true,
-				"NoSell": true,
-				"NoCart": true,
-				"NoStorage": true,
-				"NoGuildStorage": true,
-				"NoMail": true,
-				"NoAuction": true
-			},
-			"Script": "bonus2 bSubEle,Ele_All,20; bonus bShortWeaponDamageReturn,1; if (vip_status(VIP_STATUS_ACTIVE)) { bonus bAllStats,1; }\n"
-		},
-		{
 			"Id": 2133,
 			"AegisName": "Tournament_Shield",
 			"Name": "Tournament Shield",
@@ -16434,18 +16387,6 @@
 			"EquipLevelMin": 70,
 			"Refineable": true,
 			"View": 2
-		},
-		{
-			"Id": 2136,
-			"AegisName": "Cracked_Buckler",
-			"Name": "Cracked Buckler",
-			"Type": "Armor",
-			"Defense": 5,
-			"Locations": {
-				"Left_Hand": true
-			},
-			"View": 2,
-			"Script": "bonus bAgi,2; bonus2 bAddEle,Ele_Neutral,-10; bonus3 bAutoSpellWhenHit,\"PR_KYRIE\",1,50; bonus bMdef,1;\n"
 		},
 		{
 			"Id": 2137,
@@ -19573,77 +19514,6 @@
 			"Script": "bonus bMdef,5; bonus bCritical,6+(readparam(bLuk)/10); bonus bDelayRate,-23;\n"
 		},
 		{
-			"Id": 2368,
-			"AegisName": "Golden_Armor",
-			"Name": "Golden Armor",
-			"Type": "Armor",
-			"Buy": 20,
-			"Weight": 2000,
-			"Defense": 4,
-			"Locations": {
-				"Armor": true
-			},
-			"Trade": {
-				"Override": 100,
-				"NoDrop": true,
-				"NoTrade": true,
-				"NoCart": true,
-				"NoGuildStorage": true,
-				"NoMail": true,
-				"NoAuction": true
-			},
-			"Script": "bonus bMdef,4;\n"
-		},
-		{
-			"Id": 2369,
-			"AegisName": "Freyja_Overcoat",
-			"Name": "Freyja Overcoat",
-			"Type": "Armor",
-			"Weight": 500,
-			"Defense": 12,
-			"Jobs": {
-				"All": true,
-				"Novice": false,
-				"SuperNovice": false
-			},
-			"Locations": {
-				"Armor": true
-			},
-			"Trade": {
-				"Override": 100,
-				"NoDrop": true,
-				"NoTrade": true,
-				"NoSell": true,
-				"NoCart": true,
-				"NoStorage": true,
-				"NoGuildStorage": true,
-				"NoMail": true,
-				"NoAuction": true
-			},
-			"Script": "bonus bUnbreakableArmor; bonus2 bSubRace,RC_DemiHuman,10; bonus2 bSubRace,RC_Player_Human,10;\n"
-		},
-		{
-			"Id": 2370,
-			"AegisName": "Used_Mage_Coat",
-			"Name": "Used Mage Coat",
-			"Type": "Armor",
-			"Defense": 15,
-			"Locations": {
-				"Armor": true
-			},
-			"Trade": {
-				"Override": 100,
-				"NoDrop": true,
-				"NoTrade": true,
-				"NoSell": true,
-				"NoCart": true,
-				"NoGuildStorage": true,
-				"NoMail": true,
-				"NoAuction": true
-			},
-			"Script": "bonus bMaxHP,300; bonus bMaxSP,30; bonus bBaseAtk,10; bonus bAGI,1;\n"
-		},
-		{
 			"Id": 2371,
 			"AegisName": "G_Strings_",
 			"Name": "Pantie",
@@ -19983,53 +19853,6 @@
 			"Script": "bonus bMdef,10; bonus bMaxHP,20*BaseLevel; bonus bMaxSP,5*BaseLevel; bonus2 bAddClass,Class_All,10; bonus bMatkRate,10; bonus bUnbreakableArmor; bonus bNoKnockback;\n"
 		},
 		{
-			"Id": 2384,
-			"AegisName": "Spritual_Tunic",
-			"Name": "Spiritual Tunic",
-			"Type": "Armor",
-			"Buy": 20,
-			"Defense": 10,
-			"Locations": {
-				"Armor": true
-			},
-			"Trade": {
-				"Override": 100,
-				"NoDrop": true,
-				"NoTrade": true,
-				"NoSell": true,
-				"NoCart": true,
-				"NoStorage": true,
-				"NoGuildStorage": true,
-				"NoMail": true,
-				"NoAuction": true
-			},
-			"Script": "bonus bMaxHP,800; bonus2 bResEff,Eff_Freeze,10000; bonus2 bSubEle,Ele_Earth,20; bonus2 bSubEle,Ele_Fire,20; bonus2 bSubEle,Ele_Wind,20; bonus2 bSubEle,Ele_Poison,20; bonus2 bSubEle,Ele_Holy,20; bonus2 bSubEle,Ele_Dark,20; bonus2 bSubEle,Ele_Ghost,20; bonus2 bSubEle,Ele_Undead,20;\n"
-		},
-		{
-			"Id": 2385,
-			"AegisName": "Recuperative_Armor",
-			"Name": "Recuperative Armor",
-			"Type": "Armor",
-			"Buy": 20,
-			"Defense": 12,
-			"Locations": {
-				"Armor": true
-			},
-			"Trade": {
-				"Override": 100,
-				"NoDrop": true,
-				"NoTrade": true,
-				"NoSell": true,
-				"NoCart": true,
-				"NoStorage": true,
-				"NoGuildStorage": true,
-				"NoMail": true,
-				"NoAuction": true
-			},
-			"Script": "bonus bNoRegen,1; bonus bNoRegen,2; bonus bHPGainValue,60; bonus bSPGainValue,6; bonus bMagicHPGainValue,60; bonus bMagicSPGainValue,6;\n",
-			"UnEquipScript": "heal 0,-100;\n"
-		},
-		{
 			"Id": 2386,
 			"AegisName": "Chameleon_Armor",
 			"Name": "Chameleon Armor",
@@ -20204,20 +20027,9 @@
 			"Script": "bonus bVit,2; bonus bMdef,5; bonus bHPrecovRate,50;\n"
 		},
 		{
-			"Id": 2392,
-			"AegisName": "Old_Pant",
-			"Name": "Old Green Pantie",
-			"Type": "Armor",
-			"Defense": 10,
-			"Locations": {
-				"Armor": true
-			},
-			"Script": "bonus bStr,2; bonus bVit,2; bonus bMaxHP,200; bonus3 bAutoSpellWhenHit,\"MO_CALLSPIRITS\",5,20; bonus bMdef,1;\n"
-		},
-		{
 			"Id": 2393,
 			"AegisName": "N_Adventurer's_Suit",
-			"Name": "Novice Adventurer's Suit",
+			"Name": "Novice Adv Suit",
 			"Type": "Armor",
 			"Defense": 8,
 			"Slots": 1,
@@ -20317,24 +20129,6 @@
 				"NoAuction": true
 			},
 			"Script": "bonus bMaxHP,500;\n"
-		},
-		{
-			"Id": 2397,
-			"AegisName": "Incredible_Coat",
-			"Name": "Incredible Coat",
-			"Type": "Armor",
-			"Buy": 10,
-			"Weight": 900,
-			"Defense": 2,
-			"Jobs": {
-				"All": true,
-				"Novice": false,
-				"SuperNovice": false
-			},
-			"Locations": {
-				"Armor": true
-			},
-			"Refineable": true
 		},
 		{
 			"Id": 2398,
@@ -20915,125 +20709,6 @@
 			"Script": "bonus bMdef,10; if(getskilllv(\"AS_CLOAKING\")<2){ bonus5 bAutoSpellWhenHit,\"AS_CLOAKING\",2,100,BF_MAGIC,0; } else bonus5 bAutoSpellWhenHit,\"AS_CLOAKING\",getskilllv(\"AS_CLOAKING\"),100,BF_MAGIC,0;\n"
 		},
 		{
-			"Id": 2427,
-			"AegisName": "Golden_Shoes",
-			"Name": "Golden Shoes",
-			"Type": "Armor",
-			"Buy": 20,
-			"Weight": 300,
-			"Defense": 4,
-			"Locations": {
-				"Shoes": true
-			},
-			"Trade": {
-				"Override": 100,
-				"NoDrop": true,
-				"NoTrade": true,
-				"NoCart": true,
-				"NoGuildStorage": true,
-				"NoMail": true,
-				"NoAuction": true
-			},
-			"Script": "bonus bMdef,4;\n"
-		},
-		{
-			"Id": 2428,
-			"AegisName": "Freyja_Boots",
-			"Name": "Freyja Boots",
-			"Type": "Armor",
-			"Weight": 300,
-			"Defense": 10,
-			"Jobs": {
-				"All": true,
-				"Novice": false,
-				"SuperNovice": false
-			},
-			"Locations": {
-				"Shoes": true
-			},
-			"Script": "bonus2 bSubRace,RC_DemiHuman,5; bonus2 bSubRace,RC_Player_Human,5;\n"
-		},
-		{
-			"Id": 2429,
-			"AegisName": "Iron_Boots01",
-			"Name": "Iron Boots",
-			"Type": "Armor",
-			"Weight": 1500,
-			"Defense": 5,
-			"Jobs": {
-				"Alchemist": true,
-				"Archer": true,
-				"Assassin": true,
-				"BardDancer": true,
-				"Blacksmith": true,
-				"Crusader": true,
-				"Hunter": true,
-				"Knight": true,
-				"Merchant": true,
-				"Rogue": true,
-				"Swordman": true,
-				"Thief": true
-			},
-			"Locations": {
-				"Shoes": true
-			},
-			"Refineable": true,
-			"Trade": {
-				"Override": 100,
-				"NoDrop": true,
-				"NoTrade": true,
-				"NoCart": true,
-				"NoStorage": true,
-				"NoGuildStorage": true,
-				"NoMail": true,
-				"NoAuction": true
-			}
-		},
-		{
-			"Id": 2430,
-			"AegisName": "Iron_Boots02",
-			"Name": "Iron Boots",
-			"Type": "Armor",
-			"Weight": 800,
-			"Defense": 5,
-			"Locations": {
-				"Shoes": true
-			},
-			"Refineable": true,
-			"Trade": {
-				"Override": 100,
-				"NoDrop": true,
-				"NoTrade": true,
-				"NoCart": true,
-				"NoStorage": true,
-				"NoGuildStorage": true,
-				"NoMail": true,
-				"NoAuction": true
-			}
-		},
-		{
-			"Id": 2431,
-			"AegisName": "Valley_Shoes",
-			"Name": "Valley Shoes",
-			"Type": "Armor",
-			"Buy": 20,
-			"Defense": 10,
-			"Locations": {
-				"Shoes": true
-			},
-			"Trade": {
-				"Override": 100,
-				"NoDrop": true,
-				"NoTrade": true,
-				"NoSell": true,
-				"NoCart": true,
-				"NoGuildStorage": true,
-				"NoMail": true,
-				"NoAuction": true
-			},
-			"Script": "bonus bMaxHPRate,7; bonus bMaxSPRate,7;\n"
-		},
-		{
 			"Id": 2432,
 			"AegisName": "Spiky_Heel_",
 			"Name": "High Heels",
@@ -21236,29 +20911,6 @@
 			"Script": "bonus bFlee,5; bonus bAgi,1;\n"
 		},
 		{
-			"Id": 2439,
-			"AegisName": "Refresh_Shoes",
-			"Name": "Refresh Shoes",
-			"Type": "Armor",
-			"Buy": 20,
-			"Defense": 9,
-			"Locations": {
-				"Shoes": true
-			},
-			"Trade": {
-				"Override": 100,
-				"NoDrop": true,
-				"NoTrade": true,
-				"NoSell": true,
-				"NoCart": true,
-				"NoStorage": true,
-				"NoGuildStorage": true,
-				"NoMail": true,
-				"NoAuction": true
-			},
-			"Script": "bonus bMaxHPRate,17; bonus bMaxSPRate,8; bonus2 bHPRegenRate,20,10000; bonus2 bSPRegenRate,3,10000;\n"
-		},
-		{
 			"Id": 2440,
 			"AegisName": "Sprint_Shoes",
 			"Name": "Sprint Shoes",
@@ -21292,41 +20944,6 @@
 			"EquipLevelMin": 70,
 			"Refineable": true,
 			"Script": "bonus bAgi,1; bonus bSPrecovRate,5;\n"
-		},
-		{
-			"Id": 2441,
-			"AegisName": "Beach_Sandal",
-			"Name": "Beach Sandals",
-			"Type": "Armor",
-			"Buy": 20,
-			"Weight": 200,
-			"Locations": {
-				"Shoes": true
-			},
-			"Refineable": true,
-			"Script": "bonus bStr,1; bonus bInt,1; bonus bAgi,1; bonus2 bSubEle,Ele_Fire,10;\n"
-		},
-		{
-			"Id": 2442,
-			"AegisName": "Boots_Perforated",
-			"Name": "Red Stocking Boots",
-			"Type": "Armor",
-			"Defense": 7,
-			"Locations": {
-				"Shoes": true
-			},
-			"Script": "bonus bLuk,2; bonus bHPrecovRate,10; bonus bSPrecovRate,10; bonus3 bAutoSpellWhenHit,\"WZ_QUAGMIRE\",3,20; bonus bMdef,1;\n"
-		},
-		{
-			"Id": 2443,
-			"AegisName": "Fish_Shoes",
-			"Name": "Fisher's Boots",
-			"Type": "Armor",
-			"Buy": 10,
-			"Weight": 250,
-			"Locations": {
-				"Shoes": true
-			}
 		},
 		{
 			"Id": 2444,
@@ -21427,19 +21044,6 @@
 				"Shoes": true
 			},
 			"Refineable": true
-		},
-		{
-			"Id": 2448,
-			"AegisName": "Air_Boss",
-			"Name": "Air Boss",
-			"Type": "Armor",
-			"Weight": 500,
-			"Defense": 2,
-			"Locations": {
-				"Shoes": true
-			},
-			"Refineable": true,
-			"Script": "bonus bAgi,1;\n"
 		},
 		{
 			"Id": 2449,
@@ -22162,45 +21766,6 @@
 			"Script": "bonus bMdef,3; bonus5 bAutoSpellWhenHit,\"NPC_ANTIMAGIC\",6,200,BF_MAGIC,0;\n"
 		},
 		{
-			"Id": 2533,
-			"AegisName": "Freyja_Cape",
-			"Name": "Freyja Cape",
-			"Type": "Armor",
-			"Weight": 200,
-			"Defense": 10,
-			"Jobs": {
-				"All": true,
-				"Novice": false,
-				"SuperNovice": false
-			},
-			"Locations": {
-				"Garment": true
-			},
-			"Script": "bonus2 bSubRace,RC_DemiHuman,15; bonus2 bSubRace,RC_Player_Human,15;\n"
-		},
-		{
-			"Id": 2534,
-			"AegisName": "Ruffler",
-			"Name": "Ruffler",
-			"Type": "Armor",
-			"Buy": 20,
-			"Defense": 10,
-			"Locations": {
-				"Garment": true
-			},
-			"Trade": {
-				"Override": 100,
-				"NoDrop": true,
-				"NoTrade": true,
-				"NoSell": true,
-				"NoCart": true,
-				"NoGuildStorage": true,
-				"NoMail": true,
-				"NoAuction": true
-			},
-			"Script": "bonus2 bSubEle,Ele_Neutral,17; bonus bFlee,17;\n"
-		},
-		{
 			"Id": 2535,
 			"AegisName": "Cloak_Of_Survival_C",
 			"Name": "Cloak Of Survival",
@@ -22413,29 +21978,6 @@
 			"Script": "bonus bMaxHPRate,5; bonus bMdef,2; bonus bMatkRate,1; bonus2 bAddEle,Ele_Fire,2;\n"
 		},
 		{
-			"Id": 2543,
-			"AegisName": "Sylphid_Manteau",
-			"Name": "Sylphid Manteau",
-			"Type": "Armor",
-			"Buy": 20,
-			"Defense": 9,
-			"Locations": {
-				"Garment": true
-			},
-			"Trade": {
-				"Override": 100,
-				"NoDrop": true,
-				"NoTrade": true,
-				"NoSell": true,
-				"NoCart": true,
-				"NoStorage": true,
-				"NoGuildStorage": true,
-				"NoMail": true,
-				"NoAuction": true
-			},
-			"Script": "bonus bFlee,13; bonus2 bSubEle,Ele_Neutral,13; bonus bFlee2,1;\n"
-		},
-		{
 			"Id": 2544,
 			"AegisName": "Leather_Of_Tendrilion",
 			"Name": "Leather of Tendrilion",
@@ -22493,32 +22035,6 @@
 			"Script": "bonus bMdef,3; bonus3 bAutoSpellwhenhit,\"AL_HEAL\",max(1,getskilllv(\"AL_HEAL\")),20;\n"
 		},
 		{
-			"Id": 2546,
-			"AegisName": "Beach_Manteau",
-			"Name": "Beach Manteau",
-			"Type": "Armor",
-			"Buy": 20,
-			"Weight": 600,
-			"Slots": 1,
-			"Locations": {
-				"Garment": true
-			},
-			"Refineable": true,
-			"Script": "bonus bStr,1; bonus bInt,1; bonus2 bSubEle,Ele_Fire,10;\n"
-		},
-		{
-			"Id": 2547,
-			"AegisName": "Cheap_Running_Shirts",
-			"Name": "Cheap Undershirt",
-			"Type": "Armor",
-			"Defense": 8,
-			"Locations": {
-				"Garment": true
-			},
-			"Refineable": true,
-			"Script": "bonus bDex,2; bonus bFlee,10; bonus2 bSubEle,Ele_Neutral,10; bonus bMdef,1;\n"
-		},
-		{
 			"Id": 2548,
 			"AegisName": "Muffler_C",
 			"Name": "Neo Muffler",
@@ -22565,18 +22081,6 @@
 				"NoAuction": true
 			},
 			"Script": "bonus bMaxHPRate,5; bonus2 bSubRace,RC_DemiHuman,5; bonus2 bSubRace,RC_Player_Human,5;\n"
-		},
-		{
-			"Id": 2550,
-			"AegisName": "Fisher's_Muffler",
-			"Name": "Fisher's Muffler",
-			"Type": "Armor",
-			"Buy": 20,
-			"Weight": 200,
-			"Locations": {
-				"Garment": true
-			},
-			"Refineable": true
 		},
 		{
 			"Id": 2551,
@@ -25503,95 +25007,6 @@
 			},
 			"EquipLevelMin": 75,
 			"Script": "bonus bVit,3; bonus bMaxHPRate,10;\n"
-		},
-		{
-			"Id": 2738,
-			"AegisName": "Shiny_Coin",
-			"Name": "Shiny Coin",
-			"Type": "Armor",
-			"Locations": {
-				"Right_Accessory": true,
-				"Left_Accessory": true
-			},
-			"Trade": {
-				"Override": 100,
-				"NoDrop": true,
-				"NoTrade": true,
-				"NoSell": true,
-				"NoCart": true,
-				"NoStorage": true,
-				"NoGuildStorage": true,
-				"NoMail": true,
-				"NoAuction": true
-			},
-			"Script": "bonus2 bAddClass,Class_All,6; bonus bMatkRate,6;\n"
-		},
-		{
-			"Id": 2739,
-			"AegisName": "Ordinary_Coin",
-			"Name": "Ordinary Coin",
-			"Type": "Armor",
-			"Locations": {
-				"Right_Accessory": true,
-				"Left_Accessory": true
-			},
-			"Trade": {
-				"Override": 100,
-				"NoDrop": true,
-				"NoTrade": true,
-				"NoSell": true,
-				"NoCart": true,
-				"NoStorage": true,
-				"NoGuildStorage": true,
-				"NoMail": true,
-				"NoAuction": true
-			},
-			"Script": "bonus2 bAddClass,Class_All,5; bonus bMatkRate,5;\n"
-		},
-		{
-			"Id": 2740,
-			"AegisName": "Rusty_Coin",
-			"Name": "Rusty Coin",
-			"Type": "Armor",
-			"Locations": {
-				"Right_Accessory": true,
-				"Left_Accessory": true
-			},
-			"Trade": {
-				"Override": 100,
-				"NoDrop": true,
-				"NoTrade": true,
-				"NoSell": true,
-				"NoCart": true,
-				"NoStorage": true,
-				"NoGuildStorage": true,
-				"NoMail": true,
-				"NoAuction": true
-			},
-			"Script": "bonus2 bAddClass,Class_All,3; bonus bMatkRate,3;\n"
-		},
-		{
-			"Id": 2741,
-			"AegisName": "All_In_One_Ring",
-			"Name": "All In One Ring",
-			"Type": "Armor",
-			"Buy": 20,
-			"Locations": {
-				"Right_Accessory": true,
-				"Left_Accessory": true
-			},
-			"Trade": {
-				"Override": 100,
-				"NoDrop": true,
-				"NoTrade": true,
-				"NoSell": true,
-				"NoCart": true,
-				"NoStorage": true,
-				"NoGuildStorage": true,
-				"NoMail": true,
-				"NoAuction": true
-			},
-			"Script": "bonus bAllStats,1; bonus bNoCastCancel; bonus bCastRate,10; skill \"AL_HEAL\",1; skill \"AL_TELEPORT\",1;\n"
 		},
 		{
 			"Id": 2743,

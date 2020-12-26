@@ -11,6 +11,8 @@ import app.databases.db_operations as dbo
 from app import app
 from app.models.forms import LoginForm, RegisterForm, CalculatorForm, calc_dynamic_select
 
+from ragnarok.main.gear_query import is_refineable, has_slots
+
 from ragnarok.model.statuspoints_evaluator import attribute_balance
 from ragnarok.model.build_model import PlayerBuild
 from ragnarok.resources.interface.interface_generator import InterfaceGenerator
@@ -143,7 +145,9 @@ def calcframe():
     return render_template('calculator_frame.html',
                            form=form,
                            player_info=pi,
-                           image_url='static/assets/custom.png')
+                           image_url='static/assets/custom.png',
+                           is_refineable=is_refineable,
+                           has_slots=has_slots)
 
 
 @app.route("/loginframe")

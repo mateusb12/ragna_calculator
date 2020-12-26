@@ -1,5 +1,6 @@
-from ragnarok.main.exporter import hat_db, is_equipable, weapon_db, shield_db, shoes_db, armor_db, robe_db, accessory_db, \
-    equip_db
+from ragnarok.main.exporter import hat_db, is_equipable, weapon_db, shield_db, shoes_db, armor_db, robe_db, \
+    accessory_db, \
+    equip_db, card_db
 
 
 def generate_equipable_gear(player_class: str, player_level: int) -> dict:
@@ -67,12 +68,54 @@ def generate_equipable_gear(player_class: str, player_level: int) -> dict:
 
 
 def retrieve_id_by_name(gear_name: str):
-    plausible_ids = dict()
-    for k in equip_db.values():
-        if k['Name'].lower() == gear_name.lower():
-            plausible_ids[k['Id']] = k['Slots']
-    return max(plausible_ids, key=plausible_ids.get)
+    if gear_name is not None:
+        plausible_ids = dict()
+        for k in equip_db.values():
+            if k['Name'].lower() == gear_name.lower():
+                plausible_ids[k['Id']] = k['Slots']
+        return max(plausible_ids, key=plausible_ids.get)
 
 
-# print(retrieve_id_by_name('main gauche'))
+def is_refineable(gear_name: str) -> bool:
+    if gear_name is not None:
+        return equip_db[retrieve_id_by_name(gear_name)]['Refineable']
 
+
+def has_slots(gear_name: str) -> bool:
+    if gear_name is not None:
+        if equip_db[retrieve_id_by_name(gear_name)]['Slots'] != 0:
+            return True
+        else:
+            return False
+
+
+def generate_equipable_cards() -> dict:
+    card_dict = dict()
+    card_dict['acessory_cards'] = []
+    card_dict['weapon_cards'] = []
+    card_dict['shield_cards'] = []
+    card_dict['shoes_cards'] = []
+    card_dict['robe_cards'] = []
+    card_dict['armor_cards'] = []
+    card_dict['headgear_cards'] = []
+
+    for i in card_db:
+        if 'Both_Accessory' in card_db[i]['Locations']:
+            card_dict['acessory_cards'].append(card_db[i])
+        if 'Left_Hand' in card_db[i]['Locations']:
+            card_dict['shield_cards'].append(card_db[i])
+        if 'Head_Low' in card_db[i]['Locations']:
+            card_dict['headgear_cards'].append(card_db[i])
+        if 'Right_Hand' in card_db[i]['Locations']:
+            card_dict['weapon_cards'].append(card_db[i])
+        if 'Shoes' in card_db[i]['Locations']:
+            card_dict['shoes_cards'].append(card_db[i])
+        if 'Garment' in card_db[i]['Locations']:
+            card_dict['robe_cards'].append(card_db[i])
+        if 'Armor' in card_db[i]['Locations']:
+            card_dict['armor_cards'].append(card_db[i])
+
+    return card_dict
+
+
+print(generate_equipable_cards()['shield_cards'])

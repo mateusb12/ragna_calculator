@@ -203,41 +203,54 @@
                         </td>
                     </tr>
                     <tr class="gear-content">
-                        <td class="level-content">
+                        <td class="gear-content">
                             <table class="level-list">
                                 <tbody>
                                 <tr class="gear-item">
-                                    <td class="">
-                                        {{form.headtop_item(class="droplist", onchange="forceSubmit()")}}
+                                    <td class = "gear-selection">
+                                        {{form.headtop_item(class="gearlist", onchange="forceSubmit()")}}
+                                    </td>
+                                    <td style="width: 20px;">
+                                        {% if is_refineable(form.headtop_item.data) %}
+                                            {{form.refine_list(class="gear_refine", onchange="forceSubmit()")}}
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if has_slots(form.headtop_item.data) %}
+                                            {{form.refine_list(class="gear_refine", onchange="forceSubmit()")}}
+                                        {% endif %}
                                     </td>
                                 </tr>
                                 <tr class="gear-item">
                                     <td>
-                                        {{form.headmid_item(class="droplist", onchange="forceSubmit()")}}
+                                        {{form.headmid_item(class="gearlist", onchange="forceSubmit()")}}
+                                    </td>
+                                    <td>
+                                        {{is_refineable(form.headtop_item.data)}}
                                     </td>
                                 </tr>
                                 <tr class="gear-item">
                                     <td>
-                                        {{form.headlow_item(class="droplist", onchange="forceSubmit()")}}
+                                        {{form.headlow_item(class="gearlist", onchange="forceSubmit()")}}
                                     </td>
                                 </tr>
                                 <tr class="gear-item">
-                                    <td>{{form.shield_item(class="droplist", onchange="forceSubmit()")}}</td>
+                                    <td>{{form.shield_item(class="gearlist", onchange="forceSubmit()")}}</td>
                                 </tr>
                                 <tr class="gear-item">
-                                    <td>{{form.shoes_item(class="droplist", onchange="forceSubmit()")}}</td>
+                                    <td>{{form.shoes_item(class="gearlist", onchange="forceSubmit()")}}</td>
                                 </tr>
                                 <tr class="gear-item">
-                                    <td>{{form.armor_item(class="droplist", onchange="forceSubmit()")}}</td>
+                                    <td>{{form.armor_item(class="gearlist", onchange="forceSubmit()")}}</td>
                                 </tr>
                                 <tr class="gear-item">
-                                    <td>{{form.robe_item(class="droplist", onchange="forceSubmit()")}}</td>
+                                    <td>{{form.robe_item(class="gearlist", onchange="forceSubmit()")}}</td>
                                 </tr>
                                 <tr class="gear-item">
-                                    <td>{{form.accessory1_item(class="droplist", onchange="forceSubmit()")}}</td>
+                                    <td>{{form.accessory1_item(class="gearlist", onchange="forceSubmit()")}}</td>
                                 </tr>
                                 <tr class="gear-item">
-                                    <td>{{form.accessory2_item(class="droplist", onchange="forceSubmit()")}}</td>
+                                    <td>{{form.accessory2_item(class="gearlist", onchange="forceSubmit()")}}</td>
                                 </tr>
                                 </tbody>
                             </table>
