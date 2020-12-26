@@ -9953,11 +9953,20 @@
 		{
 			"Id": 4700,
 			"AegisName": "Strength1",
-			"Name": "STR+1",
+			"Name": "(No Card)",
 			"Type": "Card",
 			"Buy": 20,
 			"Weight": 10,
-			"Script": "bonus bStr,1;\n"
+			"Locations": {
+				"Both_Accessory": true,
+				"Left_Hand": true,
+				"Head_Low": true,
+				"Right_Hand": true,
+				"Shoes": true,
+				"Garment": true,
+				"Armor": true
+			},
+			"Script": ""
 		},
 		{
 			"Id": 4701,

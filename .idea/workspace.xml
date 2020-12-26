@@ -5,11 +5,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyflask/app/models/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/models/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyflask/app/static/assets/custom.png" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/static/assets/custom.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyflask/app/static/css/frames/calculator_frame.css" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/static/css/frames/calculator_frame.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyflask/app/templates/calculator_frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/templates/calculator_frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ragnarok/main/exporter.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/main/exporter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ragnarok/main/gear_query.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/main/gear_query.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ragnarok/model/decorador_db_gen.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/model/decorador_db_gen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ragnarok/resources/item_db_etc.json" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/resources/item_db_etc.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

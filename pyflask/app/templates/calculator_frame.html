@@ -25,6 +25,15 @@
 
 
 
+
+
+
+
+
+
+
+
+
     </script>
 </head>
 
@@ -253,23 +262,85 @@
                                         {% endif %}
                                     </td>
                                 </tr>
-                                <tr class="gear-item">
-                                    <td>{{form.shield_item(class="gearlist", onchange="forceSubmit()")}}</td>
+                                <tr class="shield">
+                                    <td>
+                                        {{form.shield_item(class="gearlist", onchange="forceSubmit()")}}
+                                    </td>
+                                    <td>
+                                        {% if is_refineable(form.shield_item.data) %}
+                                        {{form.shield_refine(class="gear_refine", onchange="forceSubmit()")}}
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if has_slots(form.shield_item.data) %}
+                                        {{form.shield_card_list(class="gear_card", onchange="forceSubmit()")}}
+                                        {% endif %}
+                                    </td>
                                 </tr>
-                                <tr class="gear-item">
+                                <tr class="shoes">
                                     <td>{{form.shoes_item(class="gearlist", onchange="forceSubmit()")}}</td>
+                                    <td>
+                                        {% if is_refineable(form.shoes_item.data) %}
+                                        {{form.shoes_refine(class="gear_refine", onchange="forceSubmit()")}}
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if has_slots(form.shoes_item.data) %}
+                                        {{form.shoes_card_list(class="gear_card", onchange="forceSubmit()")}}
+                                        {% endif %}
+                                    </td>
                                 </tr>
-                                <tr class="gear-item">
+                                <tr class="armor">
                                     <td>{{form.armor_item(class="gearlist", onchange="forceSubmit()")}}</td>
+                                    <td>
+                                        {% if is_refineable(form.armor_item.data) %}
+                                        {{form.armor_refine(class="gear_refine", onchange="forceSubmit()")}}
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if has_slots(form.armor_item.data) %}
+                                        {{form.armor_card_list(class="gear_card", onchange="forceSubmit()")}}
+                                        {% endif %}
+                                    </td>
                                 </tr>
-                                <tr class="gear-item">
+                                <tr class="robe">
                                     <td>{{form.robe_item(class="gearlist", onchange="forceSubmit()")}}</td>
+                                    <td>
+                                        {% if is_refineable(form.robe_item.data) %}
+                                        {{form.robe_refine(class="gear_refine", onchange="forceSubmit()")}}
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if has_slots(form.robe_item.data) %}
+                                        {{form.robe_card_list(class="gear_card", onchange="forceSubmit()")}}
+                                        {% endif %}
+                                    </td>
                                 </tr>
-                                <tr class="gear-item">
+                                <tr class="accessory1">
                                     <td>{{form.accessory1_item(class="gearlist", onchange="forceSubmit()")}}</td>
+                                    <td>
+                                        {% if is_refineable(form.accessory1_item.data) %}
+                                        {{form.accessory1_refine(class="gear_refine", onchange="forceSubmit()")}}
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if has_slots(form.accessory1_item.data) %}
+                                        {{form.accessory1_card_list(class="gear_card", onchange="forceSubmit()")}}
+                                        {% endif %}
+                                    </td>
                                 </tr>
-                                <tr class="gear-item">
+                                <tr class="accessory2">
                                     <td>{{form.accessory2_item(class="gearlist", onchange="forceSubmit()")}}</td>
+                                    <td>
+                                        {% if is_refineable(form.accessory2_item.data) %}
+                                        {{form.accessory2_refine(class="gear_refine", onchange="forceSubmit()")}}
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if has_slots(form.accessory2_item.data) %}
+                                        {{form.accessory2_card_list(class="gear_card", onchange="forceSubmit()")}}
+                                        {% endif %}
+                                    </td>
                                 </tr>
                                 </tbody>
                             </table>
