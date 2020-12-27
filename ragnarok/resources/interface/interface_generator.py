@@ -188,6 +188,8 @@ class InterfaceGenerator:
             if not pe.accessory2.is_dead_gear():
                 draw_multiline('{}'.format(pe.accessory2.export_text()), 175, 105, font_db[12])
 
+        print('meu pai amado {}'.format(pe.headmid.export_text()))
+
         download_queue = self.check_icons(list(pe.export_id_table().values()))
         if download_queue is not False:
             self.download_icons(download_queue)

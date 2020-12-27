@@ -7,6 +7,7 @@ from ragnarok.main.exporter import equip_db, job70, shield_db, shoes_db, armor_d
 from ragnarok.model.dead_gear import dead_gear_list as nullgear
 from ragnarok.model.dead_gear import dead_card as nullcard
 
+
 # nullcard = 4700
 # nullgear = [2139, 2393, 2447, 2511, 2709, 5432, 5433, 5435]
 
@@ -277,6 +278,10 @@ class PlayerGear:
                         'headmid': self.gt[1].id,
                         'headlow': self.gt[2].id}
 
+        id_refine_card = {self.gt[0].id: (self.gt[0].refining, self.gt[0].card),
+                          self.gt[1].id: (self.gt[1].refining, self.gt[1].card),
+                          self.gt[2].id: (self.gt[2].refining, self.gt[2].card)}
+
         priority_dict = {'headtop': self.gt[0].get_hat_priority(),
                          'headmid': self.gt[1].get_hat_priority(),
                          'headlow': self.gt[2].get_hat_priority()}
@@ -287,7 +292,11 @@ class PlayerGear:
                           priority_ids[priority_podium[2]]]
 
         for h in priority_queue:
-            self.equip_item(Headgear(equip_db[h]))
+            aux_head = Headgear(equip_db[h])
+            aux_head.refine(id_refine_card[h][0])
+            if id_refine_card[h][1] is not None:
+                aux_head.insert_card(id_refine_card[h][1]['Id'])
+            self.equip_item(aux_head)
 
     def equip_item(self, item: BaseGear):
         equipable = self.is_equipable(item)
@@ -498,7 +507,7 @@ class PlayerGear:
 #              "accessory1": (2626, 0, 4044),
 #              "accessory2": (2608, 0, 0)}
 
-text_dict = {"headgear1": ('Diadem', 0, 0),
+text_dict = {"headgear1": ('Poo Poo Hat', 0, 0),
              "headgear2": ('Sunglasses [1]', 0, 'Willow Card'),
              "headgear3": ('Cigarette', 0, 0),
              "weapon": None,
@@ -509,10 +518,23 @@ text_dict = {"headgear1": ('Diadem', 0, 0),
              "accessory1": ('Clip [1]', 0, 'Sage Worm Card'),
              "accessory2": ('Silver Ring', 0, 0)}
 
-
-gear_dict = dict_name_to_dict_id(text_dict)
+# gear_dict = dict_name_to_dict_id(text_dict)
+gear_dict = {'headgear1': [2289, 0, 0],
+             'headgear2': [2202, 0, 4010],
+             'headgear3': [2267, 0, 0],
+             'weapon': None,
+             'shield': [2104, 0, 4012],
+             'shoes': [2405, 0, 0],
+             'armor': [2320, 0, 4098],
+             'robe': [2502, 0, 4015],
+             'accessory1': [2607, 0, 4219],
+             'accessory2': [2611, 0, 0]}
 
 pe = PlayerGear(gear_dict, 'knight', 99)
+
+# pe.headmid.insert_card(4010)
+
+pe.print_gear()
 
 # # pe.equip_item(pe.create_item_with_id(2104))
 # pe.unequip_noble_hats()

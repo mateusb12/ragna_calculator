@@ -144,17 +144,6 @@ def calcframe():
         pi['complex_info'] = p1.export_build()
         igen = InterfaceGenerator(p1)
         igen.generate_interface()
-        # tt = {"headgear1": ('(No Headtop)', 0, 0),
-        #       "headgear2": ('Sunglasses [1]', 0, 'Willow Card'),
-        #       "headgear3": ('Cigarette', 0, 0),
-        #       "weapon": None,
-        #       "shield": ('Buckler [1]', 0, 'Thief Bug Egg Card'),
-        #       "shoes": ('Sandals [1]', 0, 'Matyr Card'),
-        #       "armor": ('Formal Suit [1]', 0, 'Dokebi Card'),
-        #       "robe": ('Hood [1]', 0, 'Condor Card'),
-        #       "accessory1": ('Clip [1]', 0, 'Sage Worm Card'),
-        #       "accessory2": ('Silver Ring', 0, 0)}
-        # igen.generate_equip_details(tt, 'female')
         igen.generate_equip_details(gear_skeleton, 'female')
     return render_template('calculator_frame.html',
                            form=form,
