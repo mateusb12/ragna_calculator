@@ -61,23 +61,6 @@
 <body style="background-color:#96897f;">
 {% block content %}
 
-{% if scroll %}
-<script>
-    document.getElementById('{{ scroll }}').scrollIntoView();
-
-
-
-
-
-
-
-
-
-
-
-
-</script>
-{% endif %}
 
 <form action="" method="POST">
     {{form.csrf_token}}
@@ -397,7 +380,9 @@
                                 <tbody>
                                 <tr class="headtop">
                                     <td class="gear-selection">
-                                        Nome da arma
+                                        {{form.weapon_item(class="gearlist",
+                                        option_attr=deletion_dict,
+                                        onchange="forceSubmit()")}}
                                     </td>
                                     <td style="width: 20px;">
                                         Refino

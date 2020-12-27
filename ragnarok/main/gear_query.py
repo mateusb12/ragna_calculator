@@ -90,28 +90,6 @@ def generate_equipable_gear(player_class: str, player_level: int) -> dict:
     return available_dict
 
 
-def generate_equipable_weapons(player_class: str, player_level: int) -> dict:
-    raw_equipable_list = generate_equipable_gear(player_class, player_level)
-
-    blank_subtype = {"Dagger": [], "1hSword": [], "2hSword": [], "1hSpear": [], "2hSpear": [],
-                     "1hAxe": [], "2hAxe": [], "Mace": [], "1hStaff": [], "2hStaff": [], "Bow": [],
-                     "Knuckle": [], "Musical": [], "Whip": [], "Book": [], "Katar": [], "Revolver": [],
-                     "Rifle": [], "Gatling": [], "Shotgun": [], "Grenade": [], "Huuma": []}
-
-    for i in raw_equipable_list['weapon']:
-        aux = weapon_db[retrieve_id_by_name(i)]
-        blank_subtype[aux['SubType']].append(aux['Name'])
-
-    trimmed_blank = blank_subtype.copy()
-    for f in blank_subtype:
-        if not blank_subtype[f]:
-            trimmed_blank.pop(f, None)
-        else:
-            trimmed_blank[f].sort()
-
-    return trimmed_blank
-
-
 def retrieve_id_by_name(gear_name: str):
     if gear_name is not None:
         original_name = gear_name
@@ -283,3 +261,40 @@ def normalize_form_values_tuple_gen(pst: str, pst_key: str, dict_norm: dict):
         pi['{}_refine'.format(pst)] = 0
     return {'tuple': (pi['{}_item'.format(pst)], pi['{}_refine'.format(pst)], pi['{}_card_list'.format(pst)]),
             'key': pst_key}
+
+
+def generate_equipable_weapons(player_class: str, player_level: int) -> dict:
+    raw_equipable_list = generate_equipable_gear(player_class, player_level)
+
+    blank_subtype = {"Dagger": [], "1hSword": [], "2hSword": [], "1hSpear": [], "2hSpear": [],
+                     "1hAxe": [], "2hAxe": [], "Mace": [], "1hStaff": [], "2hStaff": [], "Bow": [],
+                     "Knuckle": [], "Musical": [], "Whip": [], "Book": [], "Katar": [], "Revolver": [],
+                     "Rifle": [], "Gatling": [], "Shotgun": [], "Grenade": [], "Huuma": []}
+
+    for a in raw_equipable_list['weapon']:
+        aux = weapon_db[retrieve_id_by_name(a)]
+        blank_subtype[aux['SubType']].append(aux['Name'])
+
+    trimmed_blank = blank_subtype.copy()
+    for b in blank_subtype:
+        if not blank_subtype[b]:
+            trimmed_blank.pop(b, None)
+        else:
+            trimmed_blank[b].sort()
+
+    final_weapon_list = []
+    final_weapon_positions = dict()
+
+    for c in trimmed_blank.items():
+        final_weapon_list.append(c[0])
+        for d in c[1]:
+            final_weapon_list.append(d)
+
+    for e in range(len(final_weapon_list)):
+        if final_weapon_list[e] in blank_subtype.keys():
+            final_weapon_positions["weapon_item-{}".format(e)] = {"disabled": ""}
+
+    return {'list': final_weapon_list, 'positions': final_weapon_positions}
+
+
+# print(generate_equipable_weapons('hunter', 99)['positions'])

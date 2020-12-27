@@ -507,34 +507,34 @@ class PlayerGear:
 #              "accessory1": (2626, 0, 4044),
 #              "accessory2": (2608, 0, 0)}
 
-text_dict = {"headgear1": ('Poo Poo Hat', 0, 0),
-             "headgear2": ('Sunglasses [1]', 0, 'Willow Card'),
-             "headgear3": ('Cigarette', 0, 0),
-             "weapon": None,
-             "shield": ('Buckler [1]', 0, 'Thief Bug Egg Card'),
-             "shoes": ('Boots', 0, 0),
-             "armor": ('Formal Suit [1]', 0, 'Dokebi Card'),
-             "robe": ('Hood [1]', 0, 'Condor Card'),
-             "accessory1": ('Clip [1]', 0, 'Sage Worm Card'),
-             "accessory2": ('Silver Ring', 0, 0)}
-
-# gear_dict = dict_name_to_dict_id(text_dict)
-gear_dict = {'headgear1': [2289, 0, 0],
-             'headgear2': [2202, 0, 4010],
-             'headgear3': [2267, 0, 0],
-             'weapon': None,
-             'shield': [2104, 0, 4012],
-             'shoes': [2405, 0, 0],
-             'armor': [2320, 0, 4098],
-             'robe': [2502, 0, 4015],
-             'accessory1': [2607, 0, 4219],
-             'accessory2': [2611, 0, 0]}
-
-pe = PlayerGear(gear_dict, 'knight', 99)
-
-# pe.headmid.insert_card(4010)
-
-pe.print_gear()
+# text_dict = {"headgear1": ('Poo Poo Hat', 0, 0),
+#              "headgear2": ('Sunglasses [1]', 0, 'Willow Card'),
+#              "headgear3": ('Cigarette', 0, 0),
+#              "weapon": None,
+#              "shield": ('Buckler [1]', 0, 'Thief Bug Egg Card'),
+#              "shoes": ('Boots', 0, 0),
+#              "armor": ('Formal Suit [1]', 0, 'Dokebi Card'),
+#              "robe": ('Hood [1]', 0, 'Condor Card'),
+#              "accessory1": ('Clip [1]', 0, 'Sage Worm Card'),
+#              "accessory2": ('Silver Ring', 0, 0)}
+#
+# # gear_dict = dict_name_to_dict_id(text_dict)
+# gear_dict = {'headgear1': [2289, 0, 0],
+#              'headgear2': [2202, 0, 4010],
+#              'headgear3': [2267, 0, 0],
+#              'weapon': None,
+#              'shield': [2104, 0, 4012],
+#              'shoes': [2405, 0, 0],
+#              'armor': [2320, 0, 4098],
+#              'robe': [2502, 0, 4015],
+#              'accessory1': [2607, 0, 4219],
+#              'accessory2': [2611, 0, 0]}
+#
+# pe = PlayerGear(gear_dict, 'knight', 99)
+#
+# # pe.headmid.insert_card(4010)
+#
+# pe.print_gear()
 
 # # pe.equip_item(pe.create_item_with_id(2104))
 # pe.unequip_noble_hats()

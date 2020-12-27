@@ -245,7 +245,7 @@ class InterfaceGenerator:
         img.save(out_file)
 
 
-igen = InterfaceGenerator(PlayerBuild(jbl, 96, 50, 'crusader', [9, 1, 99, 1, 99, 1]))
+# igen = InterfaceGenerator(PlayerBuild(jbl, 96, 50, 'crusader', [9, 1, 99, 1, 99, 1]))
 # tt = {"headgear1": ('(No Headtop)', 0, 0),
 #       "headgear2": ('Sunglasses [1]', 0, 'Willow Card'),
 #       "headgear3": ('Cigarette', 0, 0),
