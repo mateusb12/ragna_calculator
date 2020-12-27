@@ -144,13 +144,14 @@ def calcframe():
         pi['complex_info'] = p1.export_build()
         igen = InterfaceGenerator(p1)
         igen.generate_interface()
-        igen.generate_equip_details(gear_skeleton, 'female')
+        igen.generate_equip_details(gear_skeleton, pi['player_gender'].lower())
     return render_template('calculator_frame.html',
                            form=form,
                            player_info=pi,
                            image_url='static/assets/custom.png',
                            is_refineable=is_refineable,
-                           has_slots=has_slots)
+                           has_slots=has_slots,
+                           scroll='something')
 
 
 @app.route("/loginframe")

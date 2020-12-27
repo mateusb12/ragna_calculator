@@ -66,7 +66,7 @@
 
 .gear-table{
     border: 0px ridge;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 
@@ -263,6 +263,10 @@ class_name{
 
 .attribute-item{
     width: 100px;
+}
+
+.weapon-list{
+    margin-top: 2px;
 }
 
 

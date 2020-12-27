@@ -42,11 +42,42 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
     </script>
 </head>
 
 <body style="background-color:#96897f;">
 {% block content %}
+
+{% if scroll %}
+<script>
+    document.getElementById('{{ scroll }}').scrollIntoView();
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+{% endif %}
 
 <form action="" method="POST">
     {{form.csrf_token}}
@@ -140,8 +171,8 @@
                                     </td>
                                 </tr>
                                 <tr class="level-item">
-                                    <td>Null</td>
-                                    <td>Select null</td>
+                                    <td>Gender</td>
+                                    <td>{{form.player_gender(class="droplist", onchange="forceSubmit()")}}</td>
                                 </tr>
                                 <tr class="level-item">
                                     <td>Null</td>
@@ -360,15 +391,53 @@
 
                 <table class="gear-image">
                     <tbody class="gear-image-body">
-                    <tr class="complex-image" style="">
-                        <td>
-                            <img id="target_image2" src=a" onerror="this.src=forceRender2()" width="40%" height="5%"
-                            style="display:block; margin-top: 50px; margin-bottom: 50px;
-                             margin-right: auto; margin-left: auto; align: center;">
+                    <tr>
+                        <td style="vertical-align:top;">
+                            <table class="weapon-list" style="border: 0px;">
+                                <tbody>
+                                <tr class="headtop">
+                                    <td class="gear-selection">
+                                        Nome da arma
+                                    </td>
+                                    <td style="width: 20px;">
+                                        Refino
+                                    </td>
+                                    <td>
+                                        Elemento
+                                    </td>
+                                </tr>
+                                <tr class="headmid">
+                                    <td>
+                                        Slot1
+                                    </td>
+                                </tr>
+                                <tr class="headlow">
+                                    <td>
+                                        Slot2
+                                    </td>
+                                </tr>
+                                <tr class="shield">
+                                    <td>
+                                        Slot3
+                                    </td>
+                                </tr>
+                                <tr class="shoes">
+                                    <td>Slot4</td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </td>
+                        <td style="vertical-align:top;">
+                            <img id="target_image2" src=a" onerror="this.src=forceRender2()" width="100%" height="5%"
+                                 style="display:block; margin-top: 50px; margin-bottom: 50px;
+                             margin-right: 15px; margin-left: auto; align: center;">
+                        </td>
+
+
                     </tr>
                     </tbody>
                 </table>
+
             </div>
 
         </div>

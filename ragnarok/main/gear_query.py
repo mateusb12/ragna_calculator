@@ -90,6 +90,28 @@ def generate_equipable_gear(player_class: str, player_level: int) -> dict:
     return available_dict
 
 
+def generate_equipable_weapons(player_class: str, player_level: int) -> dict:
+    raw_equipable_list = generate_equipable_gear(player_class, player_level)
+
+    blank_subtype = {"Dagger": [], "1hSword": [], "2hSword": [], "1hSpear": [], "2hSpear": [],
+                     "1hAxe": [], "2hAxe": [], "Mace": [], "1hStaff": [], "2hStaff": [], "Bow": [],
+                     "Knuckle": [], "Musical": [], "Whip": [], "Book": [], "Katar": [], "Revolver": [],
+                     "Rifle": [], "Gatling": [], "Shotgun": [], "Grenade": [], "Huuma": []}
+
+    for i in raw_equipable_list['weapon']:
+        aux = weapon_db[retrieve_id_by_name(i)]
+        blank_subtype[aux['SubType']].append(aux['Name'])
+
+    trimmed_blank = blank_subtype.copy()
+    for f in blank_subtype:
+        if not blank_subtype[f]:
+            trimmed_blank.pop(f, None)
+        else:
+            trimmed_blank[f].sort()
+
+    return trimmed_blank
+
+
 def retrieve_id_by_name(gear_name: str):
     if gear_name is not None:
         original_name = gear_name

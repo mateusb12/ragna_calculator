@@ -56,6 +56,7 @@ class CalculatorForm(FlaskForm):
     base_level = SelectField('base_level', choices=baselevel_choices)
     job_level = SelectField('job_level', choices=joblevel_choices)
     class_name = SelectField('class_name', choices=class_choices)
+    player_gender = SelectField('player_gender', choices=['Male', 'Female'])
 
     player_str = SelectField('player_str', choices=list(range(1, 100)))
     player_agi = SelectField('player_agi', choices=list(range(1, 100)))

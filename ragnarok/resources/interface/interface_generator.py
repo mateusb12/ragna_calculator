@@ -142,12 +142,6 @@ class InterfaceGenerator:
 
         import textwrap
 
-        def old_draw_multiline(textstring: str, tx: int, ty: int, breakwidth: int, tfont: ImageFont):
-            lines = textwrap.wrap(textstring, width=breakwidth)
-            for line in lines:
-                draw.text((tx, ty), line, font=tfont, fill="#000000")
-                ty += font_db[12].getsize(line)[1]
-
         def draw_multiline(textstring: str, tx: int, ty: int, tfont: ImageFont):
             if len(textstring) <= 11:
                 lines = [textstring]
@@ -155,7 +149,7 @@ class InterfaceGenerator:
                 lines = [textstring[:11], textstring[11:]]
             for line in lines:
                 draw.text((tx, ty), line, font=tfont, fill="#000000")
-                ty += font_db[12].getsize(line)[1]
+                ty += font_db[12].getsize(line)[1] - 1
 
         if pe.headtop:
             if not pe.headtop.is_dead_gear():
@@ -168,10 +162,18 @@ class InterfaceGenerator:
                 draw_multiline('{}'.format(pe.weapon.export_text()), 35, 52, font_db[12])
         if pe.robe:
             if not pe.robe.is_dead_gear():
-                draw_multiline('{}'.format(pe.robe.export_text()), 35, 80, font_db[12])
+                textline = pe.robe.export_text()
+                if len(textline) > 11:
+                    draw_multiline('{}'.format(textline), 35, 77, font_db[12])
+                else:
+                    draw_multiline('{}'.format(textline), 35, 83, font_db[12])
         if pe.accessory1:
             if not pe.accessory1.is_dead_gear():
-                draw_multiline('{}'.format(pe.accessory1.export_text()), 35, 105, font_db[12])
+                textline = pe.accessory1.export_text()
+                if len(textline) > 11:
+                    draw_multiline('{}'.format(textline), 35, 105, font_db[12])
+                else:
+                    draw_multiline('{}'.format(textline), 35, 110, font_db[12])
         if pe.headmid:
             if not pe.headmid.is_dead_gear():
                 draw_multiline('{}'.format(pe.headmid.export_text()), 175, 0, font_db[12])
@@ -183,12 +185,18 @@ class InterfaceGenerator:
                 draw_multiline('{}'.format(pe.shield.export_text()), 175, 53, font_db[12])
         if pe.shoes:
             if not pe.shoes.is_dead_gear():
-                draw_multiline('{}'.format(pe.shoes.export_text()), 175, 79, font_db[12])
+                textline = pe.shoes.export_text()
+                if len(textline) > 11:
+                    draw_multiline('{}'.format(pe.shoes.export_text()), 175, 80, font_db[12])
+                else:
+                    draw_multiline('{}'.format(pe.shoes.export_text()), 175, 82, font_db[12])
         if pe.accessory2:
             if not pe.accessory2.is_dead_gear():
-                draw_multiline('{}'.format(pe.accessory2.export_text()), 175, 105, font_db[12])
-
-        print('meu pai amado {}'.format(pe.headmid.export_text()))
+                textline = pe.accessory2.export_text()
+                if len(textline) > 11:
+                    draw_multiline('{}'.format(textline), 175, 105, font_db[12])
+                else:
+                    draw_multiline('{}'.format(textline), 175, 110, font_db[12])
 
         download_queue = self.check_icons(list(pe.export_id_table().values()))
         if download_queue is not False:
@@ -209,13 +217,13 @@ class InterfaceGenerator:
         draw_icon(gear_ids['headtop'], 5, 3)
         draw_icon(gear_ids['headmid'], 250, 3)
         draw_icon(gear_ids['headlow'], 5, 25)
-        draw_icon(gear_ids['armor'], 250, 27)
+        draw_icon(gear_ids['armor'], 250, 25)
         draw_icon(gear_ids['weapon'], 5, 52)
-        draw_icon(gear_ids['shield'], 252, 53)
+        draw_icon(gear_ids['shield'], 250, 52)
         draw_icon(gear_ids['robe'], 5, 79)
         draw_icon(gear_ids['shoes'], 250, 79)
         draw_icon(gear_ids['accessory1'], 5, 107)
-        draw_icon(gear_ids['accessory2'], 248, 104)
+        draw_icon(gear_ids['accessory2'], 248, 107)
 
         chosen_sex = sex
         job = pe.job
