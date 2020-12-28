@@ -112,6 +112,9 @@ class CalculatorForm(FlaskForm):
     )
     weapon_refine = SelectField(choices=refine_range)
     weapon_card_1 = SelectField(choices=card_choices)
+    weapon_card_2 = SelectField(choices=card_choices)
+    weapon_card_3 = SelectField(choices=card_choices)
+    weapon_card_4 = SelectField(choices=card_choices)
 
 
 def calc_dynamic_select(input_form):
@@ -140,6 +143,9 @@ def calc_dynamic_select(input_form):
     form.accessory2_item.choices = sorted(equipable_list['accessory'])
 
     form.weapon_card_1.choices = sorted(get_cardlist_by_name(form.weapon_item.data))
+    form.weapon_card_2.choices = sorted(get_cardlist_by_name(form.weapon_item.data))
+    form.weapon_card_3.choices = sorted(get_cardlist_by_name(form.weapon_item.data))
+    form.weapon_card_4.choices = sorted(get_cardlist_by_name(form.weapon_item.data))
 
     form.headtop_card_list.choices = sorted(get_cardlist_by_name(form.headtop_item.data))
     form.headmid_card_list.choices = sorted(get_cardlist_by_name(form.headmid_item.data))

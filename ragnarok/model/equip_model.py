@@ -1,5 +1,6 @@
 from typing import List
 
+from ragnarok.main.gear_query import dict_name_to_dict_id
 from ragnarok.main.exporter import equip_db, job70, shield_db, shoes_db, armor_db, robe_db, accessory_db, \
     hat_db, weapon_db, adjective_list
 
@@ -104,7 +105,7 @@ class BaseGear:
             if type_check in ['right_accessory', 'left_accessory']:
                 type_check = 'both_accessory'
             if type_check not in list(card["Locations"].keys())[0].lower():
-                if card['Id'] != self.nullcard:
+                if (card['Id'] != self.nullcard) and self.id not in self.nullgear:
                     raise Exception('Impossible to insert card. '
                                     '[{}] cannot be inserted into a [{}] ("{}"). Required: {}. Found: {}'
                                     .format(card['Name'], self.class_type, self.name,
@@ -217,9 +218,9 @@ class Weapon(BaseGear):
         if card_id == 0:
             return False
         card = card_db[card_id]
-        if self.slots == 0:
-            raise Exception('Impossible to insert card. '
-                            'The equipment [{}] {} has zero slots'.format(self.id, self.name))
+        if self.slots == 0 and self.id != 1599 and card['Id'] != 4700:
+            raise Exception('Impossible to insert the card {}. '
+                            'The weapon [{}] {} has zero slots'.format(card['Name'], self.id, self.name))
         else:
             if self.card:
                 if self.card2:
@@ -432,8 +433,8 @@ class PlayerGear:
                     aux = Shield(equip_db[v[0]])
                 if k == "weapon" and v is not None:
                     aux = Weapon(equip_db[v[0]])
-                    for t in v[2]:
-                        aux.insert_card(t)
+                    if v[2]:
+                        aux.insert_card(v[2])
                 if k == "shoes" and v is not None:
                     aux = Shoes(equip_db[v[0]])
                 if k == "armor" and v is not None:
@@ -506,18 +507,18 @@ class PlayerGear:
 #              "accessory1": (2626, 0, 4044),
 #              "accessory2": (2608, 0, 0)}
 
-# text_dict = {"headgear1": ('Poo Poo Hat', 0, 0),
-#              "headgear2": ('Sunglasses [1]', 0, 'Willow Card'),
-#              "headgear3": ('Cigarette', 0, 0),
-#              "weapon": None,
-#              "shield": ('Buckler [1]', 0, 'Thief Bug Egg Card'),
-#              "shoes": ('Boots', 0, 0),
-#              "armor": ('Formal Suit [1]', 0, 'Dokebi Card'),
-#              "robe": ('Hood [1]', 0, 'Condor Card'),
-#              "accessory1": ('Clip [1]', 0, 'Sage Worm Card'),
-#              "accessory2": ('Silver Ring', 0, 0)}
-#
-# # gear_dict = dict_name_to_dict_id(text_dict)
+text_dict = {"headgear1": ('Poo Poo Hat', 0, 0),
+             "headgear2": ('Sunglasses [1]', 0, 'Willow Card'),
+             "headgear3": ('Cigarette', 0, 0),
+             "weapon": None,
+             "shield": ('Buckler [1]', 0, 'Thief Bug Egg Card'),
+             "shoes": ('Boots', 0, 0),
+             "armor": ('Formal Suit [1]', 0, 'Dokebi Card'),
+             "robe": ('Hood [1]', 0, 'Condor Card'),
+             "accessory1": ('Clip [1]', 0, 'Sage Worm Card'),
+             "accessory2": ('Silver Ring', 0, 0)}
+
+gear_dict = dict_name_to_dict_id(text_dict)
 # gear_dict = {'headgear1': [2289, 0, 0],
 #              'headgear2': [2202, 0, 4010],
 #              'headgear3': [2267, 0, 0],
@@ -529,7 +530,7 @@ class PlayerGear:
 #              'accessory1': [2607, 0, 4219],
 #              'accessory2': [2611, 0, 0]}
 #
-# pe = PlayerGear(gear_dict, 'knight', 99)
+pe = PlayerGear(gear_dict, 'knight', 99)
 #
 # # pe.headmid.insert_card(4010)
 #
@@ -545,3 +546,5 @@ class PlayerGear:
 # print(list(pe.export_id_table().values()))
 
 # print(pe.weapon.export_text())
+
+

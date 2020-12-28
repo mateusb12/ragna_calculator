@@ -298,9 +298,13 @@ def normalize_form_values(pi: dict) -> dict:
 
     for q in [('headgear1', 'headtop'), ('headgear2', 'headmid'), ('headgear3', 'headlow'),
               ('shield', 'shield'), ('shoes', 'shoes'), ('armor', 'armor'), ('robe', 'robe'),
-              ('accessory1', 'accessory1'), ('accessory2', 'accessory2'), ('weapon', None)]:
-        if q[1] is not None:
+              ('accessory1', 'accessory1'), ('accessory2', 'accessory2'), ('weapon', 'weapon')]:
+        if q[0] is not 'weapon':
             item_t = normalize_form_values_tuple_gen(q[1], q[0], pi)
+            # print('item_t = {}'.format(item_t))
+            p1_gear[item_t['key']] = item_t['tuple']
+        else:
+            item_t = normalize_form_values_tuple_gen_for_weapon(q[1], q[0], pi)
             p1_gear[item_t['key']] = item_t['tuple']
     return p1_gear
 
@@ -312,6 +316,24 @@ def normalize_form_values_tuple_gen(pst: str, pst_key: str, dict_norm: dict):
     if ('{}_refine'.format(pst) not in pi) or (not is_refineable_by_name(pi['{}_item'.format(pst)])):
         pi['{}_refine'.format(pst)] = 0
     return {'tuple': (pi['{}_item'.format(pst)], pi['{}_refine'.format(pst)], pi['{}_card_list'.format(pst)]),
+            'key': pst_key}
+
+
+def normalize_form_values_tuple_gen_for_weapon(pst: str, pst_key: str, dict_norm: dict):
+    pi = dict_norm
+    if ('{}_card_1'.format(pst) not in pi) or (not has_slots_by_name(pi['{}_item'.format(pst)])):
+        pi['{}_card_1'.format(pst)] = '(No Card)'
+    if ('{}_card_2'.format(pst) not in pi) or (not has_slots_by_name(pi['{}_item'.format(pst)])):
+        pi['{}_card_2'.format(pst)] = '(No Card)'
+    if ('{}_card_3'.format(pst) not in pi) or (not has_slots_by_name(pi['{}_item'.format(pst)])):
+        pi['{}_card_3'.format(pst)] = '(No Card)'
+    if ('{}_card_4'.format(pst) not in pi) or (not has_slots_by_name(pi['{}_item'.format(pst)])):
+        pi['{}_card_4'.format(pst)] = '(No Card)'
+    if ('{}_refine'.format(pst) not in pi) or (not is_refineable_by_name(pi['{}_item'.format(pst)])):
+        pi['{}_refine'.format(pst)] = 0
+    return {'tuple': (pi['{}_item'.format(pst)], pi['{}_refine'.format(pst)],
+                      pi['{}_card_1'.format(pst)], pi['{}_card_2'.format(pst)],
+                      pi['{}_card_3'.format(pst)], pi['{}_card_4'.format(pst)]),
             'key': pst_key}
 
 
@@ -383,3 +405,19 @@ def generate_equipable_weapons(player_class: str, player_level: int) -> list:
         outer_tuple.append((g, tuple(void_tuple)))
 
     return list(outer_tuple)
+
+
+ttp = {"headtop_item": 'Ribbon', 'headlow_refine': 0, 'headlow_card_list': '(No Card)',
+       "headmid_item": 'Sunglasses',
+       "headlow_item": 'Romantic Flower',
+       "weapon_item": 'Gladius [3]', 'weapon_refine': 7,
+       'weapon_card_1': 'Assaulter Card', 'weapon_card_2': 'Assaulter Card', 'weapon_card_3': 'Andre Larva Card',
+       "shield_item": 'Guard [1]', 'shield_card_list': 'Thara Frog Card',
+       "shoes_item": 'Sandals',
+       "armor_item": 'Silk Robe',
+       "robe_item": 'Muffler',
+       "accessory1_item": 'Rosary',
+       "accessory2_item": 'Rosary'}
+
+# print('')
+# print('')
