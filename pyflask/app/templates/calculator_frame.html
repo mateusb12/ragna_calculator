@@ -55,6 +55,11 @@
 
 
 
+
+
+
+
+
     </script>
 </head>
 
@@ -382,8 +387,8 @@
                                     <td class="gear-selection">
                                         {{form.weapon_item(class="gearlist", onchange="forceSubmit()")}}
                                     </td>
-                                    <td id = "refine" style="width: 20px;">
-                                        refine
+                                    <td id="refine" style="width: 20px;">
+                                        {{form.weapon_refine(class="gear_refine", onchange="forceSubmit()")}}
                                     </td>
                                     <td>
                                         Elemento
@@ -391,21 +396,37 @@
                                 </tr>
                                 <tr class="headmid">
                                     <td>
-                                        Slot1
+                                        {% if has_slots(form.weapon_item.data) %}
+                                        {{form.weapon_card_1(class="gear_card", onchange="forceSubmit()")}}
+                                        {% endif %}
                                     </td>
                                 </tr>
                                 <tr class="headlow">
                                     <td>
-                                        Slot2
+                                        {% if has_slots(form.weapon_item.data) %}
+                                        {% if has_multiple_slots(form.weapon_item.data) > 1 %}
+                                        {{form.weapon_card_1(class="gear_card", onchange="forceSubmit()")}}
+                                        {% endif %}
+                                        {% endif %}
                                     </td>
                                 </tr>
                                 <tr class="shield">
                                     <td>
-                                        Slot3
+                                        {% if has_slots(form.weapon_item.data) %}
+                                        {% if has_multiple_slots(form.weapon_item.data) > 2 %}
+                                        {{form.weapon_card_1(class="gear_card", onchange="forceSubmit()")}}
+                                        {% endif %}
+                                        {% endif %}
                                     </td>
                                 </tr>
                                 <tr class="shoes">
-                                    <td>Slot4</td>
+                                    <td>
+                                        {% if has_slots(form.weapon_item.data) %}
+                                        {% if has_multiple_slots(form.weapon_item.data) > 3 %}
+                                        {{form.weapon_card_1(class="gear_card", onchange="forceSubmit()")}}
+                                        {% endif %}
+                                        {% endif %}
+                                    </td>
                                 </tr>
                                 </tbody>
                             </table>

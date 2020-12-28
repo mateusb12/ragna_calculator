@@ -45,7 +45,7 @@ class CalculatorForm(FlaskForm):
     headtop_choices = ['(No Headtop)']
     headmid_choices = ['(No Headmid)']
     headlow_choices = ['(No Headlow)']
-    weapon_choices = ['Random']
+    weapon_choices = ['(No Weapon)']
     shield_choices = ['(No Shield)']
     shoes_choices = ['(No Shoes)']
     robe_choices = ['(No Robe)']
@@ -107,17 +107,12 @@ class CalculatorForm(FlaskForm):
 
     weapon_item = ExtendedSelectField(
         choices=[
-            ('Fruits', (('apple', 'Apple'), ('peach', 'Peach'), ('pear', 'Pear'))),
-            ('Vegetables', (('cucumber', 'Cucumber'), ('potato', 'Potato'), ('tomato', 'Tomato')))
+            ('No Weapon', (('(No Weapon)', '(No Weapon)'), ('(No Weapon)', '(No Weapon)')))
         ]
     )
+    weapon_refine = SelectField(choices=refine_range)
+    weapon_card_1 = SelectField(choices=card_choices)
 
-
-# choices = [
-#     ('Fruits', (('apple', 'Apple'), ('peach', 'Peach'), ('pear', 'Pear'))),
-#     ('Vegetables', (('cucumber', 'Cucumber'), ('potato', 'Potato'), ('tomato', 'Tomato'),)),
-#     ('other', 'None Of The Above')
-# ]
 
 def calc_dynamic_select(input_form):
     form = input_form
@@ -143,6 +138,8 @@ def calc_dynamic_select(input_form):
     form.robe_item.choices = sorted(equipable_list['robe'])
     form.accessory1_item.choices = sorted(equipable_list['accessory'])
     form.accessory2_item.choices = sorted(equipable_list['accessory'])
+
+    form.weapon_card_1.choices = sorted(get_cardlist_by_name(form.weapon_item.data))
 
     form.headtop_card_list.choices = sorted(get_cardlist_by_name(form.headtop_item.data))
     form.headmid_card_list.choices = sorted(get_cardlist_by_name(form.headmid_item.data))

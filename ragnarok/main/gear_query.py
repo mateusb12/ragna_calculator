@@ -1,8 +1,34 @@
+from typing import Tuple
+
 from ragnarok.model.dead_gear import dead_gear_list as nullgear
 from ragnarok.model.dead_gear import dead_card as nullcard
-from ragnarok.main.exporter import hat_db, is_equipable, weapon_db, shield_db, shoes_db, armor_db, robe_db, \
+from ragnarok.main.exporter import hat_db, weapon_db, shield_db, shoes_db, armor_db, robe_db, \
     accessory_db, \
-    equip_db, card_db
+    equip_db, card_db, job70, job_adapt
+
+
+def is_equipable(player_job: str, player_level: int, ch: dict):
+    if player_job.lower() == 'super_novice':
+        player_job = 'SuperNovice'
+
+    if 'Upper' in ch['Classes'].keys():
+        if player_job.lower() not in job70:
+            return False, 'Transclass only'
+    if player_job.lower() in job70:
+        player_job = job_adapt['Body'][player_job.lower()]
+
+    if 'All' in ch['Jobs'].keys():
+        if player_job.lower() in map(lambda x: x.lower(), ch['Jobs'].keys()):
+            return False, ch['Jobs'].keys()
+    else:
+        if player_job.lower() not in map(lambda x: x.lower(), ch['Jobs'].keys()):
+            return False, ch['Jobs'].keys()
+
+    if 'EquipLevelMin' in ch:
+        if int(player_level) <= int(ch['EquipLevelMin']):
+            return False, 'Levelmin: {}'.format(ch['EquipLevelMin'])
+
+    return True, ch
 
 
 def generate_equipable_gear(player_class: str, player_level: int) -> dict:
@@ -33,7 +59,7 @@ def generate_equipable_gear(player_class: str, player_level: int) -> dict:
         aux = is_equipable(player_class, player_level, weapon_db[a])
         gear_name = weapon_db[a]['Name']
         if weapon_db[a]['Slots'] != 0:
-            gear_name += ' [1]'
+            gear_name += ' [{}]'.format(weapon_db[a]['Slots'])
         if aux[0]:
             equipable_weapon.add(gear_name)
 
@@ -92,17 +118,31 @@ def generate_equipable_gear(player_class: str, player_level: int) -> dict:
 
 def retrieve_id_by_name(gear_name: str):
     if gear_name is not None:
-        original_name = gear_name
-        gear_name = adapt_slotted_name(gear_name)
-        plausible_ids = dict()
-        for k in equip_db.values():
-            if k['Name'].lower() == gear_name.lower():
-                plausible_ids[k['Id']] = k['Slots']
-        if ' [1]' in original_name:
-            return max(plausible_ids, key=plausible_ids.get)
-        else:
-            # mudar para minimo
-            return min(plausible_ids, key=plausible_ids.get)
+        gear_tuple = adapt_slotted_name(gear_name)
+        gear_name = gear_tuple[0]
+        gear_slots = gear_tuple[1]
+        possible_ids = []
+
+        for j in equip_db:
+            if equip_db[j]['Name'].lower() == gear_name.lower():
+                if equip_db[j]['Slots'] == gear_slots:
+                    return equip_db[j]['Id']
+                else:
+                    possible_ids.append(equip_db[j]['Id'])
+        return max(possible_ids)
+
+        # for k in equip_db.values():
+        #     if k['Name'].lower() == gear_name[0].lower():
+        #         plausible_ids[k['Id']] = k['Slots']
+        # print('plausible_ids = {}'.format(plausible_ids))
+        # # if ' [1]' in original_name:
+        # if any(x in original_name for x in [' [1]', ' [2]', ' [3]', ' [4]']):
+        #     for g_id, g_slot in plausible_ids.items():  # for name, age in dictionary.iteritems():  (for Python 2.x)
+        #         if g_slot == gear_name[1]:
+        #             return g_id
+        # else:
+        #     # mudar para minimo
+        #     return min(plausible_ids, key=plausible_ids.get)
 
 
 def retrieve_card_id_by_name(card_name: str):
@@ -114,17 +154,20 @@ def retrieve_card_id_by_name(card_name: str):
         return 4700
 
 
-def adapt_slotted_name(input_name: str) -> str:
-    if ' [1]' in input_name:
-        return input_name[:-4]
+def adapt_slotted_name(input_name: str) -> Tuple[str, int]:
+    trimmed_name = input_name
+    trimmed_slots = 0
+    if any(x in input_name for x in [' [1]', ' [2]', ' [3]', ' [4]']):
+        trimmed_slots = int(input_name[-3:][1])
+        return input_name[:-4], trimmed_slots
     else:
-        return input_name
+        return input_name, trimmed_slots
 
 
 def is_refineable(gear_name: str) -> bool:
     if gear_name is not None:
         gear_name = adapt_slotted_name(gear_name)
-        return equip_db[retrieve_id_by_name(gear_name)]['Refineable']
+        return equip_db[retrieve_id_by_name(gear_name[0])]['Refineable']
 
 
 def has_slots(gear_name: str) -> bool:
@@ -133,6 +176,15 @@ def has_slots(gear_name: str) -> bool:
             return True
         else:
             return False
+
+
+def has_multiple_slots(gear_name: str) -> int:
+    if gear_name is not None:
+        step_aux = equip_db[retrieve_id_by_name(gear_name)]
+        if step_aux['Slots'] != 0:
+            return step_aux['Slots']
+        else:
+            return 0
 
 
 def get_item_type(gear_name: str) -> str:

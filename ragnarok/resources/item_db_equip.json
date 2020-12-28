@@ -10580,6 +10580,23 @@
 			"WeaponLevel": 3,
 			"EquipLevelMin": 1
 		},
+				{
+			"Id": 1599,
+			"AegisName": "No_Weapon",
+			"Name": "(No Weapon)",
+			"Type": "Weapon",
+			"SubType": "Dagger",
+			"Buy": 1,
+			"Attack": 135,
+			"Range": 1,
+			"Jobs": {
+				"All": true
+			},
+			"Locations": {
+				"Right_Hand": true
+			},
+			"EquipLevelMin": 0
+		},
 		{
 			"Id": 1601,
 			"AegisName": "Rod",

@@ -69,30 +69,4 @@ db_package = (weapon_db, hat_db, shield_db, robe_db, armor_db, shoes_db, accesso
 job_adapt = open_json('job_adaptation.json')
 
 
-def is_equipable(player_job: str, player_level: int, ch: dict):
-    if player_job.lower() == 'super_novice':
-        player_job = 'SuperNovice'
-
-    if 'Upper' in ch['Classes'].keys():
-        if player_job.lower() not in job70:
-            return False, 'Transclass only'
-    print('é equipavel ou não? {}'.format(player_job))
-    if player_job.lower() in job70:
-        player_job = job_adapt['Body'][player_job.lower()]
-
-    if 'All' in ch['Jobs'].keys():
-        if player_job.lower() in map(lambda x: x.lower(), ch['Jobs'].keys()):
-            return False, ch['Jobs'].keys()
-    else:
-        if player_job.lower() not in map(lambda x: x.lower(), ch['Jobs'].keys()):
-            return False, ch['Jobs'].keys()
-
-    if 'EquipLevelMin' in ch:
-        if int(player_level) <= int(ch['EquipLevelMin']):
-            return False, 'Levelmin: {}'.format(ch['EquipLevelMin'])
-
-    return True, ch
-
-
-
 

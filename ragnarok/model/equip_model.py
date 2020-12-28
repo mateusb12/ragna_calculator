@@ -1,6 +1,5 @@
 from typing import List
 
-from ragnarok.main.gear_query import get_item_type, retrieve_id_by_name, dict_name_to_dict_id
 from ragnarok.main.exporter import equip_db, job70, shield_db, shoes_db, armor_db, robe_db, accessory_db, \
     hat_db, weapon_db, adjective_list
 

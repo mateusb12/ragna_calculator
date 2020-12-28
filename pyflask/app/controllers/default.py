@@ -12,7 +12,7 @@ from app import app
 from app.models.forms import LoginForm, RegisterForm, CalculatorForm, calc_dynamic_select
 
 from ragnarok.main.gear_query import is_refineable, has_slots, has_slots_by_name, is_refineable_by_name, \
-    normalize_form_values, generate_equipable_weapons_old
+    normalize_form_values, generate_equipable_weapons_old, has_multiple_slots
 
 from ragnarok.model.statuspoints_evaluator import attribute_balance
 from ragnarok.model.build_model import PlayerBuild
@@ -153,6 +153,7 @@ def calcframe():
                            image_url='static/assets/custom.png',
                            is_refineable=is_refineable,
                            has_slots=has_slots,
+                           has_multiple_slots=has_multiple_slots,
                            deletion_dict=deletion_dict)
 
 
