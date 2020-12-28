@@ -2,7 +2,7 @@ from typing import List
 
 from ragnarok.main.gear_query import dict_name_to_dict_id
 from ragnarok.main.exporter import equip_db, job70, shield_db, shoes_db, armor_db, robe_db, accessory_db, \
-    hat_db, weapon_db, adjective_list
+    hat_db, weapon_db, adjective_list, job_adapt
 
 from ragnarok.model.dead_gear import dead_gear_list as nullgear
 from ragnarok.model.dead_gear import dead_card as nullcard
@@ -218,36 +218,41 @@ class Weapon(BaseGear):
         if card_id == 0:
             return False
         card = card_db[card_id]
-        if self.slots == 0 and self.id != 1599 and card['Id'] != 4700:
+        if (self.slots == 0) and (self.id != 1599) and (card_id != 4700):
             raise Exception('Impossible to insert the card {}. '
                             'The weapon [{}] {} has zero slots'.format(card['Name'], self.id, self.name))
         else:
-            if self.card:
-                if self.card2:
-                    if self.card3:
-                        if self.card4:
-                            raise Exception("Impossible to insert [{}]. The weapon [{}] has already {}/{} cards"
-                                            .format(card['Name'], self.name, self.slots, self.slots))
+            if card_id != 4700:
+                if self.card:
+                    if self.card2:
+                        if self.card3:
+                            if self.card4:
+                                raise Exception("Impossible to insert [{}] ({})."
+                                                " The weapon [{}] has already {}/{} cards"
+                                                .format(card['Name'], card['Id'], self.name, self.slots, self.slots))
+                            else:
+                                if self.remaining_slots() > 0:
+                                    self.card4 = card
+                                else:
+                                    raise Exception("Impossible to insert [{}] ({})."
+                                                    " The weapon [{}] has already {}/{} cards"
+                                                    .format(card['Name'], card['Id'], self.name, self.slots, self.slots))
                         else:
                             if self.remaining_slots() > 0:
-                                self.card4 = card
+                                self.card3 = card
                             else:
-                                raise Exception("Impossible to insert [{}]. The weapon [{}] has already {}/{} cards"
-                                                .format(card['Name'], self.name, self.slots, self.slots))
+                                raise Exception("Impossible to insert [{}] ({})."
+                                                " The weapon [{}] has already {}/{} cards"
+                                                .format(card['Name'], card['Id'], self.name, self.slots, self.slots))
                     else:
                         if self.remaining_slots() > 0:
-                            self.card3 = card
+                            self.card2 = card
                         else:
-                            raise Exception("Impossible to insert [{}]. The weapon [{}] has already {}/{} cards"
-                                            .format(card['Name'], self.name, self.slots, self.slots))
+                            raise Exception("Impossible to insert [{}] ({})."
+                                            " The weapon [{}] has already {}/{} cards"
+                                            .format(card['Name'], card['Id'], self.name, self.slots, self.slots))
                 else:
-                    if self.remaining_slots() > 0:
-                        self.card2 = card
-                    else:
-                        raise Exception("Impossible to insert [{}]. The weapon [{}] has already {}/{} cards"
-                                        .format(card['Name'], self.name, self.slots, self.slots))
-            else:
-                self.card = card
+                    self.card = card
 
 
 class PlayerGear:
@@ -342,12 +347,15 @@ class PlayerGear:
                 if self.job.lower() not in job70:
                     return False, 'Cannot equip the transclass-only item [{}] ({}) in a {}' \
                         .format(item.name, item.id, self.job)
+            current_job = self.job.lower()
+            if current_job in job70:
+                current_job = job_adapt['Body'][current_job.lower()]
             if 'All' in item.jobs.keys():
-                if self.job.lower() in map(lambda x: x.lower(), item.jobs.keys()):
+                if current_job in map(lambda x: x.lower(), item.jobs.keys()):
                     return False, 'Cannot equip the item [{}] ({}) in a {}' \
                         .format(item.name, item.id, self.job)
             else:
-                if self.job.lower() not in map(lambda x: x.lower(), item.jobs.keys()):
+                if current_job not in map(lambda x: x.lower(), item.jobs.keys()):
                     return False, 'Cannot equip the item [{}] ({}) in a {}' \
                         .format(item.name, item.id, self.job.capitalize())
         return True, 'equipable'
@@ -433,8 +441,14 @@ class PlayerGear:
                     aux = Shield(equip_db[v[0]])
                 if k == "weapon" and v is not None:
                     aux = Weapon(equip_db[v[0]])
-                    if v[2]:
+                    if len(v) > 2:
                         aux.insert_card(v[2])
+                    if len(v) > 3:
+                        aux.insert_card(v[3])
+                    if len(v) > 4:
+                        aux.insert_card(v[4])
+                    if len(v) > 5:
+                        aux.insert_card(v[5])
                 if k == "shoes" and v is not None:
                     aux = Shoes(equip_db[v[0]])
                 if k == "armor" and v is not None:
@@ -506,34 +520,30 @@ class PlayerGear:
 #              "robe": (2502, 7, 4133),
 #              "accessory1": (2626, 0, 4044),
 #              "accessory2": (2608, 0, 0)}
-
-text_dict = {"headgear1": ('Poo Poo Hat', 0, 0),
-             "headgear2": ('Sunglasses [1]', 0, 'Willow Card'),
-             "headgear3": ('Cigarette', 0, 0),
-             "weapon": None,
-             "shield": ('Buckler [1]', 0, 'Thief Bug Egg Card'),
-             "shoes": ('Boots', 0, 0),
-             "armor": ('Formal Suit [1]', 0, 'Dokebi Card'),
-             "robe": ('Hood [1]', 0, 'Condor Card'),
-             "accessory1": ('Clip [1]', 0, 'Sage Worm Card'),
-             "accessory2": ('Silver Ring', 0, 0)}
-
-gear_dict = dict_name_to_dict_id(text_dict)
+#
+# text_dict = {"headgear1": ('Poo Poo Hat', 0, 0),
+#              "headgear2": ('Sunglasses [1]', 0, 'Willow Card'),
+#              "headgear3": ('Cigarette', 0, 0),
+#              "weapon": ('Gladius [3]', 0, 0, 'Hydra Card', 'Hydra Card', 'Skeleton Worker Card'),
+#              "shield": ('Buckler [1]', 0, 'Thief Bug Egg Card'),
+#              "shoes": ('Boots', 0, 0),
+#              "armor": ('Formal Suit [1]', 0, 'Dokebi Card'),
+#              "robe": ('Hood [1]', 0, 'Condor Card'),
+#              "accessory1": ('Clip [1]', 0, 'Sage Worm Card'),
+#              "accessory2": ('Silver Ring', 0, 0)}
+#
+# gear_dict = dict_name_to_dict_id(text_dict)
 # gear_dict = {'headgear1': [2289, 0, 0],
 #              'headgear2': [2202, 0, 4010],
 #              'headgear3': [2267, 0, 0],
-#              'weapon': None,
+#              'weapon': [1220, 0, 4092, 4092, 4092],
 #              'shield': [2104, 0, 4012],
 #              'shoes': [2405, 0, 0],
 #              'armor': [2320, 0, 4098],
 #              'robe': [2502, 0, 4015],
 #              'accessory1': [2607, 0, 4219],
 #              'accessory2': [2611, 0, 0]}
-#
-pe = PlayerGear(gear_dict, 'knight', 99)
-#
-# # pe.headmid.insert_card(4010)
-#
+# pe = PlayerGear(gear_dict, 'knight', 99)
 # pe.print_gear()
 
 # # pe.equip_item(pe.create_item_with_id(2104))

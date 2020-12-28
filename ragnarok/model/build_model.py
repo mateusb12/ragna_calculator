@@ -4,6 +4,8 @@ import pandas as pd
 from typing import List
 import os
 
+from ragnarok.main.exporter import job70
+
 
 class PlayerBuild:
     def __init__(self, job_bonuses_list: pd.DataFrame, base_level: int, job_level: int,
@@ -142,6 +144,8 @@ class PlayerBuild:
         max_hp = math.floor(self.base_hp * (1 + (0.01 * self.vit)) * self.trans_mod)
         max_hp += self.additive_modifiers
         max_hp = math.floor(max_hp * (1 + (self.multiplicative_modifiers * 0.01)))
+        if self.current_job in job70:
+            max_hp -= 1
         return max_hp
 
     def calculate_max_sp(self) -> int:

@@ -262,7 +262,12 @@ def dict_name_to_dict_id(dict_name: dict):
     for k, v in dict_name.items():
         if v is not None:
             if v[2] != 0:
-                adapt_void = [retrieve_id_by_name(v[0]), v[1], retrieve_card_id_by_name(v[2])]
+                if k == 'weapon':
+                    adapt_void = [retrieve_id_by_name(v[0]), v[1],
+                                  retrieve_card_id_by_name(v[2]), retrieve_card_id_by_name(v[3]),
+                                  retrieve_card_id_by_name(v[4]), retrieve_card_id_by_name(v[5])]
+                else:
+                    adapt_void = [retrieve_id_by_name(v[0]), v[1], retrieve_card_id_by_name(v[2])]
             else:
                 adapt_void = [retrieve_id_by_name(v[0]), v[1], v[2]]
             output_dict[k] = adapt_void
