@@ -1635,25 +1635,6 @@
 			"Script": "bonus bDef,5; bonus bUnbreakableWeapon;\n"
 		},
 		{
-			"Id": 1161,
-			"AegisName": "Balmung",
-			"Name": "Balmung",
-			"Type": "Weapon",
-			"SubType": "2hSword",
-			"Buy": 20,
-			"Weight": 1000,
-			"Attack": 250,
-			"Range": 1,
-			"Locations": {
-				"Right_Hand": true,
-				"Left_Hand": true
-			},
-			"WeaponLevel": 4,
-			"EquipLevelMin": 48,
-			"Refineable": true,
-			"Script": "bonus bUnbreakableWeapon; bonus bAtkEle,Ele_Holy;\n"
-		},
-		{
 			"Id": 1162,
 			"AegisName": "Broad_Sword_",
 			"Name": "Broad Sword",
@@ -9294,35 +9275,6 @@
 			"Script": "bonus2 bAddEff,Eff_Stun,1000;\n"
 		},
 		{
-			"Id": 1533,
-			"AegisName": "Warrior_Balmung",
-			"Name": "Warrior's Balmung",
-			"Type": "Weapon",
-			"SubType": "Mace",
-			"Buy": 20,
-			"Weight": 1000,
-			"Attack": 170,
-			"Range": 1,
-			"Locations": {
-				"Right_Hand": true
-			},
-			"WeaponLevel": 4,
-			"EquipLevelMin": 48,
-			"Refineable": true,
-			"Trade": {
-				"Override": 100,
-				"NoDrop": true,
-				"NoTrade": true,
-				"NoSell": true,
-				"NoCart": true,
-				"NoStorage": true,
-				"NoGuildStorage": true,
-				"NoMail": true,
-				"NoAuction": true
-			},
-			"Script": "bonus bAllStats,5;\n"
-		},
-		{
 			"Id": 1534,
 			"AegisName": "Spanner_C",
 			"Name": "Wrench",
@@ -10627,24 +10579,6 @@
 			},
 			"WeaponLevel": 3,
 			"EquipLevelMin": 1
-		},
-		{
-			"Id": 1599,
-			"AegisName": "Angra_Manyu",
-			"Name": "Angra Manyu",
-			"Type": "Weapon",
-			"SubType": "Mace",
-			"Buy": 1,
-			"Weight": 10,
-			"Attack": 200,
-			"Range": 2,
-			"Locations": {
-				"Right_Hand": true
-			},
-			"WeaponLevel": 1,
-			"EquipLevelMin": 1,
-			"Refineable": true,
-			"Script": "bonus bAllStats,50; bonus bBaseAtk,3800; bonus bMatkRate,200; bonus2 bHPDrainRate,1000,100; bonus2 bSPDrainRate,1000,20; bonus bHealPower,200; bonus2 bAddClass,Class_All,100; skill \"WZ_STORMGUST\",10; Skill \"WZ_METEOR\",10; Skill \"WZ_VERMILION\",10; skill \"GM_SANDMAN\",1;\n"
 		},
 		{
 			"Id": 1601,

@@ -12,7 +12,7 @@ from app import app
 from app.models.forms import LoginForm, RegisterForm, CalculatorForm, calc_dynamic_select
 
 from ragnarok.main.gear_query import is_refineable, has_slots, has_slots_by_name, is_refineable_by_name, \
-    normalize_form_values, generate_equipable_weapons
+    normalize_form_values, generate_equipable_weapons_old
 
 from ragnarok.model.statuspoints_evaluator import attribute_balance
 from ragnarok.model.build_model import PlayerBuild
@@ -141,10 +141,6 @@ def calcframe():
         p1 = PlayerBuild(jbl, int(pi['base_level']), int(pi['job_level']), uncapitalize(pi['class_name']),
                          [int(pi['player_str']), int(pi['player_agi']), int(pi['player_vit']),
                           int(pi['player_int']), int(pi['player_dex']), int(pi['player_luk'])])
-        test_dict = generate_equipable_weapons(pi['class_name'], pi['base_level'])
-        deletion_dict = test_dict['positions']
-        print('mano que porra {}'.format(test_dict['positions']))
-        print('mano que 2 {}'.format(test_dict['list']))
         gear_skeleton = normalize_form_values(pi)
         pi['complex_info'] = p1.export_build()
         igen = InterfaceGenerator(p1)

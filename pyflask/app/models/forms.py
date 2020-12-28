@@ -3,7 +3,7 @@ from wtforms import StringField, PasswordField, BooleanField, SelectField
 from wtforms.validators import DataRequired, Email, Length, EqualTo
 from wtforms.fields.html5 import EmailField
 
-from pyflask.app.models.CustomizedSelect import CustomSelect
+from app.models.extended_select_field import ExtendedSelectWidget, ExtendedSelectField
 
 from ragnarok.model.equip_model import PlayerGear, Headgear
 from ragnarok.main.gear_query import generate_equipable_gear, get_cardlist_by_name, dict_name_to_dict_id, \
@@ -105,12 +105,19 @@ class CalculatorForm(FlaskForm):
 
     # weapon_item = SelectField(choices=card_choices)
 
-    weapon_item = SelectField(
-        choices=[("default", "Select something"), ("option1", "Option 1"), ("option2", "Option 2")],
-        widget=CustomSelect(),
-        default="default",
-        )
+    weapon_item = ExtendedSelectField(
+        choices=[
+            ('Fruits', (('apple', 'Apple'), ('peach', 'Peach'), ('pear', 'Pear'))),
+            ('Vegetables', (('cucumber', 'Cucumber'), ('potato', 'Potato'), ('tomato', 'Tomato')))
+        ]
+    )
 
+
+# choices = [
+#     ('Fruits', (('apple', 'Apple'), ('peach', 'Peach'), ('pear', 'Pear'))),
+#     ('Vegetables', (('cucumber', 'Cucumber'), ('potato', 'Potato'), ('tomato', 'Tomato'),)),
+#     ('other', 'None Of The Above')
+# ]
 
 def calc_dynamic_select(input_form):
     form = input_form
@@ -124,10 +131,8 @@ def calc_dynamic_select(input_form):
         form.job_level.choices = list(range(1, 100))
 
     equipable_list = generate_equipable_gear(form.class_name.data, form.base_level.data)
-    weapon_equipable_list = generate_equipable_weapons(form.class_name.data, form.base_level.data)['list']
 
-    # form.weapon_item.choices = "Armor", "Ocean", "Milgraand", "Haaland"
-    form.weapon_item.choices = weapon_equipable_list
+    form.weapon_item.choices = generate_equipable_weapons(form.class_name.data, form.base_level.data)
 
     form.headtop_item.choices = sorted(equipable_list['headtop'])
     form.headmid_item.choices = sorted(equipable_list['headmid'])

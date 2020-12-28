@@ -263,7 +263,7 @@ def normalize_form_values_tuple_gen(pst: str, pst_key: str, dict_norm: dict):
             'key': pst_key}
 
 
-def generate_equipable_weapons(player_class: str, player_level: int) -> dict:
+def generate_equipable_weapons_old(player_class: str, player_level: int) -> dict:
     raw_equipable_list = generate_equipable_gear(player_class, player_level)
 
     blank_subtype = {"Dagger": [], "1hSword": [], "2hSword": [], "1hSpear": [], "2hSpear": [],
@@ -273,7 +273,10 @@ def generate_equipable_weapons(player_class: str, player_level: int) -> dict:
 
     for a in raw_equipable_list['weapon']:
         aux = weapon_db[retrieve_id_by_name(a)]
-        blank_subtype[aux['SubType']].append(aux['Name'])
+        if aux['Slots'] != 0:
+            blank_subtype[aux['SubType']].append(aux['Name'] + " [{}]".format(aux['Slots']))
+        else:
+            blank_subtype[aux['SubType']].append(aux['Name'])
 
     trimmed_blank = blank_subtype.copy()
     for b in blank_subtype:
@@ -297,4 +300,38 @@ def generate_equipable_weapons(player_class: str, player_level: int) -> dict:
     return {'list': final_weapon_list, 'positions': final_weapon_positions}
 
 
-# print(generate_equipable_weapons('hunter', 99)['positions'])
+def generate_equipable_weapons(player_class: str, player_level: int) -> list:
+    raw_equipable_list = generate_equipable_gear(player_class, player_level)
+
+    blank_subtype = {"Dagger": [], "1hSword": [], "2hSword": [], "1hSpear": [], "2hSpear": [],
+                     "1hAxe": [], "2hAxe": [], "Mace": [], "Staff": [], "2hStaff": [], "Bow": [],
+                     "Knuckle": [], "Musical": [], "Whip": [], "Book": [], "Katar": [], "Revolver": [],
+                     "Rifle": [], "Gatling": [], "Shotgun": [], "Grenade": [], "Huuma": []}
+
+    for a in raw_equipable_list['weapon']:
+        aux = weapon_db[retrieve_id_by_name(a)]
+        if aux['Slots'] != 0:
+            blank_subtype[aux['SubType']].append(aux['Name'] + " [{}]".format(aux['Slots']))
+        else:
+            blank_subtype[aux['SubType']].append(aux['Name'])
+        # blank_subtype[aux['SubType']].append(aux['Name'])
+
+    trimmed_blank = blank_subtype.copy()
+    for b in blank_subtype:
+        if not blank_subtype[b]:
+            trimmed_blank.pop(b, None)
+        else:
+            trimmed_blank[b].sort()
+
+    outer_tuple = []
+    for g, h in trimmed_blank.items():
+        void_tuple = []
+        for pkl in h:
+            void_tuple.append((pkl.lower(), pkl.capitalize()))
+        outer_tuple.append((g, tuple(void_tuple)))
+
+    return list(outer_tuple)
+
+
+# test1 = generate_equipable_weapons('wizard', 99)
+# print(test1)
