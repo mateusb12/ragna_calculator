@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dc11ee9-5b10-4653-9f0f-9a26840bb0c6" name="Default Changelist" comment="Fixed some errors with Packages">
-      <change afterPath="$PROJECT_DIR$/pyflask/app/models/extended_select_field.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyflask/app/controllers/default.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/controllers/default.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyflask/app/models/CustomizedSelect.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyflask/app/models/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/models/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyflask/app/static/assets/custom.png" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/static/assets/custom.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyflask/app/static/assets/equip_custom.png" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/static/assets/equip_custom.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyflask/app/templates/calculator_frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/templates/calculator_frame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ragnarok/main/exporter.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/main/exporter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ragnarok/main/gear_query.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/main/gear_query.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ragnarok/resources/item_db_equip.json" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/resources/item_db_equip.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ragnarok/resources/interface/sprites/female/super_novice.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ragnarok/resources/interface/sprites/male/super_novice.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +48,7 @@
       <recent name="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\view" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.gear_query">
+  <component name="RunManager" selected="Python.exporter">
     <configuration name="default" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testecalc" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -94,7 +91,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="forms" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="exporter" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testecalc" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -102,11 +99,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyflask/app/models" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ragnarok/main" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyflask/app/models/forms.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ragnarok/main/exporter.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -182,17 +179,17 @@
       <item itemvalue="Python.main" />
       <item itemvalue="Python.equip_model" />
       <item itemvalue="Python.gear_query" />
-      <item itemvalue="Python.forms" />
       <item itemvalue="Python.interface_generator" />
       <item itemvalue="Python.default" />
+      <item itemvalue="Python.exporter" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.exporter" />
         <item itemvalue="Python.gear_query" />
         <item itemvalue="Python.default" />
         <item itemvalue="Python.equip_model" />
         <item itemvalue="Python.interface_generator" />
-        <item itemvalue="Python.forms" />
       </list>
     </recent_temporary>
   </component>

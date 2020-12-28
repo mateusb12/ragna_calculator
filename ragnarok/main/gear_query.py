@@ -331,7 +331,3 @@ def generate_equipable_weapons(player_class: str, player_level: int) -> list:
         outer_tuple.append((g, tuple(void_tuple)))
 
     return list(outer_tuple)
-
-
-# test1 = generate_equipable_weapons('wizard', 99)
-# print(test1)
