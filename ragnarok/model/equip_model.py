@@ -1,6 +1,6 @@
 from typing import List
 
-from ragnarok.main.gear_query import dict_name_to_dict_id
+from ragnarok.main.gear_query import dict_name_to_dict_id, is_equipable
 from ragnarok.main.exporter import equip_db, job70, shield_db, shoes_db, armor_db, robe_db, accessory_db, \
     hat_db, weapon_db, adjective_list, job_adapt
 
@@ -29,6 +29,9 @@ class BaseGear:
         self.defense = 0
         if 'Defense' in gd:
             self.defense = gd['Defense']
+        self.gender = None
+        if 'Gender' in gd:
+            self.gender = gd['Gender']
         self.locations = gd['Locations']
         self.script = gd['Script']
         self.weight = gd['Weight']
@@ -236,7 +239,8 @@ class Weapon(BaseGear):
                                 else:
                                     raise Exception("Impossible to insert [{}] ({})."
                                                     " The weapon [{}] has already {}/{} cards"
-                                                    .format(card['Name'], card['Id'], self.name, self.slots, self.slots))
+                                                    .format(card['Name'], card['Id'], self.name, self.slots,
+                                                            self.slots))
                         else:
                             if self.remaining_slots() > 0:
                                 self.card3 = card
@@ -303,6 +307,11 @@ class PlayerGear:
                 aux_head.insert_card(id_refine_card[h][1]['Id'])
             self.equip_item(aux_head)
 
+        self.gear_summary = {'headtop': self.headtop, 'headmid': self.headmid, 'headlow': self.headlow,
+                             'weapon': self.weapon, 'shield': self.shield, 'shoes': self.shoes,
+                             'armor': self.armor, 'robe': self.robe, 'accessory1': self.accessory1,
+                             'accessory2': self.accessory2, }
+
     def equip_item(self, item: BaseGear):
         equipable = self.is_equipable(item)
         if not equipable[0]:
@@ -348,6 +357,7 @@ class PlayerGear:
                     return False, 'Cannot equip the transclass-only item [{}] ({}) in a {}' \
                         .format(item.name, item.id, self.job)
             current_job = self.job.lower()
+            original_job = self.job.lower()
             if current_job in job70:
                 current_job = job_adapt['Body'][current_job.lower()]
             if 'All' in item.jobs.keys():
@@ -355,6 +365,16 @@ class PlayerGear:
                     return False, 'Cannot equip the item [{}] ({}) in a {}' \
                         .format(item.name, item.id, self.job)
             else:
+                if current_job in ['bard', 'dancer']:
+                    current_job = 'barddancer'
+                if item.gender:
+                    if item.gender == 'Female' and original_job == 'bard':
+                        return False, 'Cannot equip the item [{}] ({}) in a {}' \
+                            .format(item.name, item.id, self.job.capitalize())
+                    if item.gender == 'Male' and original_job == 'dancer':
+                        return False, 'Cannot equip the item [{}] ({}) in a {}' \
+                            .format(item.name, item.id, self.job.capitalize())
+
                 if current_job not in map(lambda x: x.lower(), item.jobs.keys()):
                     return False, 'Cannot equip the item [{}] ({}) in a {}' \
                         .format(item.name, item.id, self.job.capitalize())
@@ -510,41 +530,20 @@ class PlayerGear:
         return id_dict
 
 
-# gear_dict = {"headgear1": (2209, 7, 4127),
-#              "headgear2": (2291, 0, 0),
-#              "headgear3": None, #2218
-#              "weapon": (1202, 10, [4002, 4002, 4002, 4002]),
-#              "shield": (2102, 7, 4058),
-#              "shoes": (2404, 7, 4097),
-#              "armor": (2320, 7, 4105),
-#              "robe": (2502, 7, 4133),
-#              "accessory1": (2626, 0, 4044),
-#              "accessory2": (2608, 0, 0)}
-#
-# text_dict = {"headgear1": ('Poo Poo Hat', 0, 0),
-#              "headgear2": ('Sunglasses [1]', 0, 'Willow Card'),
-#              "headgear3": ('Cigarette', 0, 0),
-#              "weapon": ('Gladius [3]', 0, 0, 'Hydra Card', 'Hydra Card', 'Skeleton Worker Card'),
-#              "shield": ('Buckler [1]', 0, 'Thief Bug Egg Card'),
-#              "shoes": ('Boots', 0, 0),
-#              "armor": ('Formal Suit [1]', 0, 'Dokebi Card'),
-#              "robe": ('Hood [1]', 0, 'Condor Card'),
-#              "accessory1": ('Clip [1]', 0, 'Sage Worm Card'),
-#              "accessory2": ('Silver Ring', 0, 0)}
-#
-# gear_dict = dict_name_to_dict_id(text_dict)
-# gear_dict = {'headgear1': [2289, 0, 0],
-#              'headgear2': [2202, 0, 4010],
-#              'headgear3': [2267, 0, 0],
-#              'weapon': [1220, 0, 4092, 4092, 4092],
-#              'shield': [2104, 0, 4012],
-#              'shoes': [2405, 0, 0],
-#              'armor': [2320, 0, 4098],
-#              'robe': [2502, 0, 4015],
-#              'accessory1': [2607, 0, 4219],
-#              'accessory2': [2611, 0, 0]}
-# pe = PlayerGear(gear_dict, 'knight', 99)
-# pe.print_gear()
+text_dict = {'headgear1': ('Valkyrie Feather Band [1]', '4', 'Elder Willow Card'),
+             'headgear2': ('Red Glasses', 0, '(No Card)'),
+             'headgear3': ('Rainbow Scarf', 0, '(No Card)'),
+             'shield': ('Guard [1]', '7', 'Thara Frog Card'),
+             'shoes': ('Crystal Pumps', '4', '(No Card)'),
+             'armor': ('Formal Suit [1]', '7', 'Marc Card'),
+             'robe': ('Muffler [1]', '7', 'Raydric Card'),
+             'accessory1': ('Glove [1]', 0, 'Zerom Card'),
+             'accessory2': ('Earring [1]', 0, 'Zerom Card'),
+             'weapon': ('Violin [4]', 0, 'Fabre Card', 'Fabre Card', 'Fabre Card', 'Fabre Card')}
+
+gear_dict = dict_name_to_dict_id(text_dict)
+pe = PlayerGear(gear_dict, 'bard', 99)
+pe.print_gear()
 
 # # pe.equip_item(pe.create_item_with_id(2104))
 # pe.unequip_noble_hats()
@@ -556,5 +555,3 @@ class PlayerGear:
 # print(list(pe.export_id_table().values()))
 
 # print(pe.weapon.export_text())
-
-

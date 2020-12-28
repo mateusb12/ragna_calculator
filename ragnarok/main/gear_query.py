@@ -8,20 +8,25 @@ from ragnarok.main.exporter import hat_db, weapon_db, shield_db, shoes_db, armor
 
 
 def is_equipable(player_job: str, player_level: int, ch: dict):
-    if player_job.lower() == 'super_novice':
-        player_job = 'SuperNovice'
-
+    current_job = player_job.lower()
+    if current_job == 'super_novice':
+        current_job = 'SuperNovice'
     if 'Upper' in ch['Classes'].keys():
-        if player_job.lower() not in job70:
+        if current_job not in job70:
             return False, 'Transclass only'
-    if player_job.lower() in job70:
-        player_job = job_adapt['Body'][player_job.lower()]
+    if current_job in job70:
+        current_job = job_adapt['Body'][current_job]
+
+    if current_job in ['bard', 'dancer']:
+        current_job = 'barddancer'
 
     if 'All' in ch['Jobs'].keys():
-        if player_job.lower() in map(lambda x: x.lower(), ch['Jobs'].keys()):
+        if current_job in map(lambda x: x.lower(), ch['Jobs'].keys()):
             return False, ch['Jobs'].keys()
     else:
-        if player_job.lower() not in map(lambda x: x.lower(), ch['Jobs'].keys()):
+        if 'BardDancer' in ch['Jobs']:
+            pass
+        if current_job not in map(lambda x: x.lower(), ch['Jobs'].keys()):
             return False, ch['Jobs'].keys()
 
     if 'EquipLevelMin' in ch:
@@ -423,6 +428,9 @@ ttp = {"headtop_item": 'Ribbon', 'headlow_refine': 0, 'headlow_card_list': '(No 
        "robe_item": 'Muffler',
        "accessory1_item": 'Rosary',
        "accessory2_item": 'Rosary'}
+
+# test1 = generate_equipable_weapons('Bard', 99)
+# print(test1)
 
 # print('')
 # print('')

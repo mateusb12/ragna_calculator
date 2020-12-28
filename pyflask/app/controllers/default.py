@@ -142,6 +142,7 @@ def calcframe():
                          [int(pi['player_str']), int(pi['player_agi']), int(pi['player_vit']),
                           int(pi['player_int']), int(pi['player_dex']), int(pi['player_luk'])])
         gear_skeleton = normalize_form_values(pi)
+        # print('pizzaiolo e bom {}'.format(gear_skeleton))
         pi['complex_info'] = p1.export_build()
         igen = InterfaceGenerator(p1)
         igen.generate_interface()
