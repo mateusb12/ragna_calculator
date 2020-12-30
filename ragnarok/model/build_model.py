@@ -1,6 +1,7 @@
 import math
 from dataclasses import dataclass
 import pandas as pd
+import numpy as np
 from typing import List
 import os
 
@@ -9,7 +10,7 @@ from ragnarok.main.exporter import job70
 
 class PlayerBuild:
     def __init__(self, job_bonuses_list: pd.DataFrame, base_level: int, job_level: int,
-                 current_job: str, stat_build: List[int]):
+                 current_job: str, stat_build: List[int], playergear=None):
 
         self.job_bonuses_list = job_bonuses_list
         self.base_level = base_level
@@ -34,6 +35,8 @@ class PlayerBuild:
         self.luk = stat_build[5]
         self.luk_bonus = 0
         self.core_luk = self.luk
+        self.cost_list = []
+        self.possible_points = []
 
         # arquivos
         self.hp_df = pd.read_csv(os.path.abspath(
@@ -108,10 +111,21 @@ class PlayerBuild:
 
         # saldo de atributos
         attribute_cost = 0
-        attribute_pool = self.attribute_df['points'][self.base_level]
+        self.attribute_pool = self.attribute_df['points'][self.base_level]
         for i in self.stat_build:
-            attribute_cost += self.attribute_df['single_cost'][i]
-        self.attribute_balance = attribute_pool - attribute_cost
+            attribute_aux = self.attribute_df['single_cost'][i]
+            attribute_cost += attribute_aux
+            self.cost_list.append(attribute_aux)
+        self.attribute_balance = self.attribute_pool - attribute_cost
+
+        for i in range(len(self.cost_list)):
+            big_sum = self.attribute_balance + self.attribute_df['single_cost'][i] + self.cost_list[i]
+            possible_stat = self.attribute_df['single_cost'].sub(big_sum).abs().idxmin() - 1
+            if possible_stat == 98:
+                possible_stat += 1
+            if self.attribute_balance == 0:
+                possible_stat = 0
+            self.possible_points.append(possible_stat)
 
         # ASPD
         self.aspd = 172
@@ -178,7 +192,7 @@ class PlayerBuild:
                            self.int_bonus, self.dex_bonus, self.luk_bonus,
                            self.attribute_balance, self.aspd, self.atk_base, self.atk_bonus,
                            self.def_hard, self.def_soft, self.matk_min, self.matk_max,
-                           self.mdef_hard, self.mdef_soft)
+                           self.mdef_hard, self.mdef_soft, self.possible_points)
         return epb
 
     def print_build(self):
@@ -256,3 +270,4 @@ class BuildNuances:
     matk_max: int
     mdef_hard: int
     mdef_soft: int
+    possible_points: List[int]

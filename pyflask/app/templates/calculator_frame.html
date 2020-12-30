@@ -189,7 +189,7 @@
                                     <td class="stat-select">
                                         {{form.player_str(class="droplist", onchange="forceSubmit()")}}
                                     </td>
-                                    <td class="stat-bonus">+{{player_info['complex_info'].str_bonus}}</td>
+                                    <td class="stat-bonus">({{player_info["possible_stats"][0]}})</td>
                                 </tr>
                                 <tr class="attribute-item">
                                     <td class="stat-text">
@@ -198,7 +198,7 @@
                                     <td class="stat-select">
                                         {{form.player_agi(class="droplist", onchange="forceSubmit()")}}
                                     </td>
-                                    <td class="stat-bonus">+{{player_info['complex_info'].agi_bonus}}</td>
+                                    <td class="stat-bonus">({{player_info["possible_stats"][1]}})</td>
                                 </tr>
                                 <tr class="attribute-item">
                                     <td class="stat-text">
@@ -207,7 +207,7 @@
                                     <td class="stat-select">
                                         {{form.player_vit(class="droplist", onchange="forceSubmit()")}}
                                     </td>
-                                    <td class="stat-bonus">+{{player_info['complex_info'].vit_bonus}}</td>
+                                    <td class="stat-bonus">({{player_info["possible_stats"][2]}})</td>
                                 </tr>
                                 <tr class="attribute-item">
                                     <td class="stat-text">
@@ -216,7 +216,7 @@
                                     <td class="stat-select">
                                         {{form.player_int(class="droplist", onchange="forceSubmit()")}}
                                     </td>
-                                    <td class="stat-bonus">+{{player_info['complex_info'].int_bonus}}</td>
+                                    <td class="stat-bonus">({{player_info["possible_stats"][3]}})</td>
                                 </tr>
                                 <tr class="attribute-item">
                                     <td class="stat-text">
@@ -225,7 +225,7 @@
                                     <td class="stat-select">
                                         {{form.player_dex(class="droplist", onchange="forceSubmit()")}}
                                     </td>
-                                    <td class="stat-bonus">+{{player_info['complex_info'].dex_bonus}}</td>
+                                    <td class="stat-bonus">({{player_info["possible_stats"][4]}})</td>
                                 </tr>
                                 <tr class="attribute-item">
                                     <td class="stat-text">
@@ -233,7 +233,7 @@
                                     </td>
                                     <td class="stat-select">
                                         {{form.player_luk(class="droplist", onchange="forceSubmit()")}}
-                                    <td class="stat-bonus">+{{player_info['complex_info'].luk_bonus}}</td>
+                                    <td class="stat-bonus">({{player_info["possible_stats"][5]}})</td>
                                 </tr>
                                 </tbody>
                             </table>

@@ -136,14 +136,16 @@ def calcframe():
     if 'csrf_token' in pi:
         del pi['csrf_token']
     pi['complex_info'] = 'none'
+    pi['possible_stats'] = [0, 0, 0, 0, 0, 0]
     if request.method == 'POST' and request.form:
         calc_dynamic_select(form)
         p1 = PlayerBuild(jbl, int(pi['base_level']), int(pi['job_level']), uncapitalize(pi['class_name']),
                          [int(pi['player_str']), int(pi['player_agi']), int(pi['player_vit']),
                           int(pi['player_int']), int(pi['player_dex']), int(pi['player_luk'])])
         gear_skeleton = normalize_form_values(pi)
-        # print('pizzaiolo e bom {}'.format(gear_skeleton))
+        print('pizzaiolo e bom {}'.format(gear_skeleton))
         pi['complex_info'] = p1.export_build()
+        pi['possible_stats'] = pi["complex_info"].possible_points
         igen = InterfaceGenerator(p1)
         igen.generate_interface()
         igen.generate_equip_details(gear_skeleton, pi['player_gender'].lower())

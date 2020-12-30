@@ -183,4 +183,6 @@ def calc_dynamic_select(input_form):
         form.headtop_item.data = headnames['headtop']
         form.headmid_item.data = headnames['headmid']
         form.headlow_item.data = headnames['headlow']
-    # pe.print_gear()
+
+    form.base_level.default = '57'
+    # form.process()

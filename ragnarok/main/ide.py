@@ -41,7 +41,7 @@ accessory_db = dbg.get_accessory_db()
 
 db_package = (weapon_db, hat_db, shield_db, robe_db, armor_db, shoes_db, accessory_db)
 
-p1 = PlayerBuild(jbl, 99, 70, 'gypsy', [1, 1, 1, 1, 1, 1])
+p1 = PlayerBuild(jbl, 99, 70, 'gypsy', [18, 68, 42, 28, 42, 65])
 p1.print_build()
 
 print(p1.export_build())
@@ -55,3 +55,14 @@ else:
     print("--- {} seconds ---".format(full_time))
 
 import pyHook
+
+pizza = {"headgear1": ["Poo Poo Hat", 0, "(No Card)"],
+         "headgear2": ["Sunglasses [1]", 0, "Nightmare Card"],
+         "headgear3": ["Gentleman's Pipe", 0, "(No Card)"],
+         "shield": ["Guard [1]", 0, "Thara Frog Card"],
+         "shoes": ["Crystal Pumps", 0, "(No Card)"],
+         "armor": ["Formal Suit [1]", 0, "Marc Card"],
+         "robe": ["Ragamuffin Manteau", 0, "(No Card)"],
+         "accessory1": ["Rosary [1]", 0, "Smokie Card"],
+         "accessory2": ["Rosary", 0, "(No Card)"],
+         "weapon": ["(no weapon)", 0, "(No Card)", "(No Card)", "(No Card)", "(No Card)"]}
