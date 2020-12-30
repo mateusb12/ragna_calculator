@@ -18,9 +18,21 @@
 						[
 						"increase_dmg_%"
 						],
+		"bAddEle":
+						[
+						"increase_dmg_on_element_%"
+						],
 		"bAddDamageClass":
 						[
 						"increase_dmg_on_monster"
+						],
+		"bAddMonsterDropItem":
+						[
+						"add_monter_drop_item"
+						],
+		"bAddRace":
+						[
+						"increase_dmg_on_race_%"
 						],
 		"bAtkEle":
 						[
@@ -61,6 +73,14 @@
 						"bAddEff,Eff_Freeze,1000",
 						"bAddEff,Eff_Stun,1000",
 						"bAddEff,Eff_Stun,500"
+						],
+		"bSubEle":
+						[
+						"monster_element_resistance_%"
+						],
+		"bSubRace":
+						[
+						"race_resistance_%"
 						],
 	    "headgear3": ["Gentleman's Pipe", 0, "(No Card)"],
 	}

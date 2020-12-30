@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1dc11ee9-5b10-4653-9f0f-9a26840bb0c6" name="Default Changelist" comment="Fixed some errors with Packages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyflask/app/static/assets/custom.png" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/static/assets/custom.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyflask/app/static/assets/equip_custom.png" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/static/assets/equip_custom.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ragnarok/main/exporter.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/main/exporter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ragnarok/model/build_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/model/build_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ragnarok/model/equip_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/model/equip_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ragnarok/resources/script_template.json" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/resources/script_template.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

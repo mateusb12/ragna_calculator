@@ -548,11 +548,19 @@ class PlayerGear:
 
     def script_summary(self):
         script_dict = dict()
-        for i in self.gear_summary:
-            aux = self.gear_summary[i]
+        for g in self.gear_summary:
+            aux = self.gear_summary[g]
             if not isinstance(aux, Weapon):
-                script_dict[aux.class_type] = {'Gear': (aux.name, aux.script),
-                                               'Card': (aux.card['Name'], aux.card['Script'])}
+                if aux.class_type not in script_dict:
+                    script_dict[aux.class_type] = {'Gear': (aux.name, aux.script),
+                                                   'Card': (aux.card['Name'], aux.card['Script'])}
+                else:
+                    if "{}2".format(aux.class_type) not in script_dict:
+                        script_dict["{}2".format(aux.class_type)] = {'Gear': (aux.name, aux.script),
+                                                                 'Card': (aux.card['Name'], aux.card['Script'])}
+                    else:
+                        script_dict["{}3".format(aux.class_type)] = {'Gear': (aux.name, aux.script),
+                                                                 'Card': (aux.card['Name'], aux.card['Script'])}
             else:
                 wcs = {"card1": "", "card2": "", "card3": "", "card4": ""}
                 if aux.card:
@@ -568,17 +576,27 @@ class PlayerGear:
 
 
 def analyse_script(script_dict: dict):
+    weapon_script = script_dict['Weapon']['Gear'][1]
+    accessory1_script = script_dict['Accessory']['Card'][1]
+    print(analyse_single_script(accessory1_script))
+
+
+def analyse_single_script(input_script: str):
     script_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'resources', "script_template.json"))
     script_json = pd.read_json(r'{}'.format(script_path))['Body']
-    weapon_script = script_dict['Weapon']['Gear'][1]
-    if str(weapon_script) != "0":
-        print(weapon_script)
+    current_script = input_script
+    if str(current_script) != "0":
+        print(current_script)
         dict_script = dict()
+        dict_script['bonus2_extra'] = []
         script_function = []
-        first_split = weapon_script.split(' ')
+        first_split = current_script.split(' ')
         for q in range(len(first_split)):
             if q % 2 == 0:
-                dict_script[first_split[q]] = first_split[q+1]
+                if first_split[q] not in dict_script:
+                    dict_script[first_split[q]] = first_split[q + 1]
+                else:
+                    dict_script['{}_extra'.format(first_split[q])].append(first_split[q + 1])
         print(dict_script)
         print('')
         if 'bonus2' in dict_script:
@@ -587,7 +605,6 @@ def analyse_script(script_dict: dict):
             bonus2_type = bonus2[1]
             bonus2_value = bonus2[2][:-1].replace(';', '')
 
-            # print('sufix {} type {} value {}'.format(bonus2_sufix, bonus2_type, bonus2_value))
             script_function.append((script_json[bonus2_sufix][0], bonus2_type, bonus2_value))
 
         if 'bonus' in dict_script:
@@ -600,16 +617,14 @@ def analyse_script(script_dict: dict):
             skill = dict_script['skill'][1:-4]
             skill_lvl = dict_script['skill'][-2:-1]
             script_function.append(('Enable skill', skill, skill_lvl))
-        print(script_function)
 
-        # print(weapon_script.split(' '))
-        # pre_sufix = weapon_script.split(' ')[1].split(',')
-        # value = pre_sufix[-1][:-2]
-        # script_type = pre_sufix[-2]
-        # sufix = pre_sufix[0]
-        # print(pre_sufix)
-        # print('sufix = {}, type = {}, value = {}'.format(sufix, script_type, value))
-        # result = script_json[sufix][0], value
+        if 'bonus2_extra' in dict_script:
+            for w in dict_script['bonus2_extra']:
+                bonus2_extra = w.split(',')
+                sufix = script_json[bonus2_extra[0]][0]
+                value = bonus2_extra[2].replace(';', '')
+                script_function.append((sufix, bonus2_extra[1], value))
+        return script_function
 
 
 text_dict = {"headgear1": ("Valkyrie Feather Band [1]", "4", "Elder Willow Card"),
@@ -648,4 +663,3 @@ analyse_script(ttk)
 # print(list(pe.export_id_table().values()))
 
 # print(pe.weapon.export_text())
-
