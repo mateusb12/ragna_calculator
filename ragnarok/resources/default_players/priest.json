@@ -1,5 +1,6 @@
 {
 	"Body": {
+		"build_name": "Priest",
 		"base_level": 99,
 		"job_level": 50,
 		"player_class": "Priest",
@@ -19,6 +20,6 @@
         "robe": ["Muffler [1]", 0, "Raydric Card"],
         "accessory1": ["Rosary [1]", 0, "Smokie Card"],
         "accessory2": ["Rosary [1]", 0, "Horong Card"],
-        "weapon": ["(no weapon)", 0, "(No Card)", "(No Card)", "(No Card)", "(No Card)"]
+        "weapon": ["Knife [4]", 0, "Drops Card", "(No Card)", "(No Card)", "(No Card)"]
 	}
 }

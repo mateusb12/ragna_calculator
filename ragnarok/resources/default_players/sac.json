@@ -1,0 +1,25 @@
+{
+	"Body": {
+		"build_name": "Sac",
+		"base_level": 99,
+		"job_level": 50,
+		"player_class": "Crusader",
+		"player_gender": "Male",
+		"str": 9,
+		"agi": 1,
+		"vit": 99,
+		"int": 1,
+		"dex": 99,
+		"luk": 1,
+		"headgear1": ["Ulle's Cap [1]", 0, "Nightmare Card"],
+        "headgear2": ["Blush of Groom", 0, "Nightmare Card"],
+        "headgear3": ["Gentleman's Pipe", 0, "(No Card)"],
+        "shield": ["Mirror Shield [1]", 7, "Thara Frog Card"],
+        "shoes": ["Sandals [1]", 7, "Matyr Card"],
+        "armor": ["Silk Robe [1]", 7, "Marc Card"],
+        "robe": ["Hood [1]", 7, "(No Card)"],
+        "accessory1": ["Glove [1]", 0, "Zerom Card"],
+        "accessory2": ["Glove [1]", 0, "Zerom Card"],
+        "weapon": ["(no weapon)", 0, "(No Card)", "(No Card)", "(No Card)", "(No Card)"]
+	}
+}

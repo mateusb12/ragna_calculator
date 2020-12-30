@@ -219,6 +219,7 @@ def fill_calc_with_json(input_form):
         f.write("False")
         f.close()
         custombuild = pd.read_json(r'{}'.format(form.file_selector.data))['Body']
+        form.file_selector.default = custombuild['build_name']
         form.base_level.default = custombuild['base_level']
         form.class_name.default = custombuild['player_class']
         form.job_level.default = custombuild['job_level']
@@ -265,6 +266,13 @@ def fill_calc_with_json(input_form):
         form.accessory2_item.default = custombuild['accessory2'][0]
         form.accessory2_refine.default = custombuild['accessory2'][1]
         form.accessory2_card_list.default = custombuild['accessory2'][2]
+
+        form.weapon_item.default = custombuild['weapon'][0]
+        form.weapon_refine.default = custombuild['weapon'][1]
+        form.weapon_card_1.default = custombuild['weapon'][2]
+        form.weapon_card_2.default = custombuild['weapon'][3]
+        form.weapon_card_3.default = custombuild['weapon'][4]
+        form.weapon_card_4.default = custombuild['weapon'][5]
         form.process()
 
 

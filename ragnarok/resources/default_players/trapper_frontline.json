@@ -1,5 +1,6 @@
 {
 	"Body": {
+		"build_name": "Trapper Frontline",
 		"base_level": 99,
 		"job_level": 50,
 		"player_class": "Hunter",
