@@ -1,0 +1,67 @@
+{
+	"Body": {
+		"first_param": ["autobonus", "bonus", "bonus2", "bonus3", "bonus4", "bonus5", "skill"],
+        "skill_param": [
+						"ALL_WEWISH",
+						"DC_DONTFORGETME",
+						"RG_GRAFFITI",
+						"SM_BASH",
+						"SM_PROVOKE",
+						"TF_DOUBLE",
+						"TF_HIDING",
+						"WE_MALE",
+						"WZ_ESTIMATION",
+						"WZ_HEAVENDRIVE",
+						"WZ_JUPITEL"
+						],
+		"bAddClass":
+						[
+						"increase_dmg_%"
+						],
+		"bAddDamageClass":
+						[
+						"increase_dmg_on_monster"
+						],
+		"bAtkEle":
+						[
+						"change_weapon_element"
+						],
+		"bAddEff":
+						[
+						"badstatus_chance_while_attacking"
+						],	
+		"bAddEff2":
+						[
+						"self_badstatus_chance_while_attacking"
+						],
+		"bHPGainValue":
+						[
+						"hp_drained_after_killing_monster"
+						],							
+		"increase_dmg": [
+						"bAddClass,Class_All,1",
+						"bAddClass,Class_All,2",
+						"bAddClass,Class_All,4",
+						"bAddClass,Class_All,5",
+						"bAddClass,Class_All,50"					
+						],
+		"increase_dmg_on_monster": [
+						"bAddDamageClass,1002,500",
+						"bAddDamageClass,1188,150",
+						"bAddDamageClass,2047,10",
+						"bAddDamageClass,2049,10"				
+						],
+		"apply_status_on_attack": [
+						"bAddEff,Eff_Bleeding,300",
+						"bAddEff,Eff_Bleeding,500",
+						"bAddEff,Eff_Bleeding,800",
+						"bAddEff,Eff_Blind,100",
+						"bAddEff,Eff_Curse,30",
+						"bAddEff,Eff_Curse,5000",
+						"bAddEff,Eff_Freeze,1000",
+						"bAddEff,Eff_Stun,1000",
+						"bAddEff,Eff_Stun,500"
+						],
+	    "headgear3": ["Gentleman's Pipe", 0, "(No Card)"],
+	}
+}

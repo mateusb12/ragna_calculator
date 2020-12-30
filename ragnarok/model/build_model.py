@@ -6,6 +6,7 @@ from typing import List
 import os
 
 from ragnarok.main.gear_query import void_gear
+from ragnarok.main.gear_query import void_gear
 from ragnarok.main.exporter import job70
 
 
