@@ -121,6 +121,15 @@ tr{
 .thin select{
 	height:16px;
 	margin:1px;
+	text-align:left;
+}
+
+.thin{
+	text-align:left;
+}
+
+.thin3{
+	text-align:left;
 }
 
 .right{
@@ -267,6 +276,17 @@ class_name{
 
 .weapon-list{
     margin-top: 2px;
+}
+
+.load_button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 3px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 
 

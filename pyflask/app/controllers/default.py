@@ -9,7 +9,7 @@ from flask import render_template, request, redirect, session, url_for, g
 
 import app.databases.db_operations as dbo
 from app import app
-from app.models.forms import LoginForm, RegisterForm, CalculatorForm, calc_dynamic_select
+from app.models.forms import LoginForm, RegisterForm, CalculatorForm, calc_dynamic_select, fill_calc_with_json
 
 from ragnarok.main.gear_query import is_refineable, has_slots, has_slots_by_name, is_refineable_by_name, \
     normalize_form_values, generate_equipable_weapons_old, has_multiple_slots
@@ -139,6 +139,8 @@ def calcframe():
     pi['possible_stats'] = [0, 0, 0, 0, 0, 0]
     if request.method == 'POST' and request.form:
         calc_dynamic_select(form)
+        fill_calc_with_json(form)
+        # fill_calc_with_json(form)
         p1 = PlayerBuild(jbl, int(pi['base_level']), int(pi['job_level']), uncapitalize(pi['class_name']),
                          [int(pi['player_str']), int(pi['player_agi']), int(pi['player_vit']),
                           int(pi['player_int']), int(pi['player_dex']), int(pi['player_luk'])])
@@ -157,7 +159,21 @@ def calcframe():
                            is_refineable=is_refineable,
                            has_slots=has_slots,
                            has_multiple_slots=has_multiple_slots,
-                           deletion_dict=deletion_dict)
+                           deletion_dict=deletion_dict,
+                           fill_calc=fill_calc_with_json)
+
+
+@app.route('/background_process_test', methods=["POST", "GET"])
+def background_process_test():
+    fpl = request.form.to_dict()
+    print("Hello {}".format(fpl))
+    txt_path = os.path.abspath(os.path.join(os.path.dirname(__file__),
+                                            '..', '..', '..', 'ragnarok', 'resources',
+                                            "default_players", "virtual_flag.txt"))
+    f = open(txt_path, "w")
+    f.write("True")
+    f.close()
+    return "nothing"
 
 
 @app.route("/loginframe")

@@ -7,9 +7,11 @@
       <change beforePath="$PROJECT_DIR$/pyflask/app/models/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/models/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyflask/app/static/assets/custom.png" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/static/assets/custom.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyflask/app/static/assets/equip_custom.png" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/static/assets/equip_custom.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/static/css/frames/calculator_frame.css" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/static/css/frames/calculator_frame.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/static/js/New Text Document.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pyflask/app/templates/calculator_frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/templates/calculator_frame.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ragnarok/main/ide.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/main/ide.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ragnarok/model/build_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/model/build_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ragnarok/resources/default_players/trapper_frontline.json" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/resources/default_players/trapper_frontline.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

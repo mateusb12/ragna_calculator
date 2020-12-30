@@ -1,3 +1,6 @@
+import os
+import pandas as pd
+
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SelectField
 from wtforms.validators import DataRequired, Email, Length, EqualTo
@@ -54,6 +57,8 @@ class CalculatorForm(FlaskForm):
     armor_choices = ['(No Armor)']
 
     card_choices = ['Poring Card']
+
+    file_selector = SelectField('base_level', choices=["No file", "No file 2"])
 
     base_level = SelectField('base_level', choices=baselevel_choices)
     job_level = SelectField('job_level', choices=joblevel_choices)
@@ -185,4 +190,36 @@ def calc_dynamic_select(input_form):
         form.headlow_item.data = headnames['headlow']
 
     form.base_level.default = '57'
+
+    custombuild_path = os.path.abspath(os.path.join(os.path.dirname(__file__),
+                                                    '..', '..', '..', 'ragnarok', 'resources',
+                                                    "default_players"))
+
+    custombuild_list = []
+
+    for file in os.listdir(custombuild_path):
+        sliced_file = file.split('.')
+        custombuild_list.append((custombuild_path + "\\{}".format(file), sliced_file[0].capitalize()))
+
+    form.file_selector.choices = custombuild_list
     # form.process()
+
+
+def fill_calc_with_json(input_form):
+    form = input_form
+    # custombuild = pd.read_json(r'{}'.format(form.file_selector.data))['Body']
+    txt_path = os.path.abspath(os.path.join(os.path.dirname(__file__),
+                                            '..', '..', '..', 'ragnarok', 'resources',
+                                            "default_players", "virtual_flag.txt"))
+    f = open(txt_path, "r")
+    flag_check = str(f.read())
+    f.close()
+    if flag_check == "True":
+        f = open(txt_path, "w")
+        f.write("False")
+        f.close()
+        form.base_level.default = '57'
+        form.process()
+
+
+    return 'OI MEU CHAPA TUDO BOM COM VC'

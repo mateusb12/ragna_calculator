@@ -66,3 +66,20 @@ pizza = {"headgear1": ["Poo Poo Hat", 0, "(No Card)"],
          "accessory1": ["Rosary [1]", 0, "Smokie Card"],
          "accessory2": ["Rosary", 0, "(No Card)"],
          "weapon": ["(no weapon)", 0, "(No Card)", "(No Card)", "(No Card)", "(No Card)"]}
+
+custombuild_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'resources',
+                                                "default_players"))
+
+custombuild_file = custombuild_path + '\\trapper_frontline.json'
+
+hunter = pd.read_json(r'{}'.format(custombuild_file))['Body']
+
+print(hunter)
+
+custombuild_dict = dict()
+
+for file in os.listdir(custombuild_path):
+    sliced_file = file.split('.')
+    custombuild_dict[sliced_file[0]] = custombuild_path + "\\{}".format(file)
+
+print(custombuild_dict)
