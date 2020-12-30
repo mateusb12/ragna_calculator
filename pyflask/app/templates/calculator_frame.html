@@ -78,12 +78,12 @@
                                 </tr>
 
                                 <tr>
-                                    <td class="thin2">{{form.file_selector(class="droplist")}}
+                                    <td class="thin2">{{form.file_selector(class="droplist", onchange="forceSubmit()")}}
                                     </td>
                                     <td class="thin3">
                                         <a href=# id=test>
                                             <button type="button"
-                                                    class="load_button" id="load_build_button">
+                                                    class="load_button" id="load_build_button" onClick="forceSubmit()">
                                                 Load
                                             </button>
                                         </a>

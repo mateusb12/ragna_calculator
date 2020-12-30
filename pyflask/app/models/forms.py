@@ -199,7 +199,8 @@ def calc_dynamic_select(input_form):
 
     for file in os.listdir(custombuild_path):
         sliced_file = file.split('.')
-        custombuild_list.append((custombuild_path + "\\{}".format(file), sliced_file[0].capitalize()))
+        if sliced_file[1] == 'json':
+            custombuild_list.append((custombuild_path + "\\{}".format(file), sliced_file[0].capitalize()))
 
     form.file_selector.choices = custombuild_list
     # form.process()
@@ -207,7 +208,6 @@ def calc_dynamic_select(input_form):
 
 def fill_calc_with_json(input_form):
     form = input_form
-    # custombuild = pd.read_json(r'{}'.format(form.file_selector.data))['Body']
     txt_path = os.path.abspath(os.path.join(os.path.dirname(__file__),
                                             '..', '..', '..', 'ragnarok', 'resources',
                                             "default_players", "virtual_flag.txt"))
@@ -218,7 +218,53 @@ def fill_calc_with_json(input_form):
         f = open(txt_path, "w")
         f.write("False")
         f.close()
-        form.base_level.default = '57'
+        custombuild = pd.read_json(r'{}'.format(form.file_selector.data))['Body']
+        form.base_level.default = custombuild['base_level']
+        form.class_name.default = custombuild['player_class']
+        form.job_level.default = custombuild['job_level']
+
+        form.player_str.default = custombuild['str']
+        form.player_agi.default = custombuild['agi']
+        form.player_vit.default = custombuild['vit']
+        form.player_int.default = custombuild['int']
+        form.player_dex.default = custombuild['dex']
+        form.player_luk.default = custombuild['luk']
+
+        form.headtop_item.default = custombuild['headgear1'][0]
+        form.headtop_refine.default = custombuild['headgear1'][1]
+        form.headtop_card_list.default = custombuild['headgear1'][2]
+
+        form.headmid_item.default = custombuild['headgear2'][0]
+        form.headmid_refine.default = custombuild['headgear2'][1]
+        form.headmid_card_list.default = custombuild['headgear2'][2]
+
+        form.headlow_item.default = custombuild['headgear3'][0]
+        form.headlow_refine.default = custombuild['headgear3'][1]
+        form.headlow_card_list.default = custombuild['headgear3'][2]
+
+        form.shield_item.default = custombuild['shield'][0]
+        form.shield_refine.default = custombuild['shield'][1]
+        form.shield_card_list.default = custombuild['shield'][2]
+
+        form.shoes_item.default = custombuild['shoes'][0]
+        form.shoes_refine.default = custombuild['shoes'][1]
+        form.shoes_card_list.default = custombuild['shoes'][2]
+
+        form.armor_item.default = custombuild['armor'][0]
+        form.armor_refine.default = custombuild['armor'][1]
+        form.armor_card_list.default = custombuild['armor'][2]
+
+        form.robe_item.default = custombuild['robe'][0]
+        form.robe_refine.default = custombuild['robe'][1]
+        form.robe_card_list.default = custombuild['robe'][2]
+
+        form.accessory1_item.default = custombuild['accessory1'][0]
+        form.accessory1_refine.default = custombuild['accessory1'][1]
+        form.accessory1_card_list.default = custombuild['accessory1'][2]
+
+        form.accessory2_item.default = custombuild['accessory2'][0]
+        form.accessory2_refine.default = custombuild['accessory2'][1]
+        form.accessory2_card_list.default = custombuild['accessory2'][2]
         form.process()
 
 

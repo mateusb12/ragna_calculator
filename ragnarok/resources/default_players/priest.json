@@ -1,0 +1,24 @@
+{
+	"Body": {
+		"base_level": 99,
+		"job_level": 50,
+		"player_class": "Priest",
+		"player_gender": "Male",
+		"str": 31,
+		"agi": 35,
+		"vit": 92,
+		"int": 15,
+		"dex": 86,
+		"luk": 1,
+		"headgear1": ["Ribbon [1]", 7, "(No Card)"],
+        "headgear2": ["Sunglasses", 0, "(No Card)"],
+        "headgear3": ["Romantic Leaf", 0, "(No Card)"],
+        "shield": ["Buckler [1]", 7, "Thara Frog Card"],
+        "shoes": ["Shoes [1]", 0, "(No Card)"],
+        "armor": ["Silk Robe [1]", 7, "Marc Card"],
+        "robe": ["Muffler [1]", 0, "Raydric Card"],
+        "accessory1": ["Rosary [1]", 0, "Smokie Card"],
+        "accessory2": ["Rosary [1]", 0, "Horong Card"],
+        "weapon": ["(no weapon)", 0, "(No Card)", "(No Card)", "(No Card)", "(No Card)"]
+	}
+}

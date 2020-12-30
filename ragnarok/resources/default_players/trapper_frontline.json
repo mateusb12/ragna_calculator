@@ -2,8 +2,8 @@
 	"Body": {
 		"base_level": 99,
 		"job_level": 50,
-		"class": "hunter",
-		"gender": "female",
+		"player_class": "Hunter",
+		"player_gender": "Female",
 		"str": 49,
 		"agi": 77,
 		"vit": 98,

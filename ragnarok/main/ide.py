@@ -74,12 +74,11 @@ custombuild_file = custombuild_path + '\\trapper_frontline.json'
 
 hunter = pd.read_json(r'{}'.format(custombuild_file))['Body']
 
-print(hunter)
-
-custombuild_dict = dict()
+custombuild_list = []
 
 for file in os.listdir(custombuild_path):
     sliced_file = file.split('.')
-    custombuild_dict[sliced_file[0]] = custombuild_path + "\\{}".format(file)
+    if sliced_file[1] == 'json':
+        custombuild_list.append((custombuild_path + "\\{}".format(file), sliced_file[0].capitalize()))
 
-print(custombuild_dict)
+print(custombuild_list)
