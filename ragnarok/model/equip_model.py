@@ -76,6 +76,10 @@ class BaseGear:
         str_base += self.name
         return str_base
 
+    def export_info(self) -> dict:
+        return {'id': self.id, 'refine': int(self.refining), 'card': self.card['Id'],
+                'name': self.name, 'defense': int(self.defense)}
+
     def is_dead_gear(self):
         if self.id in nullgear:
             return True
@@ -529,6 +533,17 @@ class PlayerGear:
             id_dict['accessory2'] = None
         return id_dict
 
+    def total_defense(self):
+        def_sum = 0
+        refine_criteria = {0: 0, 1: 1, 2: 1, 3: 2, 4: 3, 5: 4, 6: 4, 7: 5, 8: 6, 9: 6, 10: 7}
+        for i in self.gear_summary:
+            aux = self.gear_summary[i]
+            if not isinstance(aux, Weapon):
+                aux_info = self.gear_summary[i].export_info()
+                def_sum += aux_info['defense']
+                def_sum += refine_criteria[aux_info['refine']]
+        return def_sum
+
 
 text_dict = {'headgear1': ('Valkyrie Feather Band [1]', '4', 'Elder Willow Card'),
              'headgear2': ('Red Glasses', 0, '(No Card)'),
@@ -542,8 +557,13 @@ text_dict = {'headgear1': ('Valkyrie Feather Band [1]', '4', 'Elder Willow Card'
              'weapon': ('Violin [4]', 0, 'Fabre Card', 'Fabre Card', 'Fabre Card', 'Fabre Card')}
 
 gear_dict = dict_name_to_dict_id(text_dict)
+
+
+
 pe = PlayerGear(gear_dict, 'bard', 99)
 pe.print_gear()
+
+print(pe.total_defense())
 
 # # pe.equip_item(pe.create_item_with_id(2104))
 # pe.unequip_noble_hats()

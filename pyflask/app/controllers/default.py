@@ -12,10 +12,11 @@ from app import app
 from app.models.forms import LoginForm, RegisterForm, CalculatorForm, calc_dynamic_select, fill_calc_with_json
 
 from ragnarok.main.gear_query import is_refineable, has_slots, has_slots_by_name, is_refineable_by_name, \
-    normalize_form_values, generate_equipable_weapons_old, has_multiple_slots
+    normalize_form_values, generate_equipable_weapons_old, has_multiple_slots, dict_name_to_dict_id
 
 from ragnarok.model.statuspoints_evaluator import attribute_balance
 from ragnarok.model.build_model import PlayerBuild
+from ragnarok.model.equip_model import PlayerGear
 from ragnarok.resources.interface.interface_generator import InterfaceGenerator
 
 
@@ -141,16 +142,16 @@ def calcframe():
         calc_dynamic_select(form)
         fill_calc_with_json(form)
         # fill_calc_with_json(form)
+        gear_dict = dict_name_to_dict_id(normalize_form_values(pi))
+        calc_gear = PlayerGear(gear_dict, pi['class_name'], int(pi['base_level']))
         p1 = PlayerBuild(jbl, int(pi['base_level']), int(pi['job_level']), uncapitalize(pi['class_name']),
                          [int(pi['player_str']), int(pi['player_agi']), int(pi['player_vit']),
-                          int(pi['player_int']), int(pi['player_dex']), int(pi['player_luk'])])
-        gear_skeleton = normalize_form_values(pi)
-        print('pizzaiolo e bom {}'.format(gear_skeleton))
+                          int(pi['player_int']), int(pi['player_dex']), int(pi['player_luk'])], calc_gear)
         pi['complex_info'] = p1.export_build()
         pi['possible_stats'] = pi["complex_info"].possible_points
         igen = InterfaceGenerator(p1)
         igen.generate_interface()
-        igen.generate_equip_details(gear_skeleton, pi['player_gender'].lower())
+        igen.generate_equip_details(gear_dict, pi['player_gender'].lower())
 
     return render_template('calculator_frame.html',
                            form=form,

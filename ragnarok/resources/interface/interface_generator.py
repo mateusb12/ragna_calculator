@@ -117,11 +117,11 @@ class InterfaceGenerator:
             return need_download
 
     def generate_equip_details(self, text_dict: dict, sex: str):
-        gear_dict = dict_name_to_dict_id(text_dict)
+        # gear_dict = dict_name_to_dict_id(text_dict)
+        #
+        # print('meu deus {}'.format(gear_dict))
 
-        print('meu deus {}'.format(gear_dict))
-
-        pe = PlayerGear(gear_dict, self.input_player.current_job, self.input_player.base_level)
+        pe = PlayerGear(text_dict, self.input_player.current_job, self.input_player.base_level)
 
         in_file = (os.path.abspath(os.path.join(os.path.dirname(__file__), 'equip_window.png')))
         out_file = (os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..',

@@ -429,6 +429,19 @@ ttp = {"headtop_item": 'Ribbon', 'headlow_refine': 0, 'headlow_card_list': '(No 
        "accessory1_item": 'Rosary',
        "accessory2_item": 'Rosary'}
 
+void_dict = {'headgear1': ('(No Headtop)', '0', '(No Card)'),
+             'headgear2': ('(No Headmid)', 0, '(No Card)'),
+             'headgear3': ('(No Headlow)', 0, '(No Card)'),
+             'shield': ('(No Shield)', '0', '(No Card)'),
+             'shoes': ('(No Shoes)', '0', '(No Card)'),
+             'armor': ('(No Armor)', '0', 'Marc Card'),
+             'robe': ('(No Robe)', '0', '(No Card)'),
+             'accessory1': ('(No Accessory)', 0, '(No Card)'),
+             'accessory2': ('(No Accessory)', 0, '(No Card)'),
+             'weapon': ('(No Weapon)', 0, '(No Card)', '(No Card)', '(No Card)', '(No Card)')}
+
+void_gear = dict_name_to_dict_id(void_dict)
+
 # test1 = generate_equipable_weapons('Bard', 99)
 # print(test1)
 

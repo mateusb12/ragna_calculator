@@ -5,12 +5,13 @@ import numpy as np
 from typing import List
 import os
 
+from ragnarok.main.gear_query import void_gear
 from ragnarok.main.exporter import job70
 
 
 class PlayerBuild:
     def __init__(self, job_bonuses_list: pd.DataFrame, base_level: int, job_level: int,
-                 current_job: str, stat_build: List[int], playergear=None):
+                 current_job: str, stat_build: List[int], playergear=void_gear):
 
         self.job_bonuses_list = job_bonuses_list
         self.base_level = base_level
@@ -37,6 +38,7 @@ class PlayerBuild:
         self.core_luk = self.luk
         self.cost_list = []
         self.possible_points = []
+        self.playergear = playergear
 
         # arquivos
         self.hp_df = pd.read_csv(os.path.abspath(
@@ -135,7 +137,7 @@ class PlayerBuild:
         self.atk_bonus = 0
 
         # Defesa
-        self.def_hard = 22
+        self.def_hard = self.playergear.total_defense()
         self.def_soft = 100
 
         # Ataque mágico
