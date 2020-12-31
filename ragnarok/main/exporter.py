@@ -98,7 +98,9 @@ for i in equip_db:
             aux_list = fragmented[0].split(' ')[2:]
 
         if len(formatted) != 1:
-            second_param_set.add(formatted[1])
+            if formatted[0] == 'bonus':
+                # print('first: {} second: {}'.format(formatted[0], formatted[1]))
+                second_param_set.add(formatted[1])
             # print('ae {} ({})'.format(formatted, len(formatted)))
 
         first_param_set.add(first_param)
@@ -108,3 +110,19 @@ for i in equip_db:
 
 for h in sorted(second_param_set):
     print(h)
+print('')
+
+script = "bonus bFlee2,10; if(getrefine()>8) ; bonus bCastrate,-20; bonus bDelayRate,-20; \n"
+first_split = script.split(';')
+first_split = [s.replace('\n', '') for s in first_split]
+print(first_split)
+first_split_trimmed = first_split.copy()
+
+if "if(" in script:
+    for mk in range(len(first_split)):
+        print(mk, first_split[mk])
+        if "if(" in first_split[mk]:
+            first_split_trimmed[mk + 2] = (first_split[mk + 2] + first_split[mk]).replace(';', ',')
+            del first_split_trimmed[mk]
+
+print(first_split_trimmed)

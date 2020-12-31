@@ -2139,7 +2139,7 @@
 			"WeaponLevel": 4,
 			"EquipLevelMin": 90,
 			"Refineable": true,
-			"Script": "bonus bFlee2,10; if(JobLevel>=70) autobonus \"{ bonus bBaseAtk,50; }\",10,10000,BF_WEAPON,\"{ specialeffect2 EF_POTION_BERSERK; }\"; if(getrefine()>8) { bonus bCastrate,-20; bonus bDelayRate,-20; }\n"
+			"Script": "bonus bFlee2,10; if(getrefine()>8) { bonus bCastrate,-20; bonus bDelayRate,-20; }\n"
 		},
 		{
 			"Id": 1182,

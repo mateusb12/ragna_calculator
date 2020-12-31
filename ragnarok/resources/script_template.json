@@ -28,7 +28,7 @@
 						],
 		"bAddMonsterDropItem":
 						[
-						"add_monter_drop_item"
+						"add_monster_drop_item"
 						],
 		"bAddRace":
 						[
@@ -37,6 +37,10 @@
 		"bAtkEle":
 						[
 						"change_weapon_element"
+						],
+		"bAutoSpell":
+						[
+						"autospell_while_attacking"
 						],
 		"bAddEff":
 						[
@@ -81,6 +85,126 @@
 		"bSubRace":
 						[
 						"race_resistance_%"
+						],
+		"bHPDrainRate":
+						[
+						"suck_hp_%_each_attack"
+						],
+		"bSPLossRate":
+						[
+						"lose_sp_each_x_seconds"
+						],
+		"bHPLossRate":
+						[
+						"lose_hp_each_x_seconds"
+						],
+		"bSubClass":
+						[
+						"decrease_resistance_to_monster"
+						],
+		"bSPVanishRate":
+						[
+						"drain_enemy_sp_by_%_chance"
+						],
+		"bAddMonsterDropItemGroup":
+						[
+						"add_monster_drop_item_by_group"
+						],
+		"bDef":
+						[
+						"+def"
+						],
+		"bLuk":
+						[
+						"+luk"
+						],
+		"bDex":
+						[
+						"+dex"
+						],
+		"bSPDrainValue":
+						[
+						"drain_sp_each_attack"
+						],
+		"bUnbreakableWeapon;":
+						[
+						"unbreakable_weapon"
+						],
+		"bVit":
+						[
+						"+vit"
+						],
+		"bAspdRate":
+						[
+						"+aspd_%"
+						],
+		"bStr":
+						[
+						"+str"
+						],
+		"bAspd":
+						[
+						"+aspd"
+						],
+		"bDefRate":
+						[
+						"+def_%"
+						],
+		"bDef2Rate":
+						[
+						"+softdef_%"
+						],
+		"bIgnoreDefRace":
+						[
+						"ignore_def_by_race_100%"
+						],
+		"bBreakArmorRate":
+						[
+						"break_enemy_armor_%"
+						],
+		"bBaseAtk":
+						[
+						"+atk"
+						],
+		"bCritical":
+						[
+						"+crit"
+						],
+		"bIgnoreDefRaceRate":
+						[
+						"ignore_def_by_race_%"
+						],
+		"bCritAtkRate":
+						[
+						"+critical_damage_%"
+						],
+		"bUnbreakableWeapon":
+						[
+						"unbreakable_weapon"
+						],
+		"bInt":
+						[
+						"+int"
+						],
+		"bDoubleRate":
+						[
+						"double_attack_chance_%"
+						],
+		"bAllStats":
+						[
+						"+all_stats"
+						],
+		"bFlee":
+						[
+						"+flee"
+						],
+		"bFlee2":
+						[
+						"+perfectdodge"
+						],
+		"bComaClass":
+						[
+						"coma_chance_while_attacking"
 						],
 	    "headgear3": ["Gentleman's Pipe", 0, "(No Card)"],
 	}

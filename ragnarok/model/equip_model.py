@@ -557,10 +557,10 @@ class PlayerGear:
                 else:
                     if "{}2".format(aux.class_type) not in script_dict:
                         script_dict["{}2".format(aux.class_type)] = {'Gear': (aux.name, aux.script),
-                                                                 'Card': (aux.card['Name'], aux.card['Script'])}
+                                                                     'Card': (aux.card['Name'], aux.card['Script'])}
                     else:
                         script_dict["{}3".format(aux.class_type)] = {'Gear': (aux.name, aux.script),
-                                                                 'Card': (aux.card['Name'], aux.card['Script'])}
+                                                                     'Card': (aux.card['Name'], aux.card['Script'])}
             else:
                 wcs = {"card1": "", "card2": "", "card3": "", "card4": ""}
                 if aux.card:
@@ -577,8 +577,8 @@ class PlayerGear:
 
 def analyse_script(script_dict: dict):
     weapon_script = script_dict['Weapon']['Gear'][1]
-    accessory1_script = script_dict['Accessory']['Card'][1]
-    print(analyse_single_script(accessory1_script))
+    # accessory1_script = script_dict['Accessory']['Card'][1]
+    # print(analyse_single_script(accessory1_script))
 
 
 def analyse_single_script(input_script: str):
@@ -586,19 +586,27 @@ def analyse_single_script(input_script: str):
     script_json = pd.read_json(r'{}'.format(script_path))['Body']
     current_script = input_script
     if str(current_script) != "0":
-        print(current_script)
+        # print(current_script)
         dict_script = dict()
+        dict_script['bonus_extra'] = []
         dict_script['bonus2_extra'] = []
+        dict_script['bonus3_extra'] = []
         script_function = []
         first_split = current_script.split(' ')
+        first_split = [s.replace('\n', '') for s in first_split]
+        if "if(" in current_script:
+            return 'IF-ELSE SCRIPT'
+        if "autobonus" in current_script:
+            return 'AUTOBONUS SCRIPT'
+        print('pão de alho {}'.format(first_split))
         for q in range(len(first_split)):
+            # print('q = {} dict(q) = {}'.format(q, first_split[q]))
             if q % 2 == 0:
                 if first_split[q] not in dict_script:
                     dict_script[first_split[q]] = first_split[q + 1]
                 else:
                     dict_script['{}_extra'.format(first_split[q])].append(first_split[q + 1])
-        print(dict_script)
-        print('')
+        # print('')
         if 'bonus2' in dict_script:
             bonus2 = dict_script['bonus2'].split(',')
             bonus2_sufix = bonus2[0]
@@ -609,14 +617,36 @@ def analyse_single_script(input_script: str):
 
         if 'bonus' in dict_script:
             bonus = dict_script['bonus'].replace(';', '').replace('\n', '').split(',')
-            if bonus[0] == 'bHPGainValue':
-                bonus[0] = 'hp_drained_after_kill'
-            script_function.append((bonus[0], bonus[1]))
+            if len(bonus) == 1:
+                script_function.append(script_json[bonus[0]][0])
+            else:
+                script_function.append((script_json[bonus[0]][0], bonus[1]))
 
         if 'skill' in dict_script:
             skill = dict_script['skill'][1:-4]
             skill_lvl = dict_script['skill'][-2:-1]
             script_function.append(('Enable skill', skill, skill_lvl))
+
+        if 'bonus3' in dict_script:
+            bonus3 = dict_script['bonus3'].replace(';', '').replace('\n', '').split(',')
+            bonus3_name = script_json[bonus3[0]][0]
+            script_function.append((bonus3_name, bonus3[1], bonus3[2], bonus3[3]))
+
+        if 'bonus_extra' in dict_script:
+            for w in dict_script['bonus_extra']:
+                bonus_extra = w.split(',')
+                bonus_extra = [s.replace(';', '') for s in bonus_extra]
+                if len(bonus_extra) != 1:
+                    if len(bonus_extra) != 2:
+                        sufix = script_json[bonus_extra[0]][0]
+                        value = bonus_extra[-1].replace(';', '')
+                        script_function.append((sufix, bonus_extra[1], value))
+                    else:
+                        sufix = script_json[bonus_extra[0]][0]
+                        value = bonus_extra[-1]
+                        script_function.append((sufix, bonus_extra[1]))
+                else:
+                    script_function.append(script_json[bonus_extra][0][0])
 
         if 'bonus2_extra' in dict_script:
             for w in dict_script['bonus2_extra']:
@@ -624,6 +654,17 @@ def analyse_single_script(input_script: str):
                 sufix = script_json[bonus2_extra[0]][0]
                 value = bonus2_extra[2].replace(';', '')
                 script_function.append((sufix, bonus2_extra[1], value))
+
+        if 'bonus3_extra' in dict_script:
+            for w in dict_script['bonus3_extra']:
+                bonus3_extra = w.split(',')
+                if len(bonus3_extra) != 1:
+                    sufix = script_json[bonus3_extra[0]][0]
+                    value = bonus3_extra[-1].replace(';', '')
+                    script_function.append((sufix, bonus3_extra[1], value))
+                else:
+                    script_function.append(script_json[bonus3_extra[0]][0][0])
+        print("dict = {}".format(dict_script))
         return script_function
 
 
@@ -634,7 +675,7 @@ text_dict = {"headgear1": ("Valkyrie Feather Band [1]", "4", "Elder Willow Card"
              "shoes": ('Crystal Pumps', '4', "(No Card)"),
              "armor": ("Formal Suit [1]", "7", "Peco Peco Card"),
              "robe": ("Muffler [1]", "7", "Raydric Card"),
-             "accessory1": ("Glove [1]", 0, "Zerom Card"),
+             "accessory1": ("Glove [1]", 0, "Gargoyle Card"),
              'accessory2': ("Earring [1]", 0, "Zerom Card"),
              'weapon': ("Spectral Spear", 0, "(No Card)", "(No Card)", "(No Card)", "(No Card)")}
 
@@ -651,7 +692,17 @@ for i in ttk:
     print(i, ttk[i])
 print('')
 
-analyse_script(ttk)
+# analyse_script(ttk)
+for p in range(1101, 1200):
+    if p in equip_db:
+        script = equip_db[p]['Script']
+        if script != 0:
+            print('item: {}'.format(p))
+            p_script = script
+            p_analysis = analyse_single_script(equip_db[p]['Script'])
+            print('len analysis: {}'.format(len(p_analysis)))
+            print('script: {}analysis: {}'.format(p_script, p_analysis))
+            print('')
 
 # # pe.equip_item(pe.create_item_with_id(2104))
 # pe.unequip_noble_hats()
