@@ -2,7 +2,12 @@ import json
 import os
 
 from main.exporter import card_db
-from model.equip_model import analyse_single_script
+
+# SITE SITE SITE
+# O SITE TA AQUI
+
+# https://jsonformatter.org/
+from main.fixer.script_analyser import analyse_single_script
 
 db_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..', 'resources', "item_db_etc.json"))
 a_file = open(db_path, "r")
@@ -23,6 +28,7 @@ def get_card_number(ctp: int) -> int:
     for h in range(len(aux)):
         if aux[h]['Id'] == ctp:
             return h
+
 
 for p in range(4001, 4452):
     if p in card_db:

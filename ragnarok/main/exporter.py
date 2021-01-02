@@ -122,7 +122,4 @@ second_param_set = set()
 #
 # print(first_split_trimmed)
 
-for i in card_db:
-    script = card_db[i]['Script']
-    if script.count("if") > 1:
-        print('multi-if! {}'.format(card_db[i]['Name']))
+

@@ -6615,7 +6615,21 @@
                "BuyingStore": true
             },
             "Script": "if(getrefine()<6) { bonus bDef,2; bonus bMdef,5; }\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": null,
+                  "then": [
+                     [
+                        "+def_flat",
+                        "2"
+                     ],
+                     [
+                        "+mdef_flat",
+                        "5"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4151,
@@ -6854,7 +6868,17 @@
                "BuyingStore": true
             },
             "Script": "bonus bAgi,2; if(getrefine()>8) bonus bFlee,20;\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": null,
+                  "then": [
+                     [
+                        "+flee",
+                        "20"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4160,
@@ -6870,7 +6894,21 @@
                "BuyingStore": true
             },
             "Script": "bonus bStr,2; if(getrefine()>8) { bonus bMaxHPrate,10; bonus bMaxSPrate,10; }\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": null,
+                  "then": [
+                     [
+                        "+maxhp_%",
+                        "10"
+                     ],
+                     [
+                        "+maxsp_%",
+                        "10"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4161,
@@ -6933,7 +6971,19 @@
                "BuyingStore": true
             },
             "Script": "bonus bFlee,2; bonus bCritical,7; if(BaseClass==Job_Swordman) bonus3 bAutoSpell,\"KN_BOWLINGBASH\",5,10;\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": "player_job in ['Job_Swordman']",
+                  "then": [
+                     [
+                        "whileattacking_autospell",
+                        "\"KN_BOWLINGBASH\"",
+                        "5",
+                        "10"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4164,
@@ -7125,7 +7175,17 @@
                "BuyingStore": true
             },
             "Script": "bonus2 bSPVanishRate,50,10; if(BaseJob==Job_Sage) bonus bSPDrainValue,1;\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": null,
+                  "then": [
+                     [
+                        "whileattacking_selfdrainsp",
+                        "1"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4172,
@@ -7508,7 +7568,21 @@
                "BuyingStore": true
             },
             "Script": "bonus bInt,1; if(BaseClass==Job_Acolyte) { bonus bInt,1; bonus bMdef,1; }\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": "player_job in ['Job_Acolyte)']",
+                  "then": [
+                     [
+                        "+int",
+                        "1"
+                     ],
+                     [
+                        "+mdef_flat",
+                        "1"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4186,
@@ -7696,7 +7770,19 @@
                "BuyingStore": true
             },
             "Script": "if(BaseJob==Job_Novice||BaseJob==Job_SuperNovice) bonus3 bAutoSpellWhenHit,\"SM_ENDURE\",1,200;\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": null,
+                  "then": [
+                     [
+                        "whilehit_targetskill_%",
+                        "\"SM_ENDURE\"",
+                        "1",
+                        "200"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4194,
@@ -7857,7 +7943,17 @@
                "BuyingStore": true
             },
             "Script": "if(getrefine()<6) bonus bMdef,7;\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": null,
+                  "then": [
+                     [
+                        "+mdef_flat",
+                        "7"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4201,
@@ -8097,7 +8193,28 @@
                "BuyingStore": true
             },
             "Script": "if(!isequipped(4172,4257,4230,4272)) bonus3 bAutoSpell,\"RG_INTIMIDATE\",1,20; if(BaseClass==Job_Thief) bonus bFlee,20;\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": "combo_equipped ['4172', '4257', '4230', '4272']",
+                  "then": [
+                     [
+                        "whileattacking_autospell",
+                        "\"RG_INTIMIDATE\"",
+                        "1",
+                        "20"
+                     ]
+                  ]
+               },
+               "condition2": {
+                  "if": "player_job in ['Job_Thief']",
+                  "then": [
+                     [
+                        "+flee",
+                        "20"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4211,
@@ -8493,7 +8610,17 @@
                "BuyingStore": true
             },
             "Script": "bonus bDef,2; if(getrefine()>8) bonus bMdef,5;\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": null,
+                  "then": [
+                     [
+                        "+mdef_flat",
+                        "5"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4227,
@@ -8679,7 +8806,14 @@
                "BuyingStore": true
             },
             "Script": "bonus bLuk,3; if(BaseClass==Job_Merchant) bonus bUnbreakableArmor;\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": "player_job in ['Job_Merchant']",
+                  "then": [
+                     "unbreakable_armor"
+                  ]
+               }
+            }
          },
          {
             "Id": 4234,
@@ -8845,7 +8979,21 @@
                "BuyingStore": true
             },
             "Script": "if(getrefine()<6) { bonus bDef,2; bonus bMdef,3; }\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": null,
+                  "then": [
+                     [
+                        "+def_flat",
+                        "2"
+                     ],
+                     [
+                        "+mdef_flat",
+                        "3"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4241,
@@ -8863,7 +9011,21 @@
                "BuyingStore": true
             },
             "Script": "bonus bMaxHP,300; if(readparam(bLuk)>=77) { bonus bHPrecovRate,100; bonus bSPrecovRate,100; }\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": "player_luk>=77",
+                  "then": [
+                     [
+                        "+hprecovery_%",
+                        "100"
+                     ],
+                     [
+                        "+sprecovery_%",
+                        "100"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4242,
@@ -8879,7 +9041,17 @@
                "BuyingStore": true
             },
             "Script": "bonus bVit,2; if(getrefine()>8) bonus bMaxHP,800;\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": null,
+                  "then": [
+                     [
+                        "+maxhp_flat",
+                        "800"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4243,
@@ -9255,7 +9427,17 @@
                "BuyingStore": true
             },
             "Script": "bonus bAgi,1; if(BaseClass==Job_Thief) bonus bFlee2,5;\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": "player_job in ['Job_Thief']",
+                  "then": [
+                     [
+                        "+perfectdodge",
+                        "5"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4258,
@@ -9815,7 +9997,17 @@
                "BuyingStore": true
             },
             "Script": "if(getrefine()<6) bonus bMdef,5;\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": null,
+                  "then": [
+                     [
+                        "+mdef_flat",
+                        "5"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4279,
@@ -9880,7 +10072,14 @@
                "BuyingStore": true
             },
             "Script": "bonus bBaseAtk,30; bonus bSPDrainValue,-1; if(BaseClass==Job_Merchant) bonus bUnbreakableWeapon;\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": "player_job in ['Job_Merchant']",
+                  "then": [
+                     "unbreakable_weapon"
+                  ]
+               }
+            }
          },
          {
             "Id": 4282,
@@ -10004,7 +10203,17 @@
                "BuyingStore": true
             },
             "Script": "if(getrefine()<6) bonus bMdef,8;\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": null,
+                  "then": [
+                     [
+                        "+mdef_flat",
+                        "8"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4288,
@@ -10022,7 +10231,17 @@
                "BuyingStore": true
             },
             "Script": "bonus bInt,2; if(getrefine()>8) bonus bMaxSP,150;\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": null,
+                  "then": [
+                     [
+                        "+maxsp_flat",
+                        "150"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4289,
@@ -10160,7 +10379,19 @@
                "BuyingStore": true
             },
             "Script": "if(BaseJob==Job_Novice||BaseJob==Job_SuperNovice) bonus3 bAutoSpellWhenHit,\"AL_INCAGI\",1,100;\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": null,
+                  "then": [
+                     [
+                        "whilehit_targetskill_%",
+                        "\"AL_INCAGI\"",
+                        "1",
+                        "100"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4295,
@@ -10372,7 +10603,35 @@
                "BuyingStore": true
             },
             "Script": "bonus bFlee,10; if(readparam(bStr)>=80) bonus bBaseAtk,20; if(readparam(bVit)>=80) bonus bMaxHPrate,3; if(readparam(bLuk)>=80) bonus bCritical,3;\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": "player_str>=80",
+                  "then": [
+                     [
+                        "+atk_flat",
+                        "20"
+                     ]
+                  ]
+               },
+               "condition2": {
+                  "if": "player_vit>=80",
+                  "then": [
+                     [
+                        "+maxhp_%",
+                        "3"
+                     ]
+                  ]
+               },
+               "condition3": {
+                  "if": "player_luk>=80",
+                  "then": [
+                     [
+                        "+crit",
+                        "3"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4304,
@@ -10595,7 +10854,23 @@
                "BuyingStore": true
             },
             "Script": "bonus bFlee,3; bonus bHit,10; if(BaseClass==Job_Acolyte) { bonus2 bCriticalAddRace,RC_Undead,9; bonus2 bCriticalAddRace,RC_Demon,9; }\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": "player_job in ['Job_Acolyte)']",
+                  "then": [
+                     [
+                        "critical_damage_race_%",
+                        "RC_Undead",
+                        "9"
+                     ],
+                     [
+                        "critical_damage_race_%",
+                        "RC_Demon",
+                        "9"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4313,
@@ -10694,7 +10969,17 @@
                "BuyingStore": true
             },
             "Script": "bonus bCritAtkRate,15; if(BaseClass==Job_Thief) bonus bCritical,4;\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": "player_job in ['Job_Thief']",
+                  "then": [
+                     [
+                        "+crit",
+                        "4"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4318,
@@ -10738,7 +11023,18 @@
                "BuyingStore": true
             },
             "Script": "bonus bMaxHP,300; if(getrefine()>=9) bonus2 bSkillAtk,\"SM_BASH\",10;\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": null,
+                  "then": [
+                     [
+                        "dmg_skillid_%",
+                        "\"SM_BASH\"",
+                        "10"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4320,
@@ -11041,7 +11337,17 @@
                "BuyingStore": true
             },
             "Script": "bonus bCritical,3; if(BaseClass==Job_Swordman) bonus bFlee2,3;\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": "player_job in ['Job_Swordman']",
+                  "then": [
+                     [
+                        "+perfectdodge",
+                        "3"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4332,
@@ -11516,7 +11822,21 @@
                "BuyingStore": true
             },
             "Script": "if(getrefine()<=4) { bonus bFlee,20; bonus bFlee2,1; } else { bonus bFlee,10; }\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": null,
+                  "then": [
+                     [
+                        "+flee",
+                        "20"
+                     ],
+                     [
+                        "+perfectdodge",
+                        "1else"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4352,
@@ -11594,7 +11914,38 @@
                "BuyingStore": true
             },
             "Script": "if(readparam(bAgi)>=90) { bonus2 bResEff,Eff_Silence,3000; bonus2 bResEff,Eff_Stun,3000; } if(readparam(bVit)>=80) { bonus2 bResEff,Eff_Stone,5000; bonus2 bResEff,Eff_Sleep,5000; }\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": "player_agi>=90",
+                  "then": [
+                     [
+                        "resist_badstatus_%",
+                        "Eff_Silence",
+                        "3000"
+                     ],
+                     [
+                        "resist_badstatus_%",
+                        "Eff_Stun",
+                        "3000"
+                     ]
+                  ]
+               },
+               "condition2": {
+                  "if": "player_vit>=80",
+                  "then": [
+                     [
+                        "resist_badstatus_%",
+                        "Eff_Stone",
+                        "5000"
+                     ],
+                     [
+                        "resist_badstatus_%",
+                        "Eff_Sleep",
+                        "5000"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4355,
@@ -11880,7 +12231,17 @@
                "BuyingStore": true
             },
             "Script": "bonus bCastrate,getrefine()*-1; if(getrefine()>=9) { bonus bMatkRate,2; }\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": null,
+                  "then": [
+                     [
+                        "+matk_%",
+                        "2"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4367,
@@ -12094,7 +12455,22 @@
                "BuyingStore": true
             },
             "Script": "if(getrefine()>=9) { bonus2 bSubEle,Ele_Neutral,15; bonus bFlee,15; } else { bonus2 bSubEle,Ele_Neutral,10; bonus bFlee,10; }\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": null,
+                  "then": [
+                     [
+                        "resist_monsterelement_%",
+                        "Ele_Neutral",
+                        "15"
+                     ],
+                     [
+                        "+flee",
+                        "15else"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4376,
@@ -12168,7 +12544,29 @@
                "BuyingStore": true
             },
             "Script": "if(getrefine()<=4) { bonus bMaxHPrate,8; bonus bMaxSPrate,8; bonus bHPrecovRate,5; bonus bSPrecovRate,5; } else { bonus bMaxHPrate,4; bonus bMaxSPrate,4; }\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": null,
+                  "then": [
+                     [
+                        "+maxhp_%",
+                        "8"
+                     ],
+                     [
+                        "+maxsp_%",
+                        "8"
+                     ],
+                     [
+                        "+hprecovery_%",
+                        "5"
+                     ],
+                     [
+                        "+sprecovery_%",
+                        "5else"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4379,
@@ -12186,7 +12584,21 @@
                "BuyingStore": true
             },
             "Script": "if(getrefine()<=4) { bonus bSPrecovRate,5; bonus bMaxSP,80; } else { bonus bMaxSP,40; }\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": null,
+                  "then": [
+                     [
+                        "+sprecovery_%",
+                        "5"
+                     ],
+                     [
+                        "+maxsp_flat",
+                        "80else"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4380,
@@ -12557,7 +12969,19 @@
                "BuyingStore": true
             },
             "Script": "if(BaseJob==Job_Priest) bonus3 bAutoSpell,\"CR_GRANDCROSS\",5,20;\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": null,
+                  "then": [
+                     [
+                        "whileattacking_autospell",
+                        "\"CR_GRANDCROSS\"",
+                        "5",
+                        "20"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4395,
@@ -12745,7 +13169,34 @@
                "BuyingStore": true
             },
             "Script": "if(BaseClass==Job_Swordman||BaseClass==Job_Merchant||BaseClass==Job_Thief) { bonus bStr,2; bonus bMaxHPrate,5; } if(BaseClass==Job_Mage||BaseClass==Job_Archer||BaseClass==Job_Acolyte) { bonus bInt,2; bonus bMaxSPrate,5; }\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": "player_job in ['(Job_Swordman', 'Job_Merchant', 'Job_Thief)']",
+                  "then": [
+                     [
+                        "+str",
+                        "2"
+                     ],
+                     [
+                        "+maxhp_%",
+                        "5"
+                     ]
+                  ]
+               },
+               "condition2": {
+                  "if": "player_job in ['(Job_Mage', 'Job_Archer', 'Job_Acolyte)']",
+                  "then": [
+                     [
+                        "+int",
+                        "2"
+                     ],
+                     [
+                        "+maxsp_%",
+                        "5"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4403,
@@ -12807,7 +13258,17 @@
                "BuyingStore": true
             },
             "Script": "bonus bMagicDamageReturn,getrefine()*2; if(BaseClass==Job_Mage) bonus bMdef,3;\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": "player_job in ['Job_Mage']",
+                  "then": [
+                     [
+                        "+mdef_flat",
+                        "3"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4406,
@@ -12911,7 +13372,17 @@
                "BuyingStore": true
             },
             "Script": "bonus bMatkRate,5; bonus bDef,-10; if(BaseClass==Job_Mage) bonus bMaxSP,100;\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": "player_job in ['Job_Mage']",
+                  "then": [
+                     [
+                        "+maxsp_flat",
+                        "100"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4410,
@@ -12927,7 +13398,17 @@
                "BuyingStore": true
             },
             "Script": "bonus bBaseAtk,15; if(BaseClass==Job_Swordman) bonus bMaxHP,500;\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": "player_job in ['Job_Swordman']",
+                  "then": [
+                     [
+                        "+maxhp_flat",
+                        "500"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4411,
@@ -13289,7 +13770,22 @@
                "BuyingStore": true
             },
             "Script": "if(BaseJob==Job_Rogue) { bonus bMatkRate,10; bonus2 bAddClass,Class_All,10; }\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": null,
+                  "then": [
+                     [
+                        "dmg_monstertype_%",
+                        "Class_All",
+                        "10"
+                     ],
+                     [
+                        "+matk_%",
+                        "10"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4427,
@@ -13305,7 +13801,26 @@
                "BuyingStore": true
             },
             "Script": "if(getiteminfo(getequipid(EQI_HAND_R),11)==W_1HSWORD||getiteminfo(getequipid(EQI_HAND_R),11)==W_2HSWORD) { bonus bHit,5; bonus bCritical,5; bonus2 bSkillAtk,62,25; }\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": null,
+                  "then": [
+                     [
+                        "dmg_skillid_%",
+                        "62",
+                        "25"
+                     ],
+                     [
+                        "+hit",
+                        "5"
+                     ],
+                     [
+                        "+crit",
+                        "5"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4428,
@@ -13321,7 +13836,26 @@
                "BuyingStore": true
             },
             "Script": "if(getiteminfo(getequipid(EQI_HAND_R),11)==W_BOW) { bonus bHit,5; bonus bCritical,5; bonus2 bSkillAtk,47,50; }\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": null,
+                  "then": [
+                     [
+                        "dmg_skillid_%",
+                        "47",
+                        "50"
+                     ],
+                     [
+                        "+hit",
+                        "5"
+                     ],
+                     [
+                        "+crit",
+                        "5"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4429,
@@ -13657,7 +14191,36 @@
                "BuyingStore": true
             },
             "Script": "if(BaseClass==Job_Mage){ bonus bMaxSP,100; bonus bMaxHP,-100; bonus2 bSkillAtk,\"MG_NAPALMBEAT\",20; bonus2 bSkillAtk,\"MG_SOULSTRIKE\",20; bonus2 bSkillAtk,\"HW_NAPALMVULCAN\",20; }\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": "player_job in ['Job_Mage)']",
+                  "then": [
+                     [
+                        "dmg_skillid_%",
+                        "\"MG_NAPALMBEAT\"",
+                        "20"
+                     ],
+                     [
+                        "+maxsp_flat",
+                        "100"
+                     ],
+                     [
+                        "+maxhp_flat",
+                        "-100"
+                     ],
+                     [
+                        "dmg_skillid_%",
+                        "\"MG_SOULSTRIKE\"",
+                        "20"
+                     ],
+                     [
+                        "dmg_skillid_%",
+                        "\"HW_NAPALMVULCAN\"",
+                        "20"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4439,
@@ -13730,7 +14293,27 @@
                "BuyingStore": true
             },
             "Script": "if(getiteminfo(getequipid(EQI_HAND_R),11)==W_STAFF) { bonus bInt,1; bonus2 bIgnoreMdefClassRate,Class_Normal,2; bonus2 bIgnoreMdefClassRate,Class_Boss,2; }\n",
-            "Script_adapted": "IF-ELSE SCRIPT"
+            "Script_adapted": {
+               "condition1": {
+                  "if": null,
+                  "then": [
+                     [
+                        "ignore_mdef_all_%",
+                        "Class_Normal",
+                        "2"
+                     ],
+                     [
+                        "+int",
+                        "1"
+                     ],
+                     [
+                        "ignore_mdef_all_%",
+                        "Class_Boss",
+                        "2"
+                     ]
+                  ]
+               }
+            }
          },
          {
             "Id": 4441,
