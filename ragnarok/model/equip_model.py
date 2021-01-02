@@ -582,11 +582,13 @@ def analyse_script(script_dict: dict):
 
 
 def analyse_single_script(input_script: str):
+    if_else_dict = dict()
     script_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'resources', "script_template.json"))
     script_json = pd.read_json(r'{}'.format(script_path))['Body']
     current_script = input_script
+    if_flag = False
+    multiple_if_flag = False
     if str(current_script) != "0":
-        # print(current_script)
         dict_script = dict()
         dict_script['bonus_extra'] = []
         dict_script['bonus2_extra'] = []
@@ -597,7 +599,15 @@ def analyse_single_script(input_script: str):
         first_split = current_script.split(' ')
         first_split = [s.replace('\n', '') for s in first_split]
         if "if(" in current_script:
-            return 'IF-ELSE SCRIPT'
+            occurrences = current_script.count("if")
+            if_flag = True
+            compact = current_script.split("if")
+            compact.pop(0)
+            for qh in range(len(compact)):
+                print(compact[qh])
+            print('ae {}'.format(compact))
+            return 'multiple if'
+            # return 'IF-ELSE SCRIPT'
         if "autobonus" in current_script:
             return 'AUTOBONUS SCRIPT'
         for q in range(len(first_split)):
@@ -665,8 +675,16 @@ def analyse_single_script(input_script: str):
                     script_function.append((sufix, bonus3_extra[1], value))
                 else:
                     script_function.append(script_json[bonus3_extra[0].lower()][0][0])
-        print("dict = {}".format(dict_script))
-        return script_function
+        # print("dict = {}".format(dict_script))
+        if if_flag:
+            if_else_dict['then'] = script_function
+            return if_else_dict
+        else:
+            return script_function
+
+
+def small_analysis(small_script: str):
+    pass
 
 
 text_dict = {"headgear1": ("Valkyrie Feather Band [1]", "4", "Elder Willow Card"),
@@ -693,28 +711,22 @@ for i in ttk:
     print(i, ttk[i])
 print('')
 
-# for p in range(2000, 3000):
-#     if p in equip_db:
-#         script = equip_db[p]['Script']
+# for p in range(4001, 4500):
+#     if p in card_db:
+#         script = card_db[p]['Script']
+#         name = card_db[p]['Name']
 #         if script != 0:
 #             print('item: {}'.format(p))
 #             p_script = script
-#             p_analysis = analyse_single_script(equip_db[p]['Script'])
-#             print('len analysis: {}'.format(len(p_analysis)))
+#             p_analysis = analyse_single_script(card_db[p]['Script'])
+#             print('name = {}'.format(name))
 #             print('script: {}analysis: {}'.format(p_script, p_analysis))
 #             print('')
 
-for p in range(4001, 4500):
-    if p in card_db:
-        script = card_db[p]['Script']
-        name = card_db[p]['Name']
-        if script != 0:
-            print('item: {}'.format(p))
-            p_script = script
-            p_analysis = analyse_single_script(card_db[p]['Script'])
-            print('name = {}'.format(name))
-            print('script: {}analysis: {}'.format(p_script, p_analysis))
-            print('')
+script = card_db[4007]['Script']
+analysis = analyse_single_script(script)
+# print(script)
+print(analysis)
 
 # # pe.equip_item(pe.create_item_with_id(2104))
 # pe.unequip_noble_hats()
