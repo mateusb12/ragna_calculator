@@ -591,6 +591,8 @@ def analyse_single_script(input_script: str):
         dict_script['bonus_extra'] = []
         dict_script['bonus2_extra'] = []
         dict_script['bonus3_extra'] = []
+        dict_script['skill_extra'] = []
+        dict_script['Skill_extra'] = []
         script_function = []
         first_split = current_script.split(' ')
         first_split = [s.replace('\n', '') for s in first_split]
@@ -598,7 +600,6 @@ def analyse_single_script(input_script: str):
             return 'IF-ELSE SCRIPT'
         if "autobonus" in current_script:
             return 'AUTOBONUS SCRIPT'
-        print('pão de alho {}'.format(first_split))
         for q in range(len(first_split)):
             # print('q = {} dict(q) = {}'.format(q, first_split[q]))
             if q % 2 == 0:
@@ -646,6 +647,7 @@ def analyse_single_script(input_script: str):
                         value = bonus_extra[-1]
                         script_function.append((sufix, bonus_extra[1]))
                 else:
+                    print('pão de alho? {}'.format(bonus_extra))
                     script_function.append(script_json[bonus_extra][0][0])
 
         if 'bonus2_extra' in dict_script:
@@ -693,7 +695,7 @@ for i in ttk:
 print('')
 
 # analyse_script(ttk)
-for p in range(1101, 1200):
+for p in range(1101, 3000):
     if p in equip_db:
         script = equip_db[p]['Script']
         if script != 0:

@@ -16,68 +16,60 @@
 						],
 		"bAddClass":
 						[
-						"increase_dmg_%"
+						"dmg_monstertype_increase_%"
 						],
 		"bAddEle":
 						[
-						"increase_dmg_on_element_%"
-						],
-		"bAddDamageClass":
-						[
-						"increase_dmg_on_monster"
-						],
-		"bAddMonsterDropItem":
-						[
-						"add_monster_drop_item"
+						"dmg_element_increase_%"
 						],
 		"bAddRace":
 						[
-						"increase_dmg_on_race_%"
+						"dmg_race_increase_%"
+						],
+		"bAddDamageClass":
+						[
+						"dmg_monsterid_increase_%"
+						],
+		"bAddSize":
+						[
+						"dmg_size_increase_%"
+						],
+		"bSkillAtk":
+						[
+						"dmg_skillid_increase_%"
+						],
+		"bMagicAddRace":
+						[
+						"mdmg_race_increase_%"
+						],
+		"bAddMonsterDropItem":
+						[
+						"dropitem_monster_%"
+						],
+		"bAddMonsterDropItemGroup":
+						[
+						"groupdropitem_monster_%"
 						],
 		"bAtkEle":
 						[
-						"change_weapon_element"
+						"weapon_element_change"
 						],
 		"bAutoSpell":
 						[
-						"autospell_while_attacking"
+						"whileattacking_autospell"
 						],
 		"bAddEff":
 						[
-						"badstatus_chance_while_attacking"
+						"whileattacking_badstatus"
 						],	
 		"bAddEff2":
 						[
-						"self_badstatus_chance_while_attacking"
+						"whileattacking_selfbadstatus"
 						],
 		"bHPGainValue":
 						[
 						"hp_drained_after_killing_monster"
 						],							
-		"increase_dmg": [
-						"bAddClass,Class_All,1",
-						"bAddClass,Class_All,2",
-						"bAddClass,Class_All,4",
-						"bAddClass,Class_All,5",
-						"bAddClass,Class_All,50"					
-						],
-		"increase_dmg_on_monster": [
-						"bAddDamageClass,1002,500",
-						"bAddDamageClass,1188,150",
-						"bAddDamageClass,2047,10",
-						"bAddDamageClass,2049,10"				
-						],
-		"apply_status_on_attack": [
-						"bAddEff,Eff_Bleeding,300",
-						"bAddEff,Eff_Bleeding,500",
-						"bAddEff,Eff_Bleeding,800",
-						"bAddEff,Eff_Blind,100",
-						"bAddEff,Eff_Curse,30",
-						"bAddEff,Eff_Curse,5000",
-						"bAddEff,Eff_Freeze,1000",
-						"bAddEff,Eff_Stun,1000",
-						"bAddEff,Eff_Stun,500"
-						],
 		"bSubEle":
 						[
 						"monster_element_resistance_%"
@@ -105,10 +97,6 @@
 		"bSPVanishRate":
 						[
 						"drain_enemy_sp_by_%_chance"
-						],
-		"bAddMonsterDropItemGroup":
-						[
-						"add_monster_drop_item_by_group"
 						],
 		"bDef":
 						[
@@ -206,6 +194,222 @@
 						[
 						"coma_chance_while_attacking"
 						],
+		"bBreakWeaponRate":
+						[
+						"break_enemy_weapon_%"
+						],
+		"bDefRatioAtkClass":
+						[
+						"thanatos_card_bonus"
+						],
+		"bMatkRate":
+						[
+						"increase_matk_%"
+						],
+		"bMaxHPrate":
+						[
+						"increase_maxhp_%"
+						],
+		"bMaxSPrate":
+						[
+						"increase_maxsp_"
+						],
+		"bClassChange":
+						[
+						"dead_branch_on_attack"
+						],
+		"bGetZenyNum":
+						[
+						"steal_zenny_on_kill"
+						],
+		"bHPrecovRate":
+						[
+						"increases_hp_recovery"
+						],
+		"bSPrecovRate":
+						[
+						"increases_sp_recovery"
+						],
+		"bHit":
+						[
+						"+hit"
+						],
+		"bHPRegenRate":
+						[
+						"recover_hp_each_x_seconds"
+						],
+		"bSpeedRate":
+						[
+						"increase_movspeed_%"
+						],
+		"bAddSkillBlow":
+						[
+						"push_target_x_cells_back"
+						],
+		"bComaRace":
+						[
+						"coma_chance_%_on_race"
+						],
+		"bCriticalAddRace":
+						[
+						"+critical_damage_on_race_%"
+						],
+		"bSPDrainValueRace":
+						[
+						"drain_sp_each_attack_on_race"
+						],
+		"bSPGainRace":
+						[
+						"sp_drained_after_killing_monster"
+						],
+		"bSubSize":
+						[
+						"monster_size_resistance_%"
+						],
+		"bAddEffOnSkill":
+						[
+						"change_skill_behavior"
+						],
+		"bPerfectHitRate":
+						[
+						"+perfecthit"
+						],
+		"bMaxHP":
+						[
+						"increase_maxhp_flat"
+						],
+		"bMaxSP":
+						[
+						"increase_maxsp_flat"
+						],
+		"bIgnoreDefClass":
+						[
+						"ignore_def_100%"
+						],
+		"bSPGainValue":
+						[
+						"sp_drained_after_killing_monster"
+						],
+		"bAgi":
+						[
+						"+agi"
+						],
+		"bLongAtkDef":
+						[
+						"ranged_resistance_%"
+						],
+		"bExpAddRace":
+						[
+						"increase_exp_bonus_by_race_%"
+						],
+		"bHealPower":
+						[
+						"increase_healpower_%"
+						],
+		"bIgnoreMdefRaceRate":
+						[
+						"ignore_mdef_by_race_%"
+						],
+		"bMdef":
+						[
+						"+mdef"
+						],
+		"bCastrate":
+						[
+						"castrate_%"
+						],
+		"bIgnoreMdefClassRate":
+						[
+						"ignore_mdef_%"
+						],
+		"bSPRegenRate":
+						[
+						"sp_regen_each_x_seconds"
+						],
+		"bDelayRate":
+						[
+						"delay_aftercast"
+						],
+		"bResEff":
+						[
+						"resistance_badstatus_%"
+						],
+		"bLongAtkRate":
+						[
+						"increase_dmg_ranged"
+						],
+		"bAutoSpellWhenHit":
+						[
+						"autocast_attacked_singletarget"
+						],
+		"bUseSPrate":
+						[
+						"skillspcost_%"
+						],
+		"bUnbreakableShield":
+						[
+						"unbreakable_shield"
+						],
+		"bMagicDamageReturn":
+						[
+						"reflect_mdmg_chance_%"
+						],
+		"bNoKnockback":
+						[
+						"never_knockback"
+						],
+		"bAddEffWhenHit":
+						[
+						"autocast_badstatus_whenhit_%"
+						],
+		"blank":
+						[
+						"blank"
+						],
+		"blank":
+						[
+						"blank"
+						],
+		"blank":
+						[
+						"blank"
+						],
+		"blank":
+						[
+						"blank"
+						],
+		"blank":
+						[
+						"blank"
+						],
+		"blank":
+						[
+						"blank"
+						],
+		"blank":
+						[
+						"blank"
+						],
+		"blank":
+						[
+						"blank"
+						],
+		"blank":
+						[
+						"blank"
+						],
+		"blank":
+						[
+						"blank"
+						],
+		"blank":
+						[
+						"blank"
+						],
+		"blank":
+						[
+						"blank"
+						],						
 	    "headgear3": ["Gentleman's Pipe", 0, "(No Card)"],
 	}
 }

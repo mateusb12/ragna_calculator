@@ -16424,8 +16424,7 @@
 				"Left_Hand": true
 			},
 			"EquipLevelMin": 1,
-			"Refineable": true,
-			"Script": "bonus bAllStats,50; bonus bMdef,99; bonus bShortWeaponDamageReturn,100; bonus2 bSubRace,RC_DemiHuman,95; bonus2 bSubRace,RC_Player_Human,95; skill \"CR_FULLPROTECTION\",5; Skill \"WZ_ESTIMATION\",1; Skill \"ST_FULLSTRIP\",5; Skill \"HW_MAGICPOWER\",10; bonus bMaxHPRate,200; bonus bNoGemStone; bonus bSpeedRate,25; bonus bNoWalkDelay;\n"
+			"Refineable": true
 		},
 		{
 			"Id": 2201,
