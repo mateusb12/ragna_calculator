@@ -14,377 +14,473 @@
 						"WZ_HEAVENDRIVE",
 						"WZ_JUPITEL"
 						],
-		"bAddClass":
+		"baddclass":
 						[
 						"dmg_monstertype_increase_%"
 						],
-		"bAddEle":
+		"baddele":
 						[
 						"dmg_element_increase_%"
 						],
-		"bAddRace":
+		"baddrace":
 						[
 						"dmg_race_increase_%"
 						],
-		"bAddDamageClass":
+		"baddrace2":
+						[
+						"dmg_subrace_increase_%"
+						],
+		"badddamageclass":
 						[
 						"dmg_monsterid_increase_%"
 						],
-		"bAddSize":
+		"baddsize":
 						[
 						"dmg_size_increase_%"
 						],
-		"bSkillAtk":
+		"bskillatk":
 						[
 						"dmg_skillid_increase_%"
 						],
-		"bMagicAddRace":
+		"blongatkrate":
+						[
+						"dmg_ranged_increase_%"
+						],
+		"bsubrace2":
+						[
+						"resist_subrace_increase_%"
+						],
+		"bmagicaddrace":
 						[
 						"mdmg_race_increase_%"
 						],
-		"bAddMonsterDropItem":
+		"badddefmonster":
+						[
+						"mdmg_monsterid_increase%"
+						],
+		"baddmonsterdropitem":
 						[
 						"dropitem_monster_%"
 						],
-		"bAddMonsterDropItemGroup":
+		"baddmonsterdropitemgroup":
 						[
 						"groupdropitem_monster_%"
 						],
-		"bAtkEle":
+		"batkele":
 						[
-						"weapon_element_change"
+						"elementchange_weapon"
 						],
-		"bAutoSpell":
+		"bautospell":
 						[
 						"whileattacking_autospell"
 						],
-		"bAddEff":
+		"baddeff":
 						[
 						"whileattacking_badstatus"
 						],	
-		"bAddEff2":
+		"baddeff2":
 						[
 						"whileattacking_selfbadstatus"
 						],
-		"bHPGainValue":
+		"bhpgainvalue":
 						[
 						"hp_drained_after_killing_monster"
 						],							
-		"bSubEle":
+		"bsubele":
 						[
 						"monster_element_resistance_%"
 						],
-		"bSubRace":
+		"bsubrace":
 						[
 						"race_resistance_%"
 						],
-		"bHPDrainRate":
+		"bhpdrainrate":
 						[
 						"suck_hp_%_each_attack"
 						],
-		"bSPLossRate":
+		"bsplossrate":
 						[
 						"lose_sp_each_x_seconds"
 						],
-		"bHPLossRate":
+		"bhplossrate":
 						[
 						"lose_hp_each_x_seconds"
 						],
-		"bSubClass":
+		"bsubclass":
 						[
 						"decrease_resistance_to_monster"
 						],
-		"bSPVanishRate":
+		"bspvanishrate":
 						[
 						"drain_enemy_sp_by_%_chance"
 						],
-		"bDef":
+		"bdef":
 						[
 						"+def"
 						],
-		"bLuk":
+		"bluk":
 						[
 						"+luk"
 						],
-		"bDex":
+		"bdex":
 						[
 						"+dex"
 						],
-		"bSPDrainValue":
+		"bspdrainvalue":
 						[
 						"drain_sp_each_attack"
 						],
-		"bUnbreakableWeapon;":
+		"bunbreakableweapon;":
 						[
 						"unbreakable_weapon"
 						],
-		"bVit":
+		"bvit":
 						[
 						"+vit"
 						],
-		"bAspdRate":
+		"baspdrate":
 						[
 						"+aspd_%"
 						],
-		"bStr":
+		"bstr":
 						[
 						"+str"
 						],
-		"bAspd":
+		"baspd":
 						[
 						"+aspd"
 						],
-		"bDefRate":
+		"bdefrate":
 						[
 						"+def_%"
 						],
-		"bDef2Rate":
+		"bdef2rate":
 						[
 						"+softdef_%"
 						],
-		"bIgnoreDefRace":
+		"bignoredefrace":
 						[
 						"ignore_def_by_race_100%"
 						],
-		"bBreakArmorRate":
+		"bbreakarmorrate":
 						[
 						"break_enemy_armor_%"
 						],
-		"bBaseAtk":
+		"bbaseatk":
 						[
 						"+atk"
 						],
-		"bCritical":
+		"bcritical":
 						[
 						"+crit"
 						],
-		"bIgnoreDefRaceRate":
+		"bignoredefracerate":
 						[
 						"ignore_def_by_race_%"
 						],
-		"bCritAtkRate":
+		"bcritatkrate":
 						[
 						"+critical_damage_%"
 						],
-		"bUnbreakableWeapon":
+		"bunbreakableweapon":
 						[
 						"unbreakable_weapon"
 						],
-		"bInt":
+		"bint":
 						[
 						"+int"
 						],
-		"bDoubleRate":
+		"bdoublerate":
 						[
 						"double_attack_chance_%"
 						],
-		"bAllStats":
+		"ballstats":
 						[
 						"+all_stats"
 						],
-		"bFlee":
+		"bflee":
 						[
 						"+flee"
 						],
-		"bFlee2":
+		"bflee2":
 						[
 						"+perfectdodge"
 						],
-		"bComaClass":
+		"bcomaclass":
 						[
 						"coma_chance_while_attacking"
 						],
-		"bBreakWeaponRate":
+		"bbreakweaponrate":
 						[
 						"break_enemy_weapon_%"
 						],
-		"bDefRatioAtkClass":
+		"bdefratioatkclass":
 						[
 						"thanatos_card_bonus"
 						],
-		"bMatkRate":
+		"bmatkrate":
 						[
 						"increase_matk_%"
 						],
-		"bMaxHPrate":
+		"bmaxhprate":
 						[
 						"increase_maxhp_%"
 						],
-		"bMaxSPrate":
+		"bmaxsprate":
 						[
 						"increase_maxsp_"
 						],
-		"bClassChange":
+		"bclasschange":
 						[
 						"dead_branch_on_attack"
 						],
-		"bGetZenyNum":
+		"bgetzenynum":
 						[
 						"steal_zenny_on_kill"
 						],
-		"bHPrecovRate":
+		"bhprecovrate":
 						[
 						"increases_hp_recovery"
 						],
-		"bSPrecovRate":
+		"bsprecovrate":
 						[
 						"increases_sp_recovery"
 						],
-		"bHit":
+		"bhit":
 						[
 						"+hit"
 						],
-		"bHPRegenRate":
+		"bhpregenrate":
 						[
 						"recover_hp_each_x_seconds"
 						],
-		"bSpeedRate":
+		"bspeedrate":
 						[
 						"increase_movspeed_%"
 						],
-		"bAddSkillBlow":
+		"baddskillblow":
 						[
 						"push_target_x_cells_back"
 						],
-		"bComaRace":
+		"bcomarace":
 						[
 						"coma_chance_%_on_race"
 						],
-		"bCriticalAddRace":
+		"bcriticaladdrace":
 						[
 						"+critical_damage_on_race_%"
 						],
-		"bSPDrainValueRace":
+		"bcriticallong":
+						[
+						"+critical_damage_ranged_%"
+						],
+		"bspdrainvaluerace":
 						[
 						"drain_sp_each_attack_on_race"
 						],
-		"bSPGainRace":
+		"bspgainrace":
 						[
 						"sp_drained_after_killing_monster"
 						],
-		"bSubSize":
+		"bsubsize":
 						[
 						"monster_size_resistance_%"
 						],
-		"bAddEffOnSkill":
+		"baddeffonskill":
 						[
 						"change_skill_behavior"
 						],
-		"bPerfectHitRate":
+		"bperfecthitrate":
 						[
 						"+perfecthit"
 						],
-		"bMaxHP":
+		"bmatk":
+						[
+						"+matk"
+						],
+		"bmaxhp":
 						[
 						"increase_maxhp_flat"
 						],
-		"bMaxSP":
+		"bmaxsp":
 						[
 						"increase_maxsp_flat"
 						],
-		"bIgnoreDefClass":
+		"bignoredefclass":
 						[
 						"ignore_def_100%"
 						],
-		"bSPGainValue":
+		"bspgainvalue":
 						[
 						"sp_drained_after_killing_monster"
 						],
-		"bAgi":
+		"bagi":
 						[
 						"+agi"
 						],
-		"bLongAtkDef":
+		"blongatkdef":
 						[
 						"ranged_resistance_%"
 						],
-		"bExpAddRace":
+		"bexpaddrace":
 						[
 						"increase_exp_bonus_by_race_%"
 						],
-		"bHealPower":
-						[
-						"increase_healpower_%"
-						],
-		"bIgnoreMdefRaceRate":
+		"bignoremdefracerate":
 						[
 						"ignore_mdef_by_race_%"
 						],
-		"bMdef":
+		"bmdef":
 						[
 						"+mdef"
 						],
-		"bCastrate":
+		"bcastrate":
 						[
 						"castrate_%"
 						],
-		"bIgnoreMdefClassRate":
+		"bignoremdefclassrate":
 						[
 						"ignore_mdef_%"
 						],
-		"bSPRegenRate":
+		"bspregenrate":
 						[
 						"sp_regen_each_x_seconds"
 						],
-		"bDelayRate":
+		"bdelayrate":
 						[
 						"delay_aftercast"
 						],
-		"bResEff":
+		"breseff":
 						[
 						"resistance_badstatus_%"
 						],
-		"bLongAtkRate":
-						[
-						"increase_dmg_ranged"
-						],
-		"bAutoSpellWhenHit":
+		"bautospellwhenhit":
 						[
 						"autocast_attacked_singletarget"
 						],
-		"bUseSPrate":
+		"busesprate":
 						[
 						"skillspcost_%"
 						],
-		"bUnbreakableShield":
+		"bunbreakableshield":
 						[
 						"unbreakable_shield"
 						],
-		"bMagicDamageReturn":
+		"bmagicdamagereturn":
 						[
 						"reflect_mdmg_chance_%"
 						],
-		"bNoKnockback":
+		"bnoknockback":
 						[
 						"never_knockback"
 						],
-		"bAddEffWhenHit":
+		"baddeffwhenhit":
 						[
-						"autocast_badstatus_whenhit_%"
+						"autocast_whenhit_badstatus_%"
 						],
-		"blank":
+		"bunbreakablehelm":
 						[
-						"blank"
+						"unbreakable_helm"
 						],
-		"blank":
+		"bdefele":
 						[
-						"blank"
+						"elementchange_armor"
 						],
-		"blank":
+		"bnocastcancel":
 						[
-						"blank"
+						"phencard"
 						],
-		"blank":
+		"bunbreakablearmor":
 						[
-						"blank"
+						"unbreakable_armor"
 						],
-		"blank":
+		"bskillheal":
 						[
-						"blank"
+						"efficiency_heal_potionpitcher"
 						],
-		"blank":
+		"badditemhealrate":
 						[
-						"blank"
+						"efficiency_healingitem"
+						],
+		"bmaxhprate":
+						[
+						"increase_maxhp_%"
+						],
+		"badditemgrouphealrate":
+						[
+						"efficiency_itemgroup"
+						],
+		"bmaxsprate":
+						[
+						"increase_maxsp_%"
+						],
+		"bhealpower":
+						[
+						"increase_healingpower_%"
+						],
+		"bhealpower2":
+						[
+						"increase_healingpower_and_consumablepower%"
+						],
+		"bunbreakablegarment":
+						[
+						"unbreakable_garment"
+						],
+		"bautospellwhenhit":
+						[
+						"autocast_whenhit_selfskill_%"
+						],
+		"bspdrainrate":
+						[
+						"sp_drain_on_dmg_%"
+						],
+		"bcastrate":
+						[
+						"castrate_%"
+						],
+		"bmatkrate":
+						[
+						"increase_matk_%"
+						],
+		"batkrate":
+						[
+						"increase_atk_%"
+						],
+		"baddmonsteriddropitem":
+						[
+						"dropitem_monster_%"
+						],
+		"bnowalkdelay":
+						[
+						"eddga"
+						],
+		"bnomagicdamage":
+						[
+						"gtb"
+						],
+		"bnogemstone":
+						[
+						"mistress"
+						],
+		"bshortweapondamagereturn":
+						[
+						"reflect_melee_orclord"
+						],
+		"bnosizefix":
+						[
+						"weapon_perfection_drake"
+						],
+		"brestartfullrecover":
+						[
+						"death_regen_osiris"
+						],
+		"bsplashrange":
+						[
+						"splash_dmg_baphomet"
+						],
+		"bintravision":
+						[
+						"see_hidden_enemies"
 						],
 		"blank":
 						[

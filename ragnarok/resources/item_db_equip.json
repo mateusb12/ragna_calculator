@@ -21234,8 +21234,7 @@
 			},
 			"Locations": {
 				"Garment": true
-			},
-			"Script": ""
+			}
 		},
 		{
 			"Id": 2512,
@@ -24287,8 +24286,7 @@
 			"Locations": {
 				"Right_Accessory": true,
 				"Left_Accessory": true
-			},
-			"Script": ""
+			}
 		},
 		{
 			"Id": 2710,

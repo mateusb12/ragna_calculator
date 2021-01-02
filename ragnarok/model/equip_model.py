@@ -4,7 +4,7 @@ from typing import List
 
 from ragnarok.main.gear_query import dict_name_to_dict_id, is_equipable
 from ragnarok.main.exporter import equip_db, job70, shield_db, shoes_db, armor_db, robe_db, accessory_db, \
-    hat_db, weapon_db, adjective_list, job_adapt
+    hat_db, weapon_db, adjective_list, job_adapt, card_db
 
 from ragnarok.model.dead_gear import dead_gear_list as nullgear
 from ragnarok.model.dead_gear import dead_card as nullcard
@@ -614,14 +614,14 @@ def analyse_single_script(input_script: str):
             bonus2_type = bonus2[1]
             bonus2_value = bonus2[2][:-1].replace(';', '')
 
-            script_function.append((script_json[bonus2_sufix][0], bonus2_type, bonus2_value))
+            script_function.append((script_json[bonus2_sufix.lower()][0], bonus2_type, bonus2_value))
 
         if 'bonus' in dict_script:
             bonus = dict_script['bonus'].replace(';', '').replace('\n', '').split(',')
             if len(bonus) == 1:
-                script_function.append(script_json[bonus[0]][0])
+                script_function.append(script_json[bonus[0].lower()][0])
             else:
-                script_function.append((script_json[bonus[0]][0], bonus[1]))
+                script_function.append((script_json[bonus[0].lower()][0], bonus[1]))
 
         if 'skill' in dict_script:
             skill = dict_script['skill'][1:-4]
@@ -630,7 +630,7 @@ def analyse_single_script(input_script: str):
 
         if 'bonus3' in dict_script:
             bonus3 = dict_script['bonus3'].replace(';', '').replace('\n', '').split(',')
-            bonus3_name = script_json[bonus3[0]][0]
+            bonus3_name = script_json[bonus3[0].lower()][0]
             script_function.append((bonus3_name, bonus3[1], bonus3[2], bonus3[3]))
 
         if 'bonus_extra' in dict_script:
@@ -639,21 +639,20 @@ def analyse_single_script(input_script: str):
                 bonus_extra = [s.replace(';', '') for s in bonus_extra]
                 if len(bonus_extra) != 1:
                     if len(bonus_extra) != 2:
-                        sufix = script_json[bonus_extra[0]][0]
+                        sufix = script_json[bonus_extra[0].lower()][0]
                         value = bonus_extra[-1].replace(';', '')
                         script_function.append((sufix, bonus_extra[1], value))
                     else:
-                        sufix = script_json[bonus_extra[0]][0]
+                        sufix = script_json[bonus_extra[0].lower()][0]
                         value = bonus_extra[-1]
                         script_function.append((sufix, bonus_extra[1]))
                 else:
-                    print('pão de alho? {}'.format(bonus_extra))
-                    script_function.append(script_json[bonus_extra][0][0])
+                    script_function.append(script_json[bonus_extra[0].lower()][0])
 
         if 'bonus2_extra' in dict_script:
             for w in dict_script['bonus2_extra']:
                 bonus2_extra = w.split(',')
-                sufix = script_json[bonus2_extra[0]][0]
+                sufix = script_json[bonus2_extra[0].lower()][0]
                 value = bonus2_extra[2].replace(';', '')
                 script_function.append((sufix, bonus2_extra[1], value))
 
@@ -661,11 +660,11 @@ def analyse_single_script(input_script: str):
             for w in dict_script['bonus3_extra']:
                 bonus3_extra = w.split(',')
                 if len(bonus3_extra) != 1:
-                    sufix = script_json[bonus3_extra[0]][0]
+                    sufix = script_json[bonus3_extra[0].lower()][0]
                     value = bonus3_extra[-1].replace(';', '')
                     script_function.append((sufix, bonus3_extra[1], value))
                 else:
-                    script_function.append(script_json[bonus3_extra[0]][0][0])
+                    script_function.append(script_json[bonus3_extra[0].lower()][0][0])
         print("dict = {}".format(dict_script))
         return script_function
 
@@ -694,15 +693,26 @@ for i in ttk:
     print(i, ttk[i])
 print('')
 
-# analyse_script(ttk)
-for p in range(1101, 3000):
-    if p in equip_db:
-        script = equip_db[p]['Script']
+# for p in range(2000, 3000):
+#     if p in equip_db:
+#         script = equip_db[p]['Script']
+#         if script != 0:
+#             print('item: {}'.format(p))
+#             p_script = script
+#             p_analysis = analyse_single_script(equip_db[p]['Script'])
+#             print('len analysis: {}'.format(len(p_analysis)))
+#             print('script: {}analysis: {}'.format(p_script, p_analysis))
+#             print('')
+
+for p in range(4001, 4500):
+    if p in card_db:
+        script = card_db[p]['Script']
+        name = card_db[p]['Name']
         if script != 0:
             print('item: {}'.format(p))
             p_script = script
-            p_analysis = analyse_single_script(equip_db[p]['Script'])
-            print('len analysis: {}'.format(len(p_analysis)))
+            p_analysis = analyse_single_script(card_db[p]['Script'])
+            print('name = {}'.format(name))
             print('script: {}analysis: {}'.format(p_script, p_analysis))
             print('')
 
