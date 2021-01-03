@@ -16,28 +16,55 @@ def analyse_single_script(input_script: str):
     if str(current_script) != "0":
         if "if(" in current_script:
             if_flag = True
-            compact = current_script.split("if")
-            compact.pop(0)
-            if_count = current_script.count("if")
-            if if_count == 1:
-                simple_trim = current_script.replace("if(", "").replace(" { ", "|")\
-                    .replace(" }", "").replace(")", "").replace("(", "")
-                compact = simple_trim.split("|")
-                print('compacto {} mano {}'.format(compact, current_script))
-                adapted_if = if_analysis(compact[0])
-                adapted_then = small_analysis(compact[1], script_json)
-                if_else_dict["condition_1"] = {"if": adapted_if, "then": adapted_then}
+            if current_script[:2] == "if":
+                compact = current_script.split("if")
+                compact.pop(0)
+                if_count = current_script.count("if")
+                if if_count == 1:
+                    simple_trim = current_script.replace("if(", "if_").replace(" { ", "|") \
+                        .replace(" }", "").replace(")", "").replace("(", "")
+                    if "||" in simple_trim:
+                        compact = simple_trim.replace(") bonus", "; bonus").replace("e bonus", "; bonus")
+                        compact = compact.split(";")
+                    else:
+                        compact = simple_trim.split("|")
+                    print('oi {}'.format(compact))
+                    if len(compact) == 1:
+                        compact = compact[0].split(";")
+                        for qw in compact:
+                            if not qw or qw == " ":
+                                compact.remove(qw)
+                    if len(compact) == 1:
+                        compact = compact[0].replace(" bonus", ";bonus").split(";")
+                    adapted_if = if_analysis(compact[0])
+                    adapted_then = small_analysis(compact[1], script_json)
+                    if_else_dict["condition_1"] = {"if": adapted_if, "then": adapted_then}
+                else:
+                    occurrences = current_script.count("if")
+                    for qh in range(len(compact)):
+                        position = qh + 1
+                        content = compact[qh].replace("||", "[or]").replace(") bonus", "|bonus") \
+                            .replace(" { ", "|").replace(" } ", "").replace(" }", "").replace("{ ", "|").split("|")
+                        content_if = content[0]
+                        content_then = content[1]
+                        adapted_if = if_analysis(content_if)
+                        adapted_then = small_analysis(content_then, script_json)
+                        if_else_dict["condition{}".format(position)] = {"if": adapted_if, "then": adapted_then}
             else:
-                occurrences = current_script.count("if")
-                for qh in range(len(compact)):
-                    position = qh + 1
-                    content = compact[qh].replace("||", "[or]").replace(") bonus", "|bonus") \
-                        .replace(" { ", "|").replace(" } ", "").replace(" }", "").replace("{ ", "|").split("|")
-                    content_if = content[0]
-                    content_then = content[1]
-                    adapted_if = if_analysis(content_if)
-                    adapted_then = small_analysis(content_then, script_json)
-                    if_else_dict["condition{}".format(position)] = {"if": adapted_if, "then": adapted_then}
+                simple_trim = current_script.replace("if(", "if_").replace(" }", "").split(";")
+                simple_trim = list(filter(None, simple_trim))
+                for qh in simple_trim:
+                    if 'if' in qh:
+                        print("a naooo {}".format(simple_trim))
+                        if_trim = qh.replace(") bonus", "; bonus").replace(" { bonus", ";bonus").replace("if_", "")\
+                            .replace(" { ", "").replace(")bonu", ";").replace("bonusb", "bonus b").split(";")
+                        # if_trim = normalize_stringlist(if_trim)
+                        print("a nao {}".format(if_trim))
+                        adapted_if = if_analysis(if_trim[0])
+                        adapted_then = small_analysis(if_trim[1], script_json)
+                        if_else_dict['condition1'] = (adapted_if, adapted_then)
+                    else:
+                        if_else_dict['normal'] = small_analysis(qh, script_json)
         if "autobonus" in current_script:
             return 'AUTOBONUS SCRIPT'
 
@@ -47,6 +74,13 @@ def analyse_single_script(input_script: str):
             return small_analysis(input_script, script_json)
 
         # print("dict = {}".format(dict_script))
+
+
+def normalize_stringlist(input_list: List[str]):
+    aux = input_list.copy()
+    for kj in range(len(aux)):
+        aux[kj] = aux[kj].replace(" ", "").replace("bonusb", "bonus b")
+    return aux
 
 
 def if_analysis(if_script: str):
@@ -62,8 +96,11 @@ def if_analysis(if_script: str):
         job_bank = []
         trimmed_if = if_script.split("||")
         for q in trimmed_if:
-            job_bank.append(q.split("==")[1].replace(")", ""))
+            job_bank.append(q.split("==")[1].replace(")", "").replace("if_", ""))
         return 'player_job in {}'.format(job_bank)
+    if "BaseJob" in if_script:
+        trimmed_job = if_script.replace("BaseJob==", "").replace("if_", "").replace("\\", "").split("||")
+        return 'player_job in {}'.format(trimmed_job)
     if "isequipped" in if_script:
         trimmed_if = if_script.replace("!isequipped", "").replace(")", "").replace("((", "").split(",")
         return 'combo_equipped {}'.format(trimmed_if)
@@ -82,7 +119,14 @@ def small_analysis(small_script: str, script_json: dict):
 
     if not first_split[-1]:
         first_split.pop()
+
+    first_split = list(filter(None, first_split))
+    if len(first_split) == 1:
+        if first_split[0].count(',') == 1:
+            first_split = first_split[0].split(',')
+
     for q in range(len(first_split)):
+        # print('raiz do problema: {} {}'.format(first_split, len(first_split)))
         # print('q = {} dict(q) = {}'.format(q, first_split[q]))
         if q % 2 == 0:
             if first_split[q] not in dict_script:
@@ -151,30 +195,54 @@ def small_analysis(small_script: str, script_json: dict):
     return script_function
 
 
+def all_cards() -> List[int]:
+    return list(range(4001, 4453))
+
+
 def multiple_if_else_cards() -> List[int]:
     if_else_bank = []
-    for i in card_db:
-        c_script = card_db[i]['Script'].replace("\n", "")
+    for im1 in card_db:
+        c_script = card_db[im1]['Script'].replace("\n", "")
         if c_script.count("if") > 1:
-            if_else_bank.append(card_db[i]['Id'])
+            if_else_bank.append(card_db[im1]['Id'])
     return if_else_bank
 
 
 def if_else_cards() -> List[int]:
     if_else_bank = []
-    for i in card_db:
-        c_script = card_db[i]['Script'].replace("\n", "")
+    for im2 in card_db:
+        c_script = card_db[im2]['Script'].replace("\n", "")
         if c_script.count("if") == 1:
-            if_else_bank.append(card_db[i]['Id'])
+            if_else_bank.append(card_db[im2]['Id'])
     return if_else_bank
 
 
-for q in if_else_cards():
-    name = card_db[q]['Name']
-    script = card_db[q]['Script']
-    analysis = analyse_single_script(script)
-    print(name.replace("\n", ""))
-    print(script.replace("\n", ""))
-    print(analysis)
-    print('')
 
+# s_check = card_db[4442]['Script'].replace(",", " ").replace(";", " ").replace("\n", "").split(" ")
+# s_check = list(filter(None, s_check))
+# print(s_check)
+# print(set(s_check))
+
+
+# for q in if_else_cards():
+#     name = card_db[q]['Name']
+#     script = card_db[q]['Script']
+#     analysis = analyse_single_script(script)
+#     print("[{}]".format(name.replace("\n", "")))
+#     print(script.replace("\n", ""))
+#     print(analysis)
+#     print('')
+#
+# print("")
+# 4193
+
+# script = card_db[4312]['Script']
+# analysis = analyse_single_script(script)
+# print("")
+# print("script: {}".format(script.replace("\n", "")))
+# print("analysis: {}".format(analysis))
+
+# for q in if_else_cards():
+#     print(card_db[q]['Id'], card_db[q]['Name'])
+#
+# print(card_db[4160]["Script_adapted"])

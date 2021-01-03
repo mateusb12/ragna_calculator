@@ -6617,7 +6617,7 @@
             "Script": "if(getrefine()<6) { bonus bDef,2; bonus bMdef,5; }\n",
             "Script_adapted": {
                "condition1": {
-                  "if": null,
+                  "if": "refine<6",
                   "then": [
                      [
                         "+def_flat",
@@ -6870,14 +6870,16 @@
             "Script": "bonus bAgi,2; if(getrefine()>8) bonus bFlee,20;\n",
             "Script_adapted": {
                "condition1": {
-                  "if": null,
+                  "if": "getrefine()<6",
                   "then": [
                      [
                         "+flee",
                         "20"
                      ]
                   ]
-               }
+               }, "normal": [
+					"+agi", "2"
+							]
             }
          },
          {
@@ -6896,7 +6898,7 @@
             "Script": "bonus bStr,2; if(getrefine()>8) { bonus bMaxHPrate,10; bonus bMaxSPrate,10; }\n",
             "Script_adapted": {
                "condition1": {
-                  "if": null,
+                  "if": "getrefine()>8",
                   "then": [
                      [
                         "+maxhp_%",
@@ -6907,7 +6909,7 @@
                         "10"
                      ]
                   ]
-               }
+               }, "normal": ["+str", "2"]
             }
          },
          {
@@ -6982,7 +6984,7 @@
                         "10"
                      ]
                   ]
-               }
+               }, "normal": ["+flee", "2"]
             }
          },
          {
@@ -7177,14 +7179,14 @@
             "Script": "bonus2 bSPVanishRate,50,10; if(BaseJob==Job_Sage) bonus bSPDrainValue,1;\n",
             "Script_adapted": {
                "condition1": {
-                  "if": null,
+                  "if": "player_job in ['Job_Sage']",
                   "then": [
                      [
                         "whileattacking_selfdrainsp",
                         "1"
                      ]
                   ]
-               }
+               }, "normal": ["whileattacking_vanishsp", "50", "10"]
             }
          },
          {
@@ -7581,7 +7583,7 @@
                         "1"
                      ]
                   ]
-               }
+               }, "normal": ["+int", "1"]
             }
          },
          {
@@ -7772,7 +7774,7 @@
             "Script": "if(BaseJob==Job_Novice||BaseJob==Job_SuperNovice) bonus3 bAutoSpellWhenHit,\"SM_ENDURE\",1,200;\n",
             "Script_adapted": {
                "condition1": {
-                  "if": null,
+                  "if": "player_job in ['Job_Novice', 'Job_SuperNovice']",
                   "then": [
                      [
                         "whilehit_targetskill_%",

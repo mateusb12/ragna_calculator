@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dc11ee9-5b10-4653-9f0f-9a26840bb0c6" name="Default Changelist" comment="Fixed some errors with Packages">
-      <change afterPath="$PROJECT_DIR$/ragnarok/main/fixer/script_analyser.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ragnarok/main/fixer/pynput_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ragnarok/main/exporter.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/main/exporter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ragnarok/main/fixer/json_fixer.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/main/fixer/json_fixer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ragnarok/model/equip_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/model/equip_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ragnarok/main/fixer/script_analyser.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/main/fixer/script_analyser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ragnarok/resources/item_db_etc.json" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/resources/item_db_etc.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,8 +46,8 @@
       <recent name="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\flasktest" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.script_analyser">
-    <configuration name="equip_model" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.json_fixer (1)">
+    <configuration name="autogui_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testecalc" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -56,32 +55,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ragnarok/model" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ragnarok/main/fixer" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ragnarok/model/equip_model.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="exporter" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="testecalc" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ragnarok/main" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ragnarok/main/exporter.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ragnarok/main/fixer/autogui_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -111,27 +89,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="json_fixer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="testecalc" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ragnarok/main" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\ragnarok\main\fixer\json_fixer.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="testecalc" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -145,6 +102,48 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pynput_test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="testecalc" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ragnarok/main/fixer" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ragnarok/main/fixer/pynput_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pynput_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="testecalc" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ragnarok/main/fixer" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\ragnarok\main\fixer\pynput_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -176,19 +175,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.main" />
-      <item itemvalue="Python.equip_model" />
-      <item itemvalue="Python.exporter" />
-      <item itemvalue="Python.json_fixer" />
+      <item itemvalue="Python.autogui_test" />
       <item itemvalue="Python.json_fixer (1)" />
+      <item itemvalue="Python.pynput_test (1)" />
+      <item itemvalue="Python.pynput_test" />
       <item itemvalue="Python.script_analyser" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.script_analyser" />
         <item itemvalue="Python.json_fixer (1)" />
-        <item itemvalue="Python.exporter" />
-        <item itemvalue="Python.equip_model" />
-        <item itemvalue="Python.json_fixer" />
+        <item itemvalue="Python.script_analyser" />
+        <item itemvalue="Python.pynput_test (1)" />
+        <item itemvalue="Python.autogui_test" />
+        <item itemvalue="Python.pynput_test" />
       </list>
     </recent_temporary>
   </component>
