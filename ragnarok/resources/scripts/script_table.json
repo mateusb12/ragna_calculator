@@ -15,11 +15,6 @@
       "Id": 4200,
       "Script": "if(getrefine()<6) bonus bMdef,7;"
     },
-    "4210": {
-      "Name": "Wanderer Card",
-      "Id": 4210,
-      "Script": "if(!isequipped(4172,4257,4230,4272)) bonus3 bAutoSpell,\"RG_INTIMIDATE\",1,20; if(BaseClass==Job_Thief) bonus bFlee,20;"
-    },
     "4240": {
       "Name": "Arclouze Card",
       "Id": 4240,
@@ -45,11 +40,6 @@
       "Id": 4351,
       "Script": "if(getrefine()<=4) { bonus bFlee,20; bonus bFlee2,1; } else { bonus bFlee,10; }"
     },
-    "4354": {
-      "Name": "Gemini-S58 Card",
-      "Id": 4354,
-      "Script": "if(readparam(bAgi)>=90) { bonus2 bResEff,Eff_Silence,3000; bonus2 bResEff,Eff_Stun,3000; } if(readparam(bVit)>=80) { bonus2 bResEff,Eff_Stone,5000; bonus2 bResEff,Eff_Sleep,5000; }"
-    },
     "4375": {
       "Name": "Orc Baby Card",
       "Id": 4375,
@@ -69,11 +59,6 @@
       "Name": "Lady Solace Card",
       "Id": 4394,
       "Script": "if(BaseJob==Job_Priest) bonus3 bAutoSpell,\"CR_GRANDCROSS\",5,20;"
-    },
-    "4402": {
-      "Name": "Aliot Card",
-      "Id": 4402,
-      "Script": "if(BaseClass==Job_Swordman||BaseClass==Job_Merchant||BaseClass==Job_Thief) { bonus bStr,2; bonus bMaxHPrate,5; } if(BaseClass==Job_Mage||BaseClass==Job_Archer||BaseClass==Job_Acolyte) { bonus bInt,2; bonus bMaxSPrate,5; }"
     },
     "4426": {
       "Name": "Byorgue Card",
@@ -2121,21 +2106,6 @@
       "Id": 4408,
       "Script": "bonus2 bAddEle,Ele_Holy,40; bonus2 bAddEle,Ele_Dark,40; bonus2 bAddRace,RC_Angel,40; bonus2 bAddRace,RC_Demon,40;"
     },
-    "4411": {
-      "Name": "Vanberk Card",
-      "Id": 4411,
-      "Script": "bonus bStr,2; autobonus \"{ bonus bCritical,100; }\",5,5000,0,\"{ specialeffect2 EF_ENHANCE; }\";"
-    },
-    "4412": {
-      "Name": "Isilla Card",
-      "Id": 4412,
-      "Script": "bonus bInt,2; autobonus \"{ bonus bCastrate,-50; bonus bFlee,30; }\",50,5000,BF_MAGIC,\"{ specialeffect2 EF_SUFFRAGIUM; }\";"
-    },
-    "4413": {
-      "Name": "Hodremlin Card",
-      "Id": 4413,
-      "Script": "bonus2 bSubSize,Size_All,15; autobonus2 \"{ bonus bFlee2,30; }\",3,10000,BF_WEAPON|BF_MAGIC,\"{ specialeffect2 EF_WIND; }\";"
-    },
     "4415": {
       "Name": "Snowier Card",
       "Id": 4415,
@@ -2145,11 +2115,6 @@
       "Name": "Siroma Card",
       "Id": 4416,
       "Script": "bonus2 bSkillAtk,\"MG_COLDBOLT\",25; bonus2 bCastrate,\"MG_COLDBOLT\",-25;"
-    },
-    "4417": {
-      "Name": "Ice Titan Card",
-      "Id": 4417,
-      "Script": "bonus bVit,2; autobonus2 \"{ bonus bDef,10; }\",3,10000,BF_WEAPON|BF_MAGIC,\"{ specialeffect2 EF_FREEZED; }\";"
     },
     "4420": {
       "Name": "Muscipular Card",
@@ -2170,11 +2135,6 @@
       "Name": "Stapo Card",
       "Id": 4424,
       "Script": "skill \"TF_PICKSTONE\",1; skill \"TF_THROWSTONE\",1;"
-    },
-    "4425": {
-      "Name": "Atroce Card",
-      "Id": 4425,
-      "Script": "bonus bBaseAtk,25; autobonus \"{ bonus bAspdRate,100; }\",5,10000,0,\"{ specialeffect2 EF_POTION_BERSERK; }\";"
     },
     "4429": {
       "Name": "Salamander Card",
@@ -2270,6 +2230,50 @@
       "Name": "Centipede Larva Card",
       "Id": 4452,
       "Script": "bonus bInt,1; bonus bMatk,3;"
+    }
+  },
+  "Autobonus": {
+    "4411": {
+      "Name": "Vanberk Card",
+      "Id": 4411,
+      "Script": "bonus bStr,2; autobonus \"{ bonus bCritical,100; }\",5,5000,0,\"{ specialeffect2 EF_ENHANCE; }\";"
+    },
+    "4412": {
+      "Name": "Isilla Card",
+      "Id": 4412,
+      "Script": "bonus bInt,2; autobonus \"{ bonus bCastrate,-50; bonus bFlee,30; }\",50,5000,BF_MAGIC,\"{ specialeffect2 EF_SUFFRAGIUM; }\";"
+    },
+    "4413": {
+      "Name": "Hodremlin Card",
+      "Id": 4413,
+      "Script": "bonus2 bSubSize,Size_All,15; autobonus2 \"{ bonus bFlee2,30; }\",3,10000,BF_WEAPON|BF_MAGIC,\"{ specialeffect2 EF_WIND; }\";"
+    },
+    "4417": {
+      "Name": "Ice Titan Card",
+      "Id": 4417,
+      "Script": "bonus bVit,2; autobonus2 \"{ bonus bDef,10; }\",3,10000,BF_WEAPON|BF_MAGIC,\"{ specialeffect2 EF_FREEZED; }\";"
+    },
+    "4425": {
+      "Name": "Atroce Card",
+      "Id": 4425,
+      "Script": "bonus bBaseAtk,25; autobonus \"{ bonus bAspdRate,100; }\",5,10000,0,\"{ specialeffect2 EF_POTION_BERSERK; }\";"
+    }
+  },
+  "MultipleIf": {
+    "4210": {
+      "Name": "Wanderer Card",
+      "Id": 4210,
+      "Script": "if(!isequipped(4172,4257,4230,4272)) bonus3 bAutoSpell,\"RG_INTIMIDATE\",1,20; if(BaseClass==Job_Thief) bonus bFlee,20;"
+    },
+    "4354": {
+      "Name": "Gemini-S58 Card",
+      "Id": 4354,
+      "Script": "if(readparam(bAgi)>=90) { bonus2 bResEff,Eff_Silence,3000; bonus2 bResEff,Eff_Stun,3000; } if(readparam(bVit)>=80) { bonus2 bResEff,Eff_Stone,5000; bonus2 bResEff,Eff_Sleep,5000; }"
+    },
+    "4402": {
+      "Name": "Aliot Card",
+      "Id": 4402,
+      "Script": "if(BaseClass==Job_Swordman||BaseClass==Job_Merchant||BaseClass==Job_Thief) { bonus bStr,2; bonus bMaxHPrate,5; } if(BaseClass==Job_Mage||BaseClass==Job_Archer||BaseClass==Job_Acolyte) { bonus bInt,2; bonus bMaxSPrate,5; }"
     }
   }
 }
