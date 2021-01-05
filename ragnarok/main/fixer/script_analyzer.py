@@ -6,9 +6,9 @@ import time
 import pandas as pd
 
 
-def generate_input_scripts():
+def categorize_scripts(input_path: str):
     script_table_path = os.path.abspath(
-        os.path.join(os.path.dirname(__file__), '..', '..', 'resources', "scripts", "script_table.json"))
+        os.path.join(os.path.dirname(__file__), '..', '..', 'resources', "scripts", input_path))
 
     with open(script_table_path) as json_file:
         input_scripts = json.load(json_file)
@@ -16,7 +16,7 @@ def generate_input_scripts():
     return input_scripts
 
 
-def generate_script_json():
+def adapt_ragnarok_to_python():
     script_path = os.path.abspath(
         os.path.join(os.path.dirname(__file__), '..', '..', 'resources', "script_template.json"))
     return pd.read_json(r'{}'.format(script_path))['Body']
@@ -304,10 +304,10 @@ def autobonus_creator(dict_pack: dict):
         output_scripts[script_id] = autobonus_analyser(script_desc, script_json)
 
 
-def assemble_json():
+def assemble_json(input_file: str, output_file: str):
     final_dict = dict()
-    input_script = generate_input_scripts()
-    script_json = generate_script_json()
+    input_script = categorize_scripts(input_file)
+    script_json = adapt_ragnarok_to_python()
     dict_pack = {"final_dict": final_dict, "input_scripts": input_script, "script_json": script_json}
     autobonus_creator(dict_pack)
     multipleif_creator(dict_pack)
@@ -315,14 +315,23 @@ def assemble_json():
     begin_creator(dict_pack)
     default_creator(dict_pack)
     repeated_creator(dict_pack)
-    pprint.pprint(final_dict)
+
+    start_time = time.time()
+    adapted_table_path = os.path.abspath(
+        os.path.join(os.path.dirname(__file__), '..', '..', 'resources', "scripts", output_file))
+    b_file = open(adapted_table_path, "w")
+    json.dump(final_dict, b_file, indent=2)
+    b_file.close()
+    # pprint.pprint(final_dict)
+
+    full_time = time.time() - start_time
+    if full_time < 1:
+        full_time *= 1000
+        print("--- {} ms ---".format(round(full_time, 4)))
+    else:
+        print("--- {} seconds ---".format(full_time))
+
+    print("JSON successfully dumped!")
 
 
-start_time = time.time()
-assemble_json()
-full_time = time.time() - start_time
-if full_time < 1:
-    full_time *= 1000
-    print("--- {} ms ---".format(round(full_time, 4)))
-else:
-    print("--- {} seconds ---".format(full_time))
+assemble_json("card_script_table.json", "card_adapted_table.json")

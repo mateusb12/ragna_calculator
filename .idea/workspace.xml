@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1dc11ee9-5b10-4653-9f0f-9a26840bb0c6" name="Default Changelist" comment="Fixed some errors with Packages">
-      <change afterPath="$PROJECT_DIR$/ragnarok/main/fixer/script_analyzer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ragnarok/main/fixer/json_fixer.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/main/fixer/json_fixer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ragnarok/main/fixer/script_analyser.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/main/fixer/script_analyser_old.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ragnarok/resources/script_template.json" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/resources/script_template.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ragnarok/resources/scripts/script_table.json" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/resources/scripts/script_table.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ragnarok/main/fixer/json_fixer.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/main/fixer/categorize_script_to_json.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ragnarok/main/fixer/script_analyzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/main/fixer/script_analyzer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ragnarok/resources/scripts/script_table.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +46,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.script_analyzer">
-    <configuration name="autogui_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="categorize_script_to_json (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testecalc" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -60,7 +58,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ragnarok/main/fixer/autogui_test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ragnarok/main/fixer/categorize_script_to_json.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -69,7 +67,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="json_fixer (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="categorize_script_to_json" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testecalc" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -81,7 +79,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ragnarok/main/fixer/json_fixer.py" />
+      <option name="SCRIPT_NAME" value="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\ragnarok\main\fixer\categorize_script_to_json.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -176,19 +174,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.main" />
-      <item itemvalue="Python.autogui_test" />
-      <item itemvalue="Python.json_fixer (1)" />
       <item itemvalue="Python.pynput_test (1)" />
       <item itemvalue="Python.script_analyser_old" />
       <item itemvalue="Python.script_analyzer" />
+      <item itemvalue="Python.categorize_script_to_json" />
+      <item itemvalue="Python.categorize_script_to_json (1)" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.script_analyzer" />
-        <item itemvalue="Python.json_fixer (1)" />
+        <item itemvalue="Python.categorize_script_to_json (1)" />
+        <item itemvalue="Python.categorize_script_to_json" />
         <item itemvalue="Python.script_analyser_old" />
         <item itemvalue="Python.pynput_test (1)" />
-        <item itemvalue="Python.autogui_test" />
       </list>
     </recent_temporary>
   </component>
