@@ -42,6 +42,10 @@
 						[
 						"dmg_skillid_%"
 						],
+		"batkrate":
+						[
+						"dmg_melee_%"
+						],
 		"blongatkrate":
 						[
 						"dmg_ranged_%"
@@ -169,6 +173,10 @@
 		"baddeffwhenhit":
 						[
 						"whilehit_badstatus_%"
+						],
+		"bmagichpgainvalue":
+						[
+						"aftermagickill_hpdrain"
 						],
 		"bhpgainvalue":
 						[

@@ -87,7 +87,7 @@ def repeated_analyser(script: str, script_json: pd.DataFrame):
         return 'No Script'
     first_trim = script.replace(" ", ";").split(";")
     first_trim = list(filter(None, first_trim))
-    bonus_dict = {"bonus_extra": [], "bonus2_extra": [], "bonus3_extra": [], "skill_extra": []}
+    bonus_dict = {"bonus_extra": [], "bonus2_extra": [], "bonus3_extra": [], "bonus4_extra": [], "skill_extra": []}
     output_adapt = []
     print('kkkk {}'.format(script))
     print('waa man {}'.format(first_trim))
@@ -154,6 +154,7 @@ def begin_analyser(script: str, script_json: pd.DataFrame):
 def displaced_analyser(script: str, script_json: pd.DataFrame):
     if not script:
         return 'No Script'
+    print('isso ta estranho {}'.format(script))
     first_trim = script.replace(" ", ";").replace(";{", "").replace(";;", ";").replace("}", "&") \
         .replace("if(", "if&").replace(";else", "else&").replace(");", "&").replace("){", "&") \
         .replace(";if", "&if").split("&")
@@ -168,6 +169,7 @@ def displaced_analyser(script: str, script_json: pd.DataFrame):
                 second_trim.insert(q - 1, "normal")
     if "normal" not in second_trim:
         second_trim.insert(0, "normal")
+    print('pão com maionese {}\n'.format(second_trim))
     for w in range(len(second_trim)):
         if second_trim[w] == "normal":
             if_else_dict['normal'] = analyse_small_script(second_trim[w + 1], script_json)
@@ -222,6 +224,8 @@ def multipleif_analyser(script: str, script_json: pd.DataFrame):
                     else:
                         wd["crowded"] = False
                 if_else_dict[wd["new_tag"]] = aux_then
+    print('sacanagem {}'.format(script))
+    print('sacanagem {}\n'.format(if_else_dict))
     return if_else_dict
 
 
@@ -241,6 +245,8 @@ def autobonus_analyser(script: str, script_json: pd.DataFrame):
             first_trim.insert(q + 4, "visual_effect")
     if "normal" not in first_trim:
         first_trim.insert(0, "normal")
+    print('haha {}'.format(script))
+    print('cara nao da {}\n'.format(first_trim))
     for w in range(len(first_trim)):
         if first_trim[w] == "normal":
             if_else_dict['normal'] = analyse_small_script(first_trim[w + 1], script_json)
@@ -318,11 +324,11 @@ def assemble_json(input_file: str, output_file: str, **kwargs):
     input_script = categorize_scripts(input_file)
     script_json = adapt_ragnarok_to_python()
     dict_pack = {"final_dict": final_dict, "input_scripts": input_script, "script_json": script_json}
-    # autobonus_creator(dict_pack)
-    # multipleif_creator(dict_pack)
-    # displaced_creator(dict_pack)
-    # begin_creator(dict_pack)
-    # default_creator(dict_pack)
+    autobonus_creator(dict_pack)
+    multipleif_creator(dict_pack)
+    displaced_creator(dict_pack)
+    begin_creator(dict_pack)
+    default_creator(dict_pack)
     repeated_creator(dict_pack)
 
     final_dict = dict(sorted(final_dict.items(), key=lambda x: x[0]))

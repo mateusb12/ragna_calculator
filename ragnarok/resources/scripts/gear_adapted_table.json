@@ -74,6 +74,169 @@
     "3"
   ],
   "1129": "No Script",
+  "1130": [
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "5"
+    ],
+    [
+      "add_skill",
+      "\"TF_DOUBLE\"",
+      "5"
+    ],
+    [
+      "whileattacking_doubleattack_%",
+      "25"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "5"
+    ]
+  ],
+  "1131": [
+    [
+      "whileattacking_selfbadstatus",
+      "Eff_Freeze",
+      "10"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Water"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Freeze",
+      "500"
+    ],
+    [
+      "add_skill",
+      "\"MG_COLDBOLT\"",
+      "3"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"MG_COLDBOLT\"",
+      "3",
+      "100"
+    ]
+  ],
+  "1132": [
+    [
+      "whileattacking_coma",
+      "Class_Normal",
+      "10"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Curse",
+      "30"
+    ]
+  ],
+  "1133": [
+    [
+      "elementchange_weapon",
+      "Ele_Fire"
+    ],
+    [
+      "add_skill",
+      "\"MG_FIREBOLT\"",
+      "3"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"MG_FIREBOLT\"",
+      "3",
+      "100"
+    ]
+  ],
+  "1134": [
+    [
+      "dmg_race_%",
+      "RC_Plant",
+      "25"
+    ],
+    [
+      "ignore_def_race_100%",
+      "RC_Plant"
+    ]
+  ],
+  "1135": [
+    [
+      "+def_flat",
+      "1"
+    ],
+    [
+      "add_skill",
+      "\"SM_BASH\"",
+      "5"
+    ],
+    [
+      "+str",
+      "2"
+    ]
+  ],
+  "1136": [
+    [
+      "regularly_lose_sp",
+      "15",
+      "10000"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Fire"
+    ],
+    [
+      "whileattacking_suck_hp_%",
+      "1000",
+      "1"
+    ]
+  ],
+  "1137": [
+    [
+      "+luk",
+      "10"
+    ],
+    [
+      "+dex",
+      "-1"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Holy"
+    ],
+    [
+      "+int",
+      "5"
+    ]
+  ],
+  "1138": [
+    [
+      "+dex",
+      "3"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Stone",
+      "10"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Dark"
+    ],
+    [
+      "dmg_element_%",
+      "Ele_Ghost",
+      "15"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"MG_STONECURSE\"",
+      "3",
+      "100"
+    ]
+  ],
   "1139": [
     [
       "elementchange_weapon",
@@ -83,6 +246,40 @@
       "regularly_lose_hp",
       "35",
       "10000"
+    ]
+  ],
+  "1140": [
+    [
+      "dmg_monstertype_%",
+      "Class_Boss",
+      "50"
+    ],
+    [
+      "resist_allmonster_%",
+      "Class_Normal",
+      "-10"
+    ],
+    [
+      "+all_stats",
+      "2"
+    ]
+  ],
+  "1141": [
+    [
+      "whileattacking_selfdrainsp",
+      "-1"
+    ],
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Ghost"
+    ],
+    [
+      "whileattacking_vanishsp",
+      "30",
+      "30"
     ]
   ],
   "1142": [
@@ -107,6 +304,16 @@
       "4000"
     ]
   ],
+  "1145": [
+    [
+      "+vit",
+      "2"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Holy"
+    ]
+  ],
   "1146": "No Script",
   "1147": "No Script",
   "1148": [
@@ -129,14 +336,195 @@
   "1157": "No Script",
   "1158": "No Script",
   "1159": "No Script",
+  "1160": [
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "+def_flat",
+      "5"
+    ]
+  ],
+  "1162": [
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "+def_flat",
+      "5"
+    ]
+  ],
   "1163": "No Script",
+  "1164": [
+    [
+      "+aspd_%",
+      "8"
+    ],
+    [
+      "+crit",
+      "30"
+    ],
+    [
+      "whileattacking_selfbadstatus",
+      "Eff_Curse",
+      "10"
+    ]
+  ],
+  "1165": [
+    [
+      "+str",
+      "-5"
+    ],
+    [
+      "+aspd_flat",
+      "2"
+    ],
+    [
+      "+def_%",
+      "-67"
+    ],
+    [
+      "+softdef_%",
+      "-67"
+    ],
+    [
+      "+flee",
+      "30"
+    ]
+  ],
+  "1166": [
+    [
+      "ignore_def_race_100%",
+      "RC_Dragon"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Dragon",
+      "15"
+    ]
+  ],
+  "1167": [
+    [
+      "+def_flat",
+      "1"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Wind"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"MG_LIGHTNINGBOLT\"",
+      "3",
+      "100"
+    ]
+  ],
   "1168": [
     "unbreakable_weapon"
+  ],
+  "1169": [
+    [
+      "ignore_def_race_100%",
+      "RC_Player_Human"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Dark"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "20"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "-10"
+    ],
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "-10"
+    ],
+    [
+      "ignore_def_race_100%",
+      "RC_DemiHuman"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "20"
+    ]
+  ],
+  "1170": [
+    [
+      "+def_flat",
+      "10"
+    ],
+    [
+      "+vit",
+      "5"
+    ]
   ],
   "1171": [
     "unbreakable_weapon"
   ],
   "1172": "No Script",
+  "1173": [
+    [
+      "+aspd_%",
+      "8"
+    ],
+    [
+      "+crit",
+      "30"
+    ]
+  ],
+  "1174": [
+    [
+      "ignore_def_race_100%",
+      "RC_Player_Human"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Dark"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "20"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "-10"
+    ],
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "-10"
+    ],
+    [
+      "ignore_def_race_100%",
+      "RC_DemiHuman"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "20"
+    ]
+  ],
+  "1175": {
+    "normal": [
+      "+crit",
+      "10"
+    ],
+    "if": "readparam(bStr)>=80",
+    "if_then": [
+      "whileattacking_breakarmor_%",
+      "500"
+    ]
+  },
   "1176": [
     [
       "whileattacking_badstatus",
@@ -155,6 +543,210 @@
     "Class_All",
     "50"
   ],
+  "1178": [
+    [
+      "+def_flat",
+      "1"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Wind"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"MG_LIGHTNINGBOLT\"",
+      "3",
+      "100"
+    ]
+  ],
+  "1179": [
+    [
+      "ignore_def_race_100%",
+      "RC_Player_Human"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Dark"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "20"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "-10"
+    ],
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "-10"
+    ],
+    [
+      "ignore_def_race_100%",
+      "RC_DemiHuman"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "20"
+    ]
+  ],
+  "1180": [
+    [
+      "ignore_def_race_100%",
+      "RC_Dragon"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Dragon",
+      "15"
+    ]
+  ],
+  "1181": {
+    "normal": [
+      "+perfectdodge",
+      "10"
+    ],
+    "if": "getrefine()>8",
+    "if_then": [
+      "cast_delay",
+      "-20"
+    ]
+  },
+  "1182": {
+    "normal": [
+      "elementchange_weapon",
+      "Ele_Ghost"
+    ],
+    "autobonus": [
+      "+atk_flat",
+      "50"
+    ],
+    "autobonus_trigger": [
+      "1",
+      "5000",
+      "0"
+    ]
+  },
+  "1183": [
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "55"
+    ],
+    [
+      "ignore_def_race_%",
+      "RC_DemiHuman",
+      "20"
+    ],
+    [
+      "ignore_def_race_%",
+      "RC_Player_Human",
+      "20"
+    ],
+    [
+      "+str",
+      "2"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "55"
+    ]
+  ],
+  "1184": [
+    [
+      "critical_damage_%",
+      "20"
+    ],
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "55"
+    ],
+    [
+      "+crit",
+      "20"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "55"
+    ]
+  ],
+  "1185": {
+    "normal": [
+      "whileattacking_autospell",
+      "WZ_FROSTNOVA",
+      "5",
+      "50"
+    ],
+    "autobonus": [
+      "ignore_def_all_100%",
+      "Class_Normal"
+    ],
+    "autobonus_trigger": [
+      "50",
+      "5000;"
+    ]
+  },
+  "1186": {
+    "normal": [
+      [
+        "+perfectdodge",
+        "20"
+      ],
+      [
+        "whileattacking_autospell",
+        "\"NPC_HELLPOWER\"",
+        "1",
+        "10"
+      ],
+      [
+        "whileattacking_autospell",
+        "\"NPC_HELLPOWER\"",
+        "1",
+        "10",
+        "0"
+      ]
+    ],
+    "if": ";getrefine()>8;",
+    "if_then": [
+      "whileattacking_autospell",
+      "\"NPC_VAMPIRE_GIFT\"",
+      "2",
+      "20else"
+    ]
+  },
+  "1188": {
+    "if": "getskilllv(\"SM_BASH\")==10",
+    "if_then": [
+      "dmg_skillid_%",
+      "\"SM_BASH\"",
+      "50"
+    ],
+    "if_2": "getskilllv(\"KN_BOWLINGBASH\")==10",
+    "if_then_2": [
+      "dmg_skillid_%",
+      "\"KN_BOWLINGBASH\"",
+      "50"
+    ]
+  },
+  "1189": {
+    "if": "readparam(bStr)>=95",
+    "if_then": [
+      "+atk_flat",
+      "20"
+    ]
+  },
   "1190": [
     "dmg_size_%",
     "Size_All",
@@ -184,6 +776,16 @@
   "1222": [
     "unbreakable_weapon"
   ],
+  "1223": [
+    [
+      "+perfectdodge",
+      "20"
+    ],
+    [
+      "+luk",
+      "5"
+    ]
+  ],
   "1224": [
     "whileattacking_breakweapon_%",
     "500"
@@ -194,6 +796,47 @@
   ],
   "1226": [
     "unbreakable_weapon"
+  ],
+  "1227": [
+    [
+      "resist_race_%",
+      "RC_Plant",
+      "15"
+    ],
+    [
+      "ignore_def_race_100%",
+      "RC_Plant"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Plant",
+      "15"
+    ]
+  ],
+  "1228": [
+    [
+      "ignore_def_race_100%",
+      "RC_Player_Human"
+    ],
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "10"
+    ],
+    [
+      "resist_race_%",
+      "RC_Demon",
+      "-10"
+    ],
+    [
+      "ignore_def_race_100%",
+      "RC_DemiHuman"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "10"
+    ]
   ],
   "1229": [
     [
@@ -211,9 +854,105 @@
     "thanatos_card_bonus",
     "Class_All"
   ],
+  "1231": [
+    [
+      "+int",
+      "5"
+    ],
+    [
+      "+matk_%",
+      "10"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Fire"
+    ]
+  ],
+  "1232": [
+    [
+      "+maxsp_%",
+      "15"
+    ],
+    [
+      "+aspd_%",
+      "2"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Dark"
+    ],
+    [
+      "+maxhp_%",
+      "20"
+    ]
+  ],
+  "1233": [
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "-10"
+    ],
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "-10"
+    ],
+    [
+      "ignore_def_race_100%",
+      "RC_Demon"
+    ],
+    [
+      "resist_race_%",
+      "RC_Demon",
+      "5"
+    ]
+  ],
+  "1234": [
+    [
+      "whileattacking_selfdrainsp",
+      "3"
+    ],
+    [
+      "+maxsp_%",
+      "10"
+    ]
+  ],
   "1235": [
     "whileattacking_deadbranch",
     "300"
+  ],
+  "1236": [
+    [
+      "dmg_element_%",
+      "Ele_Wind",
+      "10"
+    ],
+    [
+      "dmg_element_%",
+      "Ele_Earth",
+      "10"
+    ],
+    [
+      "unbreakable_weapon"
+    ]
+  ],
+  "1237": [
+    [
+      "+perfectdodge",
+      "5"
+    ],
+    [
+      "+def_%",
+      "-50"
+    ],
+    [
+      "+softdef_%",
+      "-50"
+    ],
+    [
+      "+flee",
+      "10"
+    ]
   ],
   "1238": [
     "afterkill_stealzenny",
@@ -245,6 +984,16 @@
     "90"
   ],
   "1243": "No Script",
+  "1244": [
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Holy"
+    ]
+  ],
   "1245": "No Script",
   "1246": "No Script",
   "1247": [
@@ -319,16 +1068,147 @@
     "elementchange_weapon",
     "Ele_Undead"
   ],
+  "1261": [
+    [
+      "+flee",
+      "5"
+    ],
+    [
+      "+perfectdodge",
+      "2"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "50"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "50"
+    ],
+    [
+      "+def_flat",
+      "3"
+    ]
+  ],
   "1262": [
     "whileattacking_badstatus",
     "Eff_Bleeding",
     "300"
+  ],
+  "1263": [
+    [
+      "+crit",
+      "-1"
+    ],
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Dark"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Curse",
+      "200"
+    ]
   ],
   "1264": [
     "whileattacking_selfbadstatus",
     "Eff_Bleeding",
     "10"
   ],
+  "1265": [
+    [
+      "ignore_def_race_100%",
+      "RC_Player_Human"
+    ],
+    [
+      "+flee",
+      "-(readparam(bAgi)+BaseLevel)"
+    ],
+    [
+      "+hprecovery_%",
+      "-100"
+    ],
+    [
+      "+sprecovery_%",
+      "-100"
+    ],
+    [
+      "ignore_def_race_100%",
+      "RC_DemiHuman"
+    ]
+  ],
+  "1266": [
+    [
+      "+flee",
+      "5"
+    ],
+    [
+      "+perfectdodge",
+      "2"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "50"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "50"
+    ],
+    [
+      "+def_flat",
+      "3"
+    ]
+  ],
+  "1267": [
+    [
+      "+flee",
+      "5"
+    ],
+    [
+      "+perfectdodge",
+      "2"
+    ],
+    [
+      "+aspd_%",
+      "5"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "70"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "70"
+    ],
+    [
+      "+def_flat",
+      "3"
+    ]
+  ],
+  "1268": {
+    "if": "getrefine()>=9",
+    "if_then": [
+      "whileattacking_autospell",
+      "\"NPC_CRITICALWOUND\"",
+      "2",
+      "100"
+    ],
+    "else": [
+      "whileattacking_autospell",
+      "\"NPC_CRITICALWOUND\"",
+      "1",
+      "100"
+    ]
+  },
   "1269": [
     [
       "elementchange_weapon",
@@ -353,10 +1233,58 @@
       "150"
     ]
   ],
+  "1271": {
+    "if": "getrefine()>=9",
+    "if_then": [
+      "whileattacking_autospell",
+      "\"NPC_WIDEBLEEDING\"",
+      "2",
+      "30"
+    ],
+    "else": [
+      "whileattacking_autospell",
+      "\"NPC_WIDEBLEEDING\"",
+      "1",
+      "30"
+    ]
+  },
   "1272": [
     "dmg_monstertype_%",
     "Class_All",
     "50"
+  ],
+  "1273": [
+    [
+      "ignore_def_race_100%",
+      "RC_Player_Human"
+    ],
+    [
+      "ignore_def_race_100%",
+      "RC_DemiHuman"
+    ],
+    [
+      "regularly_recover_hp",
+      "3",
+      "5000"
+    ]
+  ],
+  "1274": [
+    [
+      "+crit",
+      "-1"
+    ],
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Dark"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Curse",
+      "5000"
+    ]
   ],
   "1275": [
     [
@@ -402,6 +1330,78 @@
       "500"
     ]
   ],
+  "1279": [
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "+luk",
+      "1"
+    ],
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "70"
+    ],
+    [
+      "ignore_def_race_%",
+      "RC_DemiHuman",
+      "20"
+    ],
+    [
+      "ignore_def_race_%",
+      "RC_Player_Human",
+      "20"
+    ],
+    [
+      "+str",
+      "1"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "70"
+    ]
+  ],
+  "1280": [
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "+luk",
+      "1"
+    ],
+    [
+      "critical_damage_%",
+      "20"
+    ],
+    [
+      "+aspd_%",
+      "5"
+    ],
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "70"
+    ],
+    [
+      "+str",
+      "1"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "70"
+    ]
+  ],
   "1283": [
     [
       "dmg_skillid_%",
@@ -413,6 +1413,27 @@
       "3"
     ]
   ],
+  "1284": {
+    "normal": [
+      "dmg_skillid_%",
+      "\"AS_GRIMTOOTH\"",
+      "10"
+    ],
+    "if": "getskilllv(\"AS_SONICBLOW\")",
+    "if_then": [
+      "whileattacking_autospell",
+      "\"AS_SONICBLOW\"",
+      "getskilllv(\"AS_SONICBLOW\")",
+      "5"
+    ]
+  },
+  "1285": {
+    "if": "getskilllv(\"AS_KATAR\")==10",
+    "if_then": [
+      "+hit",
+      "10"
+    ]
+  },
   "1286": [
     [
       "unbreakable_weapon"
@@ -426,6 +1447,33 @@
   "13000": [
     "elementchange_weapon",
     "Ele_Wind"
+  ],
+  "13001": [
+    [
+      "ignore_def_race_100%",
+      "RC_Dragon"
+    ],
+    [
+      "expbonus_race_%",
+      "RC_Dragon",
+      "10"
+    ]
+  ],
+  "13002": [
+    [
+      "whileattacking_selfbadstatus",
+      "Eff_Blind",
+      "50"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Dark"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Blind",
+      "500"
+    ]
   ],
   "13003": [
     "+def_flat",
@@ -455,6 +1503,20 @@
     "whileattacking_breakweapon_%",
     "200"
   ],
+  "13009": [
+    [
+      "+crit",
+      "3"
+    ],
+    [
+      "+aspd_%",
+      "3"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Wind"
+    ]
+  ],
   "1301": "No Script",
   "13010": [
     "+matk_%",
@@ -463,6 +1525,38 @@
   "13011": [
     "+matk_%",
     "10"
+  ],
+  "13012": [
+    [
+      "critical_damage_race_%",
+      "RC_Player_Human",
+      "10"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Water"
+    ],
+    [
+      "critical_damage_race_%",
+      "RC_DemiHuman",
+      "10"
+    ]
+  ],
+  "13013": [
+    [
+      "critical_damage_race_%",
+      "RC_Player_Human",
+      "10"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Water"
+    ],
+    [
+      "critical_damage_race_%",
+      "RC_DemiHuman",
+      "10"
+    ]
   ],
   "13014": [
     [
@@ -503,10 +1597,74 @@
     "thanatos_card_bonus",
     "Class_All"
   ],
+  "13018": [
+    [
+      "dmg_element_%",
+      "Ele_Wind",
+      "10"
+    ],
+    [
+      "dmg_element_%",
+      "Ele_Earth",
+      "10"
+    ],
+    [
+      "unbreakable_weapon"
+    ]
+  ],
+  "13019": [
+    [
+      "whileattacking_selfbadstatus",
+      "Eff_Blind",
+      "50"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Dark"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Blind",
+      "500"
+    ]
+  ],
   "1302": "No Script",
   "13020": [
     "+all_stats",
     "5"
+  ],
+  "13021": [
+    [
+      "ignore_def_race_100%",
+      "RC_Player_Human"
+    ],
+    [
+      "+maxsp_%",
+      "10"
+    ],
+    [
+      "whileattacking_selfdrainsp",
+      "3"
+    ],
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "10"
+    ],
+    [
+      "resist_race_%",
+      "RC_Demon",
+      "-10"
+    ],
+    [
+      "ignore_def_race_100%",
+      "RC_DemiHuman"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "10"
+    ]
   ],
   "13022": [
     "+crit",
@@ -524,17 +1682,53 @@
     "whileattacking_breakarmor_%",
     "500"
   ],
+  "13026": [
+    [
+      "whileattacking_selfdrainsp",
+      "3"
+    ],
+    [
+      "+maxsp_%",
+      "10"
+    ]
+  ],
   "13027": [
     "whileattacking_badstatus",
     "Eff_Bleeding",
     "500"
   ],
+  "13028": {
+    "if": "getrefine()>=9",
+    "if_then": [
+      "whileattacking_autospell",
+      "\"NPC_SLOWCAST\"",
+      "2",
+      "70"
+    ],
+    "else": [
+      "whileattacking_autospell",
+      "\"NPC_SLOWCAST\"",
+      "1",
+      "50"
+    ]
+  },
   "13029": [
     "dmg_monstertype_%",
     "Class_All",
     "50"
   ],
   "1303": "No Script",
+  "13030": [
+    [
+      "ignore_def_race_100%",
+      "RC_Dragon"
+    ],
+    [
+      "expbonus_race_%",
+      "RC_Dragon",
+      "10"
+    ]
+  ],
   "13031": [
     "whileattacking_breakweapon_%",
     "500"
@@ -543,8 +1737,90 @@
     "whileattacking_breakarmor_%",
     "500"
   ],
+  "13033": [
+    [
+      "+maxsp_%",
+      "15"
+    ],
+    [
+      "+aspd_%",
+      "2"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Dark"
+    ],
+    [
+      "+maxhp_%",
+      "20"
+    ]
+  ],
   "13034": "No Script",
   "13035": "No Script",
+  "13036": {
+    "normal": [
+      [
+        "unbreakable_weapon"
+      ],
+      [
+        "ignore_def_race_%",
+        "RC_Player_Human",
+        "20"
+      ]
+    ],
+    "if": "Class==Job_Ninja||Class==Job_Rogue||Class==Job_Stalker",
+    "if_then": [
+      "+matk_%",
+      "15"
+    ]
+  },
+  "13038": [
+    [
+      "+agi",
+      "2"
+    ],
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "+str",
+      "1"
+    ],
+    [
+      "cast_spell_on_skill",
+      "\"RG_BACKSTAP\"",
+      "\"SM_BASH\"",
+      "10",
+      "100"
+    ],
+    [
+      "dmg_skillid_%",
+      "\"RG_BACKSTAP\"",
+      "20"
+    ]
+  ],
+  "13039": [
+    [
+      "+aspd_%",
+      "3"
+    ],
+    [
+      "+agi",
+      "2"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Bleeding",
+      "300"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"NPC_CRITICALWOUND\"",
+      "1",
+      "30"
+    ]
+  ],
   "1304": "No Script",
   "13040": "No Script",
   "13041": "No Script",
@@ -554,10 +1830,79 @@
   ],
   "13044": "No Script",
   "13045": "No Script",
+  "13046": [
+    [
+      "change_skill_behavior",
+      "\"RG_BACKSTAP\"",
+      "Eff_Bleeding",
+      "1000"
+    ],
+    [
+      "dmg_skillid_%",
+      "\"RG_BACKSTAP\"",
+      "15"
+    ]
+  ],
+  "13047": {
+    "normal": [
+      "change_skill_behavior",
+      "RG_RAID",
+      "Eff_Poison",
+      "1000"
+    ],
+    "autobonus": [
+      "dmg_monstertype_%",
+      "Class_All",
+      "10"
+    ],
+    "autobonus_trigger": [
+      "5",
+      "5000",
+      "BF_WEAPON|BF_SHORT"
+    ]
+  },
   "13048": [
     "dmg_size_%",
     "Size_All",
     "40"
+  ],
+  "1305": [
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "5"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "5"
+    ],
+    [
+      "dropitem_monster_%",
+      "517",
+      "RC_Brute",
+      "3000"
+    ]
+  ],
+  "1306": [
+    [
+      "+luk",
+      "2"
+    ],
+    [
+      "+dex",
+      "2"
+    ]
+  ],
+  "1307": [
+    [
+      "+aspd_%",
+      "5"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Wind"
+    ]
   ],
   "1308": "No Script",
   "1309": "No Script",
@@ -585,6 +1930,88 @@
     "+hit",
     "-10"
   ],
+  "13106": {
+    "normal": [
+      "+hit",
+      "-10"
+    ],
+    "if": "getskilllv(\"GS_GLITTERING\")>0",
+    "if_then": [
+      "whileattacking_autospell",
+      "\"GS_GLITTERING\"",
+      "getskilllv(\"GS_GLITTERING\")",
+      "100"
+    ]
+  },
+  "13107": [
+    [
+      "+aspd_%",
+      "readparam(bAgi)/14"
+    ],
+    [
+      "+hit",
+      "readparam(bAgi)/10"
+    ]
+  ],
+  "13108": {
+    "normal": [
+      [
+        "+hit",
+        "-10"
+      ],
+      [
+        "ignore_def_race_%",
+        "RC_Player_Human",
+        "20"
+      ]
+    ],
+    "autobonus": [
+      "+aspd_%",
+      "100"
+    ],
+    "autobonus_trigger": [
+      "10",
+      "3000",
+      "BF_WEAPON"
+    ]
+  },
+  "13109": [
+    [
+      "+aspd_%",
+      "readparam(bAgi)/14"
+    ],
+    [
+      "+matk_%",
+      "10"
+    ],
+    [
+      "+hit",
+      "readparam(bAgi)/10"
+    ],
+    [
+      "dmg_monstertype_%",
+      "Class_All",
+      "10"
+    ]
+  ],
+  "1311": {
+    "if": "readparam(bLuk)>=90",
+    "if_then": [
+      "+atk_flat",
+      "20"
+    ],
+    "if_2": "readparam(bDex)>=90",
+    "if_then_2": [
+      "+crit",
+      "5"
+    ],
+    "if_3": "readparam(bDex)>=90||readparam(bLuk)>=90",
+    "if_then_3": [
+      "dmg_skillid_%",
+      "\"MC_MAMMONITE\"",
+      "15"
+    ]
+  },
   "13112": [
     "+hit",
     "-5"
@@ -606,7 +2033,47 @@
     "elementchange_weapon",
     "Ele_Wind"
   ],
+  "1315": [
+    [
+      "+str",
+      "10"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Holy"
+    ]
+  ],
   "13150": "No Script",
+  "13151": [
+    [
+      "+crit",
+      "10"
+    ],
+    [
+      "+hit",
+      "10"
+    ]
+  ],
+  "13152": [
+    [
+      "+crit",
+      "10"
+    ],
+    [
+      "+hit",
+      "10"
+    ]
+  ],
+  "13153": [
+    [
+      "+crit",
+      "10"
+    ],
+    [
+      "+hit",
+      "10"
+    ]
+  ],
   "13154": [
     "splash_dmg_baphomet",
     "1"
@@ -628,6 +2095,30 @@
     ]
   ],
   "13157": "No Script",
+  "13158": [
+    [
+      "critical_damage_race_%",
+      "RC_Player_Doram",
+      "10"
+    ],
+    [
+      "critical_damage_race_%",
+      "RC_Brute",
+      "10"
+    ]
+  ],
+  "13159": [
+    [
+      "critical_damage_race_%",
+      "RC_Player_Doram",
+      "10"
+    ],
+    [
+      "critical_damage_race_%",
+      "RC_Brute",
+      "10"
+    ]
+  ],
   "13160": [
     "whileattacking_breakarmor_%",
     "200"
@@ -637,6 +2128,304 @@
     "200"
   ],
   "13162": "No Script",
+  "13163": [
+    [
+      "+crit",
+      "20"
+    ],
+    [
+      "+aspd_%",
+      "-3"
+    ],
+    [
+      "+hit",
+      "10"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"GS_TRACKING\"",
+      "5",
+      "20"
+    ]
+  ],
+  "13164": [
+    [
+      "+crit",
+      "20"
+    ],
+    [
+      "+aspd_%",
+      "-3"
+    ],
+    [
+      "+hit",
+      "10"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"GS_TRACKING\"",
+      "5",
+      "20"
+    ]
+  ],
+  "13165": [
+    [
+      "+crit",
+      "4"
+    ],
+    [
+      "+aspd_%",
+      "10"
+    ],
+    [
+      "+hit",
+      "-readparam(bDex)/3"
+    ],
+    [
+      "+hit",
+      "10"
+    ]
+  ],
+  "13166": [
+    [
+      "+crit",
+      "4"
+    ],
+    [
+      "+aspd_%",
+      "10"
+    ],
+    [
+      "+hit",
+      "-readparam(bDex)/3"
+    ],
+    [
+      "+hit",
+      "10"
+    ]
+  ],
+  "13167": [
+    [
+      "+def_flat",
+      "getrefine()"
+    ],
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "splash_dmg_baphomet",
+      "1"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"GS_SPREADATTACK\"",
+      "6",
+      "50"
+    ]
+  ],
+  "13168": [
+    [
+      "+hit",
+      "-5"
+    ],
+    [
+      "+aspd_%",
+      "20"
+    ],
+    [
+      "splash_dmg_baphomet",
+      "1"
+    ]
+  ],
+  "13169": [
+    [
+      "+hit",
+      "-5"
+    ],
+    [
+      "+aspd_%",
+      "20"
+    ],
+    [
+      "splash_dmg_baphomet",
+      "1"
+    ]
+  ],
+  "13170": [
+    [
+      "+crit",
+      "50"
+    ],
+    [
+      "+aspd_%",
+      "-5"
+    ],
+    [
+      "+hit",
+      "20"
+    ]
+  ],
+  "13171": [
+    [
+      "+hit",
+      "10"
+    ],
+    [
+      "+crit",
+      "10"
+    ],
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "75"
+    ],
+    [
+      "cast_rate_%",
+      "\"GS_TRACKING\"",
+      "-25"
+    ],
+    [
+      "ignore_def_race_%",
+      "RC_DemiHuman",
+      "20"
+    ],
+    [
+      "ignore_def_race_%",
+      "RC_Player_Human",
+      "20"
+    ],
+    [
+      "+dex",
+      "2"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "75"
+    ]
+  ],
+  "13172": {
+    "normal": [
+      [
+        "+dex",
+        "2"
+      ],
+      [
+        "ignore_def_race_%",
+        "RC_Player_Human",
+        "20"
+      ]
+    ],
+    "autobonus": [
+      [
+        "+atk_flat",
+        "80"
+      ],
+      [
+        "regularly_lose_hp",
+        "120",
+        "1000"
+      ]
+    ],
+    "autobonus_trigger": [
+      "10",
+      "6000",
+      "BF_WEAPON"
+    ]
+  },
+  "13173": {
+    "normal": [
+      [
+        "splash_dmg_baphomet",
+        "1"
+      ],
+      [
+        "ignore_def_race_%",
+        "RC_Player_Human",
+        "20"
+      ]
+    ],
+    "autobonus": [
+      [
+        "+atk_flat",
+        "80"
+      ],
+      [
+        "regularly_lose_hp",
+        "100",
+        "1000"
+      ]
+    ],
+    "autobonus_trigger": [
+      "30",
+      "6000",
+      "BF_WEAPON"
+    ]
+  },
+  "13174": {
+    "normal": [
+      [
+        "+dex",
+        "2"
+      ],
+      [
+        "ignore_def_race_%",
+        "RC_Player_Human",
+        "20"
+      ]
+    ],
+    "autobonus": [
+      [
+        "+atk_flat",
+        "300"
+      ],
+      [
+        "regularly_lose_hp",
+        "120",
+        "1000"
+      ]
+    ],
+    "autobonus_trigger": [
+      "30",
+      "9000",
+      "BF_WEAPON"
+    ]
+  },
+  "13175": [
+    [
+      "+crit",
+      "50"
+    ],
+    [
+      "+aspd_%",
+      "-5"
+    ],
+    [
+      "+hit",
+      "20"
+    ]
+  ],
+  "13300": [
+    [
+      "elementchange_weapon",
+      "Ele_Wind"
+    ],
+    [
+      "+dex",
+      "-2"
+    ],
+    [
+      "+agi",
+      "-1"
+    ],
+    [
+      "unbreakable_weapon"
+    ]
+  ],
   "13301": [
     [
       "unbreakable_weapon"
@@ -657,10 +2446,171 @@
       "100"
     ]
   ],
+  "13303": [
+    [
+      "elementchange_weapon",
+      "Ele_Fire"
+    ],
+    [
+      "+dex",
+      "-2"
+    ],
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"MG_FIREBALL\"",
+      "5",
+      "30"
+    ]
+  ],
+  "13304": [
+    [
+      "cast_phencard"
+    ],
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "dmg_skillid_%",
+      "\"NJ_HUUMA\"",
+      "30"
+    ]
+  ],
+  "13305": [
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "95"
+    ],
+    [
+      "ignore_def_race_%",
+      "RC_DemiHuman",
+      "20"
+    ],
+    [
+      "ignore_def_race_%",
+      "RC_Player_Human",
+      "20"
+    ],
+    [
+      "+str",
+      "2"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "95"
+    ]
+  ],
+  "13306": {
+    "normal": [
+      [
+        "+dex",
+        "1"
+      ],
+      [
+        "dmg_race_%",
+        "RC_Player_Human",
+        "95"
+      ]
+    ],
+    "autobonus": [
+      "dmg_skillid_%",
+      "\\NJ_ISSEN\\",
+      "100"
+    ],
+    "autobonus_trigger": [
+      "50",
+      "10000",
+      "BF_WEAPON",
+      "{specialeffect2;EF_POTION_BERSERK;"
+    ]
+  },
+  "13308": [
+    [
+      "elementchange_weapon",
+      "Ele_Fire"
+    ],
+    [
+      "+dex",
+      "2"
+    ],
+    [
+      "unbreakable_weapon"
+    ]
+  ],
   "13309": [
     "dmg_size_%",
     "Size_All",
     "80"
+  ],
+  "13400": [
+    [
+      "+def_flat",
+      "1"
+    ],
+    [
+      "add_skill",
+      "\"SM_BASH\"",
+      "5"
+    ],
+    [
+      "+str",
+      "2"
+    ]
+  ],
+  "13401": [
+    [
+      "+luk",
+      "10"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Holy"
+    ],
+    [
+      "+int",
+      "10"
+    ]
+  ],
+  "13402": [
+    [
+      "+def_flat",
+      "1"
+    ],
+    [
+      "add_skill",
+      "\"SM_BASH\"",
+      "5"
+    ],
+    [
+      "+str",
+      "2"
+    ]
+  ],
+  "13403": [
+    [
+      "whileattacking_suck_hp_%",
+      "1"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Fire"
+    ],
+    [
+      "regularly_lose_sp",
+      "15",
+      "10000"
+    ]
   ],
   "13404": [
     "+crit",
@@ -682,8 +2632,250 @@
     "Class_All",
     "50"
   ],
+  "13407": [
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "40"
+    ],
+    [
+      "add_skill",
+      "\"TF_DOUBLE\"",
+      "5"
+    ],
+    [
+      "whileattacking_doubleattack_%",
+      "25"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "40"
+    ]
+  ],
+  "13408": [
+    [
+      "+int",
+      "2"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Fire"
+    ],
+    [
+      "add_skill",
+      "\"MG_FIREBOLT\"",
+      "5"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"MG_FIREBOLT\"",
+      "5",
+      "100"
+    ]
+  ],
+  "13409": [
+    [
+      "whileattacking_selfdrainsp",
+      "-1"
+    ],
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Ghost"
+    ],
+    [
+      "whileattacking_vanishsp",
+      "45",
+      "30"
+    ]
+  ],
+  "13410": [
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "75"
+    ],
+    [
+      "ignore_def_race_%",
+      "RC_DemiHuman",
+      "20"
+    ],
+    [
+      "ignore_def_race_%",
+      "RC_Player_Human",
+      "20"
+    ],
+    [
+      "+str",
+      "1"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "75"
+    ]
+  ],
+  "13411": [
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "+matk_%",
+      "10"
+    ],
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "75"
+    ],
+    [
+      "+str",
+      "1"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "75"
+    ]
+  ],
+  "13412": {
+    "normal": [
+      [
+        "elementchange_weapon",
+        "Ele_Water"
+      ],
+      [
+        "add_skill",
+        "MG_FROSTDIVER",
+        "5"
+      ]
+    ],
+    "autobonus": [
+      "ignore_def_all_100%",
+      "Class_Normal"
+    ],
+    "autobonus_trigger": [
+      "50",
+      "5000;"
+    ]
+  },
+  "13413": {
+    "normal": [
+      [
+        "elementchange_weapon",
+        "Ele_Fire"
+      ],
+      [
+        "add_skill",
+        "WZ_METEOR",
+        "3"
+      ]
+    ],
+    "autobonus": [
+      "ignore_def_all_100%",
+      "Class_Normal"
+    ],
+    "autobonus_trigger": [
+      "50",
+      "5000;"
+    ]
+  },
+  "13414": [
+    [
+      "+int",
+      "4"
+    ],
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "+matk_%",
+      "5"
+    ],
+    [
+      "cast_spell_on_skill",
+      "\"MG_FIREBOLT\"",
+      "\"MG_LIGHTNINGBOLT\"",
+      "3",
+      "1000"
+    ],
+    [
+      "cast_spell_on_skill",
+      "\"MG_LIGHTNINGBOLT\"",
+      "\"WZ_EARTHSPIKE\"",
+      "3",
+      "1000"
+    ],
+    [
+      "+str",
+      "2"
+    ],
+    [
+      "dmg_element_%",
+      "Ele_Neutral",
+      "10"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"MG_COLDBOLT\"",
+      "3",
+      "50"
+    ],
+    [
+      "cast_spell_on_skill",
+      "\"MG_COLDBOLT\"",
+      "\"MG_FIREBOLT\"",
+      "3",
+      "1000"
+    ]
+  ],
   "13415": "No Script",
   "13419": "No Script",
+  "13420": [
+    [
+      "+str",
+      "2"
+    ],
+    [
+      "+int",
+      "2"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Fire"
+    ]
+  ],
+  "13421": {
+    "normal": [
+      "+str",
+      "0"
+    ],
+    "autobonus": [
+      "dmg_skillid_%",
+      "\\SM_BASH\\",
+      "20"
+    ],
+    "autobonus_trigger": [
+      "5",
+      "15000",
+      "BF_WEAPON"
+    ]
+  },
   "13422": [
     [
       "unbreakable_weapon"
@@ -706,6 +2898,84 @@
   "1360": "No Script",
   "1361": "No Script",
   "1362": "No Script",
+  "1363": [
+    [
+      "+movespeed_%",
+      "25"
+    ],
+    [
+      "+str",
+      "10"
+    ]
+  ],
+  "1364": [
+    [
+      "whileattacking_badstatus",
+      "Eff_Stun",
+      "1500"
+    ],
+    [
+      "push_target_x_cells_back",
+      "\"MC_MAMMONITE\"",
+      "5"
+    ]
+  ],
+  "1365": [
+    [
+      "critical_damage_race_%",
+      "RC_Undead",
+      "50"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Dark"
+    ],
+    [
+      "whileattacking_coma_race",
+      "RC_Demon",
+      "50"
+    ]
+  ],
+  "1366": [
+    [
+      "elementchange_weapon",
+      "Ele_Holy"
+    ],
+    [
+      "add_skill",
+      "\"AL_HEAL\"",
+      "3"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Demon",
+      "3"
+    ]
+  ],
+  "1367": [
+    [
+      "ignore_def_race_100%",
+      "RC_Brute"
+    ],
+    [
+      "ignore_def_race_100%",
+      "RC_Player_Doram"
+    ],
+    [
+      "whileattacking_coma_race",
+      "RC_Player_Doram",
+      "40"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Earth"
+    ],
+    [
+      "whileattacking_coma_race",
+      "RC_Brute",
+      "40"
+    ]
+  ],
   "1368": [
     [
       "elementchange_weapon",
@@ -715,6 +2985,112 @@
       "add_skill",
       "\"ITM_TOMAHAWK\"",
       "1"
+    ]
+  ],
+  "1369": [
+    [
+      "whileattacking_coma_race",
+      "RC_Player_Human",
+      "30"
+    ],
+    [
+      "whileattacking_drainsp_race",
+      "RC_DemiHuman",
+      "2"
+    ],
+    [
+      "whileattacking_drainsp_race",
+      "RC_Player_Human",
+      "2"
+    ],
+    [
+      "afterkill_spdrain_race",
+      "RC_DemiHuman",
+      "20"
+    ],
+    [
+      "afterkill_spdrain_race",
+      "RC_Player_Human",
+      "20"
+    ],
+    [
+      "whileattacking_coma_race",
+      "RC_DemiHuman",
+      "30"
+    ]
+  ],
+  "1370": {
+    "normal": [
+      "skillspcost_%",
+      "100"
+    ],
+    "if": "readparam(bStr)>=95",
+    "if_then": [
+      [
+        "whileattacking_breakarmor_%",
+        "500"
+      ],
+      [
+        "whileattacking_badstatus",
+        "Eff_Stun",
+        "3000"
+      ]
+    ]
+  },
+  "1371": {
+    "normal": [
+      "skillspcost_%",
+      "100"
+    ],
+    "if": "readparam(bStr)>=95",
+    "if_then": [
+      [
+        "whileattacking_breakarmor_%",
+        "500"
+      ],
+      [
+        "whileattacking_badstatus",
+        "Eff_Stun",
+        "3000"
+      ]
+    ]
+  },
+  "1372": [
+    [
+      "+str",
+      "10"
+    ],
+    [
+      "+movespeed_%",
+      "25"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Holy"
+    ],
+    [
+      "add_skill",
+      "\"AL_HEAL\"",
+      "3"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Demon",
+      "3"
+    ]
+  ],
+  "1373": [
+    [
+      "+movespeed_%",
+      "25"
+    ],
+    [
+      "+aspd_%",
+      "5"
+    ],
+    [
+      "+str",
+      "20"
     ]
   ],
   "1374": [
@@ -728,6 +3104,31 @@
       "1"
     ]
   ],
+  "1375": [
+    [
+      "resist_size_%",
+      "Size_Large",
+      "15"
+    ],
+    [
+      "resist_size_%",
+      "Size_Medium",
+      "13"
+    ]
+  ],
+  "1376": {
+    "normal": [
+      "+aspd_%",
+      "5"
+    ],
+    "if": "(Class==Job_Whitesmith)||(Class==Job_Creator)",
+    "if_then": [
+      "whileattacking_autospell",
+      "\"BS_HAMMERFALL\"",
+      "3",
+      "30"
+    ]
+  },
   "1377": [
     [
       "resist_size_%",
@@ -745,13 +3146,164 @@
       "20"
     ]
   ],
+  "1378": [
+    [
+      "+hit",
+      "20"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Stun",
+      "2000"
+    ],
+    [
+      "+str",
+      "5"
+    ],
+    [
+      "push_target_x_cells_back",
+      "\"MC_MAMMONITE\"",
+      "5"
+    ]
+  ],
+  "1379": [
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "55"
+    ],
+    [
+      "ignore_def_race_%",
+      "RC_DemiHuman",
+      "20"
+    ],
+    [
+      "ignore_def_race_%",
+      "RC_Player_Human",
+      "20"
+    ],
+    [
+      "+str",
+      "3"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "55"
+    ]
+  ],
+  "1380": {
+    "normal": [
+      [
+        "+str",
+        "3"
+      ],
+      [
+        "dmg_race_%",
+        "RC_Player_Human",
+        "55"
+      ]
+    ],
+    "autobonus": [
+      "whileattacking_breakarmor_%",
+      "10000"
+    ],
+    "autobonus_trigger": [
+      "20",
+      "3000",
+      "BF_WEAPON"
+    ]
+  },
   "1381": "No Script",
+  "1383": [
+    [
+      "+vit",
+      "10"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Holy"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Undead",
+      "10"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"AL_BLESSING\"",
+      "5",
+      "50"
+    ]
+  ],
+  "1384": {
+    "if": "getskilllv(\"BS_DAGGER\")==3",
+    "if_then": [
+      "+atk_flat",
+      "10"
+    ],
+    "if_2": "getskilllv(\"BS_SWORD\")==3",
+    "if_then_2": [
+      "+atk_flat",
+      "10"
+    ],
+    "if_3": "getskilllv(\"BS_TWOHANDSWORD\")==3",
+    "if_then_3": [
+      "+atk_flat",
+      "10"
+    ],
+    "if_4": "getskilllv(\"BS_KNUCKLE\")==3",
+    "if_then_4": [
+      "+atk_flat",
+      "10"
+    ],
+    "if_5": "getskilllv(\"BS_SPEAR\")==3",
+    "if_then_5": [
+      "+atk_flat",
+      "10"
+    ],
+    "if_6": "getskilllv(\"BS_AXE\")==3",
+    "if_then_6": [
+      "+atk_flat",
+      "10"
+    ],
+    "if_7": "getskilllv(\"BS_MACE\")==3"
+  },
   "1385": [
     "change_skill_behavior",
     "\"BS_HAMMERFALL\"",
     "Eff_Stun",
     "500+(200*getrefine())"
   ],
+  "1386": {
+    "if": "readparam(bStr)>=95",
+    "if_then": [
+      [
+        "whileattacking_breakarmor_%",
+        "500"
+      ],
+      [
+        "whileattacking_badstatus",
+        "Eff_Stun",
+        "3000"
+      ]
+    ]
+  },
+  "1387": {
+    "normal": [
+      "dmg_skillid_%",
+      "\"WS_CARTTERMINATION\"",
+      "15"
+    ],
+    "if": "readparam(bStr)>=95",
+    "if_then": [
+      "+aspd_%",
+      "3"
+    ]
+  },
   "1388": [
     "dmg_size_%",
     "Size_All",
@@ -760,6 +3312,16 @@
   "1389": [
     "elementchange_weapon",
     "Ele_Wind"
+  ],
+  "1390": [
+    [
+      "+str",
+      "10"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Holy"
+    ]
   ],
   "1401": "No Script",
   "1402": "No Script",
@@ -773,6 +3335,34 @@
   "1410": "No Script",
   "1411": "No Script",
   "1412": "No Script",
+  "1413": [
+    [
+      "+perfecthit",
+      "25"
+    ],
+    [
+      "+hit",
+      "30"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Wind"
+    ]
+  ],
+  "1414": [
+    [
+      "+maxhp_flat",
+      "800"
+    ],
+    [
+      "+maxsp_flat",
+      "-50"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Earth"
+    ]
+  ],
   "1415": [
     [
       "ignore_def_all_100%",
@@ -782,6 +3372,121 @@
       "dmg_element_%",
       "Ele_Neutral",
       "25"
+    ]
+  ],
+  "1416": [
+    [
+      "afterkill_spdrain",
+      "5"
+    ],
+    [
+      "whileattacking_selfdrainsp",
+      "1"
+    ]
+  ],
+  "1417": [
+    [
+      "+int",
+      "2"
+    ],
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "+str",
+      "1"
+    ]
+  ],
+  "1418": [
+    [
+      "+perfecthit",
+      "25"
+    ],
+    [
+      "+hit",
+      "30"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Wind"
+    ]
+  ],
+  "1419": [
+    [
+      "+int",
+      "2"
+    ],
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "+str",
+      "1"
+    ]
+  ],
+  "1420": [
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Holy"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Bleeding",
+      "500"
+    ],
+    [
+      "add_skill",
+      "\"TF_DETOXIFY\"",
+      "1"
+    ]
+  ],
+  "1421": [
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "20"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "20"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Stun",
+      "500"
+    ],
+    [
+      "add_skill",
+      "\"KN_PIERCE\"",
+      "3"
+    ]
+  ],
+  "1422": [
+    [
+      "ignore_def_race_100%",
+      "RC_Player_Doram"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"LK_JOINTBEAT\"",
+      "3",
+      "100"
+    ],
+    [
+      "ignore_def_race_100%",
+      "RC_Brute"
+    ],
+    [
+      "dropitem_monster_%",
+      "517",
+      "RC_Brute",
+      "1000"
     ]
   ],
   "1423": [
@@ -800,6 +3505,23 @@
       "20"
     ]
   ],
+  "1425": {
+    "normal": [
+      [
+        "unbreakable_weapon"
+      ],
+      [
+        "ignore_def_race_%",
+        "RC_Player_Human",
+        "20"
+      ]
+    ],
+    "if": "BaseJob==Job_Crusader",
+    "if_then": [
+      "+aspd_%",
+      "20"
+    ]
+  },
   "1427": [
     [
       "dmg_skillid_%",
@@ -811,10 +3533,79 @@
       "2"
     ]
   ],
+  "1428": [
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Holy"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Bleeding",
+      "500"
+    ],
+    [
+      "add_skill",
+      "\"TF_DETOXIFY\"",
+      "1"
+    ]
+  ],
+  "1429": [
+    [
+      "ignore_def_race_100%",
+      "RC_Player_Doram"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"LK_JOINTBEAT\"",
+      "3",
+      "500"
+    ],
+    [
+      "ignore_def_race_100%",
+      "RC_Brute"
+    ],
+    [
+      "dropitem_monster_%",
+      "517",
+      "RC_Brute",
+      "1000"
+    ]
+  ],
   "1430": [
     "dmg_size_%",
     "Size_All",
     "70"
+  ],
+  "1431": [
+    [
+      "+int",
+      "2"
+    ],
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "+str",
+      "1"
+    ]
+  ],
+  "1432": [
+    [
+      "+int",
+      "2"
+    ],
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "+str",
+      "1"
+    ]
   ],
   "1451": "No Script",
   "1452": "No Script",
@@ -831,6 +3622,38 @@
   "1463": "No Script",
   "1464": "No Script",
   "1465": "No Script",
+  "1466": [
+    [
+      "+hit",
+      "10"
+    ],
+    [
+      "+crit",
+      "30"
+    ]
+  ],
+  "1467": [
+    [
+      "dmg_race_%",
+      "RC_Player_Doram",
+      "10"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "5"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "5"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Brute",
+      "10"
+    ]
+  ],
   "1468": [
     [
       "elementchange_weapon",
@@ -848,6 +3671,93 @@
       "100"
     ]
   ],
+  "1469": [
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "10"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Angel",
+      "10"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Dark"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "10"
+    ]
+  ],
+  "1470": [
+    [
+      "elementchange_weapon",
+      "Ele_Holy"
+    ],
+    [
+      "add_skill",
+      "\"AL_HEAL\"",
+      "5"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"MG_SOULSTRIKE\"",
+      "3",
+      "100"
+    ],
+    [
+      "dmg_monstertype_%",
+      "Class_Boss",
+      "5"
+    ]
+  ],
+  "1471": [
+    [
+      "+str",
+      "3"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Fire"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"MG_FIREBALL\"",
+      "3",
+      "100"
+    ]
+  ],
+  "1472": [
+    [
+      "+agi",
+      "2"
+    ],
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "+int",
+      "5"
+    ]
+  ],
+  "1473": [
+    [
+      "+dex",
+      "2"
+    ],
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "+int",
+      "6"
+    ]
+  ],
   "1474": [
     [
       "ignore_def_race_100%",
@@ -860,6 +3770,124 @@
     ]
   ],
   "1475": "No Script",
+  "1476": [
+    [
+      "+hit",
+      "10"
+    ],
+    [
+      "+crit",
+      "30"
+    ]
+  ],
+  "1477": [
+    [
+      "dmg_race_%",
+      "RC_Demon",
+      "20"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Undead",
+      "20"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Dark",
+      "10"
+    ],
+    [
+      "resist_race_%",
+      "RC_Demon",
+      "10"
+    ],
+    [
+      "resist_race_%",
+      "RC_Undead",
+      "10"
+    ],
+    [
+      "whileattacking_selfbadstatus",
+      "Eff_Confusion",
+      "1000"
+    ],
+    [
+      "dmg_element_%",
+      "Ele_Dark",
+      "20"
+    ],
+    [
+      "afterkill_hpdrain",
+      "50"
+    ]
+  ],
+  "1478": [
+    [
+      "ignore_def_all_100%",
+      "Class_Boss"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "10"
+    ],
+    [
+      "ignore_def_all_100%",
+      "Class_Normal"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "10"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"KN_PIERCE\"",
+      "5",
+      "30"
+    ]
+  ],
+  "1479": [
+    [
+      "dmg_race_%",
+      "RC_Demon",
+      "20"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Undead",
+      "20"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Dark",
+      "10"
+    ],
+    [
+      "resist_race_%",
+      "RC_Demon",
+      "10"
+    ],
+    [
+      "resist_race_%",
+      "RC_Undead",
+      "10"
+    ],
+    [
+      "whileattacking_selfbadstatus",
+      "Eff_Confusion",
+      "1000"
+    ],
+    [
+      "dmg_element_%",
+      "Ele_Dark",
+      "20"
+    ],
+    [
+      "afterkill_hpdrain",
+      "50"
+    ]
+  ],
   "1480": [
     [
       "ignore_def_race_100%",
@@ -888,11 +3916,136 @@
       "100"
     ]
   ],
+  "1482": [
+    [
+      "ignore_def_race_100%",
+      "RC_DemiHuman"
+    ],
+    [
+      "ignore_def_race_100%",
+      "RC_Player_Human"
+    ],
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "25"
+    ],
+    [
+      "+str",
+      "2"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "25"
+    ]
+  ],
+  "1483": [
+    [
+      "+aspd_%",
+      "3"
+    ],
+    [
+      "+agi",
+      "2"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Bleeding",
+      "300"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"NPC_CRITICALWOUND\"",
+      "1",
+      "30"
+    ],
+    [
+      "add_skill",
+      "\"KN_SPEARSTAB\"",
+      "5"
+    ]
+  ],
+  "1484": [
+    [
+      "+def_flat",
+      "getrefine()/2"
+    ],
+    [
+      "+aspd_%",
+      "-10"
+    ]
+  ],
   "1485": "No Script",
   "1487": [
     "dmg_size_%",
     "Size_All",
     "50"
+  ],
+  "1488": [
+    [
+      "ignore_def_all_100%",
+      "Class_Boss"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "10"
+    ],
+    [
+      "ignore_def_all_100%",
+      "Class_Normal"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "10"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"KN_PIERCE\"",
+      "5",
+      "30"
+    ]
+  ],
+  "15000": [
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "ignore_def_race_%",
+      "RC_Player_Human",
+      "10"
+    ],
+    [
+      "ignore_def_race_%",
+      "RC_Brute",
+      "10"
+    ],
+    [
+      "ignore_def_race_%",
+      "RC_Player_Doram",
+      "10"
+    ],
+    [
+      "+str",
+      "1"
+    ],
+    [
+      "ignore_def_race_%",
+      "RC_DemiHuman",
+      "10"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"NPC_WIDEBLEEDING\"",
+      "1",
+      "10"
+    ]
   ],
   "15001": "No Script",
   "1501": "No Script",
@@ -921,6 +4074,20 @@
     "Eff_Stun",
     "1000"
   ],
+  "1523": [
+    [
+      "+def_%",
+      "-67"
+    ],
+    [
+      "+softdef_%",
+      "-67"
+    ],
+    [
+      "+crit",
+      "40"
+    ]
+  ],
   "1524": [
     [
       "dmg_race_%",
@@ -935,16 +4102,194 @@
     "resist_ranged_%",
     "10"
   ],
+  "1526": [
+    [
+      "whileattacking_coma_race",
+      "RC_Undead",
+      "10"
+    ],
+    [
+      "expbonus_race_%",
+      "RC_Undead",
+      "5"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Undead",
+      "15"
+    ]
+  ],
+  "1527": [
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "10"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "10"
+    ],
+    [
+      "dmg_element_%",
+      "Ele_Earth",
+      "10"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Undead",
+      "10"
+    ]
+  ],
+  "1528": [
+    [
+      "afterkill_spdrain_race",
+      "RC_Undead",
+      "3"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Holy"
+    ],
+    [
+      "add_skill",
+      "\"PR_TURNUNDEAD\"",
+      "3"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"PR_TURNUNDEAD\"",
+      "3",
+      "100"
+    ],
+    [
+      "whileattacking_drainsp_race",
+      "RC_Undead",
+      "1"
+    ]
+  ],
   "1529": "No Script",
+  "1530": [
+    [
+      "+dex",
+      "40"
+    ],
+    [
+      "+str",
+      "15"
+    ],
+    [
+      "+aspd_%",
+      "10"
+    ],
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Wind"
+    ]
+  ],
+  "1531": [
+    [
+      "whileattacking_badstatus",
+      "Eff_Stun",
+      "100"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Poison",
+      "100"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Freeze",
+      "100"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Blind",
+      "100"
+    ]
+  ],
   "1532": [
     "whileattacking_badstatus",
     "Eff_Stun",
     "1000"
   ],
+  "1534": [
+    [
+      "whileattacking_badstatus",
+      "Eff_Stun",
+      "100"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Poison",
+      "100"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Freeze",
+      "100"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Blind",
+      "100"
+    ]
+  ],
+  "1535": {
+    "normal": [
+      "whileattacking_breakweapon_%",
+      "100"
+    ],
+    "if": "readparam(bStr)>=44",
+    "if_then": [
+      "+atk_flat",
+      "44"
+    ]
+  },
   "1536": [
     "dmg_monstertype_%",
     "Class_All",
     "50"
+  ],
+  "1537": [
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "30"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Demon",
+      "40"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Undead",
+      "40"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "30"
+    ]
+  ],
+  "1538": [
+    [
+      "+def_%",
+      "-67"
+    ],
+    [
+      "+softdef_%",
+      "-67"
+    ],
+    [
+      "+crit",
+      "40"
+    ]
   ],
   "1539": [
     [
@@ -956,6 +4301,136 @@
       "unbreakable_weapon"
     ]
   ],
+  "1540": [
+    [
+      "afterkill_spdrain_race",
+      "RC_Undead",
+      "3"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Holy"
+    ],
+    [
+      "add_skill",
+      "\"PR_TURNUNDEAD\"",
+      "3"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"PR_TURNUNDEAD\"",
+      "3",
+      "100"
+    ],
+    [
+      "whileattacking_drainsp_race",
+      "RC_Undead",
+      "1"
+    ]
+  ],
+  "1541": {
+    "normal": [
+      [
+        "elementchange_weapon",
+        "Ele_Holy"
+      ],
+      [
+        "dmg_race_%",
+        "RC_Demon",
+        "10"
+      ],
+      [
+        "whileattacking_autospell",
+        "AL_CRUCIS",
+        "1+getrefine()",
+        "100"
+      ]
+    ],
+    "autobonus": [
+      "+atk_flat",
+      "50"
+    ],
+    "autobonus_trigger": [
+      "10",
+      "20000",
+      "BF_WEAPON"
+    ]
+  },
+  "1542": [
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "75"
+    ],
+    [
+      "ignore_def_race_%",
+      "RC_DemiHuman",
+      "20"
+    ],
+    [
+      "ignore_def_race_%",
+      "RC_Player_Human",
+      "20"
+    ],
+    [
+      "+str",
+      "1"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "75"
+    ]
+  ],
+  "1543": {
+    "normal": [
+      [
+        "unbreakable_weapon"
+      ],
+      [
+        "dmg_race_%",
+        "RC_Player_Human",
+        "75"
+      ]
+    ],
+    "autobonus": [
+      "whileattacking_badstatus",
+      "Eff_Stun",
+      "5000"
+    ],
+    "autobonus_trigger": [
+      "10",
+      "6000",
+      "BF_WEAPON"
+    ]
+  },
+  "1544": {
+    "if": "readparam(bStr)>=77",
+    "if_then": [
+      [
+        "+aspd_%",
+        "4"
+      ],
+      [
+        "whileattacking_badstatus",
+        "Eff_Stun",
+        "1500"
+      ],
+      [
+        "dropitem_monster_%",
+        "12069",
+        "RC_Fish",
+        "500"
+      ]
+    ]
+  },
   "1545": "No Script",
   "1547": [
     [
@@ -966,6 +4441,24 @@
     [
       "+str",
       "2"
+    ]
+  ],
+  "1548": [
+    [
+      "+crit",
+      "getskilllv(\"PR_MACEMASTERY\")*2"
+    ],
+    [
+      "+int",
+      "1"
+    ],
+    [
+      "+luk",
+      "1"
+    ],
+    [
+      "efficiency_healing_%",
+      "getskilllv(\"AL_DP\")"
     ]
   ],
   "1549": "No Script",
@@ -991,10 +4484,66 @@
     "elementchange_weapon",
     "Ele_Wind"
   ],
+  "1557": [
+    [
+      "dmg_element_%",
+      "Ele_Water",
+      "7"
+    ],
+    [
+      "dmg_element_%",
+      "Ele_Earth",
+      "7"
+    ],
+    [
+      "dmg_element_%",
+      "Ele_Fire",
+      "7"
+    ],
+    [
+      "dmg_element_%",
+      "Ele_Wind",
+      "7"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Dark"
+    ],
+    [
+      "dmg_element_%",
+      "Ele_Holy",
+      "5"
+    ]
+  ],
   "1558": [
     "dmg_monsterid_%",
     "1188",
     "150"
+  ],
+  "1559": [
+    [
+      "ignore_def_race_100%",
+      "RC_Dragon"
+    ],
+    [
+      "+int",
+      "3"
+    ],
+    [
+      "afterkill_spdrain_race",
+      "RC_Dragon",
+      "10"
+    ]
+  ],
+  "1561": [
+    [
+      "+dex",
+      "2"
+    ],
+    [
+      "+str",
+      "3"
+    ]
   ],
   "1562": [
     [
@@ -1008,10 +4557,72 @@
       "20"
     ]
   ],
+  "1563": [
+    [
+      "+aspd_%",
+      "5"
+    ],
+    [
+      "+matk_%",
+      "20"
+    ]
+  ],
+  "1564": [
+    [
+      "+int",
+      "3"
+    ],
+    [
+      "+dex",
+      "2"
+    ],
+    [
+      "+crit",
+      "20+((readparam(bLuk)*2)/10)"
+    ],
+    [
+      "+matk_%",
+      "15"
+    ]
+  ],
+  "1565": {
+    "normal": [
+      [
+        "+aspd_%",
+        "getrefine("
+      ],
+      [
+        "whileattacking_coma_race",
+        "RC_Player_Human",
+        "10"
+      ]
+    ],
+    "if": "BaseJob==Job_Sage",
+    "if_then": [
+      "whileattacking_autospell",
+      "\"NPC_HELLJUDGEMENT\"",
+      "5",
+      "20"
+    ]
+  },
   "1566": [
     "dmg_monstertype_%",
     "Class_All",
     "50"
+  ],
+  "1567": [
+    [
+      "+dex",
+      "2"
+    ],
+    [
+      "+matk_%",
+      "20"
+    ],
+    [
+      "+str",
+      "5"
+    ]
   ],
   "1568": [
     "elementchange_weapon",
@@ -1029,13 +4640,199 @@
     "elementchange_weapon",
     "Ele_Wind"
   ],
+  "1572": [
+    [
+      "+int",
+      "3"
+    ],
+    [
+      "+sprecovery_%",
+      "5"
+    ],
+    [
+      "+matk_%",
+      "20"
+    ]
+  ],
   "1573": [
     "+matk_%",
     "15"
   ],
+  "1574": [
+    [
+      "+int",
+      "1"
+    ],
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "75"
+    ],
+    [
+      "ignore_def_race_%",
+      "RC_DemiHuman",
+      "20"
+    ],
+    [
+      "ignore_def_race_%",
+      "RC_Player_Human",
+      "20"
+    ],
+    [
+      "+str",
+      "2"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "75"
+    ]
+  ],
+  "1575": [
+    [
+      "+int",
+      "1"
+    ],
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "ignore_mdef_by_race_%",
+      "RC_Player_Human",
+      "25"
+    ],
+    [
+      "+str",
+      "2"
+    ],
+    [
+      "ignore_mdef_by_race_%",
+      "RC_DemiHuman",
+      "25"
+    ]
+  ],
+  "1578": [
+    [
+      "+mdef_flat",
+      "2"
+    ],
+    [
+      "+maxsp_%",
+      "10"
+    ],
+    [
+      "+vit",
+      "2"
+    ]
+  ],
+  "1579": {
+    "normal": [
+      [
+        "+aspd_%",
+        "getrefine("
+      ],
+      [
+        "whileattacking_coma_race",
+        "RC_Player_Human",
+        "10"
+      ]
+    ],
+    "if": "BaseJob==Job_Sage",
+    "if_then": [
+      "whileattacking_autospell",
+      "\"NPC_HELLJUDGEMENT\"",
+      "5",
+      "20"
+    ]
+  },
+  "1580": [
+    [
+      "+int",
+      "3"
+    ],
+    [
+      "+dex",
+      "2"
+    ],
+    [
+      "+crit",
+      "20+((readparam(bLuk)*2)/10)"
+    ],
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "dmg_size_%",
+      "Size_All",
+      "40"
+    ]
+  ],
   "1581": "No Script",
   "1582": "No Script",
   "1599": "No Script",
+  "16000": [
+    [
+      "efficiency_healing_%",
+      "10"
+    ],
+    [
+      "dmg_skillid_%",
+      "\"AM_DEMONSTRATION\"",
+      "20"
+    ],
+    [
+      "dmg_skillid_%",
+      "\"AM_ACIDTERROR\"",
+      "20"
+    ],
+    [
+      "+maxsp_flat",
+      "50"
+    ]
+  ],
+  "16001": {
+    "normal": [
+      [
+        "+maxhp_flat",
+        "200"
+      ],
+      [
+        "dropitem_monster_%",
+        "505",
+        "10"
+      ]
+    ],
+    "if": "readparam(bStr)>=95",
+    "if_then": [
+      "whileattacking_badstatus",
+      "Eff_Stun",
+      "500"
+    ]
+  },
+  "16002": [
+    [
+      "dmg_size_%",
+      "Size_All",
+      "40"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Stun",
+      "1000"
+    ]
+  ],
   "1601": [
     "+matk_%",
     "15"
@@ -1060,6 +4857,291 @@
     "skillspcost_%",
     "getrefine()*-1"
   ],
+  "1604": [
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "+int",
+      "1"
+    ]
+  ],
+  "1605": [
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "+int",
+      "1"
+    ]
+  ],
+  "1606": [
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "+int",
+      "1"
+    ]
+  ],
+  "1607": [
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "+int",
+      "2"
+    ]
+  ],
+  "1608": [
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "+int",
+      "2"
+    ]
+  ],
+  "1609": [
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "+int",
+      "2"
+    ]
+  ],
+  "1610": [
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "+int",
+      "3"
+    ]
+  ],
+  "1611": [
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "+int",
+      "3"
+    ]
+  ],
+  "1612": [
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "+int",
+      "3"
+    ]
+  ],
+  "1613": [
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "whileattacking_selfdrainsp",
+      "-2"
+    ],
+    [
+      "+str",
+      "10"
+    ]
+  ],
+  "1614": [
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "+int",
+      "3"
+    ]
+  ],
+  "1615": [
+    [
+      "elementchange_weapon",
+      "Ele_Undead"
+    ],
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "+int",
+      "4"
+    ]
+  ],
+  "1616": [
+    [
+      "cast_rate_%",
+      "-5"
+    ],
+    [
+      "+matk_%",
+      "15"
+    ]
+  ],
+  "1617": [
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "+maxhp_flat",
+      "300"
+    ],
+    [
+      "+dex",
+      "2"
+    ]
+  ],
+  "1618": [
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "+maxhp_flat",
+      "400"
+    ],
+    [
+      "+dex",
+      "3"
+    ]
+  ],
+  "1619": [
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "+maxhp_flat",
+      "300"
+    ],
+    [
+      "+int",
+      "2"
+    ]
+  ],
+  "1620": [
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "+maxhp_flat",
+      "400"
+    ],
+    [
+      "+int",
+      "3"
+    ]
+  ],
+  "1621": [
+    [
+      "+matk_%",
+      "25"
+    ],
+    [
+      "+int",
+      "1"
+    ]
+  ],
+  "1622": [
+    [
+      "+matk_%",
+      "25"
+    ],
+    [
+      "+int",
+      "1"
+    ]
+  ],
+  "1623": [
+    [
+      "+int",
+      "4"
+    ],
+    [
+      "+matk_%",
+      "20"
+    ],
+    [
+      "whileattacking_selfdrainsp",
+      "-1"
+    ],
+    [
+      "+str",
+      "10"
+    ]
+  ],
+  "1624": {
+    "normal": [
+      [
+        "+matk_%",
+        "20"
+      ],
+      [
+        "whilehit_targetskill_%",
+        "\"NPC_WIDECURSE\"",
+        "5",
+        "10+getrefine("
+      ]
+    ],
+    "if": "getrefine()>=9",
+    "if_then": [
+      "+maxsp_flat",
+      "300"
+    ]
+  },
+  "1625": [
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "efficiency_healing_%",
+      "(getrefine()*3/2)"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Holy"
+    ]
+  ],
+  "1626": [
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "ignore_mdef_all_%",
+      "Class_Boss",
+      "10+getrefine()"
+    ],
+    [
+      "+int",
+      "4"
+    ],
+    [
+      "ignore_mdef_all_%",
+      "Class_Normal",
+      "10+getrefine()"
+    ]
+  ],
   "1627": [
     [
       "+matk_%",
@@ -1071,12 +5153,386 @@
       "50"
     ]
   ],
+  "1628": [
+    [
+      "+matk_%",
+      "20"
+    ],
+    [
+      "+maxhp_flat",
+      "500"
+    ],
+    [
+      "+dex",
+      "4"
+    ]
+  ],
+  "1629": [
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "+matk_%",
+      "15"
+    ]
+  ],
+  "1630": {
+    "normal": [
+      "efficiency_healing_%",
+      "5"
+    ],
+    "autobonus": [
+      "regularly_recover_hp",
+      "50",
+      "2000"
+    ],
+    "autobonus_trigger": [
+      "10",
+      "10000",
+      "BF_MAGIC"
+    ]
+  },
+  "1631": [
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "cast_rate_%",
+      "\"PR_TURNUNDEAD\"",
+      "-25"
+    ],
+    [
+      "cast_rate_%",
+      "\"PR_MAGNUS\"",
+      "-25"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Holy"
+    ],
+    [
+      "cast_rate_%",
+      "\"AL_HOLYLIGHT\"",
+      "-25"
+    ]
+  ],
+  "1632": [
+    [
+      "+dex",
+      "3"
+    ],
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "ignore_mdef_by_race_%",
+      "RC_Player_Human",
+      "25"
+    ],
+    [
+      "+int",
+      "4"
+    ],
+    [
+      "ignore_mdef_by_race_%",
+      "RC_DemiHuman",
+      "25"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Stun",
+      "500",
+      "ATF_SKILL"
+    ]
+  ],
+  "1633": [
+    [
+      "+dex",
+      "3"
+    ],
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "mdmg_race_%",
+      "RC_Player_Human",
+      "15"
+    ],
+    [
+      "+int",
+      "3"
+    ],
+    [
+      "mdmg_race_%",
+      "RC_DemiHuman",
+      "15"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Stun",
+      "500",
+      "ATF_SKILL"
+    ]
+  ],
+  "1634": [
+    [
+      "efficiency_healing_%",
+      "14"
+    ],
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "regularly_recover_sp",
+      "5",
+      "10000"
+    ]
+  ],
+  "1635": [
+    [
+      "+dex",
+      "2"
+    ],
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "cast_delay",
+      "-15"
+    ],
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "+int",
+      "3"
+    ],
+    [
+      "regularly_recover_sp",
+      "5",
+      "10000"
+    ]
+  ],
+  "1636": [
+    [
+      "+dex",
+      "3"
+    ],
+    [
+      "+matk_%",
+      "20"
+    ],
+    [
+      "cast_delay",
+      "-(getrefine()*3/2)"
+    ],
+    [
+      "ignore_mdef_all_%",
+      "Class_Boss",
+      "getrefine()"
+    ],
+    [
+      "+int",
+      "3"
+    ],
+    [
+      "ignore_mdef_all_%",
+      "Class_Normal",
+      "getrefine()"
+    ]
+  ],
+  "1637": {
+    "normal": [
+      "+sprecovery_%",
+      "8"
+    ],
+    "if": ";getrefine()>9;",
+    "if_then": [
+      "whileattacking_autospell",
+      "\"NPC_WIDESOULDRAIN\"",
+      "3",
+      "5",
+      "BF_MAGIC",
+      "0else"
+    ]
+  },
+  "1638": [
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "efficiency_healing_%",
+      "(getrefine()*3/2)"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Holy"
+    ]
+  ],
   "1639": [
     "+matk_%",
     "16"
   ],
+  "1640": {
+    "normal": [
+      "unbreakable_weapon"
+    ],
+    "if": "getrefine()>8",
+    "if_then": [
+      "+matk_%",
+      "5"
+    ]
+  },
+  "1642": [
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "+int",
+      "2"
+    ],
+    [
+      "cast_rate_%",
+      "-5"
+    ]
+  ],
+  "1643": {
+    "normal": [
+      "+int",
+      "4"
+    ],
+    "if": "getrefine()>5",
+    "if_then": [
+      "+maxsp_flat",
+      "-100"
+    ]
+  },
+  "1644": [
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "ignore_mdef_all_%",
+      "Class_Boss",
+      "10+getrefine()"
+    ],
+    [
+      "+int",
+      "4"
+    ],
+    [
+      "ignore_mdef_all_%",
+      "Class_Normal",
+      "10+getrefine()"
+    ]
+  ],
+  "1645": {
+    "normal": [
+      [
+        "+matk_%",
+        "20"
+      ],
+      [
+        "whilehit_targetskill_%",
+        "\"NPC_WIDECURSE\"",
+        "5",
+        "10+getrefine("
+      ]
+    ],
+    "if": "getrefine()>=9",
+    "if_then": [
+      "+maxsp_flat",
+      "300"
+    ]
+  },
+  "1646": {
+    "normal": [
+      "dmg_skillid_%",
+      "\"WZ_STORMGUST\"",
+      "getrefine("
+    ],
+    "if": "getrefine()>9",
+    "if_then": [
+      "cast_rate_%",
+      "\"WZ_STORMGUST\"",
+      "-8"
+    ]
+  },
+  "1647": [
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "+int",
+      "4"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Holy"
+    ],
+    [
+      "cast_spell_on_skill",
+      "\"AL_HEAL\"",
+      "\"AL_BLESSING\"",
+      "max(getskilllv(\"AL_BLESSING\")",
+      "1)",
+      "20"
+    ]
+  ],
+  "1648": {
+    "normal": [
+      "+dex",
+      "1"
+    ],
+    "if": "getskilllv(\"SA_DRAGONOLOGY\")==5",
+    "if_then": [
+      "+int",
+      "3"
+    ]
+  },
   "1701": "No Script",
   "1702": "No Script",
+  "1703": [
+    [
+      "dmg_monsterid_%",
+      "1113",
+      "500"
+    ],
+    [
+      "dmg_monsterid_%",
+      "1031",
+      "500"
+    ],
+    [
+      "dmg_monsterid_%",
+      "1242",
+      "500"
+    ],
+    [
+      "dmg_monsterid_%",
+      "1002",
+      "500"
+    ]
+  ],
   "1704": "No Script",
   "1705": "No Script",
   "1706": "No Script",
@@ -1098,17 +5554,104 @@
   "1716": "No Script",
   "1718": "No Script",
   "1719": "No Script",
+  "1720": [
+    [
+      "+int",
+      "5"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Curse",
+      "5000"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Silence",
+      "5000"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Confusion",
+      "5000"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Blind",
+      "5000"
+    ],
+    [
+      "add_skill",
+      "\"AL_HEAL\"",
+      "1"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Holy"
+    ],
+    [
+      "add_skill",
+      "\"AL_CURE\"",
+      "1"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Poison",
+      "5000"
+    ]
+  ],
   "1721": "No Script",
   "1722": "No Script",
   "1723": [
     "+def_flat",
     "2+3*(getrefine()>5)+2*(getrefine()>8)"
   ],
+  "1724": [
+    [
+      "dropitem_monster_%",
+      "1765",
+      "RC_Dragon",
+      "300"
+    ],
+    [
+      "ignore_def_race_100%",
+      "RC_Dragon"
+    ]
+  ],
+  "1725": [
+    [
+      "+sprecovery_%",
+      "10"
+    ],
+    [
+      "+int",
+      "2"
+    ]
+  ],
   "1726": "No Script",
   "1727": "No Script",
   "1728": [
     "dmg_ranged_%",
     "20"
+  ],
+  "1729": [
+    [
+      "+int",
+      "5"
+    ],
+    [
+      "add_skill",
+      "\"AL_HEAL\"",
+      "1"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Holy"
+    ],
+    [
+      "add_skill",
+      "\"AL_CURE\"",
+      "1"
+    ]
   ],
   "1730": [
     "resist_element_%",
@@ -1137,6 +5680,73 @@
     "\"AC_DOUBLE\"",
     "GetSkillLv(\"AC_DOUBLE\")",
     "10"
+  ],
+  "1737": {
+    "normal": [
+      "+int",
+      "0"
+    ],
+    "autobonus": [
+      "+aspd_%",
+      "7"
+    ],
+    "autobonus_trigger": [
+      "10+(getrefine()*2)",
+      "7000",
+      "BF_WEAPON"
+    ]
+  },
+  "1738": [
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "55"
+    ],
+    [
+      "ignore_def_race_%",
+      "RC_DemiHuman",
+      "20"
+    ],
+    [
+      "ignore_def_race_%",
+      "RC_Player_Human",
+      "20"
+    ],
+    [
+      "+dex",
+      "2"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "55"
+    ]
+  ],
+  "1739": [
+    [
+      "+int",
+      "10"
+    ],
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "55"
+    ],
+    [
+      "+dex",
+      "2"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "55"
+    ]
   ],
   "1740": [
     "cast_spell_on_skill",
@@ -1168,6 +5778,23 @@
       "2"
     ]
   ],
+  "1745": [
+    [
+      "dmg_skillid_%",
+      "\"AC_DOUBLE\"",
+      "10"
+    ],
+    [
+      "dmg_skillid_%",
+      "\"AC_CHARGEARROW\"",
+      "10"
+    ],
+    [
+      "dmg_skillid_%",
+      "\"SN_SHARPSHOOTING\"",
+      "10"
+    ]
+  ],
   "1801": "No Script",
   "1802": "No Script",
   "1803": "No Script",
@@ -1188,15 +5815,186 @@
     "dmg_ranged_%",
     "20"
   ],
+  "18101": [
+    [
+      "+int",
+      "5"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Curse",
+      "5000"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Silence",
+      "5000"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Confusion",
+      "5000"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Blind",
+      "5000"
+    ],
+    [
+      "add_skill",
+      "\"AL_HEAL\"",
+      "1"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Holy"
+    ],
+    [
+      "add_skill",
+      "\"AL_CURE\"",
+      "1"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Poison",
+      "5000"
+    ]
+  ],
+  "18102": [
+    [
+      "+int",
+      "5"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Curse",
+      "5000"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Silence",
+      "5000"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Confusion",
+      "5000"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Blind",
+      "5000"
+    ],
+    [
+      "add_skill",
+      "\"AL_HEAL\"",
+      "1"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Holy"
+    ],
+    [
+      "add_skill",
+      "\"AL_CURE\"",
+      "1"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Poison",
+      "5000"
+    ]
+  ],
   "1811": "No Script",
   "1812": "No Script",
+  "1813": [
+    [
+      "dmg_element_%",
+      "Ele_Water",
+      "10"
+    ],
+    [
+      "dmg_element_%",
+      "Ele_Earth",
+      "10"
+    ],
+    [
+      "dmg_element_%",
+      "Ele_Fire",
+      "10"
+    ],
+    [
+      "dmg_element_%",
+      "Ele_Wind",
+      "10"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Wind"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Undead",
+      "5"
+    ]
+  ],
   "1814": [
     "+aspd_%",
     "12"
   ],
+  "1815": [
+    [
+      "+maxhp_%",
+      "-2"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Dark"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Bleeding",
+      "200"
+    ]
+  ],
   "1816": [
     "+aspd_%",
     "12"
+  ],
+  "1817": [
+    [
+      "+aspd_%",
+      "5"
+    ],
+    [
+      "dmg_element_%",
+      "Ele_Water",
+      "10"
+    ],
+    [
+      "dmg_element_%",
+      "Ele_Earth",
+      "10"
+    ],
+    [
+      "dmg_element_%",
+      "Ele_Fire",
+      "10"
+    ],
+    [
+      "dmg_element_%",
+      "Ele_Wind",
+      "10"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Wind"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Undead",
+      "5"
+    ]
   ],
   "1818": [
     "whileattacking_autospell",
@@ -1222,6 +6020,107 @@
     "5",
     "10"
   ],
+  "1822": [
+    [
+      "dmg_skillid_%",
+      "\"MO_CHAINCOMBO\"",
+      "15"
+    ],
+    [
+      "dmg_skillid_%",
+      "\"MO_COMBOFINISH\"",
+      "20"
+    ],
+    [
+      "dmg_skillid_%",
+      "\"MO_TRIPLEATTACK\"",
+      "15"
+    ]
+  ],
+  "1823": [
+    [
+      "+agi",
+      "1"
+    ],
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "95"
+    ],
+    [
+      "ignore_def_race_%",
+      "RC_DemiHuman",
+      "20"
+    ],
+    [
+      "ignore_def_race_%",
+      "RC_Player_Human",
+      "20"
+    ],
+    [
+      "+str",
+      "2"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "95"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"CH_SOULCOLLECT\"",
+      "1",
+      "5",
+      "0"
+    ]
+  ],
+  "1824": {
+    "normal": [
+      [
+        "+int",
+        "1"
+      ],
+      [
+        "cast_rate_%",
+        "MO_EXTREMITYFIST",
+        "-25"
+      ]
+    ],
+    "autobonus": [
+      "cast_rate_%",
+      "\\MO_EXTREMITYFIST\\",
+      "-100"
+    ],
+    "autobonus_trigger": [
+      "50",
+      "6000",
+      "BF_WEAPON"
+    ]
+  },
+  "1825": [
+    [
+      "whileattacking_autospell",
+      "\"MO_CALLSPIRITS\"",
+      "5",
+      "100"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"NPC_CRITICALWOUND\"",
+      "1",
+      "100"
+    ],
+    [
+      "cast_spell_on_skill",
+      "\"CH_PALMSTRIKE\"",
+      "\"MO_INVESTIGATE\"",
+      "1",
+      "100"
+    ]
+  ],
   "1828": [
     [
       "+int",
@@ -1241,18 +6140,95 @@
   "18500": "No Script",
   "18501": "No Script",
   "18502": "No Script",
+  "18503": [
+    [
+      "+matk_%",
+      "5"
+    ],
+    [
+      "+maxhp_%",
+      "10"
+    ],
+    [
+      "+maxsp_%",
+      "10"
+    ],
+    [
+      "dmg_melee_%",
+      "5"
+    ]
+  ],
   "18505": [
     "+vit",
     "1"
   ],
   "18506": "No Script",
   "18507": "No Script",
+  "18595": "No Script",
   "18596": [
     "add_skill",
     "\"WZ_HEAVENDRIVE\"",
     "3"
   ],
+  "18612": [
+    [
+      "+vit",
+      "2"
+    ],
+    [
+      "+luk",
+      "1"
+    ],
+    [
+      "unbreakable_helm"
+    ],
+    [
+      "+str",
+      "2"
+    ]
+  ],
+  "18613": [
+    [
+      "+dex",
+      "2"
+    ],
+    [
+      "+agi",
+      "1"
+    ],
+    [
+      "unbreakable_helm"
+    ],
+    [
+      "+int",
+      "2"
+    ]
+  ],
   "18620": "No Script",
+  "18656": [
+    [
+      "+str",
+      "2"
+    ],
+    [
+      "+int",
+      "2"
+    ],
+    [
+      "mdmg_race_%",
+      "RC_Demon",
+      "15"
+    ],
+    [
+      "+mdef_flat",
+      "10"
+    ],
+    [
+      "mdmg_race_%",
+      "RC_Undead",
+      "15"
+    ]
+  ],
   "1901": "No Script",
   "1902": "No Script",
   "1903": "No Script",
@@ -1271,6 +6247,31 @@
   ],
   "1911": "No Script",
   "1912": "No Script",
+  "1913": [
+    [
+      "+int",
+      "2"
+    ],
+    [
+      "+agi",
+      "1"
+    ],
+    [
+      "add_skill",
+      "\"WZ_JUPITEL\"",
+      "1"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"WZ_JUPITEL\"",
+      "1",
+      "100"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Wind"
+    ]
+  ],
   "1914": [
     "elementchange_weapon",
     "Ele_Fire"
@@ -1287,10 +6288,183 @@
     "elementchange_weapon",
     "Ele_Wind"
   ],
+  "1918": [
+    [
+      "dmg_skillid_%",
+      "\"BA_MUSICALSTRIKE\"",
+      "10"
+    ],
+    [
+      "dmg_skillid_%",
+      "\"CG_ARROWVULCAN\"",
+      "10"
+    ]
+  ],
+  "1919": [
+    [
+      "afterkill_spdrain",
+      "3"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"WZ_HEAVENDRIVE\"",
+      "3",
+      "30",
+      "1"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"NPC_WIDECONFUSE\"",
+      "2",
+      "100"
+    ]
+  ],
+  "1920": [
+    [
+      "+hprecovery_%",
+      "-100"
+    ],
+    [
+      "+dex",
+      "-readparam(bDex)"
+    ],
+    [
+      "+aspd_%",
+      "100"
+    ],
+    [
+      "regularly_lose_hp",
+      "50",
+      "5000"
+    ]
+  ],
   "1921": [
     "dmg_monstertype_%",
     "Class_All",
     "50"
+  ],
+  "1922": [
+    [
+      "dmg_skillid_%",
+      "\"BA_MUSICALSTRIKE\"",
+      "10"
+    ],
+    [
+      "dmg_skillid_%",
+      "\"CG_ARROWVULCAN\"",
+      "10"
+    ]
+  ],
+  "1923": [
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "95"
+    ],
+    [
+      "ignore_def_race_%",
+      "RC_DemiHuman",
+      "20"
+    ],
+    [
+      "ignore_def_race_%",
+      "RC_Player_Human",
+      "20"
+    ],
+    [
+      "+dex",
+      "2"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "95"
+    ]
+  ],
+  "1924": [
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "95"
+    ],
+    [
+      "dmg_skillid_%",
+      "\"CG_ARROWVULCAN\"",
+      "20"
+    ],
+    [
+      "+dex",
+      "2"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "95"
+    ]
+  ],
+  "1925": [
+    [
+      "+dex",
+      "3"
+    ],
+    [
+      "push_target_x_cells_back",
+      "\"CG_ARROWVULCAN\"",
+      "3"
+    ],
+    [
+      "+agi",
+      "2"
+    ],
+    [
+      "push_target_x_cells_back",
+      "\"BA_MUSICALSTRIKE\"",
+      "2"
+    ]
+  ],
+  "1926": {
+    "normal": [
+      "+int",
+      "2"
+    ],
+    "if": ";getrefine()>9;",
+    "if_then": [
+      "change_skill_behavior",
+      "\"BA_MUSICALSTRIKE\"",
+      "Eff_Stun",
+      "2000"
+    ],
+    "else": [
+      "change_skill_behavior",
+      "\"BA_MUSICALSTRIKE\"",
+      "Eff_Stun",
+      "1000"
+    ]
+  },
+  "1928": [
+    [
+      "+hprecovery_%",
+      "-100"
+    ],
+    [
+      "+dex",
+      "-readparam(bDex)"
+    ],
+    [
+      "+aspd_%",
+      "100"
+    ],
+    [
+      "regularly_lose_hp",
+      "50",
+      "5000"
+    ]
   ],
   "1929": [
     "dmg_size_%",
@@ -1324,6 +6498,16 @@
   ],
   "1960": "No Script",
   "1961": "No Script",
+  "1962": [
+    [
+      "+agi",
+      "1"
+    ],
+    [
+      "+dex",
+      "5"
+    ]
+  ],
   "1963": [
     [
       "elementchange_weapon",
@@ -1333,6 +6517,20 @@
       "whileattacking_badstatus",
       "Eff_Poison",
       "5000"
+    ]
+  ],
+  "1964": [
+    [
+      "+flee",
+      "10"
+    ],
+    [
+      "+perfectdodge",
+      "2"
+    ],
+    [
+      "+crit",
+      "5"
     ]
   ],
   "1965": [
@@ -1356,10 +6554,43 @@
     "Eff_Bleeding",
     "300"
   ],
+  "1970": [
+    [
+      "dmg_skillid_%",
+      "\"DC_THROWARROW\"",
+      "10"
+    ],
+    [
+      "dmg_skillid_%",
+      "\"CG_ARROWVULCAN\"",
+      "10"
+    ]
+  ],
   "1971": [
     "elementchange_weapon",
     "Ele_Wind"
   ],
+  "1972": {
+    "normal": [
+      [
+        "+agi",
+        "2"
+      ],
+      [
+        "whileattacking_autospell",
+        "\"WZ_JUPITEL\"",
+        "3",
+        "20"
+      ]
+    ],
+    "if": "getrefine()>0",
+    "if_then": [
+      "whileattacking_autospell",
+      "\"CG_ARROWVULCAN\"",
+      "getrefine()",
+      "50"
+    ]
+  },
   "1973": [
     [
       "afterkill_spdrain",
@@ -1379,10 +6610,123 @@
       "100"
     ]
   ],
+  "1974": {
+    "if": "getrefine()>0",
+    "if_then": [
+      "whileattacking_autospell",
+      "\"AL_INCAGI\"",
+      "getrefine()",
+      "10"
+    ]
+  },
   "1975": [
     "dmg_monstertype_%",
     "Class_All",
     "50"
+  ],
+  "1976": [
+    [
+      "dmg_skillid_%",
+      "\"DC_THROWARROW\"",
+      "10"
+    ],
+    [
+      "dmg_skillid_%",
+      "\"CG_ARROWVULCAN\"",
+      "10"
+    ]
+  ],
+  "1977": [
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "95"
+    ],
+    [
+      "ignore_def_race_%",
+      "RC_DemiHuman",
+      "20"
+    ],
+    [
+      "ignore_def_race_%",
+      "RC_Player_Human",
+      "20"
+    ],
+    [
+      "+dex",
+      "2"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "95"
+    ]
+  ],
+  "1978": [
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "95"
+    ],
+    [
+      "dmg_skillid_%",
+      "\"CG_ARROWVULCAN\"",
+      "20"
+    ],
+    [
+      "+dex",
+      "2"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "95"
+    ]
+  ],
+  "1979": {
+    "normal": [
+      "+int",
+      "2"
+    ],
+    "if": ";getrefine()>=9;",
+    "if_then": [
+      "change_skill_behavior",
+      "\"DC_THROWARROW\"",
+      "Eff_Freeze",
+      "2000"
+    ],
+    "else": [
+      "change_skill_behavior",
+      "\"DC_THROWARROW\"",
+      "Eff_Freeze",
+      "1000"
+    ]
+  },
+  "1980": [
+    [
+      "+dex",
+      "3"
+    ],
+    [
+      "push_target_x_cells_back",
+      "\"CG_ARROWVULCAN\"",
+      "3"
+    ],
+    [
+      "+agi",
+      "2"
+    ],
+    [
+      "push_target_x_cells_back",
+      "\"DC_THROWARROW\"",
+      "2"
+    ]
   ],
   "1982": [
     [
@@ -1400,6 +6744,123 @@
     "Size_All",
     "40"
   ],
+  "2000": [
+    [
+      "+int",
+      "3"
+    ],
+    [
+      "+agi",
+      "10"
+    ],
+    [
+      "skillspcost_%",
+      "(getrefine()*2)"
+    ],
+    [
+      "+matk_%",
+      "25+getrefine()/2"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"WZ_JUPITEL\"",
+      "5",
+      "(getrefine()*20)"
+    ],
+    [
+      "cast_rate_%",
+      "\"HW_MAGICPOWER\"",
+      "-50"
+    ]
+  ],
+  "2001": [
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "+dex",
+      "4"
+    ],
+    [
+      "resist_race_%",
+      "RC_Undead",
+      "15"
+    ],
+    [
+      "elementchange_weapon",
+      "Ele_Holy"
+    ],
+    [
+      "resist_race_%",
+      "RC_Demon",
+      "15"
+    ]
+  ],
+  "2003": [
+    [
+      "+int",
+      "3"
+    ],
+    [
+      "+agi",
+      "10"
+    ],
+    [
+      "skillspcost_%",
+      "(getrefine()*2)"
+    ],
+    [
+      "+matk_%",
+      "25+getrefine()/2"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"WZ_JUPITEL\"",
+      "5",
+      "(getrefine()*20)"
+    ],
+    [
+      "cast_rate_%",
+      "\"HW_MAGICPOWER\"",
+      "-50"
+    ]
+  ],
+  "2004": {
+    "normal": [
+      "+int",
+      "3+(getrefine()/2"
+    ],
+    "autobonus": [
+      "skillspcost_%",
+      "20"
+    ],
+    "autobonus_trigger": [
+      "1",
+      "5000",
+      "BF_MAGIC"
+    ]
+  },
+  "2005": {
+    "normal": [
+      "+vit",
+      "2"
+    ]
+  },
+  "2006": [
+    [
+      "elementchange_weapon",
+      "Ele_Holy"
+    ],
+    [
+      "+int",
+      "6"
+    ],
+    [
+      "+matk_flat",
+      "150"
+    ]
+  ],
   "2101": "No Script",
   "2102": "No Script",
   "2103": "No Script",
@@ -1414,11 +6875,111 @@
     "+mdef_flat",
     "5"
   ],
+  "2109": [
+    [
+      "+mdef_flat",
+      "2"
+    ],
+    [
+      "+int",
+      "1"
+    ]
+  ],
+  "2110": [
+    [
+      "+mdef_flat",
+      "2"
+    ],
+    [
+      "+vit",
+      "2"
+    ]
+  ],
+  "2111": [
+    [
+      "+int",
+      "2"
+    ],
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "unbreakable_shield"
+    ],
+    [
+      "+vit",
+      "3"
+    ]
+  ],
   "2112": "No Script",
+  "2113": [
+    [
+      "resist_element_%",
+      "Ele_Earth",
+      "20"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Fire",
+      "20"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Wind",
+      "20"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Poison",
+      "20"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Ghost",
+      "20"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Undead",
+      "20"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Water",
+      "20"
+    ]
+  ],
   "2114": [
     "resist_size_%",
     "Size_Large",
     "5"
+  ],
+  "2115": [
+    [
+      "resist_element_%",
+      "Ele_Fire",
+      "20"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Dark",
+      "20"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Undead",
+      "20"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Water",
+      "20"
+    ],
+    [
+      "+mdef_flat",
+      "5"
+    ]
   ],
   "2116": [
     "resist_race_%",
@@ -1435,15 +6996,239 @@
     "+mdef_flat",
     "5"
   ],
+  "2121": [
+    [
+      "+mdef_flat",
+      "2"
+    ],
+    [
+      "+int",
+      "1"
+    ]
+  ],
+  "2122": [
+    [
+      "resist_size_%",
+      "Size_Large",
+      "15"
+    ],
+    [
+      "resist_race_%",
+      "RC_Undead",
+      "10"
+    ],
+    [
+      "+mdef_flat",
+      "5"
+    ],
+    [
+      "resist_size_%",
+      "Size_Medium",
+      "15"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"NPC_MAGICMIRROR\"",
+      "7",
+      "150",
+      "BF_MAGIC",
+      "0"
+    ]
+  ],
+  "2123": [
+    [
+      "reflect_mdmg_chance_%",
+      "5"
+    ],
+    [
+      "+mdef_flat",
+      "2"
+    ]
+  ],
   "2124": [
     "+mdef_flat",
     "2"
+  ],
+  "2125": [
+    [
+      "resist_element_%",
+      "Ele_Fire",
+      "-20"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Water",
+      "-20"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Wind",
+      "-20"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Earth",
+      "-20"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Dark",
+      "-20"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Holy",
+      "-20"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Ghost",
+      "-20"
+    ],
+    [
+      "never_knockback"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Neutral",
+      "-20"
+    ]
   ],
   "2126": [
     "+mdef_flat",
     "3"
   ],
+  "2128": [
+    [
+      "+int",
+      "2"
+    ],
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "unbreakable_shield"
+    ],
+    [
+      "+vit",
+      "3"
+    ]
+  ],
+  "2129": [
+    [
+      "+sprecovery_%",
+      "3"
+    ],
+    [
+      "+int",
+      "1"
+    ],
+    [
+      "+hprecovery_%",
+      "3"
+    ]
+  ],
+  "2130": [
+    [
+      "skillspcost_%",
+      "10"
+    ],
+    [
+      "dmg_skillid_%",
+      "\"CR_SHIELDBOOMERANG\"",
+      "30"
+    ],
+    [
+      "+str",
+      "1"
+    ],
+    [
+      "dmg_skillid_%",
+      "\"PA_SHIELDCHAIN\"",
+      "30"
+    ]
+  ],
+  "2131": [
+    [
+      "+int",
+      "2"
+    ],
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "whilehit_badstatus_%",
+      "Eff_Stun",
+      "1000"
+    ]
+  ],
+  "2133": {
+    "normal": [
+      "dmg_monstertype_%",
+      "Class_All",
+      "1"
+    ],
+    "if": ";Class==Job_Lord_Knight;",
+    "if_then": [
+      "+aspd_%",
+      "-5"
+    ]
+  },
+  "2134": {
+    "normal": [
+      "+mdef_flat",
+      "3"
+    ],
+    "autobonus": [
+      "reflect_melee_orclord",
+      "(getrefine()*3"
+    ],
+    "autobonus_trigger": []
+  },
   "2135": "No Script",
+  "2137": [
+    [
+      "resist_element_%",
+      "Ele_Fire",
+      "20"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Dark",
+      "20"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Undead",
+      "20"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Water",
+      "20"
+    ],
+    [
+      "+mdef_flat",
+      "5"
+    ]
+  ],
+  "2138": [
+    [
+      "+maxhp_flat",
+      "500"
+    ],
+    [
+      "dmg_skillid_%",
+      "\"CR_SHIELDBOOMERANG\"",
+      "60"
+    ],
+    [
+      "+agi",
+      "-1"
+    ]
+  ],
   "2139": "No Script",
   "2199": "No Script",
   "2201": [
@@ -1531,6 +7316,16 @@
     "+int",
     "2"
   ],
+  "2236": [
+    [
+      "+luk",
+      "1"
+    ],
+    [
+      "+mdef_flat",
+      "1"
+    ]
+  ],
   "2237": "No Script",
   "2239": "No Script",
   "2240": "No Script",
@@ -1575,6 +7370,40 @@
     "resist_race_%",
     "RC_Insect",
     "10"
+  ],
+  "2254": [
+    [
+      "+agi",
+      "1"
+    ],
+    [
+      "+luk",
+      "1"
+    ],
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "resist_race_%",
+      "RC_Demon",
+      "3"
+    ]
+  ],
+  "2255": [
+    [
+      "+str",
+      "1"
+    ],
+    [
+      "+mdef_flat",
+      "2"
+    ],
+    [
+      "resist_race_%",
+      "RC_Angel",
+      "3"
+    ]
   ],
   "2256": [
     "+str",
@@ -1669,7 +7498,31 @@
     "1"
   ],
   "2288": "No Script",
+  "2289": [
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "10"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "10"
+    ]
+  ],
   "2290": "No Script",
+  "2291": [
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "3"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "3"
+    ]
+  ],
   "2292": [
     "resist_element_%",
     "Ele_Fire",
@@ -1706,6 +7559,16 @@
   "2315": "No Script",
   "2316": "No Script",
   "2317": "No Script",
+  "2318": [
+    [
+      "+int",
+      "1"
+    ],
+    [
+      "+mdef_flat",
+      "5"
+    ]
+  ],
   "2319": [
     [
       "+mdef_flat",
@@ -1736,6 +7599,22 @@
     "+mdef_flat",
     "5"
   ],
+  "2327": [
+    [
+      "resist_element_%",
+      "Ele_Dark",
+      "10"
+    ],
+    [
+      "+mdef_flat",
+      "5"
+    ],
+    [
+      "resist_race_%",
+      "RC_Demon",
+      "15"
+    ]
+  ],
   "2328": "No Script",
   "2329": "No Script",
   "2330": [
@@ -1748,6 +7627,16 @@
   ],
   "2332": "No Script",
   "2333": "No Script",
+  "2334": [
+    [
+      "+int",
+      "1"
+    ],
+    [
+      "+mdef_flat",
+      "5"
+    ]
+  ],
   "2335": [
     "+agi",
     "1"
@@ -1755,6 +7644,16 @@
   "2336": [
     "+agi",
     "1"
+  ],
+  "2337": [
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "+agi",
+      "1"
+    ]
   ],
   "2338": [
     "+mdef_flat",
@@ -1764,6 +7663,16 @@
   "2340": "No Script",
   "2341": "No Script",
   "2342": "No Script",
+  "2343": [
+    [
+      "+mdef_flat",
+      "4"
+    ],
+    [
+      "cast_rate_%",
+      "-3"
+    ]
+  ],
   "2344": [
     "elementchange_armor",
     "Ele_Fire"
@@ -1798,6 +7707,16 @@
   ],
   "2352": "No Script",
   "2353": "No Script",
+  "2354": [
+    [
+      "+maxhp_%",
+      "10"
+    ],
+    [
+      "+vit",
+      "2"
+    ]
+  ],
   "2355": [
     "+mdef_flat",
     "20"
@@ -1817,11 +7736,442 @@
     "+luk",
     "4"
   ],
+  "2359": [
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "+agi",
+      "1"
+    ]
+  ],
+  "2360": [
+    [
+      "+mdef_flat",
+      "4"
+    ],
+    [
+      "cast_rate_%",
+      "-3"
+    ]
+  ],
+  "2364": [
+    [
+      "resist_badstatus_%",
+      "Eff_Freeze",
+      "3001"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Stun",
+      "3000"
+    ]
+  ],
+  "2365": [
+    [
+      "cast_phencard"
+    ],
+    [
+      "cast_rate_%",
+      "15"
+    ]
+  ],
+  "2366": [
+    [
+      "resist_badstatus_%",
+      "Eff_Silence",
+      "500"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Stun",
+      "500"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Stone",
+      "500"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Sleep",
+      "500"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Curse",
+      "500"
+    ]
+  ],
+  "2367": [
+    [
+      "+crit",
+      "6+(readparam(bLuk)/10)"
+    ],
+    [
+      "cast_delay",
+      "-23"
+    ],
+    [
+      "+mdef_flat",
+      "5"
+    ]
+  ],
   "2371": "No Script",
+  "2372": [
+    [
+      "+int",
+      "1"
+    ],
+    [
+      "+mdef_flat",
+      "5"
+    ]
+  ],
+  "2373": [
+    [
+      "resist_element_%",
+      "Ele_Dark",
+      "10"
+    ],
+    [
+      "+mdef_flat",
+      "5"
+    ],
+    [
+      "resist_race_%",
+      "RC_Demon",
+      "15"
+    ]
+  ],
+  "2374": [
+    [
+      "+mdef_flat",
+      "5"
+    ],
+    [
+      "efficiency_healing_%",
+      "6"
+    ],
+    [
+      "cast_delay",
+      "-10"
+    ],
+    [
+      "+maxsp_flat",
+      "150"
+    ]
+  ],
+  "2375": [
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "+maxhp_flat",
+      "150"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Stone",
+      "500"
+    ],
+    [
+      "+str",
+      "2"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Stun",
+      "500"
+    ]
+  ],
+  "2376": [
+    [
+      "+mdef_flat",
+      "2"
+    ],
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "2"
+    ],
+    [
+      "+maxhp_flat",
+      "150"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "2"
+    ]
+  ],
+  "2377": [
+    [
+      "+mdef_flat",
+      "2"
+    ],
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "2"
+    ],
+    [
+      "+maxhp_flat",
+      "150"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "2"
+    ]
+  ],
+  "2378": [
+    [
+      "+mdef_flat",
+      "2"
+    ],
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "2"
+    ],
+    [
+      "+maxhp_flat",
+      "150"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "2"
+    ]
+  ],
+  "2379": [
+    [
+      "+mdef_flat",
+      "2"
+    ],
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "2"
+    ],
+    [
+      "+maxhp_flat",
+      "150"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "2"
+    ]
+  ],
+  "2380": [
+    [
+      "+mdef_flat",
+      "2"
+    ],
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "2"
+    ],
+    [
+      "+maxhp_flat",
+      "150"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "2"
+    ]
+  ],
+  "2381": [
+    [
+      "+mdef_flat",
+      "2"
+    ],
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "2"
+    ],
+    [
+      "+maxhp_flat",
+      "150"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "2"
+    ]
+  ],
+  "2382": [
+    [
+      "+mdef_flat",
+      "2"
+    ],
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "2"
+    ],
+    [
+      "+maxhp_flat",
+      "150"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "2"
+    ]
+  ],
+  "2383": [
+    [
+      "+maxhp_flat",
+      "20*BaseLevel"
+    ],
+    [
+      "+maxsp_flat",
+      "5*BaseLevel"
+    ],
+    [
+      "+matk_%",
+      "10"
+    ],
+    [
+      "unbreakable_armor"
+    ],
+    [
+      "never_knockback"
+    ],
+    [
+      "+mdef_flat",
+      "10"
+    ],
+    [
+      "dmg_monstertype_%",
+      "Class_All",
+      "10"
+    ]
+  ],
+  "2387": [
+    [
+      "+hprecovery_%",
+      "5"
+    ],
+    [
+      "efficiency_healingitem",
+      "3"
+    ],
+    [
+      "+vit",
+      "1"
+    ],
+    [
+      "efficiency_heal_skills",
+      "\"AL_HEAL\"",
+      "3"
+    ]
+  ],
+  "2388": [
+    [
+      "+flee",
+      "5"
+    ],
+    [
+      "+aspd_%",
+      "2"
+    ],
+    [
+      "+agi",
+      "1"
+    ]
+  ],
+  "2389": {
+    "normal": [
+      "+mdef_flat",
+      "2"
+    ],
+    "autobonus": [
+      "+atk_flat",
+      "20"
+    ],
+    "autobonus_trigger": [
+      "10",
+      "10000",
+      "BF_WEAPON"
+    ]
+  },
+  "2390": [
+    [
+      "+perfectdodge",
+      "3"
+    ],
+    [
+      "+mdef_flat",
+      "2"
+    ]
+  ],
+  "2391": [
+    [
+      "+mdef_flat",
+      "5"
+    ],
+    [
+      "+hprecovery_%",
+      "50"
+    ],
+    [
+      "+vit",
+      "2"
+    ]
+  ],
   "2393": "No Script",
+  "2394": [
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "7"
+    ],
+    [
+      "+maxhp_%",
+      "20"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "7"
+    ]
+  ],
+  "2395": [
+    [
+      "+sprecovery_%",
+      "10"
+    ],
+    [
+      "+maxhp_flat",
+      "600"
+    ]
+  ],
   "2396": [
     "+maxhp_flat",
     "500"
+  ],
+  "2398": [
+    [
+      "+crit",
+      "6+(readparam(bLuk)/10)"
+    ],
+    [
+      "cast_delay",
+      "-23"
+    ],
+    [
+      "+mdef_flat",
+      "5"
+    ]
   ],
   "2399": [
     "+mdef_flat",
@@ -1833,15 +8183,57 @@
   "2404": "No Script",
   "2405": "No Script",
   "2406": "No Script",
+  "2407": [
+    [
+      "+luk",
+      "5"
+    ],
+    [
+      "+mdef_flat",
+      "10"
+    ]
+  ],
   "2408": "No Script",
   "2409": [
     "+mdef_flat",
     "5"
   ],
+  "2410": [
+    [
+      "+maxhp_%",
+      "20"
+    ],
+    [
+      "+maxsp_%",
+      "20"
+    ],
+    [
+      "+sprecovery_%",
+      "15"
+    ],
+    [
+      "+movespeed_%",
+      "25"
+    ],
+    [
+      "+mdef_flat",
+      "10"
+    ]
+  ],
   "2411": "No Script",
   "2412": "No Script",
   "2413": "No Script",
   "2414": "No Script",
+  "2415": [
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "+luk",
+      "3"
+    ]
+  ],
   "2416": [
     "+maxhp_%",
     "5"
@@ -1857,6 +8249,30 @@
       "20"
     ]
   ],
+  "2418": [
+    [
+      "+maxsp_%",
+      "9"
+    ],
+    [
+      "+maxhp_%",
+      "9"
+    ]
+  ],
+  "2419": [
+    [
+      "+maxhp_%",
+      "5"
+    ],
+    [
+      "+maxsp_%",
+      "5"
+    ],
+    [
+      "+mdef_flat",
+      "3"
+    ]
+  ],
   "2420": [
     "+maxhp_flat",
     "100"
@@ -1865,11 +8281,59 @@
     "+mdef_flat",
     "10"
   ],
+  "2423": [
+    [
+      "+maxsp_%",
+      "20-getrefine()"
+    ],
+    [
+      "+def_flat",
+      "getrefine()/2"
+    ],
+    [
+      "+maxhp_%",
+      "20-getrefine()"
+    ]
+  ],
   "2424": [
     "resist_element_%",
     "Ele_Water",
     "5"
   ],
+  "2425": {
+    "normal": [
+      "+agi",
+      "1"
+    ],
+    "if": "getrefine()>=9",
+    "if_then": [
+      "+agi",
+      "2"
+    ]
+  },
+  "2426": {
+    "normal": [
+      "+mdef_flat",
+      "10"
+    ],
+    "if": "getskilllv(\"AS_CLOAKING\")<2",
+    "if_then": [
+      "whilehit_targetskill_%",
+      "\"AS_CLOAKING\"",
+      "2",
+      "100",
+      "BF_MAGIC",
+      "0"
+    ],
+    "else": [
+      "whilehit_targetskill_%",
+      "\"AS_CLOAKING\"",
+      "getskilllv(\"AS_CLOAKING\")",
+      "100",
+      "BF_MAGIC",
+      "0"
+    ]
+  },
   "2432": [
     "+mdef_flat",
     "5"
@@ -1878,11 +8342,175 @@
     "+maxhp_flat",
     "(BaseLevel*10)"
   ],
+  "2434": {
+    "normal": [
+      "+agi",
+      "1"
+    ],
+    "if": "getrefine()>=9",
+    "if_then": [
+      "+agi",
+      "2"
+    ]
+  },
+  "2435": [
+    [
+      "+mdef_flat",
+      "1"
+    ],
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "1"
+    ],
+    [
+      "+maxhp_flat",
+      "100"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "1"
+    ]
+  ],
+  "2436": [
+    [
+      "+mdef_flat",
+      "1"
+    ],
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "1"
+    ],
+    [
+      "+maxhp_flat",
+      "100"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "1"
+    ]
+  ],
+  "2437": [
+    [
+      "+mdef_flat",
+      "1"
+    ],
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "1"
+    ],
+    [
+      "+maxhp_flat",
+      "100"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "1"
+    ]
+  ],
+  "2438": [
+    [
+      "+agi",
+      "1"
+    ],
+    [
+      "+flee",
+      "5"
+    ]
+  ],
+  "2440": [
+    [
+      "+sprecovery_%",
+      "5"
+    ],
+    [
+      "+agi",
+      "1"
+    ]
+  ],
+  "2444": [
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "4"
+    ],
+    [
+      "+maxhp_%",
+      "10"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "4"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"AL_INCAGI\"",
+      "1",
+      "10"
+    ]
+  ],
+  "2445": [
+    [
+      "+maxsp_%",
+      "5"
+    ],
+    [
+      "+maxhp_%",
+      "5"
+    ]
+  ],
   "2446": [
     "+maxhp_%",
     "5"
   ],
   "2447": "No Script",
+  "2449": [
+    [
+      "+maxsp_%",
+      "20-getrefine()"
+    ],
+    [
+      "+def_flat",
+      "getrefine()/2"
+    ],
+    [
+      "+maxhp_%",
+      "20-getrefine()"
+    ]
+  ],
+  "2450": [
+    [
+      "efficiency_healing_consumable_%",
+      "5"
+    ],
+    [
+      "efficiency_healingitem",
+      "5"
+    ],
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "+vit",
+      "2"
+    ],
+    [
+      "+maxhp_%",
+      "10"
+    ],
+    [
+      "regularly_recover_hp",
+      "30",
+      "10000"
+    ]
+  ],
   "2501": "No Script",
   "2502": "No Script",
   "2503": "No Script",
@@ -1892,6 +8520,25 @@
   "2507": [
     "+agi",
     "1"
+  ],
+  "2508": [
+    [
+      "+mdef_flat",
+      "10"
+    ],
+    [
+      "unbreakable_garment"
+    ]
+  ],
+  "2509": [
+    [
+      "+vit",
+      "10"
+    ],
+    [
+      "+mdef_flat",
+      "5"
+    ]
   ],
   "2510": [
     "resist_element_%",
@@ -1907,10 +8554,54 @@
   "2513": "No Script",
   "2514": "No Script",
   "2515": "No Script",
+  "2516": [
+    [
+      "+perfectdodge",
+      "5"
+    ],
+    [
+      "+flee",
+      "15"
+    ]
+  ],
   "2517": [
     "resist_element_%",
     "Ele_Neutral",
     "15"
+  ],
+  "2518": [
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "+maxsp_%",
+      "10"
+    ]
+  ],
+  "2519": [
+    [
+      "+perfectdodge",
+      "8"
+    ],
+    [
+      "+luk",
+      "2"
+    ]
+  ],
+  "2520": [
+    [
+      "+mdef_flat",
+      "2"
+    ],
+    [
+      "+vit",
+      "1"
+    ],
+    [
+      "resist_ranged_%",
+      "10"
+    ]
   ],
   "2521": [
     "+hprecovery_%",
@@ -1966,6 +8657,235 @@
       "0"
     ]
   ],
+  "2535": [
+    [
+      "+mdef_flat",
+      "10"
+    ],
+    [
+      "+vit",
+      "10"
+    ]
+  ],
+  "2536": [
+    [
+      "+maxhp_flat",
+      "200"
+    ],
+    [
+      "+flee",
+      "10"
+    ],
+    [
+      "+mdef_flat",
+      "2"
+    ]
+  ],
+  "2537": [
+    [
+      "dmg_monsterid_%",
+      "1916",
+      "10"
+    ],
+    [
+      "dmg_monsterid_%",
+      "1917",
+      "10"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Neutral",
+      "5"
+    ],
+    [
+      "+maxhp_flat",
+      "100"
+    ]
+  ],
+  "2538": [
+    [
+      "+mdef_flat",
+      "1"
+    ],
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "1"
+    ],
+    [
+      "+maxhp_flat",
+      "50"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "1"
+    ]
+  ],
+  "2539": [
+    [
+      "+mdef_flat",
+      "1"
+    ],
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "1"
+    ],
+    [
+      "+maxhp_flat",
+      "50"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "1"
+    ]
+  ],
+  "2540": [
+    [
+      "+mdef_flat",
+      "1"
+    ],
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "1"
+    ],
+    [
+      "+maxhp_flat",
+      "50"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "1"
+    ]
+  ],
+  "2541": [
+    [
+      "+flee",
+      "30"
+    ],
+    [
+      "unbreakable_garment"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Water",
+      "30",
+      "BF_SHORT"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Earth",
+      "30",
+      "BF_SHORT"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Fire",
+      "30",
+      "BF_SHORT"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Wind",
+      "30",
+      "BF_SHORT"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Poison",
+      "30",
+      "BF_SHORT"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Holy",
+      "30",
+      "BF_SHORT"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Dark",
+      "30",
+      "BF_SHORT"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Ghost",
+      "30",
+      "BF_SHORT"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Undead",
+      "30",
+      "BF_SHORT"
+    ],
+    [
+      "+mdef_flat",
+      "5"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Neutral",
+      "30",
+      "BF_SHORT"
+    ],
+    [
+      "add_skill",
+      "\"AL_TELEPORT\"",
+      "1"
+    ]
+  ],
+  "2542": [
+    [
+      "+mdef_flat",
+      "2"
+    ],
+    [
+      "+matk_%",
+      "1"
+    ],
+    [
+      "+maxhp_%",
+      "5"
+    ],
+    [
+      "dmg_element_%",
+      "Ele_Fire",
+      "2"
+    ]
+  ],
+  "2544": [
+    [
+      "resist_element_%",
+      "Ele_Earth",
+      "5"
+    ],
+    [
+      "resist_race_%",
+      "RC_Plant",
+      "5"
+    ],
+    [
+      "resist_race_%",
+      "RC_Brute",
+      "5"
+    ],
+    [
+      "resist_race_%",
+      "RC_Player_Doram",
+      "5"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Water",
+      "5"
+    ]
+  ],
   "2545": [
     [
       "+mdef_flat",
@@ -1977,6 +8897,58 @@
       "max(1",
       "getskilllv(\"AL_HEAL\"))",
       "20"
+    ]
+  ],
+  "2548": [
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "10"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Water",
+      "5"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Fire",
+      "5"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Holy",
+      "5"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Dark",
+      "5"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "10"
+    ],
+    [
+      "+maxhp_%",
+      "10"
+    ]
+  ],
+  "2549": [
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "5"
+    ],
+    [
+      "+maxhp_%",
+      "5"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "5"
     ]
   ],
   "2551": [
@@ -1995,6 +8967,81 @@
       "200",
       "BF_MAGIC",
       "0"
+    ]
+  ],
+  "2553": [
+    [
+      "+mdef_flat",
+      "5"
+    ],
+    [
+      "+agi",
+      "1"
+    ]
+  ],
+  "2554": [
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Water",
+      "7"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Earth",
+      "7"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Fire",
+      "7"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Wind",
+      "7"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Poison",
+      "7"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Holy",
+      "7"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Dark",
+      "7"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Ghost",
+      "7"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Undead",
+      "7"
+    ],
+    [
+      "whileattacking_suck_sp_%",
+      "10",
+      "1"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Neutral",
+      "7"
+    ],
+    [
+      "+maxsp_flat",
+      "(BaseLevel/3)+(getrefine()*10)"
     ]
   ],
   "2601": [
@@ -2021,11 +9068,38 @@
     "+maxsp_flat",
     "10"
   ],
+  "2608": [
+    [
+      "+luk",
+      "2"
+    ],
+    [
+      "+mdef_flat",
+      "5"
+    ]
+  ],
   "2609": "No Script",
   "2610": "No Script",
   "2611": "No Script",
   "2612": "No Script",
   "2613": "No Script",
+  "2614": [
+    [
+      "resist_race_%",
+      "RC_Undead",
+      "4"
+    ],
+    [
+      "resist_race_%",
+      "RC_Demon",
+      "4"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Poison",
+      "10000"
+    ]
+  ],
   "2615": [
     "+mdef_flat",
     "3"
@@ -2046,6 +9120,18 @@
     "dmg_ranged_%",
     "3"
   ],
+  "2620": {
+    "if": "readparam(bStr)>=90",
+    "if_then": [
+      "+flee",
+      "10"
+    ],
+    "if_2": "readparam(bAgi)>=90",
+    "if_then_2": [
+      "+crit",
+      "10"
+    ]
+  },
   "2621": [
     "+str",
     "1"
@@ -2066,9 +9152,89 @@
     "+agi",
     "1"
   ],
+  "2626": [
+    [
+      "+luk",
+      "1"
+    ],
+    [
+      "+mdef_flat",
+      "3"
+    ]
+  ],
   "2627": "No Script",
   "2628": "No Script",
+  "2629": [
+    [
+      "+mdef_flat",
+      "7"
+    ],
+    [
+      "+str",
+      "40"
+    ]
+  ],
+  "2630": [
+    [
+      "+agi",
+      "6"
+    ],
+    [
+      "+vit",
+      "6"
+    ],
+    [
+      "+int",
+      "6"
+    ],
+    [
+      "+luk",
+      "10"
+    ],
+    [
+      "+mdef_flat",
+      "5"
+    ],
+    [
+      "+str",
+      "6"
+    ]
+  ],
   "2631": "No Script",
+  "2634": [
+    [
+      "add_skill",
+      "\"WE_FEMALE\"",
+      "1"
+    ],
+    [
+      "add_skill",
+      "\"WE_CALLPARTNER\"",
+      "1"
+    ],
+    [
+      "add_skill",
+      "\"WE_MALE\"",
+      "1"
+    ]
+  ],
+  "2635": [
+    [
+      "add_skill",
+      "\"WE_FEMALE\"",
+      "1"
+    ],
+    [
+      "add_skill",
+      "\"WE_CALLPARTNER\"",
+      "1"
+    ],
+    [
+      "add_skill",
+      "\"WE_MALE\"",
+      "1"
+    ]
+  ],
   "2636": [
     "+luk",
     "1"
@@ -2077,12 +9243,65 @@
     "+luk",
     "1"
   ],
+  "2638": [
+    [
+      "+luk",
+      "1"
+    ],
+    [
+      "+str",
+      "1"
+    ]
+  ],
+  "2639": [
+    [
+      "+agi",
+      "1"
+    ],
+    [
+      "+int",
+      "1"
+    ]
+  ],
+  "2640": [
+    [
+      "+int",
+      "1"
+    ],
+    [
+      "+agi",
+      "1"
+    ],
+    [
+      "+luk",
+      "1"
+    ],
+    [
+      "+mdef_flat",
+      "1"
+    ],
+    [
+      "+str",
+      "1"
+    ]
+  ],
   "2641": [
     "+str",
     "2"
   ],
   "2642": "No Script",
   "2643": "No Script",
+  "2644": [
+    [
+      "dmg_monstertype_%",
+      "Class_All",
+      "5"
+    ],
+    [
+      "+matk_%",
+      "5"
+    ]
+  ],
   "2645": [
     "+mdef_flat",
     "2"
@@ -2094,6 +9313,46 @@
   "2647": [
     "+maxhp_flat",
     "10"
+  ],
+  "2648": [
+    [
+      "+maxsp_%",
+      "5"
+    ],
+    [
+      "+int",
+      "1"
+    ]
+  ],
+  "2649": [
+    [
+      "+maxsp_%",
+      "5"
+    ],
+    [
+      "+int",
+      "1"
+    ]
+  ],
+  "2650": [
+    [
+      "+crit",
+      "3"
+    ],
+    [
+      "+atk_flat",
+      "5"
+    ]
+  ],
+  "2651": [
+    [
+      "+crit",
+      "3"
+    ],
+    [
+      "+str",
+      "2"
+    ]
   ],
   "2652": [
     [
@@ -2107,6 +9366,20 @@
     ]
   ],
   "2653": "No Script",
+  "2654": [
+    [
+      "+agi",
+      "1"
+    ],
+    [
+      "+mdef_flat",
+      "1"
+    ],
+    [
+      "+str",
+      "1"
+    ]
+  ],
   "2655": "No Script",
   "2656": [
     "+maxhp_flat",
@@ -2117,6 +9390,98 @@
     "+maxhp_flat",
     "10"
   ],
+  "2659": [
+    [
+      "+int",
+      "2"
+    ],
+    [
+      "+maxsp_%",
+      "5"
+    ],
+    [
+      "+mdef_flat",
+      "3"
+    ]
+  ],
+  "2660": [
+    [
+      "+str",
+      "3"
+    ],
+    [
+      "+atk_flat",
+      "10"
+    ],
+    [
+      "+mdef_flat",
+      "3"
+    ]
+  ],
+  "2661": [
+    [
+      "+agi",
+      "3"
+    ],
+    [
+      "+flee",
+      "5"
+    ],
+    [
+      "+mdef_flat",
+      "3"
+    ]
+  ],
+  "2662": [
+    [
+      "+dex",
+      "3"
+    ],
+    [
+      "+hit",
+      "10"
+    ],
+    [
+      "+mdef_flat",
+      "3"
+    ]
+  ],
+  "2663": [
+    [
+      "+str",
+      "1"
+    ],
+    [
+      "+hit",
+      "15"
+    ]
+  ],
+  "2664": [
+    [
+      "+int",
+      "1"
+    ],
+    [
+      "+dex",
+      "2"
+    ]
+  ],
+  "2665": [
+    [
+      "expbonus_race_%",
+      "RC_Demon",
+      "5"
+    ],
+    [
+      "+mdef_flat",
+      "1"
+    ],
+    [
+      "expbonus_race_%",
+      "RC_Undead",
+      "5"
+    ]
+  ],
   "2666": [
     [
       "+str",
@@ -2126,6 +9491,20 @@
       "resist_badstatus_%",
       "Eff_Blind",
       "1000"
+    ]
+  ],
+  "2667": [
+    [
+      "+crit",
+      "5"
+    ],
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "+hit",
+      "5"
     ]
   ],
   "2668": "No Script",
@@ -2142,6 +9521,16 @@
     "3"
   ],
   "2672": "No Script",
+  "2673": [
+    [
+      "+sprecovery_%",
+      "3"
+    ],
+    [
+      "+atk_flat",
+      "10"
+    ]
+  ],
   "2674": "No Script",
   "2675": [
     "+all_stats",
@@ -2151,6 +9540,164 @@
     "dropitem_monster_%",
     "7618",
     "100"
+  ],
+  "2677": [
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "+int",
+      "2"
+    ]
+  ],
+  "2678": [
+    [
+      "+vit",
+      "1"
+    ],
+    [
+      "+atk_flat",
+      "15"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"MO_EXPLOSIONSPIRITS\"",
+      "1",
+      "10"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"PA_PRESSURE\"",
+      "2",
+      "30"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"MG_FIREBALL\"",
+      "1",
+      "150"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"KN_BOWLINGBASH\"",
+      "5",
+      "20"
+    ],
+    [
+      "+str",
+      "2"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Fire",
+      "10"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"CH_SOULCOLLECT\"",
+      "1",
+      "30"
+    ]
+  ],
+  "2679": [
+    [
+      "+vit",
+      "1"
+    ],
+    [
+      "+mdef_flat",
+      "2"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"AL_HEAL\"",
+      "10",
+      "30"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"HP_ASSUMPTIO\"",
+      "3",
+      "20"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"CG_TAROTCARD\"",
+      "5",
+      "20"
+    ],
+    [
+      "+agi",
+      "2"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"WZ_QUAGMIRE\"",
+      "1",
+      "50",
+      "0"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"AS_SPLASHER\"",
+      "10",
+      "20"
+    ]
+  ],
+  "2680": [
+    [
+      "whileattacking_autospell",
+      "\"MC_IDENTIFY\"",
+      "1",
+      "50"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"TF_PICKSTONE\"",
+      "1",
+      "100"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"BS_GREED\"",
+      "1",
+      "10"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"TK_RUN\"",
+      "5",
+      "20"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"TK_HIGHJUMP\"",
+      "3",
+      "30"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"NV_FIRSTAID\"",
+      "1",
+      "100"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"TF_BACKSLIDING\"",
+      "1",
+      "50"
+    ],
+    [
+      "+all_stats",
+      "1"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"WZ_ESTIMATION\"",
+      "1",
+      "80"
+    ]
   ],
   "2681": [
     "+all_stats",
@@ -2209,14 +9756,100 @@
     "+agi",
     "4"
   ],
+  "2694": [
+    [
+      "+luk",
+      "4"
+    ],
+    [
+      "+mdef_flat",
+      "5"
+    ]
+  ],
   "2695": [
     "+mdef_flat",
     "5"
   ],
+  "2696": [
+    [
+      "+int",
+      "2"
+    ],
+    [
+      "+maxsp_%",
+      "5"
+    ],
+    [
+      "+mdef_flat",
+      "3"
+    ]
+  ],
+  "2697": [
+    [
+      "+str",
+      "3"
+    ],
+    [
+      "+atk_flat",
+      "10"
+    ],
+    [
+      "+mdef_flat",
+      "3"
+    ]
+  ],
+  "2698": [
+    [
+      "+agi",
+      "3"
+    ],
+    [
+      "+flee",
+      "5"
+    ],
+    [
+      "+mdef_flat",
+      "3"
+    ]
+  ],
+  "2699": [
+    [
+      "+dex",
+      "3"
+    ],
+    [
+      "+hit",
+      "10"
+    ],
+    [
+      "+mdef_flat",
+      "3"
+    ]
+  ],
   "2700": "No Script",
+  "2701": [
+    [
+      "+matk_%",
+      "3"
+    ],
+    [
+      "+dex",
+      "2"
+    ]
+  ],
   "2702": [
     "+agi",
     "2"
+  ],
+  "2703": [
+    [
+      "skillspcost_%",
+      "5"
+    ],
+    [
+      "cast_delay",
+      "-5"
+    ]
   ],
   "2704": [
     "+mdef_flat",
@@ -2240,6 +9873,30 @@
     "+atk_flat",
     "30"
   ],
+  "2711": [
+    [
+      "+dex",
+      "2"
+    ],
+    [
+      "+int",
+      "2"
+    ]
+  ],
+  "2712": [
+    [
+      "+agi",
+      "3"
+    ],
+    [
+      "+luk",
+      "3"
+    ],
+    [
+      "+vit",
+      "3"
+    ]
+  ],
   "2713": "No Script",
   "2714": "No Script",
   "2715": [
@@ -2253,12 +9910,348 @@
   ],
   "2717": "No Script",
   "2718": "No Script",
+  "2719": [
+    [
+      "dmg_skillid_%",
+      "\"MC_MAMMONITE\"",
+      "6"
+    ],
+    [
+      "dmg_skillid_%",
+      "\"SM_BASH\"",
+      "6"
+    ]
+  ],
+  "2720": [
+    [
+      "+hit",
+      "10"
+    ],
+    [
+      "+maxhp_flat",
+      "500"
+    ],
+    [
+      "+maxsp_flat",
+      "50"
+    ],
+    [
+      "dmg_monstertype_%",
+      "Class_All",
+      "5"
+    ],
+    [
+      "+matk_%",
+      "5"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Stun",
+      "100",
+      "ATF_SHORT"
+    ]
+  ],
+  "2721": [
+    [
+      "+flee",
+      "10"
+    ],
+    [
+      "+maxhp_flat",
+      "300"
+    ],
+    [
+      "+maxsp_flat",
+      "80"
+    ],
+    [
+      "dmg_monstertype_%",
+      "Class_All",
+      "5"
+    ],
+    [
+      "+matk_%",
+      "5"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Poison",
+      "100",
+      "ATF_SHORT"
+    ]
+  ],
+  "2722": [
+    [
+      "+mdef_flat",
+      "6"
+    ],
+    [
+      "+maxhp_flat",
+      "600"
+    ],
+    [
+      "dmg_monstertype_%",
+      "Class_All",
+      "5"
+    ],
+    [
+      "+matk_%",
+      "5"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Silence",
+      "100",
+      "ATF_SHORT"
+    ]
+  ],
+  "2723": [
+    [
+      "+mdef_flat",
+      "6"
+    ],
+    [
+      "+maxhp_flat",
+      "600"
+    ],
+    [
+      "whilehit_badstatus_%",
+      "Eff_Stone",
+      "100"
+    ],
+    [
+      "dmg_monstertype_%",
+      "Class_All",
+      "5"
+    ],
+    [
+      "+matk_%",
+      "5"
+    ]
+  ],
+  "2724": [
+    [
+      "+crit",
+      "10"
+    ],
+    [
+      "+maxhp_flat",
+      "300"
+    ],
+    [
+      "+maxsp_flat",
+      "80"
+    ],
+    [
+      "dmg_monstertype_%",
+      "Class_All",
+      "5"
+    ],
+    [
+      "+matk_%",
+      "5"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Blind",
+      "100",
+      "ATF_LONG"
+    ]
+  ],
+  "2725": [
+    [
+      "+aspd_%",
+      "10"
+    ],
+    [
+      "+maxhp_flat",
+      "500"
+    ],
+    [
+      "+maxsp_flat",
+      "50"
+    ],
+    [
+      "dmg_monstertype_%",
+      "Class_All",
+      "5"
+    ],
+    [
+      "+matk_%",
+      "5"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Curse",
+      "100",
+      "ATF_SHORT"
+    ]
+  ],
+  "2726": [
+    [
+      "+dex",
+      "3"
+    ],
+    [
+      "+maxsp_flat",
+      "50"
+    ]
+  ],
+  "2727": [
+    [
+      "+dex",
+      "3"
+    ],
+    [
+      "+maxsp_flat",
+      "50"
+    ]
+  ],
+  "2728": [
+    [
+      "+hprecovery_%",
+      "20"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"NPC_CRITICALWOUND\"",
+      "1",
+      "30"
+    ],
+    [
+      "+hit",
+      "10"
+    ]
+  ],
+  "2729": [
+    [
+      "+maxsp_flat",
+      "100"
+    ],
+    [
+      "efficiency_healing_%",
+      "5"
+    ],
+    [
+      "dmg_monsterid_%",
+      "1917",
+      "10"
+    ],
+    [
+      "+maxhp_flat",
+      "100"
+    ],
+    [
+      "dmg_monsterid_%",
+      "1916",
+      "10"
+    ]
+  ],
+  "2730": [
+    [
+      "+aspd_%",
+      "3"
+    ],
+    [
+      "+maxhp_flat",
+      "50"
+    ]
+  ],
+  "2731": [
+    [
+      "cast_rate_%",
+      "-1"
+    ],
+    [
+      "+maxsp_flat",
+      "50"
+    ]
+  ],
   "2732": [
     "+crit",
     "5"
   ],
+  "2733": [
+    [
+      "+crit",
+      "10"
+    ],
+    [
+      "+maxhp_flat",
+      "300"
+    ],
+    [
+      "+maxsp_flat",
+      "80"
+    ],
+    [
+      "dmg_monstertype_%",
+      "Class_All",
+      "5"
+    ],
+    [
+      "+matk_%",
+      "5"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Blind",
+      "100",
+      "ATF_LONG"
+    ]
+  ],
   "2734": "No Script",
   "2735": "No Script",
+  "2736": [
+    [
+      "+luk",
+      "3"
+    ],
+    [
+      "+mdef_flat",
+      "2"
+    ],
+    [
+      "+dex",
+      "3"
+    ]
+  ],
+  "2737": [
+    [
+      "+maxhp_%",
+      "10"
+    ],
+    [
+      "+vit",
+      "3"
+    ]
+  ],
+  "2743": {
+    "normal": [
+      "+mdef_flat",
+      "2"
+    ]
+  },
+  "2744": [
+    [
+      "cast_delay",
+      "-5"
+    ],
+    [
+      "cast_rate_%",
+      "-10"
+    ]
+  ],
+  "2745": [
+    [
+      "+maxsp_flat",
+      "25"
+    ],
+    [
+      "+mdef_flat",
+      "2"
+    ]
+  ],
   "2746": [
     "+agi",
     "3"
@@ -2266,6 +10259,63 @@
   "2747": [
     "+dex",
     "3"
+  ],
+  "2748": [
+    [
+      "+dex",
+      "2"
+    ],
+    [
+      "+luk",
+      "-1"
+    ],
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "regularly_lose_hp",
+      "50",
+      "10000"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Curse",
+      "200",
+      "ATF_WEAPON|ATF_LONG|ATF_TARGET"
+    ]
+  ],
+  "2749": [
+    [
+      "+agi",
+      "2"
+    ],
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "+mdef_flat",
+      "2"
+    ]
+  ],
+  "2751": {
+    "if": "BaseLevel<80",
+    "if_then": [
+      "+maxsp_flat",
+      "200"
+    ]
+  },
+  "2752": [
+    [
+      "dmg_monstertype_%",
+      "Class_All",
+      "5"
+    ],
+    [
+      "+matk_%",
+      "5"
+    ]
   ],
   "2753": [
     "expbonus_race_%",
@@ -2317,7 +10367,146 @@
     "RC_Dragon",
     "15"
   ],
+  "2763": [
+    [
+      "+matk_%",
+      "5"
+    ],
+    [
+      "+maxhp_%",
+      "5"
+    ],
+    [
+      "dmg_melee_%",
+      "5"
+    ],
+    [
+      "efficiency_heal_skills",
+      "\"AL_HEAL\"",
+      "5"
+    ],
+    [
+      "add_skill",
+      "\"MG_SIGHT\"",
+      "1"
+    ]
+  ],
   "2764": "No Script",
+  "2765": {
+    "normal": [
+      "+maxhp_flat",
+      "70"
+    ],
+    "if": "BaseJob==Job_Novice||BaseJob==Job_SuperNovice",
+    "if_then": [
+      "+maxhp_flat",
+      "30"
+    ]
+  },
+  "2766": {
+    "normal": [
+      "+vit",
+      "1"
+    ],
+    "if": "Class==Job_Swordman",
+    "if_then": [
+      "+def_flat",
+      "2"
+    ]
+  },
+  "2767": {
+    "normal": [
+      "+int",
+      "1"
+    ],
+    "if": "Class==Job_Acolyte",
+    "if_then": [
+      "+maxsp_flat",
+      "50"
+    ]
+  },
+  "2768": {
+    "normal": [
+      "+int",
+      "1"
+    ],
+    "if": "Class==Job_Mage",
+    "if_then": [
+      "+sprecovery_%",
+      "5"
+    ]
+  },
+  "2769": {
+    "normal": [
+      "+dex",
+      "1"
+    ],
+    "if": "Class==Job_Archer",
+    "if_then": [
+      "+atk_flat",
+      "10"
+    ]
+  },
+  "2770": {
+    "normal": [
+      "+agi",
+      "1"
+    ],
+    "if": "Class==Job_Thief",
+    "if_then": [
+      "+aspd_%",
+      "3"
+    ]
+  },
+  "2771": {
+    "normal": [
+      "+str",
+      "1"
+    ],
+    "if": "Class==Job_Merchant",
+    "if_then": [
+      "+crit",
+      "5"
+    ]
+  },
+  "2772": [
+    [
+      "+aspd_%",
+      "5"
+    ],
+    [
+      "cast_rate_%",
+      "-3"
+    ],
+    [
+      "efficiency_healing_%",
+      "5"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Wind",
+      "10"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Earth",
+      "10"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Fire",
+      "10"
+    ],
+    [
+      "+maxhp_flat",
+      "300"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Water",
+      "10"
+    ]
+  ],
   "2773": [
     "+all_stats",
     "2"
@@ -2336,10 +10525,143 @@
     "+int",
     "2"
   ],
+  "2779": [
+    [
+      "+agi",
+      "1"
+    ],
+    [
+      "+str",
+      "2"
+    ]
+  ],
+  "2780": {
+    "normal": [
+      "+mdef_flat",
+      "0"
+    ],
+    "autobonus": [
+      "+aspd_%",
+      "2"
+    ],
+    "autobonus_trigger": [
+      "10",
+      "10000",
+      "0"
+    ]
+  },
+  "2781": [
+    [
+      "+mdef_flat",
+      "1"
+    ],
+    [
+      "+all_stats",
+      "1"
+    ]
+  ],
+  "2782": [
+    [
+      "+maxsp_flat",
+      "20"
+    ],
+    [
+      "+maxhp_flat",
+      "50"
+    ]
+  ],
+  "2783": [
+    [
+      "+maxsp_flat",
+      "25"
+    ],
+    [
+      "+crit",
+      "2"
+    ]
+  ],
   "2784": [
     "add_skill",
     "\"ALL_WEWISH\"",
     "1"
+  ],
+  "2785": [
+    [
+      "+matk_%",
+      "3"
+    ],
+    [
+      "+dex",
+      "2"
+    ]
+  ],
+  "2786": [
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "+int",
+      "2"
+    ]
+  ],
+  "2787": [
+    [
+      "+mdef_flat",
+      "2"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Water",
+      "5"
+    ],
+    [
+      "+maxhp_flat",
+      "80"
+    ]
+  ],
+  "2788": [
+    [
+      "+int",
+      "1"
+    ],
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "+matk_%",
+      "2"
+    ]
+  ],
+  "2789": [
+    [
+      "+vit",
+      "1"
+    ],
+    [
+      "dmg_monstertype_%",
+      "Class_All",
+      "2"
+    ],
+    [
+      "+str",
+      "1"
+    ]
+  ],
+  "2790": [
+    [
+      "+aspd_%",
+      "2"
+    ],
+    [
+      "+agi",
+      "1"
+    ],
+    [
+      "+flee",
+      "4"
+    ]
   ],
   "2791": [
     "+hit",
@@ -2349,6 +10671,61 @@
     "+str",
     "2"
   ],
+  "2795": {
+    "normal": [
+      "+all_stats",
+      "6"
+    ],
+    "if": "JobLevel;<30",
+    "if_then": [
+      "+all_stats",
+      "(JobLevel/5"
+    ]
+  },
+  "2796": [
+    [
+      "mdmg_monsterid_%",
+      "2048",
+      "-10"
+    ],
+    [
+      "dmg_monsterid_%",
+      "2047",
+      "10"
+    ],
+    [
+      "dropitem_monsterid_%",
+      "6152",
+      "2047",
+      "70"
+    ]
+  ],
+  "2797": [
+    [
+      "mdmg_monsterid_%",
+      "2050",
+      "-10"
+    ],
+    [
+      "dmg_monsterid_%",
+      "2049",
+      "10"
+    ],
+    [
+      "dropitem_monsterid_%",
+      "6151",
+      "2049",
+      "70"
+    ]
+  ],
+  "2798": {
+    "if": "strcharinfo(3)==\"job3_arch02\"",
+    "if_then": [
+      "mdmg_monsterid_%",
+      "1762",
+      "50"
+    ]
+  },
   "2799": [
     "+mdef_flat",
     "1"
@@ -2391,10 +10768,174 @@
     "+dex",
     "1"
   ],
+  "2819": [
+    [
+      "add_skill",
+      "\"SM_PROVOKE\"",
+      "1"
+    ],
+    [
+      "add_skill",
+      "\"SM_MAGNUM\"",
+      "1"
+    ],
+    [
+      "+maxsp_flat",
+      "100"
+    ],
+    [
+      "add_skill",
+      "\"SM_BASH\"",
+      "1"
+    ]
+  ],
+  "2820": [
+    [
+      "whileattacking_doubleattack_%",
+      "15"
+    ],
+    [
+      "add_skill",
+      "\"TF_STEAL\"",
+      "1"
+    ],
+    [
+      "add_skill",
+      "\"TF_HIDING\"",
+      "1"
+    ],
+    [
+      "add_skill",
+      "\"TF_POISON\"",
+      "1"
+    ],
+    [
+      "+maxsp_flat",
+      "100"
+    ],
+    [
+      "add_skill",
+      "\"TF_DOUBLE\"",
+      "3"
+    ]
+  ],
+  "2821": [
+    [
+      "add_skill",
+      "\"AL_INCAGI\"",
+      "1"
+    ],
+    [
+      "add_skill",
+      "\"AL_BLESSING\"",
+      "1"
+    ],
+    [
+      "+maxsp_flat",
+      "100"
+    ],
+    [
+      "add_skill",
+      "\"AL_HEAL\"",
+      "1"
+    ]
+  ],
+  "2822": [
+    [
+      "add_skill",
+      "\"AC_CONCENTRATION\"",
+      "1"
+    ],
+    [
+      "+maxsp_flat",
+      "100"
+    ],
+    [
+      "add_skill",
+      "\"AC_OWL\"",
+      "1"
+    ]
+  ],
+  "2823": [
+    [
+      "add_skill",
+      "\"MC_OVERCHARGE\"",
+      "10"
+    ],
+    [
+      "add_skill",
+      "\"MC_IDENTIFY\"",
+      "1"
+    ],
+    [
+      "add_skill",
+      "\"MC_MAMMONITE\"",
+      "1"
+    ],
+    [
+      "+maxsp_flat",
+      "100"
+    ],
+    [
+      "add_skill",
+      "\"MC_DISCOUNT\"",
+      "1"
+    ]
+  ],
+  "2824": [
+    [
+      "add_skill",
+      "\"MG_COLDBOLT\"",
+      "1"
+    ],
+    [
+      "add_skill",
+      "\"MG_FIREWALL\"",
+      "1"
+    ],
+    [
+      "add_skill",
+      "\"MG_FIREBOLT\"",
+      "1"
+    ],
+    [
+      "+maxsp_flat",
+      "100"
+    ],
+    [
+      "add_skill",
+      "\"MG_SRECOVERY\"",
+      "1"
+    ]
+  ],
   "5001": [
     "resist_badstatus_%",
     "Eff_Curse",
     "1000"
+  ],
+  "5002": [
+    [
+      "+luk",
+      "1"
+    ],
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "+int",
+      "2"
+    ]
+  ],
+  "5003": [
+    [
+      "+mdef_flat",
+      "5"
+    ],
+    [
+      "+luk",
+      "2"
+    ]
   ],
   "5004": [
     "resist_badstatus_%",
@@ -2407,10 +10948,63 @@
     "3000"
   ],
   "5006": "No Script",
+  "5007": [
+    [
+      "+int",
+      "1"
+    ],
+    [
+      "+luk",
+      "1"
+    ],
+    [
+      "+mdef_flat",
+      "4"
+    ],
+    [
+      "+str",
+      "1"
+    ]
+  ],
   "5008": "No Script",
+  "5009": [
+    [
+      "unbreakable_helm"
+    ],
+    [
+      "+mdef_flat",
+      "3"
+    ]
+  ],
   "5010": "No Script",
   "5011": "No Script",
   "5012": "No Script",
+  "5013": [
+    [
+      "+str",
+      "5"
+    ],
+    [
+      "+agi",
+      "10"
+    ],
+    [
+      "+vit",
+      "10"
+    ],
+    [
+      "+int",
+      "5"
+    ],
+    [
+      "+luk",
+      "20"
+    ],
+    [
+      "+mdef_flat",
+      "10"
+    ]
+  ],
   "5014": "No Script",
   "5015": "No Script",
   "5016": "No Script",
@@ -2431,11 +11025,55 @@
     "+mdef_flat",
     "3"
   ],
+  "5021": [
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "+int",
+      "1"
+    ]
+  ],
+  "5022": [
+    [
+      "+int",
+      "2"
+    ],
+    [
+      "+str",
+      "3"
+    ]
+  ],
   "5023": "No Script",
   "5024": "No Script",
+  "5025": [
+    [
+      "+luk",
+      "1"
+    ],
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "+agi",
+      "1"
+    ]
+  ],
   "5026": [
     "+dex",
     "1"
+  ],
+  "5027": [
+    [
+      "+maxsp_flat",
+      "150"
+    ],
+    [
+      "+int",
+      "2"
+    ]
   ],
   "5028": "No Script",
   "5029": "No Script",
@@ -2450,6 +11088,16 @@
   "5035": "No Script",
   "5036": "No Script",
   "5037": "No Script",
+  "5038": [
+    [
+      "+int",
+      "1"
+    ],
+    [
+      "+str",
+      "1"
+    ]
+  ],
   "5039": "No Script",
   "5040": "No Script",
   "5041": "No Script",
@@ -2458,6 +11106,20 @@
   "5044": [
     "+vit",
     "1"
+  ],
+  "5045": [
+    [
+      "+agi",
+      "1"
+    ],
+    [
+      "+maxsp_flat",
+      "50"
+    ],
+    [
+      "+dex",
+      "1"
+    ]
   ],
   "5046": "No Script",
   "5047": "No Script",
@@ -2502,6 +11164,16 @@
     "RC_Fish",
     "10"
   ],
+  "5066": [
+    [
+      "+mdef_flat",
+      "10"
+    ],
+    [
+      "+int",
+      "1"
+    ]
+  ],
   "5067": [
     "+agi",
     "1"
@@ -2510,6 +11182,16 @@
     "+str",
     "1"
   ],
+  "5069": [
+    [
+      "+luk",
+      "1"
+    ],
+    [
+      "+agi",
+      "1"
+    ]
+  ],
   "5070": [
     "+str",
     "2"
@@ -2517,6 +11199,16 @@
   "5071": [
     "+dex",
     "1"
+  ],
+  "5072": [
+    [
+      "+mdef_flat",
+      "10"
+    ],
+    [
+      "+agi",
+      "1"
+    ]
   ],
   "5073": [
     "+dex",
@@ -2538,6 +11230,19 @@
   ],
   "5079": "No Script",
   "5080": "No Script",
+  "5081": [
+    [
+      "+int",
+      "2"
+    ],
+    [
+      "unbreakable_helm"
+    ],
+    [
+      "+maxsp_flat",
+      "100"
+    ]
+  ],
   "5082": "No Script",
   "5083": [
     "+mdef_flat",
@@ -2564,10 +11269,102 @@
     "+maxsp_flat",
     "100"
   ],
+  "5094": [
+    [
+      "+vit",
+      "1"
+    ],
+    [
+      "+str",
+      "2"
+    ]
+  ],
   "5096": "No Script",
   "5097": "No Script",
+  "5098": [
+    [
+      "+maxhp_flat",
+      "100"
+    ],
+    [
+      "+str",
+      "3"
+    ]
+  ],
+  "5099": [
+    [
+      "+mdef_flat",
+      "10"
+    ],
+    [
+      "resist_race_%",
+      "RC_Player_Doram",
+      "5"
+    ],
+    [
+      "+luk",
+      "2"
+    ],
+    [
+      "resist_race_%",
+      "RC_Brute",
+      "5"
+    ]
+  ],
+  "5100": [
+    [
+      "+agi",
+      "1"
+    ],
+    [
+      "+luk",
+      "1"
+    ],
+    [
+      "+str",
+      "1"
+    ]
+  ],
   "5101": "No Script",
   "5102": "No Script",
+  "5103": [
+    [
+      "+crit",
+      "5"
+    ],
+    [
+      "+agi",
+      "2"
+    ]
+  ],
+  "5104": [
+    [
+      "resist_badstatus_%",
+      "Eff_Stun",
+      "200"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Blind",
+      "10000"
+    ]
+  ],
+  "5105": [
+    [
+      "+maxsp_flat",
+      "80"
+    ],
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "dropitem_monster_%",
+      "7864",
+      "7",
+      "50"
+    ]
+  ],
   "5106": [
     "+luk",
     "1"
@@ -2609,9 +11406,55 @@
     "1"
   ],
   "5120": "No Script",
+  "5121": [
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "5"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "5"
+    ],
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "5"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "5"
+    ]
+  ],
   "5122": [
     "+str",
     "2"
+  ],
+  "5123": [
+    [
+      "+agi",
+      "1"
+    ],
+    [
+      "+dex",
+      "2"
+    ]
+  ],
+  "5124": [
+    [
+      "+int",
+      "2"
+    ],
+    [
+      "+maxsp_flat",
+      "50"
+    ],
+    [
+      "+mdef_flat",
+      "10"
+    ]
   ],
   "5125": [
     "+sprecovery_%",
@@ -2620,6 +11463,42 @@
   "5126": [
     "+int",
     "2"
+  ],
+  "5127": [
+    [
+      "+atk_flat",
+      "3"
+    ],
+    [
+      "+luk",
+      "2"
+    ]
+  ],
+  "5128": [
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "+vit",
+      "3"
+    ]
+  ],
+  "5129": [
+    [
+      "resist_race_%",
+      "RC_Player_Doram",
+      "10"
+    ],
+    [
+      "+agi",
+      "2"
+    ],
+    [
+      "resist_race_%",
+      "RC_Brute",
+      "10"
+    ]
   ],
   "5130": [
     [
@@ -2630,6 +11509,28 @@
     [
       "+mdef_flat",
       "1"
+    ]
+  ],
+  "5131": [
+    [
+      "+maxhp_%",
+      "3"
+    ],
+    [
+      "+vit",
+      "3"
+    ]
+  ],
+  "5132": [
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "10"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "10"
     ]
   ],
   "5133": [
@@ -2646,9 +11547,86 @@
     "50"
   ],
   "5136": "No Script",
+  "5137": [
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "10"
+    ],
+    [
+      "whileattacking_selfbadstatus",
+      "Eff_Sleep",
+      "10"
+    ],
+    [
+      "+str",
+      "1"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "10"
+    ]
+  ],
+  "5138": [
+    [
+      "cast_rate_%",
+      "-10"
+    ],
+    [
+      "skillspcost_%",
+      "20"
+    ],
+    [
+      "+mdef_flat",
+      "5"
+    ]
+  ],
+  "5139": [
+    [
+      "+int",
+      "1"
+    ],
+    [
+      "+mdef_flat",
+      "5"
+    ],
+    [
+      "+dex",
+      "1"
+    ]
+  ],
+  "5140": [
+    [
+      "resist_race_%",
+      "RC_Demon",
+      "5"
+    ],
+    [
+      "resist_race_%",
+      "RC_Undead",
+      "5"
+    ]
+  ],
   "5141": [
     "+str",
     "1"
+  ],
+  "5142": [
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "5"
+    ],
+    [
+      "+vit",
+      "1"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "5"
+    ]
   ],
   "5143": [
     "resist_badstatus_%",
@@ -2660,6 +11638,22 @@
     "5"
   ],
   "5145": "No Script",
+  "5146": [
+    [
+      "+vit",
+      "1"
+    ],
+    [
+      "resist_race_%",
+      "RC_Brute",
+      "7"
+    ],
+    [
+      "add_skill",
+      "\"WZ_WATERBALL\"",
+      "1"
+    ]
+  ],
   "5147": "No Script",
   "5148": [
     "+int",
@@ -2672,6 +11666,22 @@
   "5150": [
     "+movespeed_%",
     "25"
+  ],
+  "5151": [
+    [
+      "resist_badstatus_%",
+      "Eff_Freeze",
+      "1000"
+    ],
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Stun",
+      "1000"
+    ]
   ],
   "5152": [
     [
@@ -2737,10 +11747,88 @@
     "10"
   ],
   "5168": "No Script",
+  "5169": {
+    "if": "BaseClass==Job_Taekwon",
+    "if_then": [
+      "+crit",
+      "5"
+    ]
+  },
+  "5170": [
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "10"
+    ],
+    [
+      "+mdef_flat",
+      "1"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "10"
+    ]
+  ],
   "5171": [
     "+mdef_flat",
     "5"
   ],
+  "5172": [
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "10"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "10"
+    ]
+  ],
+  "5173": {
+    "if": "BaseClass==Job_Taekwon",
+    "if_then": [
+      "+hprecovery_%",
+      "3"
+    ]
+  },
+  "5174": {
+    "if": "BaseClass==Job_Taekwon",
+    "if_then": [
+      "+sprecovery_%",
+      "3"
+    ]
+  },
+  "5175": [
+    [
+      "+hit",
+      "-5"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Curse",
+      "500"
+    ],
+    [
+      "+mdef_flat",
+      "1"
+    ]
+  ],
+  "5176": {
+    "if": "BaseClass==Job_Taekwon",
+    "if_then": [
+      "+perfectdodge",
+      "2"
+    ]
+  },
+  "5177": {
+    "if": "BaseClass==Job_Taekwon",
+    "if_then": [
+      "+atk_flat",
+      "2*getrefine("
+    ]
+  },
   "5178": [
     "+all_stats",
     "1"
@@ -2757,12 +11845,121 @@
     "+str",
     "2"
   ],
+  "5182": [
+    [
+      "+agi",
+      "1"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"PR_GLORIA\"",
+      "1",
+      "10+20*(readparam(bAgi)>=77)"
+    ]
+  ],
+  "5183": [
+    [
+      "+agi",
+      "1"
+    ],
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Stun",
+      "1000"
+    ]
+  ],
   "5184": [
     "resist_element_%",
     "Ele_Water",
     "5"
   ],
+  "5185": [
+    [
+      "resist_badstatus_%",
+      "Eff_Curse",
+      "500"
+    ],
+    [
+      "+luk",
+      "3"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Blind",
+      "500"
+    ]
+  ],
+  "5186": [
+    [
+      "+int",
+      "1"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"AL_HEAL\"",
+      "1",
+      "50"
+    ]
+  ],
+  "5187": [
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "+maxsp_flat",
+      "30"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"NPC_STONESKIN\"",
+      "6",
+      "10"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"NPC_ANTIMAGIC\"",
+      "6",
+      "120",
+      "BF_MAGIC",
+      "0"
+    ]
+  ],
+  "5188": [
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "+int",
+      "1"
+    ]
+  ],
+  "5189": [
+    [
+      "+maxsp_flat",
+      "40"
+    ],
+    [
+      "+maxhp_flat",
+      "40"
+    ]
+  ],
   "5190": "No Script",
+  "5191": [
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "+int",
+      "1"
+    ]
+  ],
   "5192": [
     "+mdef_flat",
     "3"
@@ -2787,6 +11984,16 @@
     "+mdef_flat",
     "3"
   ],
+  "5198": [
+    [
+      "+flee",
+      "2"
+    ],
+    [
+      "+dex",
+      "1"
+    ]
+  ],
   "5199": "No Script",
   "5200": "No Script",
   "5201": "No Script",
@@ -2798,6 +12005,28 @@
   "5203": [
     "+movespeed_%",
     "25"
+  ],
+  "5204": [
+    [
+      "dropitem_monster_%",
+      "12130",
+      "30"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Blind",
+      "3000"
+    ]
+  ],
+  "5205": [
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "+all_stats",
+      "1"
+    ]
   ],
   "5206": [
     "resist_race_%",
@@ -2815,7 +12044,92 @@
       "5"
     ]
   ],
+  "5208": [
+    [
+      "whileattacking_suck_sp_%",
+      "10",
+      "4"
+    ],
+    [
+      "regularly_lose_hp",
+      "10",
+      "5000"
+    ],
+    [
+      "whileattacking_suck_hp_%",
+      "50",
+      "8"
+    ]
+  ],
   "5209": "No Script",
+  "5210": [
+    [
+      "+aspd_%",
+      "3"
+    ],
+    [
+      "+int",
+      "1"
+    ],
+    [
+      "+agi",
+      "1"
+    ],
+    [
+      "cast_rate_%",
+      "-3"
+    ]
+  ],
+  "5211": {
+    "normal": [
+      [
+        "efficiency_healing_%",
+        "5"
+      ],
+      [
+        "dmg_monstertype_%",
+        "Class_All",
+        "2"
+      ]
+    ],
+    "if": "getrefine()>=7",
+    "if_then": [
+      [
+        "dmg_monstertype_%",
+        "Class_All",
+        "1"
+      ],
+      [
+        "efficiency_healing_%",
+        "1"
+      ]
+    ]
+  },
+  "5212": [
+    [
+      "+maxsp_flat",
+      "10"
+    ],
+    [
+      "+maxhp_flat",
+      "50"
+    ],
+    [
+      "add_skill",
+      "\"AL_RUWACH\"",
+      "1"
+    ]
+  ],
+  "5213": [
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "+agi",
+      "2"
+    ]
+  ],
   "5214": [
     [
       "+dex",
@@ -2828,6 +12142,44 @@
       "50"
     ]
   ],
+  "5215": [
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "+int",
+      "1"
+    ],
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "resist_race_%",
+      "RC_Demon",
+      "3"
+    ]
+  ],
+  "5216": [
+    [
+      "+agi",
+      "1"
+    ],
+    [
+      "+flee",
+      "3"
+    ],
+    [
+      "+str",
+      "1"
+    ],
+    [
+      "resist_race_%",
+      "RC_Angel",
+      "3"
+    ]
+  ],
   "5217": [
     "+str",
     "2"
@@ -2836,13 +12188,139 @@
     "+int",
     "2"
   ],
+  "5219": [
+    [
+      "+flee",
+      "3"
+    ],
+    [
+      "+mdef_flat",
+      "18"
+    ]
+  ],
+  "5220": [
+    [
+      "resist_race_%",
+      "RC_Player_Doram",
+      "5"
+    ],
+    [
+      "+vit",
+      "1"
+    ],
+    [
+      "resist_race_%",
+      "RC_Brute",
+      "5"
+    ]
+  ],
   "5221": [
     "+flee",
     "5"
   ],
+  "5222": [
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "+agi",
+      "1"
+    ]
+  ],
   "5223": [
     "+agi",
     "2"
+  ],
+  "5224": [
+    [
+      "+vit",
+      "1"
+    ],
+    [
+      "+maxhp_%",
+      "10"
+    ],
+    [
+      "+str",
+      "2"
+    ]
+  ],
+  "5225": {
+    "normal": [
+      [
+        "+str",
+        "2"
+      ],
+      [
+        "whilehit_targetskill_%",
+        "\"HP_ASSUMPTIO\"",
+        "1",
+        "1",
+        "0"
+      ],
+      [
+        "resist_badstatus_%",
+        "Eff_Stun",
+        "1000"
+      ]
+    ],
+    "if": "BaseClass==Job_Acolyte",
+    "if_then": [
+      "cast_spell_on_skill",
+      "\"AL_HEAL\"",
+      "\"PR_LEXAETERNA\"",
+      "1",
+      "1000"
+    ]
+  },
+  "5226": [
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "+flee",
+      "10"
+    ],
+    [
+      "cast_rate_%",
+      "-getrefine()"
+    ],
+    [
+      "+agi",
+      "2"
+    ]
+  ],
+  "5227": [
+    [
+      "+int",
+      "1"
+    ],
+    [
+      "+str",
+      "1"
+    ]
+  ],
+  "5228": [
+    [
+      "+int",
+      "1"
+    ],
+    [
+      "+str",
+      "1"
+    ]
+  ],
+  "5229": [
+    [
+      "+int",
+      "1"
+    ],
+    [
+      "+str",
+      "1"
+    ]
   ],
   "5230": [
     [
@@ -2911,6 +12389,56 @@
     "+luk",
     "1"
   ],
+  "5238": [
+    [
+      "+maxsp_flat",
+      "150"
+    ],
+    [
+      "+int",
+      "2"
+    ]
+  ],
+  "5239": [
+    [
+      "+maxsp_flat",
+      "150"
+    ],
+    [
+      "+int",
+      "2"
+    ]
+  ],
+  "5240": [
+    [
+      "+maxsp_flat",
+      "150"
+    ],
+    [
+      "+int",
+      "2"
+    ]
+  ],
+  "5241": [
+    [
+      "+maxsp_flat",
+      "150"
+    ],
+    [
+      "+int",
+      "2"
+    ]
+  ],
+  "5242": [
+    [
+      "+maxsp_flat",
+      "150"
+    ],
+    [
+      "+int",
+      "2"
+    ]
+  ],
   "5243": [
     "resist_badstatus_%",
     "Eff_Freeze",
@@ -2926,6 +12454,44 @@
     "Eff_Blind",
     "500"
   ],
+  "5246": [
+    [
+      "+luk",
+      "1"
+    ],
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "+agi",
+      "1"
+    ],
+    [
+      "resist_race_%",
+      "RC_Demon",
+      "5"
+    ]
+  ],
+  "5247": [
+    [
+      "+luk",
+      "1"
+    ],
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "+agi",
+      "1"
+    ],
+    [
+      "resist_race_%",
+      "RC_Demon",
+      "5"
+    ]
+  ],
   "5248": [
     "resist_badstatus_%",
     "Eff_Blind",
@@ -2938,6 +12504,54 @@
   ],
   "5250": "No Script",
   "5251": "No Script",
+  "5252": [
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "+agi",
+      "1"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"PR_GLORIA\"",
+      "1",
+      "30"
+    ]
+  ],
+  "5253": [
+    [
+      "+mdef_flat",
+      "getrefine()"
+    ],
+    [
+      "+def_flat",
+      "getrefine()*-1"
+    ],
+    [
+      "+int",
+      "1"
+    ]
+  ],
+  "5254": {
+    "normal": [
+      [
+        "+crit",
+        "3"
+      ],
+      [
+        "resist_race_%",
+        "RC_Angel",
+        "-20"
+      ]
+    ],
+    "if": "getrefine()>=6",
+    "if_then": [
+      "+crit",
+      "getrefine()-5"
+    ]
+  },
   "5255": [
     [
       "+luk",
@@ -2948,6 +12562,18 @@
       "\"BS_GREED\"",
       "1",
       "50"
+    ]
+  ],
+  "5256": [
+    [
+      "+int",
+      "1"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"AL_HEAL\"",
+      "1",
+      "10"
     ]
   ],
   "5257": [
@@ -2962,6 +12588,81 @@
       "10"
     ]
   ],
+  "5258": [
+    [
+      "whilehit_targetskill_%",
+      "\"NV_FIRSTAID\"",
+      "1",
+      "300"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Neutral",
+      "1"
+    ]
+  ],
+  "5259": [
+    [
+      "+vit",
+      "1"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"WZ_WATERBALL\"",
+      "3",
+      "10"
+    ],
+    [
+      "add_skill",
+      "\"AL_HOLYWATER\"",
+      "1"
+    ]
+  ],
+  "5260": [
+    [
+      "+perfectdodge",
+      "5"
+    ],
+    [
+      "critical_damage_%",
+      "5"
+    ],
+    [
+      "+agi",
+      "1"
+    ]
+  ],
+  "5262": [
+    "+str",
+    "2"
+  ],
+  "5263": [
+    [
+      "resist_element_%",
+      "Ele_Earth",
+      "1"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Fire",
+      "1"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Wind",
+      "1"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Curse",
+      "300"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Water",
+      "1"
+    ]
+  ],
   "5264": [
     "+all_stats",
     "2"
@@ -2970,9 +12671,61 @@
     "+dex",
     "4"
   ],
+  "5266": [
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "10"
+    ],
+    [
+      "+mdef_flat",
+      "5"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "10"
+    ]
+  ],
   "5267": [
     "+agi",
     "3"
+  ],
+  "5268": [
+    [
+      "+int",
+      "3"
+    ],
+    [
+      "+luk",
+      "3"
+    ],
+    [
+      "+mdef_flat",
+      "4"
+    ],
+    [
+      "+str",
+      "3"
+    ]
+  ],
+  "5269": [
+    [
+      "+agi",
+      "1"
+    ],
+    [
+      "+aspd_%",
+      "3"
+    ],
+    [
+      "+movespeed_%",
+      "25"
+    ],
+    [
+      "+int",
+      "1"
+    ]
   ],
   "5270": [
     "+perfectdodge",
@@ -2995,6 +12748,94 @@
     "5",
     "50"
   ],
+  "5273": [
+    [
+      "+def_flat",
+      "4"
+    ],
+    [
+      "+movespeed_%",
+      "25"
+    ],
+    [
+      "add_skill",
+      "\"TF_HIDING\"",
+      "1"
+    ]
+  ],
+  "5274": [
+    [
+      "+def_flat",
+      "4"
+    ],
+    [
+      "+movespeed_%",
+      "25"
+    ],
+    [
+      "add_skill",
+      "\"TF_HIDING\"",
+      "1"
+    ]
+  ],
+  "5275": [
+    [
+      "+def_flat",
+      "4"
+    ],
+    [
+      "+movespeed_%",
+      "25"
+    ],
+    [
+      "add_skill",
+      "\"TF_HIDING\"",
+      "1"
+    ]
+  ],
+  "5276": [
+    [
+      "+def_flat",
+      "4"
+    ],
+    [
+      "+movespeed_%",
+      "25"
+    ],
+    [
+      "add_skill",
+      "\"TF_HIDING\"",
+      "1"
+    ]
+  ],
+  "5277": [
+    [
+      "+vit",
+      "2"
+    ],
+    [
+      "resist_ranged_%",
+      "10"
+    ],
+    [
+      "+luk",
+      "2"
+    ]
+  ],
+  "5278": [
+    [
+      "+vit",
+      "2"
+    ],
+    [
+      "resist_ranged_%",
+      "10"
+    ],
+    [
+      "+luk",
+      "2"
+    ]
+  ],
   "5279": [
     [
       "+mdef_flat",
@@ -3010,10 +12851,85 @@
     "+str",
     "1"
   ],
+  "5281": [
+    [
+      "+int",
+      "1"
+    ],
+    [
+      "+str",
+      "1"
+    ]
+  ],
   "5282": "No Script",
+  "5283": [
+    [
+      "+maxhp_flat",
+      "50"
+    ],
+    [
+      "+maxsp_flat",
+      "50"
+    ],
+    [
+      "whileattacking_doubleattack_%",
+      "10"
+    ],
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "3"
+    ],
+    [
+      "+luk",
+      "2"
+    ],
+    [
+      "add_skill",
+      "\"TF_DOUBLE\"",
+      "2"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "3"
+    ]
+  ],
+  "5284": [
+    [
+      "+agi",
+      "1"
+    ],
+    [
+      "+hprecovery_%",
+      "5"
+    ],
+    [
+      "+sprecovery_%",
+      "3"
+    ],
+    [
+      "+dex",
+      "1"
+    ]
+  ],
   "5285": [
     "+agi",
     "2"
+  ],
+  "5286": [
+    [
+      "+aspd_%",
+      "-10"
+    ],
+    [
+      "cast_rate_%",
+      "25"
+    ],
+    [
+      "+movespeed_%",
+      "25"
+    ]
   ],
   "5287": [
     "+vit",
@@ -3023,10 +12939,75 @@
     "+int",
     "1"
   ],
+  "5289": [
+    [
+      "+mdef_flat",
+      "5"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"MG_COLDBOLT\"",
+      "1",
+      "10"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"MG_LIGHTNINGBOLT\"",
+      "1",
+      "10"
+    ],
+    [
+      "unbreakable_helm"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"MG_FIREBOLT\"",
+      "1",
+      "10"
+    ]
+  ],
+  "5290": [
+    [
+      "+flee",
+      "2"
+    ],
+    [
+      "+dex",
+      "1"
+    ]
+  ],
+  "5291": [
+    [
+      "whileattacking_autospell",
+      "\"SA_DELUGE\"",
+      "2",
+      "10",
+      "0"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"WZ_WATERBALL\"",
+      "3",
+      "10"
+    ]
+  ],
   "5292": [
     "resist_race_%",
     "RC_Dragon",
     "5"
+  ],
+  "5293": [
+    [
+      "+dex",
+      "4"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"AL_DECAGI\"",
+      "1",
+      "30",
+      "1"
+    ]
   ],
   "5294": [
     [
@@ -3043,6 +13024,16 @@
     "+mdef_flat",
     "4"
   ],
+  "5296": [
+    [
+      "+crit",
+      "1"
+    ],
+    [
+      "+agi",
+      "1"
+    ]
+  ],
   "5297": [
     [
       "+all_stats",
@@ -3052,6 +13043,23 @@
       "regularly_recover_sp",
       "2",
       "10000"
+    ]
+  ],
+  "5298": [
+    [
+      "resist_element_%",
+      "Ele_Fire",
+      "-5"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Water",
+      "-5"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Neutral",
+      "5"
     ]
   ],
   "5299": [
@@ -3066,9 +13074,43 @@
   ],
   "5301": "No Script",
   "5302": "No Script",
+  "5303": [
+    [
+      "+maxhp_flat",
+      "50"
+    ],
+    [
+      "+mdef_flat",
+      "3"
+    ]
+  ],
+  "5304": [
+    [
+      "resist_badstatus_%",
+      "Eff_Blind",
+      "10000"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Curse",
+      "700"
+    ]
+  ],
   "5305": [
     "+atk_flat",
     "5"
+  ],
+  "5306": [
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "5"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "5"
+    ]
   ],
   "5307": [
     [
@@ -3106,6 +13148,48 @@
   "5311": [
     "+mdef_flat",
     "15"
+  ],
+  "5312": [
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "5"
+    ],
+    [
+      "+str",
+      "1"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "5"
+    ]
+  ],
+  "5313": [
+    [
+      "+matk_%",
+      "3"
+    ],
+    [
+      "cast_rate_%",
+      "-3"
+    ],
+    [
+      "+int",
+      "1"
+    ]
+  ],
+  "5314": [
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "5"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "5"
+    ]
   ],
   "5315": [
     "add_skill",
@@ -3145,22 +13229,308 @@
     ]
   ],
   "5321": "No Script",
+  "5322": [
+    [
+      "+flee",
+      "5"
+    ],
+    [
+      "+mdef_flat",
+      "2"
+    ]
+  ],
   "5323": [
     "+all_stats",
     "2"
+  ],
+  "5324": [
+    [
+      "+dex",
+      "3"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"CR_GRANDCROSS\"",
+      "3",
+      "30",
+      "0"
+    ]
+  ],
+  "5325": [
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "dmg_monstertype_%",
+      "Class_All",
+      "2"
+    ],
+    [
+      "+matk_%",
+      "2"
+    ]
+  ],
+  "5326": [
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "7"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "7"
+    ]
+  ],
+  "5327": [
+    [
+      "+vit",
+      "3"
+    ],
+    [
+      "+str",
+      "5"
+    ]
   ],
   "5328": [
     "+str",
     "1"
   ],
+  "5329": [
+    [
+      "resist_badstatus_%",
+      "Eff_Stun",
+      "500"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Blind",
+      "10000"
+    ]
+  ],
+  "5330": [
+    [
+      "resist_badstatus_%",
+      "Eff_Curse",
+      "1000"
+    ],
+    [
+      "+mdef_flat",
+      "15"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Curse",
+      "4000"
+    ]
+  ],
+  "5331": [
+    [
+      "+int",
+      "3"
+    ],
+    [
+      "+vit",
+      "3"
+    ]
+  ],
   "5332": [
     "+perfectdodge",
     "3"
+  ],
+  "5333": [
+    [
+      "+crit",
+      "5"
+    ],
+    [
+      "+flee",
+      "5"
+    ],
+    [
+      "+mdef_flat",
+      "5"
+    ],
+    [
+      "add_skill",
+      "\"MG_LIGHTNINGBOLT\"",
+      "1"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"MG_THUNDERSTORM\"",
+      "5",
+      "30",
+      "1"
+    ]
+  ],
+  "5334": [
+    [
+      "+mdef_flat",
+      "2"
+    ],
+    [
+      "+luk",
+      "2"
+    ]
+  ],
+  "5335": [
+    [
+      "unbreakable_helm"
+    ],
+    [
+      "+luk",
+      "1"
+    ]
   ],
   "5336": "No Script",
   "5337": "No Script",
   "5338": "No Script",
   "5339": "No Script",
+  "5340": [
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "5"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "5"
+    ],
+    [
+      "+str",
+      "2"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"AL_ANGELUS\"",
+      "10",
+      "20"
+    ]
+  ],
+  "5341": [
+    [
+      "aftermagickill_hpdrain",
+      "50"
+    ],
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "5"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "5"
+    ],
+    [
+      "+int",
+      "2"
+    ]
+  ],
+  "5342": {
+    "normal": [
+      [
+        "resist_race_%",
+        "RC_Player_Human",
+        "5"
+      ],
+      [
+        "+dex",
+        "2"
+      ]
+    ],
+    "autobonus": [
+      "+atk_flat",
+      "50"
+    ],
+    "autobonus_trigger": [
+      "20",
+      "10000",
+      "0"
+    ]
+  },
+  "5343": [
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "5"
+    ],
+    [
+      "efficiency_healingitem",
+      "504",
+      "10"
+    ],
+    [
+      "efficiency_healingitem",
+      "547",
+      "10"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "5"
+    ],
+    [
+      "+agi",
+      "2"
+    ]
+  ],
+  "5344": {
+    "normal": [
+      [
+        "resist_race_%",
+        "RC_Player_Human",
+        "5"
+      ],
+      [
+        "+vit",
+        "2"
+      ]
+    ],
+    "autobonus": [
+      "+aspd_%",
+      "5"
+    ],
+    "autobonus_trigger": [
+      "20",
+      "30000",
+      "0"
+    ]
+  },
+  "5345": [
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "5"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Undead",
+      "5"
+    ],
+    [
+      "mdmg_race_%",
+      "RC_Undead",
+      "5"
+    ],
+    [
+      "resist_race_%",
+      "RC_Undead",
+      "5"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "5"
+    ],
+    [
+      "+luk",
+      "2"
+    ]
+  ],
   "5346": "No Script",
   "5347": "No Script",
   "5348": [
@@ -3178,6 +13548,16 @@
     "10"
   ],
   "5352": "No Script",
+  "5353": [
+    [
+      "+int",
+      "2"
+    ],
+    [
+      "+str",
+      "3"
+    ]
+  ],
   "5354": [
     "cast_rate_%",
     "-5"
@@ -3186,9 +13566,122 @@
     "cast_rate_%",
     "-5"
   ],
+  "5356": [
+    [
+      "dmg_race_%",
+      "RC_Demon",
+      "5"
+    ],
+    [
+      "resist_race_%",
+      "RC_Demon",
+      "5"
+    ]
+  ],
+  "5357": [
+    [
+      "unbreakable_helm"
+    ],
+    [
+      "+mdef_flat",
+      "10"
+    ]
+  ],
+  "5358": [
+    [
+      "+mdef_flat",
+      "2"
+    ],
+    [
+      "unbreakable_helm"
+    ],
+    [
+      "+agi",
+      "1"
+    ]
+  ],
+  "5359": [
+    [
+      "dmg_ranged_%",
+      "7"
+    ],
+    [
+      "+maxhp_flat",
+      "100"
+    ],
+    [
+      "+dex",
+      "1"
+    ]
+  ],
+  "5360": [
+    [
+      "+crit",
+      "3"
+    ],
+    [
+      "critical_damage_%",
+      "10"
+    ],
+    [
+      "+def_%",
+      "-50"
+    ],
+    [
+      "+softdef_%",
+      "-50"
+    ],
+    [
+      "+flee",
+      "10"
+    ]
+  ],
+  "5361": {
+    "normal": [
+      "+atk_flat",
+      "5"
+    ],
+    "if": "BaseJob==Job_Rogue",
+    "if_then": [
+      "add_skill",
+      "\"RG_GANGSTER\"",
+      "1"
+    ]
+  },
   "5362": [
     "+matk_%",
     "1"
+  ],
+  "5363": [
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "-10"
+    ],
+    [
+      "resist_allmonster_%",
+      "Class_Boss",
+      "10"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "-10"
+    ]
+  ],
+  "5364": [
+    [
+      "+int",
+      "1"
+    ],
+    [
+      "+agi",
+      "2"
+    ],
+    [
+      "+str",
+      "1"
+    ]
   ],
   "5365": [
     [
@@ -3231,6 +13724,64 @@
     "+int",
     "1"
   ],
+  "5371": [
+    [
+      "+maxsp_flat",
+      "30"
+    ],
+    [
+      "+luk",
+      "1"
+    ]
+  ],
+  "5372": [
+    [
+      "cast_delay",
+      "-3"
+    ],
+    [
+      "+matk_%",
+      "3"
+    ],
+    [
+      "+maxsp_%",
+      "3"
+    ],
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "+int",
+      "1"
+    ]
+  ],
+  "5373": [
+    [
+      "+mdef_flat",
+      "1"
+    ],
+    [
+      "+dex",
+      "3"
+    ]
+  ],
+  "5374": [
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "12"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "12"
+    ],
+    [
+      "+atk_flat",
+      "(JobLevel*2)/7"
+    ]
+  ],
   "5375": [
     [
       "+str",
@@ -3254,6 +13805,18 @@
       "300"
     ]
   ],
+  "5377": [
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "2"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "2"
+    ]
+  ],
   "5378": [
     [
       "+agi",
@@ -3266,16 +13829,111 @@
       "10"
     ]
   ],
+  "5379": [
+    [
+      "+matk_%",
+      "2+(getrefine()/2)"
+    ],
+    [
+      "+mdef_flat",
+      "2"
+    ]
+  ],
   "5380": [
     "whileattacking_autospell",
     "\"SA_FROSTWEAPON\"",
     "1",
     "5"
   ],
+  "5381": [
+    [
+      "resist_element_%",
+      "Ele_Dark",
+      "3"
+    ],
+    [
+      "+mdef_flat",
+      "2"
+    ],
+    [
+      "dmg_element_%",
+      "Ele_Dark",
+      "3"
+    ]
+  ],
+  "5382": [
+    [
+      "+vit",
+      "1"
+    ],
+    [
+      "add_skill",
+      "\"AL_ANGELUS\"",
+      "1"
+    ]
+  ],
+  "5383": [
+    [
+      "dmg_race_%",
+      "RC_Player_Doram",
+      "10"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "5"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "5"
+    ],
+    [
+      "+luk",
+      "1"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Brute",
+      "10"
+    ]
+  ],
+  "5384": [
+    [
+      "+luk",
+      "3"
+    ],
+    [
+      "add_skill",
+      "\"WZ_ESTIMATION\"",
+      "1"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"AL_INCAGI\"",
+      "1",
+      "500"
+    ]
+  ],
   "5385": [
     "add_skill",
     "\"TF_HIDING\"",
     "1"
+  ],
+  "5386": [
+    [
+      "+flee",
+      "7"
+    ],
+    [
+      "+mdef_flat",
+      "7"
+    ],
+    [
+      "dropitem_monster_%",
+      "12198",
+      "200"
+    ]
   ],
   "5387": [
     "+mdef_flat",
@@ -3290,6 +13948,16 @@
     [
       "whileattacking_doubleattack_%",
       "25"
+    ]
+  ],
+  "5389": [
+    [
+      "+hit",
+      "15"
+    ],
+    [
+      "+str",
+      "2"
     ]
   ],
   "5390": [
@@ -3312,7 +13980,37 @@
     "+luk",
     "2"
   ],
+  "5393": [
+    [
+      "+maxhp_%",
+      "7"
+    ],
+    [
+      "+maxsp_%",
+      "7"
+    ]
+  ],
   "5394": "No Script",
+  "5395": [
+    [
+      "+luk",
+      "3"
+    ],
+    [
+      "+maxhp_flat",
+      "100+(getrefine()*20)"
+    ]
+  ],
+  "5396": [
+    [
+      "+vit",
+      "1"
+    ],
+    [
+      "+dex",
+      "3"
+    ]
+  ],
   "5397": [
     [
       "resist_element_%",
@@ -3322,6 +14020,26 @@
     [
       "unbreakable_helm",
       "0"
+    ]
+  ],
+  "5398": [
+    [
+      "+mdef_flat",
+      "5"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Bleeding",
+      "500"
+    ],
+    [
+      "+str",
+      "2"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Stun",
+      "500"
     ]
   ],
   "5399": [
@@ -3340,6 +14058,42 @@
     "+luk",
     "1"
   ],
+  "5401": [
+    [
+      "+mdef_flat",
+      "2"
+    ],
+    [
+      "unbreakable_helm",
+      "0"
+    ],
+    [
+      "+int",
+      "1"
+    ]
+  ],
+  "5402": [
+    [
+      "+perfectdodge",
+      "3"
+    ],
+    [
+      "unbreakable_helm",
+      "0"
+    ]
+  ],
+  "5403": [
+    [
+      "efficiency_healingitem",
+      "579",
+      "25"
+    ],
+    [
+      "dropitem_monster_%",
+      "579",
+      "500"
+    ]
+  ],
   "5404": [
     "whilehit_targetskill_%",
     "\"AC_CONCENTRATION\"",
@@ -3351,9 +14105,68 @@
     "reflect_melee_orclord",
     "1"
   ],
+  "5406": [
+    [
+      "+maxsp_flat",
+      "10"
+    ],
+    [
+      "+maxhp_flat",
+      "80"
+    ]
+  ],
   "5407": [
     "+maxsp_flat",
     "30"
+  ],
+  "5408": [
+    [
+      "+maxsp_flat",
+      "50"
+    ],
+    [
+      "cast_rate_%",
+      "10"
+    ],
+    [
+      "+int",
+      "2"
+    ]
+  ],
+  "5409": [
+    [
+      "+vit",
+      "2"
+    ],
+    [
+      "+maxsp_flat",
+      "50"
+    ],
+    [
+      "+int",
+      "2"
+    ]
+  ],
+  "5410": [
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "4"
+    ],
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "4"
+    ],
+    [
+      "+maxhp_flat",
+      "100"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Stun",
+      "400"
+    ]
   ],
   "5411": [
     "+dex",
@@ -3382,6 +14195,84 @@
       "1"
     ]
   ],
+  "5415": [
+    [
+      "+crit",
+      "5"
+    ],
+    [
+      "+flee",
+      "5"
+    ],
+    [
+      "+perfectdodge",
+      "5"
+    ],
+    [
+      "+aspd_%",
+      "5"
+    ],
+    [
+      "cast_rate_%",
+      "-5"
+    ],
+    [
+      "cast_delay",
+      "-5"
+    ],
+    [
+      "+mdef_flat",
+      "5"
+    ]
+  ],
+  "5416": [
+    [
+      "add_skill",
+      "\"MG_SRECOVERY\"",
+      "3"
+    ],
+    [
+      "+perfectdodge",
+      "5"
+    ],
+    [
+      "add_skill",
+      "\"SM_RECOVERY\"",
+      "3"
+    ]
+  ],
+  "5417": [
+    [
+      "+int",
+      "1"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Silence",
+      "10000"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"DC_SCREAM\"",
+      "1",
+      "50"
+    ]
+  ],
+  "5418": [
+    [
+      "skillspcost_%",
+      "10"
+    ],
+    [
+      "+str",
+      "1"
+    ],
+    [
+      "dmg_monstertype_%",
+      "Class_All",
+      "3"
+    ]
+  ],
   "5419": [
     [
       "+vit",
@@ -3393,6 +14284,123 @@
       "5"
     ]
   ],
+  "5420": [
+    [
+      "+int",
+      "1"
+    ],
+    [
+      "+mdef_flat",
+      "5"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Water",
+      "-10"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"MG_FIREBOLT\"",
+      "3",
+      "50"
+    ],
+    [
+      "+str",
+      "1"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Fire",
+      "10"
+    ],
+    [
+      "add_skill",
+      "\"MG_SIGHT\"",
+      "1"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"WZ_METEOR\"",
+      "3",
+      "50"
+    ]
+  ],
+  "5421": [
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "dmg_skillid_%",
+      "\"WZ_FIREPILLAR\"",
+      "2"
+    ],
+    [
+      "dmg_skillid_%",
+      "\"WZ_METEOR\"",
+      "2"
+    ],
+    [
+      "dmg_skillid_%",
+      "\"SM_BASH\"",
+      "2"
+    ],
+    [
+      "dmg_skillid_%",
+      "\"SM_MAGNUM\"",
+      "2"
+    ],
+    [
+      "dmg_skillid_%",
+      "\"KN_PIERCE\"",
+      "2"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Fire",
+      "5"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Water",
+      "-5"
+    ],
+    [
+      "+str",
+      "1"
+    ],
+    [
+      "dmg_skillid_%",
+      "\"MG_FIREBOLT\"",
+      "2"
+    ]
+  ],
+  "5422": [
+    [
+      "+mdef_flat",
+      "2"
+    ],
+    [
+      "+int",
+      "1"
+    ]
+  ],
+  "5423": [
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "10"
+    ],
+    [
+      "+dex",
+      "3"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "10"
+    ]
+  ],
   "5424": "No Script",
   "5425": "No Script",
   "5426": [
@@ -3402,6 +14410,28 @@
   "5427": [
     "+agi",
     "1"
+  ],
+  "5428": [
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "12"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "12"
+    ]
+  ],
+  "5429": [
+    [
+      "+sprecovery_%",
+      "5"
+    ],
+    [
+      "+hprecovery_%",
+      "5"
+    ]
   ],
   "5430": [
     [
@@ -3430,6 +14460,31 @@
   "5432": "No Script",
   "5433": "No Script",
   "5435": "No Script",
+  "5436": [
+    [
+      "+mdef_flat",
+      "2"
+    ],
+    [
+      "+luk",
+      "3"
+    ]
+  ],
+  "5437": [
+    [
+      "+mdef_flat",
+      "1"
+    ],
+    [
+      "+int",
+      "1"
+    ],
+    [
+      "resist_race_%",
+      "RC_Insect",
+      "5"
+    ]
+  ],
   "5438": [
     "+maxsp_flat",
     "20"
@@ -3445,6 +14500,20 @@
   "5441": [
     "+maxsp_flat",
     "20"
+  ],
+  "5442": [
+    [
+      "+hit",
+      "-5"
+    ],
+    [
+      "skillspcost_%",
+      "5"
+    ],
+    [
+      "+vit",
+      "1"
+    ]
   ],
   "5443": [
     [
@@ -3467,9 +14536,184 @@
     "+maxsp_flat",
     "5"
   ],
+  "5446": [
+    [
+      "+perfectdodge",
+      "3"
+    ],
+    [
+      "+flee",
+      "5"
+    ]
+  ],
+  "5447": [
+    [
+      "mdmg_race_%",
+      "RC_Insect",
+      "12"
+    ],
+    [
+      "+mdef_flat",
+      "1"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Insect",
+      "12"
+    ]
+  ],
   "5448": "No Script",
   "5449": "No Script",
   "5450": "No Script",
+  "5451": [
+    [
+      "+all_stats",
+      "3"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "5"
+    ],
+    [
+      "+aspd_%",
+      "10"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "5"
+    ]
+  ],
+  "5452": [
+    [
+      "+all_stats",
+      "2"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "3"
+    ],
+    [
+      "+aspd_%",
+      "7"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "3"
+    ]
+  ],
+  "5453": [
+    [
+      "+all_stats",
+      "2"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "1"
+    ],
+    [
+      "+aspd_%",
+      "5"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "1"
+    ]
+  ],
+  "5454": {
+    "normal": [
+      "+int",
+      "1"
+    ],
+    "autobonus": [
+      "ignore_mdef_all_%",
+      "Class_Boss",
+      "100"
+    ],
+    "autobonus_trigger": [
+      "10",
+      "3000",
+      "BF_MAGIC"
+    ]
+  },
+  "5455": [
+    [
+      "whilehit_targetskill_%",
+      "\"AL_HEAL\"",
+      "5",
+      "30"
+    ],
+    [
+      "+int",
+      "1"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"AL_HEAL\"",
+      "5",
+      "50"
+    ]
+  ],
+  "5456": [
+    [
+      "+hprecovery_%",
+      "20"
+    ],
+    [
+      "+sprecovery_%",
+      "15"
+    ],
+    [
+      "+vit",
+      "5"
+    ]
+  ],
+  "5457": {
+    "normal": [
+      "+matk_%",
+      "5"
+    ],
+    "if": "getrefine()>4",
+    "if_then": [
+      "+matk_%",
+      "getrefine()-4"
+    ]
+  },
+  "5458": [
+    [
+      "+maxsp_%",
+      "5"
+    ],
+    [
+      "+maxhp_%",
+      "5"
+    ]
+  ],
+  "5459": [
+    [
+      "+flee",
+      "2"
+    ],
+    [
+      "+dex",
+      "1"
+    ]
+  ],
+  "5460": [
+    [
+      "+maxhp_%",
+      "3"
+    ],
+    [
+      "+all_stats",
+      "2"
+    ]
+  ],
   "5461": [
     [
       "+dex",
@@ -3479,6 +14723,46 @@
       "resist_element_%",
       "Ele_Ghost",
       "20"
+    ]
+  ],
+  "5462": [
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "1"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "1"
+    ],
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "1"
+    ],
+    [
+      "+vit",
+      "1"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "1"
+    ]
+  ],
+  "5463": [
+    [
+      "+mdef_flat",
+      "2"
+    ],
+    [
+      "+matk_%",
+      "1"
+    ],
+    [
+      "+int",
+      "1"
     ]
   ],
   "5464": [
@@ -3492,14 +14776,128 @@
       "3"
     ]
   ],
+  "5476": [
+    [
+      "+maxhp_%",
+      "-10"
+    ],
+    [
+      "+str",
+      "2"
+    ],
+    [
+      "dmg_subrace_%",
+      "RC2_Orc",
+      "15"
+    ]
+  ],
   "5477": [
     "add_skill",
     "\"SM_BASH\"",
     "1"
   ],
+  "5478": [
+    [
+      "+maxhp_flat",
+      "300"
+    ],
+    [
+      "+str",
+      "2"
+    ]
+  ],
+  "5479": [
+    [
+      "+maxhp_flat",
+      "50"
+    ],
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Neutral",
+      "5"
+    ]
+  ],
+  "5480": [
+    [
+      "+all_stats",
+      "2"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"PR_IMPOSITIO\"",
+      "3",
+      "3"
+    ]
+  ],
+  "5481": [
+    [
+      "+atk_flat",
+      "-20"
+    ],
+    [
+      "+matk_%",
+      "-10"
+    ],
+    [
+      "+aspd_%",
+      "10"
+    ]
+  ],
   "5482": [
     "+str",
     "3"
+  ],
+  "5483": [
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "6"
+    ],
+    [
+      "+hit",
+      "-10"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "6"
+    ]
+  ],
+  "5485": [
+    [
+      "dmg_race_%",
+      "RC_Brute",
+      "5"
+    ],
+    [
+      "mdmg_race_%",
+      "RC_Brute",
+      "5"
+    ],
+    [
+      "resist_race_%",
+      "RC_Player_Doram",
+      "5"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Doram",
+      "5"
+    ],
+    [
+      "mdmg_race_%",
+      "RC_Player_Doram",
+      "5"
+    ],
+    [
+      "resist_race_%",
+      "RC_Brute",
+      "5"
+    ]
   ],
   "5486": [
     "+all_stats",
@@ -3509,9 +14907,38 @@
     "+luk",
     "2"
   ],
+  "5488": [
+    [
+      "+mdef_flat",
+      "1"
+    ],
+    [
+      "+luk",
+      "1"
+    ]
+  ],
   "5489": [
     "+dex",
     "2"
+  ],
+  "5490": [
+    [
+      "efficiency_healing_consumable_%",
+      "10"
+    ],
+    [
+      "efficiency_healingitem",
+      "10"
+    ],
+    [
+      "+mdef_flat",
+      "5"
+    ],
+    [
+      "resist_allmonster_%",
+      "Class_Boss",
+      "10"
+    ]
   ],
   "5491": [
     [
@@ -3524,9 +14951,53 @@
       "10"
     ]
   ],
+  "5492": [
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "5"
+    ],
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "5"
+    ]
+  ],
+  "5493": [
+    [
+      "+agi",
+      "1"
+    ],
+    [
+      "+dex",
+      "2"
+    ]
+  ],
   "5494": [
     "+str",
     "5"
+  ],
+  "5495": [
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "+flee",
+      "5"
+    ],
+    [
+      "+int",
+      "1"
+    ]
   ],
   "5496": [
     "+luk",
@@ -3536,19 +15007,277 @@
     "+str",
     "2"
   ],
+  "5498": [
+    [
+      "+flee",
+      "10"
+    ],
+    [
+      "+vit",
+      "5"
+    ]
+  ],
   "5499": [
     "add_skill",
     "\"SM_PROVOKE\"",
     "1"
   ],
+  "5500": [
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "add_skill",
+      "\"MG_FROSTDIVER\"",
+      "3"
+    ]
+  ],
+  "5501": [
+    [
+      "resist_subrace_%",
+      "RC2_Ninja",
+      "5"
+    ],
+    [
+      "dmg_subrace_%",
+      "RC2_Ninja",
+      "5"
+    ]
+  ],
+  "5502": [
+    "whilehit_targetskill_%",
+    "\"NPC_DARKSTRIKE\"",
+    "5",
+    "5",
+    "BF_WEAPON|BF_MAGIC",
+    "1"
+  ],
+  "5503": [
+    [
+      "+agi",
+      "2"
+    ],
+    [
+      "+mdef_flat",
+      "1"
+    ],
+    [
+      "+maxsp_flat",
+      "50"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"MG_COLDBOLT\"",
+      "1",
+      "20"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"MG_LIGHTNINGBOLT\"",
+      "1",
+      "20"
+    ],
+    [
+      "+dex",
+      "2"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"MG_FIREBOLT\"",
+      "1",
+      "20"
+    ]
+  ],
   "5504": [
     "+mdef_flat",
     "10"
+  ],
+  "5505": [
+    [
+      "+luk",
+      "2"
+    ],
+    [
+      "add_skill",
+      "\"DC_DONTFORGETME\"",
+      "1"
+    ],
+    [
+      "+dex",
+      "2"
+    ]
+  ],
+  "5506": [
+    [
+      "+matk_%",
+      "5"
+    ],
+    [
+      "+atk_flat",
+      "5"
+    ]
+  ],
+  "5507": [
+    [
+      "+matk_%",
+      "5"
+    ],
+    [
+      "+atk_flat",
+      "5"
+    ]
+  ],
+  "5508": [
+    [
+      "+agi",
+      "2"
+    ],
+    [
+      "+mdef_flat",
+      "1"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Water",
+      "10"
+    ],
+    [
+      "+str",
+      "1"
+    ],
+    [
+      "dmg_element_%",
+      "Ele_Water",
+      "5"
+    ]
+  ],
+  "5509": [
+    [
+      "+vit",
+      "1"
+    ],
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Earth",
+      "5"
+    ],
+    [
+      "+str",
+      "2"
+    ],
+    [
+      "dmg_element_%",
+      "Ele_Fire",
+      "5"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"WZ_EARTHSPIKE\"",
+      "1",
+      "10"
+    ]
+  ],
+  "5510": [
+    [
+      "+flee",
+      "3"
+    ],
+    [
+      "resist_race_%",
+      "RC_Fish",
+      "10"
+    ],
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "dmg_element_%",
+      "Ele_Water",
+      "10"
+    ]
   ],
   "5511": [
     "+sprecovery_%",
     "8"
   ],
+  "5512": {
+    "normal": [
+      [
+        "+flee",
+        "10"
+      ],
+      [
+        "resist_element_%",
+        "Ele_Wind",
+        "5"
+      ]
+    ],
+    "if": "getrefine()>6",
+    "if_then": [
+      "+atk_flat",
+      "15"
+    ]
+  },
+  "5513": {
+    "normal": [
+      [
+        "+flee",
+        "10"
+      ],
+      [
+        "resist_element_%",
+        "Ele_Wind",
+        "5"
+      ]
+    ],
+    "if": "getrefine()>6",
+    "if_then": [
+      "+atk_flat",
+      "15"
+    ]
+  },
+  "5514": {
+    "normal": [
+      [
+        "+mdef_flat",
+        "5"
+      ],
+      [
+        "resist_element_%",
+        "Ele_Water",
+        "5"
+      ]
+    ],
+    "if": "getrefine()>6",
+    "if_then": [
+      "+matk_%",
+      "2"
+    ]
+  },
+  "5515": {
+    "normal": [
+      [
+        "+mdef_flat",
+        "5"
+      ],
+      [
+        "resist_element_%",
+        "Ele_Water",
+        "5"
+      ]
+    ],
+    "if": "getrefine()>6",
+    "if_then": [
+      "+matk_%",
+      "2"
+    ]
+  },
   "5516": [
     "+dex",
     "1"
@@ -3557,9 +15286,36 @@
     "+dex",
     "1"
   ],
+  "5518": [
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "12"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "12"
+    ],
+    [
+      "+atk_flat",
+      "(JobLevel*2)/7"
+    ]
+  ],
   "5519": [
     "+int",
     "2"
+  ],
+  "5520": [
+    [
+      "dmg_monstertype_%",
+      "Class_All",
+      "4"
+    ],
+    [
+      "+matk_%",
+      "4"
+    ]
   ],
   "5521": [
     "cast_delay",
@@ -3573,6 +15329,55 @@
   "5524": [
     "+vit",
     "1"
+  ],
+  "5525": [
+    [
+      "+maxsp_flat",
+      "20"
+    ],
+    [
+      "+maxhp_flat",
+      "80"
+    ]
+  ],
+  "5526": [
+    [
+      "+flee",
+      "3"
+    ],
+    [
+      "dropitem_monster_%",
+      "513",
+      "200"
+    ],
+    [
+      "+agi",
+      "2"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Wind",
+      "5"
+    ]
+  ],
+  "5527": [
+    [
+      "+mdef_flat",
+      "2"
+    ],
+    [
+      "+perfectdodge",
+      "5"
+    ],
+    [
+      "+luk",
+      "5"
+    ],
+    [
+      "dropitem_monster_%",
+      "622",
+      "50"
+    ]
   ],
   "5528": [
     "+agi",
@@ -3595,6 +15400,7 @@
     ]
   ],
   "5530": "No Script",
+  "5531": "No Script",
   "5532": [
     "reflect_melee_orclord",
     "1"
@@ -3602,6 +15408,40 @@
   "5533": [
     "+all_stats",
     "1"
+  ],
+  "5535": [
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "5"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "3"
+    ],
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "3"
+    ],
+    [
+      "+vit",
+      "1"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "5"
+    ]
   ],
   "5536": [
     "dropitem_monster_%",
@@ -3627,9 +15467,178 @@
       "1"
     ]
   ],
+  "5540": [
+    [
+      "+int",
+      "1"
+    ],
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "+str",
+      "1"
+    ]
+  ],
+  "5541": [
+    [
+      "+int",
+      "1"
+    ],
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "+str",
+      "1"
+    ]
+  ],
+  "5542": [
+    [
+      "+int",
+      "1"
+    ],
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "+str",
+      "1"
+    ]
+  ],
+  "5543": [
+    [
+      "+int",
+      "1"
+    ],
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "+str",
+      "1"
+    ]
+  ],
+  "5544": [
+    [
+      "+maxsp_flat",
+      "50"
+    ],
+    [
+      "+int",
+      "2"
+    ]
+  ],
+  "5545": {
+    "normal": [
+      [
+        "+vit",
+        "2"
+      ],
+      [
+        "resist_element_%",
+        "Ele_fire",
+        "5"
+      ]
+    ],
+    "if": "getrefine()>6",
+    "if_then": [
+      "+vit",
+      "1"
+    ]
+  },
+  "5546": {
+    "normal": [
+      [
+        "+vit",
+        "2"
+      ],
+      [
+        "resist_element_%",
+        "Ele_fire",
+        "5"
+      ]
+    ],
+    "if": "getrefine()>6",
+    "if_then": [
+      "+vit",
+      "1"
+    ]
+  },
+  "5547": "No Script",
   "5548": [
     "+luk",
     "1"
+  ],
+  "5549": {
+    "normal": [
+      [
+        "cast_delay",
+        "-2"
+      ],
+      [
+        "resist_element_%",
+        "Ele_earth",
+        "5"
+      ]
+    ],
+    "if": "getrefine()>6",
+    "if_then": [
+      "+matk_%",
+      "1"
+    ]
+  },
+  "5550": {
+    "normal": [
+      [
+        "cast_delay",
+        "-2"
+      ],
+      [
+        "resist_element_%",
+        "Ele_earth",
+        "5"
+      ]
+    ],
+    "if": "getrefine()>6",
+    "if_then": [
+      "+matk_%",
+      "1"
+    ]
+  },
+  "5552": [
+    [
+      "+int",
+      "3"
+    ],
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "+str",
+      "3"
+    ]
+  ],
+  "5553": [
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "9"
+    ],
+    [
+      "+mdef_flat",
+      "4"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "9"
+    ]
   ],
   "5554": [
     [
@@ -3654,6 +15663,18 @@
       "10"
     ]
   ],
+  "5556": [
+    [
+      "+int",
+      "1"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"WZ_FROSTNOVA\"",
+      "1",
+      "30"
+    ]
+  ],
   "5557": [
     "+agi",
     "3"
@@ -3665,15 +15686,174 @@
     "500"
   ],
   "5559": "No Script",
+  "5560": [
+    [
+      "never_knockback"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Fire",
+      "-20"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Water",
+      "-20"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Wind",
+      "-20"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Earth",
+      "-20"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Dark",
+      "-20"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Holy",
+      "-20"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Ghost",
+      "-20"
+    ],
+    [
+      "+maxhp_flat",
+      "100"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Neutral",
+      "-20"
+    ]
+  ],
+  "5561": "No Script",
+  "5562": [
+    [
+      "cast_rate_%",
+      "-3"
+    ],
+    [
+      "skillspcost_%",
+      "-5"
+    ],
+    [
+      "+mdef_flat",
+      "10"
+    ]
+  ],
+  "5564": [
+    [
+      "cast_rate_%",
+      "-10"
+    ],
+    [
+      "+int",
+      "4"
+    ]
+  ],
+  "5565": [
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "10"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "10"
+    ]
+  ],
+  "5566": [
+    [
+      "dmg_race_%",
+      "RC_Player_Human",
+      "2"
+    ],
+    [
+      "dmg_race_%",
+      "RC_DemiHuman",
+      "2"
+    ]
+  ],
+  "5567": [
+    [
+      "+aspd_%",
+      "2"
+    ],
+    [
+      "+str",
+      "1"
+    ],
+    [
+      "dmg_monstertype_%",
+      "Class_All",
+      "2"
+    ]
+  ],
   "5568": [
     "+int",
     "2"
   ],
+  "5569": {
+    "normal": [
+      "+matk_%",
+      "2"
+    ],
+    "if": "getrefine()>6",
+    "if_then": [
+      [
+        "+matk_%",
+        "8"
+      ],
+      [
+        "resist_element_%",
+        "Ele_Wind",
+        "5"
+      ]
+    ]
+  },
+  "5570": {
+    "normal": [
+      "+mdef_flat",
+      "5"
+    ],
+    "if": "getrefine()>6",
+    "if_then": [
+      [
+        "+flee",
+        "10"
+      ],
+      [
+        "resist_element_%",
+        "Ele_Wind",
+        "5"
+      ]
+    ]
+  },
   "5572": [
     "+vit",
     "2"
   ],
   "5573": "No Script",
+  "5574": [
+    [
+      "+hit",
+      "3"
+    ],
+    [
+      "+dex",
+      "2"
+    ]
+  ],
   "5575": "No Script",
   "5577": [
     "+str",
@@ -3687,11 +15867,65 @@
     "+agi",
     "2"
   ],
+  "5581": {
+    "normal": [
+      [
+        "+int",
+        "2"
+      ],
+      [
+        "resist_element_%",
+        "Ele_water",
+        "5"
+      ]
+    ],
+    "if": "getrefine()>6",
+    "if_then": [
+      "+matk_%",
+      "2"
+    ]
+  },
+  "5582": {
+    "normal": [
+      [
+        "+str",
+        "2"
+      ],
+      [
+        "resist_element_%",
+        "Ele_water",
+        "5"
+      ]
+    ],
+    "if": "getrefine()>6",
+    "if_then": [
+      "+flee",
+      "10"
+    ]
+  },
   "5583": "No Script",
+  "5584": [
+    [
+      "whileattacking_suck_hp_%",
+      "3",
+      "15"
+    ],
+    [
+      "whileattacking_suck_sp_%",
+      "1",
+      "7"
+    ],
+    [
+      "resist_race_%",
+      "RC_Demon",
+      "3"
+    ]
+  ],
   "5585": "No Script",
   "5586": "No Script",
   "5587": "No Script",
   "5590": "No Script",
+  "5592": "No Script",
   "5593": "No Script",
   "5594": "No Script",
   "5596": [
@@ -3701,6 +15935,16 @@
   "5597": [
     "+mdef_flat",
     "2"
+  ],
+  "5600": [
+    [
+      "+mdef_flat",
+      "1"
+    ],
+    [
+      "+all_stats",
+      "3"
+    ]
   ],
   "5603": [
     "+all_stats",
@@ -3715,6 +15959,18 @@
     "1"
   ],
   "5653": "No Script",
+  "5654": [
+    [
+      "+str",
+      "2"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"PR_ASPERSIO\"",
+      "2",
+      "30"
+    ]
+  ],
   "5658": [
     "whileattacking_autospell",
     "\"SA_FLAMELAUNCHER\"",
@@ -3733,6 +15989,82 @@
     "1",
     "5"
   ],
+  "5664": [
+    [
+      "cast_rate_%",
+      "-2"
+    ],
+    [
+      "+aspd_%",
+      "2"
+    ]
+  ],
+  "5665": [
+    [
+      "resist_element_%",
+      "Ele_Water",
+      "3"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Earth",
+      "3"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Fire",
+      "3"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Wind",
+      "3"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Poison",
+      "3"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Holy",
+      "3"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Dark",
+      "3"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Ghost",
+      "3"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Undead",
+      "3"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Neutral",
+      "3"
+    ]
+  ],
+  "5666": [
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "+luk",
+      "1"
+    ],
+    [
+      "+int",
+      "1"
+    ]
+  ],
   "5667": "No Script",
   "5668": [
     "+mdef_flat",
@@ -3743,11 +16075,38 @@
     "+mdef_flat",
     "3"
   ],
+  "5682": "No Script",
   "5683": "No Script",
   "5684": "No Script",
   "5685": "No Script",
   "5686": "No Script",
   "5687": "No Script",
+  "5690": {
+    "if": "getrefine()>6",
+    "if_then": [
+      [
+        "dmg_monstertype_%",
+        "Class_All",
+        "2"
+      ],
+      [
+        "+matk_%",
+        "2"
+      ]
+    ],
+    "if_2": "getrefine()>8",
+    "if_then_2": [
+      [
+        "dmg_monstertype_%",
+        "Class_All",
+        "2"
+      ],
+      [
+        "+matk_%",
+        "2"
+      ]
+    ]
+  },
   "5691": [
     [
       "+dex",
@@ -3763,10 +16122,51 @@
     "+dex",
     "1"
   ],
+  "5738": {
+    "normal": [
+      [
+        "+mdef_flat",
+        "3"
+      ],
+      [
+        "dropitem_monster_%",
+        "12354",
+        "300"
+      ]
+    ],
+    "if": "getrefine()>7",
+    "if_then": [
+      "whilehit_targetskill_%",
+      "\"BA_FROSTJOKER\"",
+      "5",
+      "20",
+      "BF_WEAPON|BF_MAGIC",
+      "0"
+    ],
+    "else": [
+      "whilehit_targetskill_%",
+      "\"BA_FROSTJOKER\"",
+      "1",
+      "20",
+      "BF_WEAPON|BF_MAGIC",
+      "0"
+    ]
+  },
   "5741": "No Script",
   "5742": [
     "+luk",
     "1"
+  ],
+  "5770": "No Script",
+  "5771": [
+    [
+      "+mdef_flat",
+      "1"
+    ],
+    [
+      "+dex",
+      "1"
+    ]
   ],
   "5775": "No Script",
   "5781": "No Script",
@@ -3776,11 +16176,59 @@
   ],
   "5788": "No Script",
   "5792": "No Script",
+  "5793": [
+    [
+      "+mdef_flat",
+      "2"
+    ],
+    [
+      "+int",
+      "1"
+    ]
+  ],
   "5794": "No Script",
   "5796": "No Script",
   "5797": "No Script",
   "5798": "No Script",
   "5799": "No Script",
+  "5800": [
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "3"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "3"
+    ]
+  ],
+  "5801": {
+    "normal": [
+      [
+        "+all_stats",
+        "2"
+      ],
+      [
+        "resist_race_%",
+        "RC_Player_Human",
+        "10"
+      ]
+    ],
+    "if": "getskilllv(\"AL_HEAL\")==10",
+    "if_then": [
+      "whilehit_targetskill_%",
+      "\"AL_HEAL\"",
+      "10",
+      "20"
+    ],
+    "else": [
+      "whilehit_targetskill_%",
+      "\"AL_HEAL\"",
+      "5",
+      "20"
+    ]
+  },
   "5802": "No Script",
   "5803": [
     "dropitem_monster_%",
@@ -3788,14 +16236,96 @@
     "100"
   ],
   "5804": "No Script",
+  "5805": [
+    [
+      "+sprecovery_%",
+      "5"
+    ],
+    [
+      "+maxhp_%",
+      "15"
+    ]
+  ],
   "5806": "No Script",
   "5807": "No Script",
+  "5808": [
+    [
+      "resist_badstatus_%",
+      "Eff_Freeze",
+      "2000+(getrefine()*200)"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Stun",
+      "2000+(getrefine()*200)"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Stone",
+      "2000+(getrefine()*200)"
+    ]
+  ],
   "5809": [
     "+all_stats",
     "5"
   ],
+  "5810": [
+    [
+      "+vit",
+      "3"
+    ],
+    [
+      "+dex",
+      "3"
+    ],
+    [
+      "+int",
+      "5"
+    ]
+  ],
   "5811": "No Script",
   "5812": "No Script",
+  "5815": [
+    [
+      "resist_size_%",
+      "1",
+      "5"
+    ],
+    [
+      "resist_size_%",
+      "2",
+      "5"
+    ],
+    [
+      "+str",
+      "1"
+    ],
+    [
+      "resist_size_%",
+      "0",
+      "5"
+    ]
+  ],
+  "5816": [
+    [
+      "+flee",
+      "-5"
+    ],
+    [
+      "+atk_flat",
+      "15"
+    ]
+  ],
+  "5817": [
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "+all_stats",
+      "2"
+    ]
+  ],
   "5818": [
     "+all_stats",
     "3"
@@ -3809,8 +16339,69 @@
     "Class_All",
     "5"
   ],
+  "5822": [
+    [
+      "+maxhp_flat",
+      "100"
+    ],
+    [
+      "+maxsp_flat",
+      "100"
+    ],
+    [
+      "resist_race_%",
+      "RC_Player_Human",
+      "7"
+    ],
+    [
+      "resist_race_%",
+      "RC_Undead",
+      "7"
+    ],
+    [
+      "+luk",
+      "4"
+    ],
+    [
+      "resist_race_%",
+      "RC_DemiHuman",
+      "7"
+    ]
+  ],
   "5824": "No Script",
+  "5826": [
+    [
+      "+int",
+      "2"
+    ],
+    [
+      "+dex",
+      "2"
+    ],
+    [
+      "+agi",
+      "2"
+    ],
+    [
+      "+mdef_flat",
+      "5"
+    ],
+    [
+      "+str",
+      "2"
+    ]
+  ],
   "5827": "No Script",
+  "5828": [
+    [
+      "+mdef_flat",
+      "5"
+    ],
+    [
+      "+all_stats",
+      "1"
+    ]
+  ],
   "5844": [
     "+all_stats",
     "3"
@@ -3820,6 +16411,36 @@
     "5"
   ],
   "5851": "No Script",
+  "5856": [
+    [
+      "+dex",
+      "2"
+    ],
+    [
+      "+str",
+      "2"
+    ]
+  ],
+  "5857": [
+    [
+      "+vit",
+      "2"
+    ],
+    [
+      "+int",
+      "2"
+    ]
+  ],
+  "5858": [
+    [
+      "+dex",
+      "2"
+    ],
+    [
+      "+int",
+      "2"
+    ]
+  ],
   "5859": [
     "+all_stats",
     "1"

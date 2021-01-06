@@ -10,7 +10,7 @@ def generate_script_types(main_db: dict, output_file: str):
     script_table_path = os.path.abspath(
         os.path.join(os.path.dirname(__file__), '..', '..', 'resources', "scripts", output_file))
 
-    data = {"Begin": {}, "Displaced": {}, "Default": {}, "Repeated": {}, "Autobonus": {}, "MultipleIf": {}}
+    data = {"Begin": {}, "Displaced": {}, "Default": {}, "Repeated": {}, "Autobonus": {}, "MultipleIf": {}, "MultipleDisplaced": {}}
 
     for qh in main_db:
         view_name = main_db[qh]['Name']
@@ -29,7 +29,11 @@ def generate_script_types(main_db: dict, output_file: str):
                 else:
                     data['MultipleIf'][view_item_id] = data_tuple
             else:
-                data['Displaced'][view_item_id] = data_tuple
+                if 'autobonus' not in view_script:
+                    if view_script.count("if") == 1:
+                        data['Displaced'][view_item_id] = data_tuple
+                    else:
+                        data['MultipleDisplaced'][view_item_id] = data_tuple
         else:
             if 'autobonus' in view_script:
                 data['Autobonus'][view_item_id] = data_tuple
