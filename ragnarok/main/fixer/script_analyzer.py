@@ -5,6 +5,8 @@ import time
 
 import pandas as pd
 
+from main.exporter import card_db
+
 
 def categorize_scripts(input_path: str):
     script_table_path = os.path.abspath(
@@ -56,6 +58,7 @@ def default_analyser(script: str, script_json: pd.DataFrame):
         return 'No Script'
     bonus_dict = dict()
     output_adapt = []
+    # print('waaa {} ({})'.format(first_trim, len(first_trim)))
     for q in range(len(first_trim)):
         if q % 2 == 0:
             bonus_dict[first_trim[q]] = first_trim[q + 1]
@@ -304,7 +307,7 @@ def autobonus_creator(dict_pack: dict):
         output_scripts[script_id] = autobonus_analyser(script_desc, script_json)
 
 
-def assemble_json(input_file: str, output_file: str):
+def assemble_json(input_file: str, output_file: str, **kwargs):
     final_dict = dict()
     input_script = categorize_scripts(input_file)
     script_json = adapt_ragnarok_to_python()
@@ -315,6 +318,8 @@ def assemble_json(input_file: str, output_file: str):
     begin_creator(dict_pack)
     default_creator(dict_pack)
     repeated_creator(dict_pack)
+
+    final_dict = dict(sorted(final_dict.items(), key=lambda x: x[0]))
 
     start_time = time.time()
     adapted_table_path = os.path.abspath(
@@ -333,5 +338,24 @@ def assemble_json(input_file: str, output_file: str):
 
     print("JSON successfully dumped!")
 
+    merge_db = kwargs.get('merge_db')
+    if merge_db:
+        card_db_copy = card_db.copy()
+        card_db_path = os.path.abspath(
+            os.path.join(os.path.dirname(__file__), '..', '..', 'resources', "item_db_etc.json"))
+        for q in final_dict.keys():
+            card_db_copy[int(q)]['Script_adapted'] = final_dict[q]
 
-assemble_json("card_script_table.json", "card_adapted_table.json")
+        card_file = open(card_db_path, "w")
+        json.dump(card_db_copy, card_file, indent=3)
+        b_file.close()
+
+    # pprint(card_db_copy)
+
+    # for q in card_db_copy:
+    #
+
+
+assemble_json("card_script_table.json", "card_adapted_table.json", merge_db=True)
+
+# assemble_json("gear_script_table.json", "adapted_gear_table.json")

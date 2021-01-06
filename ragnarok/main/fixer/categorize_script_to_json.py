@@ -1,6 +1,6 @@
 import os
 
-from main.exporter import card_db
+from main.exporter import card_db, equip_db
 
 
 def generate_script_types(main_db: dict, output_file: str):
@@ -15,7 +15,12 @@ def generate_script_types(main_db: dict, output_file: str):
     for qh in main_db:
         view_name = main_db[qh]['Name']
         view_item_id = main_db[qh]['Id']
-        view_script = main_db[qh]['Script'].replace("\n", "")
+        if 'Script' not in main_db[qh]:
+            main_db[qh]['Script'] = ""
+        first_script = main_db[qh]['Script']
+        if first_script == 0:
+            first_script = ""
+        view_script = first_script.replace("\n", "")
         data_tuple = {"Name": view_name, "Id": view_item_id, "Script": view_script}
         if "if(" in view_script:
             if view_script[:3] == "if(":
@@ -29,7 +34,10 @@ def generate_script_types(main_db: dict, output_file: str):
             if 'autobonus' in view_script:
                 data['Autobonus'][view_item_id] = data_tuple
             else:
-                set_check = main_db[view_item_id]['Script'].replace(",", " ").replace(";", " ").split(" ")
+                raw_script = main_db[view_item_id]['Script']
+                if raw_script == 0:
+                    raw_script = ""
+                set_check = raw_script.replace(",", " ").replace(";", " ").split(" ")
                 set_check = list(filter(None, set_check))
                 print('carta {} list_len {} set_len {} '.format(view_item_id, len(set_check), len(set(set_check))))
                 if len(set_check) == len(set(set_check)):
@@ -49,4 +57,5 @@ def generate_script_types(main_db: dict, output_file: str):
 # a_file.close()
 
 
-generate_script_types(card_db, "script_table2.json")
+# generate_script_types(card_db, "script_table2.json")
+generate_script_types(equip_db, "gear_script_table.json")

@@ -461,7 +461,15 @@
 		"bintravision":
 						[
 						"see_hidden_enemies"
-						],						
+						],
+		"bautospellonskill":
+						[
+						"cast_spell_on_skill"
+						],
+		"bspeedaddrate":
+						[
+						"+movespeed2_%"
+						],
 	    "headgear3": ["Gentleman's Pipe", 0, "(No Card)"],
 	}
 }
