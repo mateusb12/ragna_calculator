@@ -470,6 +470,10 @@
 						[
 						"+movespeed2_%"
 						],
+		"bexpaddclass":
+						[
+						"+expbonus_all%"
+						],
 	    "headgear3": ["Gentleman's Pipe", 0, "(No Card)"],
 	}
 }

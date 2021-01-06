@@ -58,7 +58,11 @@ def default_analyser(script: str, script_json: pd.DataFrame):
         return 'No Script'
     bonus_dict = dict()
     output_adapt = []
-    # print('waaa {} ({})'.format(first_trim, len(first_trim)))
+    if len(first_trim) == 3 and first_trim[-1] == "1":
+        first_trim[-2] = first_trim[-2] + first_trim[-1]
+        first_trim.pop()
+    print('beee {}'.format(script))
+    print('waaa {} ({})'.format(first_trim, len(first_trim)))
     for q in range(len(first_trim)):
         if q % 2 == 0:
             bonus_dict[first_trim[q]] = first_trim[q + 1]
@@ -85,6 +89,8 @@ def repeated_analyser(script: str, script_json: pd.DataFrame):
     first_trim = list(filter(None, first_trim))
     bonus_dict = {"bonus_extra": [], "bonus2_extra": [], "bonus3_extra": [], "skill_extra": []}
     output_adapt = []
+    print('kkkk {}'.format(script))
+    print('waa man {}'.format(first_trim))
     for q in range(len(first_trim)):
         if q % 2 == 0:
             if first_trim[q] in bonus_dict:
@@ -312,11 +318,11 @@ def assemble_json(input_file: str, output_file: str, **kwargs):
     input_script = categorize_scripts(input_file)
     script_json = adapt_ragnarok_to_python()
     dict_pack = {"final_dict": final_dict, "input_scripts": input_script, "script_json": script_json}
-    autobonus_creator(dict_pack)
-    multipleif_creator(dict_pack)
-    displaced_creator(dict_pack)
-    begin_creator(dict_pack)
-    default_creator(dict_pack)
+    # autobonus_creator(dict_pack)
+    # multipleif_creator(dict_pack)
+    # displaced_creator(dict_pack)
+    # begin_creator(dict_pack)
+    # default_creator(dict_pack)
     repeated_creator(dict_pack)
 
     final_dict = dict(sorted(final_dict.items(), key=lambda x: x[0]))
@@ -338,24 +344,19 @@ def assemble_json(input_file: str, output_file: str, **kwargs):
 
     print("JSON successfully dumped!")
 
-    merge_db = kwargs.get('merge_db')
-    if merge_db:
+    merge_card = kwargs.get('merge_card')
+    if merge_card:
         card_db_copy = card_db.copy()
-        card_db_path = os.path.abspath(
-            os.path.join(os.path.dirname(__file__), '..', '..', 'resources', "item_db_etc.json"))
         for q in final_dict.keys():
             card_db_copy[int(q)]['Script_adapted'] = final_dict[q]
-
-        card_file = open(card_db_path, "w")
-        json.dump(card_db_copy, card_file, indent=3)
+        final_dict = {"Header": {"Type": "ITEM_DB", "Version": 1}, "Body": {"Body2": list(card_db_copy.values())}}
+        adapted_table_path = os.path.abspath(
+            os.path.join(os.path.dirname(__file__), '..', '..', 'resources', "scripts", output_file))
+        b_file = open(adapted_table_path, "w")
+        json.dump(final_dict, b_file, indent=2)
         b_file.close()
 
-    # pprint(card_db_copy)
 
-    # for q in card_db_copy:
-    #
-
-
-assemble_json("card_script_table.json", "card_adapted_table.json", merge_db=True)
+assemble_json("gear_script_table.json", "gear_adapted_table.json", merge_card=False)
 
 # assemble_json("gear_script_table.json", "adapted_gear_table.json")

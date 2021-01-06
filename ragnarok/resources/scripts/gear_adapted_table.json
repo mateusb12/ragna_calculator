@@ -1,0 +1,3883 @@
+{
+  "10001": "No Script",
+  "10002": "No Script",
+  "10003": "No Script",
+  "10004": "No Script",
+  "10005": "No Script",
+  "10006": "No Script",
+  "10007": "No Script",
+  "10008": "No Script",
+  "10009": "No Script",
+  "10010": "No Script",
+  "10011": "No Script",
+  "10012": "No Script",
+  "10013": "No Script",
+  "10014": "No Script",
+  "10015": "No Script",
+  "10016": "No Script",
+  "10017": "No Script",
+  "10018": "No Script",
+  "10019": "No Script",
+  "10020": "No Script",
+  "10021": "No Script",
+  "10022": "No Script",
+  "10023": "No Script",
+  "10024": "No Script",
+  "10025": "No Script",
+  "10026": "No Script",
+  "10027": "No Script",
+  "10028": "No Script",
+  "10029": "No Script",
+  "10030": "No Script",
+  "10031": "No Script",
+  "10032": "No Script",
+  "10033": "No Script",
+  "10034": "No Script",
+  "10035": "No Script",
+  "10036": "No Script",
+  "10037": "No Script",
+  "10038": "No Script",
+  "1101": "No Script",
+  "1102": "No Script",
+  "1103": "No Script",
+  "1104": "No Script",
+  "1105": "No Script",
+  "1106": "No Script",
+  "1107": "No Script",
+  "1108": "No Script",
+  "1109": "No Script",
+  "1110": "No Script",
+  "1111": "No Script",
+  "1112": "No Script",
+  "1113": "No Script",
+  "1114": "No Script",
+  "1115": "No Script",
+  "1116": "No Script",
+  "1117": "No Script",
+  "1118": "No Script",
+  "1119": "No Script",
+  "1120": "No Script",
+  "1121": "No Script",
+  "1122": "No Script",
+  "1123": [
+    "+int",
+    "3"
+  ],
+  "1124": [
+    "unbreakable_weapon"
+  ],
+  "1125": "No Script",
+  "1126": "No Script",
+  "1127": "No Script",
+  "1128": [
+    "+int",
+    "3"
+  ],
+  "1129": "No Script",
+  "1139": [
+    [
+      "elementchange_weapon",
+      "Ele_Dark"
+    ],
+    [
+      "regularly_lose_hp",
+      "35",
+      "10000"
+    ]
+  ],
+  "1142": [
+    "groupdropitem_monster_%",
+    "IG_Jewel",
+    "100"
+  ],
+  "1143": [
+    "groupdropitem_monster_%",
+    "IG_Ore",
+    "30"
+  ],
+  "1144": [
+    [
+      "elementchange_weapon",
+      "Ele_Wind"
+    ],
+    [
+      "dropitem_monster_%",
+      "544",
+      "RC_Fish",
+      "4000"
+    ]
+  ],
+  "1146": "No Script",
+  "1147": "No Script",
+  "1148": [
+    [
+      "whileattacking_badstatus",
+      "Eff_Stun",
+      "500"
+    ],
+    [
+      "unbreakable_weapon"
+    ]
+  ],
+  "1149": "No Script",
+  "1151": "No Script",
+  "1152": "No Script",
+  "1153": "No Script",
+  "1154": "No Script",
+  "1155": "No Script",
+  "1156": "No Script",
+  "1157": "No Script",
+  "1158": "No Script",
+  "1159": "No Script",
+  "1163": "No Script",
+  "1168": [
+    "unbreakable_weapon"
+  ],
+  "1171": [
+    "unbreakable_weapon"
+  ],
+  "1172": "No Script",
+  "1176": [
+    [
+      "whileattacking_badstatus",
+      "Eff_Bleeding",
+      "800"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"AL_DECAGI\"",
+      "1",
+      "30"
+    ]
+  ],
+  "1177": [
+    "dmg_monstertype_%",
+    "Class_All",
+    "50"
+  ],
+  "1190": [
+    "dmg_size_%",
+    "Size_All",
+    "40"
+  ],
+  "1201": "No Script",
+  "1202": "No Script",
+  "1203": "No Script",
+  "1204": "No Script",
+  "1205": "No Script",
+  "1206": "No Script",
+  "1207": "No Script",
+  "1208": "No Script",
+  "1209": "No Script",
+  "1210": "No Script",
+  "1211": "No Script",
+  "1212": "No Script",
+  "1213": "No Script",
+  "1214": "No Script",
+  "1215": "No Script",
+  "1216": "No Script",
+  "1217": "No Script",
+  "1218": "No Script",
+  "1219": "No Script",
+  "1220": "No Script",
+  "1221": "No Script",
+  "1222": [
+    "unbreakable_weapon"
+  ],
+  "1224": [
+    "whileattacking_breakweapon_%",
+    "500"
+  ],
+  "1225": [
+    "whileattacking_breakarmor_%",
+    "500"
+  ],
+  "1226": [
+    "unbreakable_weapon"
+  ],
+  "1229": [
+    [
+      "+crit",
+      "30"
+    ],
+    [
+      "dropitem_monster_%",
+      "517",
+      "RC_Brute",
+      "5000"
+    ]
+  ],
+  "1230": [
+    "thanatos_card_bonus",
+    "Class_All"
+  ],
+  "1235": [
+    "whileattacking_deadbranch",
+    "300"
+  ],
+  "1238": [
+    "afterkill_stealzenny",
+    "100",
+    "40"
+  ],
+  "1239": [
+    [
+      "elementchange_weapon",
+      "Ele_Poison"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Poison",
+      "3000"
+    ]
+  ],
+  "1240": [
+    "+all_stats",
+    "1"
+  ],
+  "1241": [
+    "whileattacking_badstatus",
+    "Eff_Curse",
+    "5000"
+  ],
+  "1242": [
+    "+crit",
+    "90"
+  ],
+  "1243": "No Script",
+  "1245": "No Script",
+  "1246": "No Script",
+  "1247": [
+    "elementchange_weapon",
+    "Ele_Fire"
+  ],
+  "1248": [
+    "elementchange_weapon",
+    "Ele_Earth"
+  ],
+  "1249": [
+    "elementchange_weapon",
+    "Ele_Water"
+  ],
+  "1250": "No Script",
+  "1251": "No Script",
+  "1252": [
+    "+dex",
+    "1"
+  ],
+  "1253": [
+    "+dex",
+    "1"
+  ],
+  "1254": "No Script",
+  "1255": "No Script",
+  "1256": [
+    [
+      "elementchange_weapon",
+      "Ele_Water"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Freeze",
+      "500"
+    ]
+  ],
+  "1257": [
+    [
+      "elementchange_weapon",
+      "Ele_Earth"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Blind",
+      "500"
+    ]
+  ],
+  "1258": [
+    [
+      "elementchange_weapon",
+      "Ele_Fire"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Silence",
+      "500"
+    ]
+  ],
+  "1259": [
+    [
+      "elementchange_weapon",
+      "Ele_Wind"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Sleep",
+      "500"
+    ]
+  ],
+  "1260": [
+    "elementchange_weapon",
+    "Ele_Undead"
+  ],
+  "1262": [
+    "whileattacking_badstatus",
+    "Eff_Bleeding",
+    "300"
+  ],
+  "1264": [
+    "whileattacking_selfbadstatus",
+    "Eff_Bleeding",
+    "10"
+  ],
+  "1269": [
+    [
+      "elementchange_weapon",
+      "Ele_Holy"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"NPC_DRAGONFEAR\"",
+      "1",
+      "30"
+    ]
+  ],
+  "1270": [
+    [
+      "+hit",
+      "30"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"ST_FULLSTRIP\"",
+      "1",
+      "150"
+    ]
+  ],
+  "1272": [
+    "dmg_monstertype_%",
+    "Class_All",
+    "50"
+  ],
+  "1275": [
+    [
+      "elementchange_weapon",
+      "Ele_Water"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Freeze",
+      "500"
+    ]
+  ],
+  "1276": [
+    [
+      "elementchange_weapon",
+      "Ele_Earth"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Blind",
+      "500"
+    ]
+  ],
+  "1277": [
+    [
+      "elementchange_weapon",
+      "Ele_Fire"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Silence",
+      "500"
+    ]
+  ],
+  "1278": [
+    [
+      "elementchange_weapon",
+      "Ele_Wind"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Sleep",
+      "500"
+    ]
+  ],
+  "1283": [
+    [
+      "dmg_skillid_%",
+      "\"AS_SONICBLOW\"",
+      "25"
+    ],
+    [
+      "+aspd_%",
+      "3"
+    ]
+  ],
+  "1286": [
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "dmg_size_%",
+      "Size_All",
+      "40"
+    ]
+  ],
+  "13000": [
+    "elementchange_weapon",
+    "Ele_Wind"
+  ],
+  "13003": [
+    "+def_flat",
+    "5"
+  ],
+  "13004": [
+    "+def_flat",
+    "5"
+  ],
+  "13005": "No Script",
+  "13006": [
+    [
+      "elementchange_weapon",
+      "Ele_Dark"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Curse",
+      "1000"
+    ]
+  ],
+  "13007": [
+    "whileattacking_breakweapon_%",
+    "200"
+  ],
+  "13008": [
+    "whileattacking_breakweapon_%",
+    "200"
+  ],
+  "1301": "No Script",
+  "13010": [
+    "+matk_%",
+    "10"
+  ],
+  "13011": [
+    "+matk_%",
+    "10"
+  ],
+  "13014": [
+    [
+      "+int",
+      "2"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"AL_HEAL\"",
+      "1",
+      "10"
+    ]
+  ],
+  "13015": [
+    [
+      "+int",
+      "2"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"AL_HEAL\"",
+      "1",
+      "10"
+    ]
+  ],
+  "13016": [
+    [
+      "elementchange_weapon",
+      "Ele_Poison"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Poison",
+      "3000"
+    ]
+  ],
+  "13017": [
+    "thanatos_card_bonus",
+    "Class_All"
+  ],
+  "1302": "No Script",
+  "13020": [
+    "+all_stats",
+    "5"
+  ],
+  "13022": [
+    "+crit",
+    "90"
+  ],
+  "13023": [
+    "+matk_%",
+    "15"
+  ],
+  "13024": [
+    "whileattacking_breakweapon_%",
+    "500"
+  ],
+  "13025": [
+    "whileattacking_breakarmor_%",
+    "500"
+  ],
+  "13027": [
+    "whileattacking_badstatus",
+    "Eff_Bleeding",
+    "500"
+  ],
+  "13029": [
+    "dmg_monstertype_%",
+    "Class_All",
+    "50"
+  ],
+  "1303": "No Script",
+  "13031": [
+    "whileattacking_breakweapon_%",
+    "500"
+  ],
+  "13032": [
+    "whileattacking_breakarmor_%",
+    "500"
+  ],
+  "13034": "No Script",
+  "13035": "No Script",
+  "1304": "No Script",
+  "13040": "No Script",
+  "13041": "No Script",
+  "13043": [
+    "+luk",
+    "5"
+  ],
+  "13044": "No Script",
+  "13045": "No Script",
+  "13048": [
+    "dmg_size_%",
+    "Size_All",
+    "40"
+  ],
+  "1308": "No Script",
+  "1309": "No Script",
+  "13100": [
+    "+hit",
+    "-10"
+  ],
+  "13101": [
+    "+hit",
+    "-10"
+  ],
+  "13102": [
+    "+hit",
+    "-10"
+  ],
+  "13103": [
+    "+hit",
+    "-10"
+  ],
+  "13104": [
+    "+hit",
+    "-10"
+  ],
+  "13105": [
+    "+hit",
+    "-10"
+  ],
+  "13112": [
+    "+hit",
+    "-5"
+  ],
+  "13113": [
+    "+hit",
+    "-5"
+  ],
+  "1312": [
+    "dmg_size_%",
+    "Size_All",
+    "70"
+  ],
+  "1313": [
+    "+str",
+    "2"
+  ],
+  "1314": [
+    "elementchange_weapon",
+    "Ele_Wind"
+  ],
+  "13150": "No Script",
+  "13154": [
+    "splash_dmg_baphomet",
+    "1"
+  ],
+  "13155": [
+    "splash_dmg_baphomet",
+    "1"
+  ],
+  "13156": [
+    [
+      "splash_dmg_baphomet",
+      "1"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"GS_SPREADATTACK\"",
+      "6",
+      "50"
+    ]
+  ],
+  "13157": "No Script",
+  "13160": [
+    "whileattacking_breakarmor_%",
+    "200"
+  ],
+  "13161": [
+    "whileattacking_breakarmor_%",
+    "200"
+  ],
+  "13162": "No Script",
+  "13301": [
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Bleeding",
+      "100"
+    ]
+  ],
+  "13302": [
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Bleeding",
+      "100"
+    ]
+  ],
+  "13309": [
+    "dmg_size_%",
+    "Size_All",
+    "80"
+  ],
+  "13404": [
+    "+crit",
+    "50"
+  ],
+  "13405": [
+    [
+      "+aspd_%",
+      "10"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Curse",
+      "300"
+    ]
+  ],
+  "13406": [
+    "dmg_monstertype_%",
+    "Class_All",
+    "50"
+  ],
+  "13415": "No Script",
+  "13419": "No Script",
+  "13422": [
+    [
+      "unbreakable_weapon"
+    ],
+    [
+      "dmg_size_%",
+      "Size_All",
+      "40"
+    ]
+  ],
+  "1351": "No Script",
+  "1352": "No Script",
+  "1353": "No Script",
+  "1354": "No Script",
+  "1355": "No Script",
+  "1356": "No Script",
+  "1357": "No Script",
+  "1358": "No Script",
+  "1359": "No Script",
+  "1360": "No Script",
+  "1361": "No Script",
+  "1362": "No Script",
+  "1368": [
+    [
+      "elementchange_weapon",
+      "Ele_Wind"
+    ],
+    [
+      "add_skill",
+      "\"ITM_TOMAHAWK\"",
+      "1"
+    ]
+  ],
+  "1374": [
+    [
+      "elementchange_weapon",
+      "Ele_Wind"
+    ],
+    [
+      "add_skill",
+      "\"ITM_TOMAHAWK\"",
+      "1"
+    ]
+  ],
+  "1377": [
+    [
+      "resist_size_%",
+      "Size_Medium",
+      "10+getrefine()"
+    ],
+    [
+      "+aspd_%",
+      "getrefine()"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"NPC_PULSESTRIKE\"",
+      "5",
+      "20"
+    ]
+  ],
+  "1381": "No Script",
+  "1385": [
+    "change_skill_behavior",
+    "\"BS_HAMMERFALL\"",
+    "Eff_Stun",
+    "500+(200*getrefine())"
+  ],
+  "1388": [
+    "dmg_size_%",
+    "Size_All",
+    "40"
+  ],
+  "1389": [
+    "elementchange_weapon",
+    "Ele_Wind"
+  ],
+  "1401": "No Script",
+  "1402": "No Script",
+  "1403": "No Script",
+  "1404": "No Script",
+  "1405": "No Script",
+  "1406": "No Script",
+  "1407": "No Script",
+  "1408": "No Script",
+  "1409": "No Script",
+  "1410": "No Script",
+  "1411": "No Script",
+  "1412": "No Script",
+  "1415": [
+    [
+      "ignore_def_all_100%",
+      "Class_Normal"
+    ],
+    [
+      "dmg_element_%",
+      "Ele_Neutral",
+      "25"
+    ]
+  ],
+  "1423": [
+    "dmg_monstertype_%",
+    "Class_All",
+    "50"
+  ],
+  "1424": [
+    [
+      "ignore_def_all_100%",
+      "Class_Normal"
+    ],
+    [
+      "dmg_size_%",
+      "Size_Medium",
+      "20"
+    ]
+  ],
+  "1427": [
+    [
+      "dmg_skillid_%",
+      "\"SM_MAGNUM\"",
+      "25"
+    ],
+    [
+      "+str",
+      "2"
+    ]
+  ],
+  "1430": [
+    "dmg_size_%",
+    "Size_All",
+    "70"
+  ],
+  "1451": "No Script",
+  "1452": "No Script",
+  "1453": "No Script",
+  "1454": "No Script",
+  "1455": "No Script",
+  "1456": "No Script",
+  "1457": "No Script",
+  "1458": "No Script",
+  "1459": "No Script",
+  "1460": "No Script",
+  "1461": "No Script",
+  "1462": "No Script",
+  "1463": "No Script",
+  "1464": "No Script",
+  "1465": "No Script",
+  "1468": [
+    [
+      "elementchange_weapon",
+      "Ele_Wind"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Silence",
+      "200"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"MG_THUNDERSTORM\"",
+      "3",
+      "100"
+    ]
+  ],
+  "1474": [
+    [
+      "ignore_def_race_100%",
+      "RC_Dragon"
+    ],
+    [
+      "dmg_monstertype_%",
+      "Class_Boss",
+      "10"
+    ]
+  ],
+  "1475": "No Script",
+  "1480": [
+    [
+      "ignore_def_race_100%",
+      "RC_Dragon"
+    ],
+    [
+      "dmg_monstertype_%",
+      "Class_Boss",
+      "10"
+    ]
+  ],
+  "1481": [
+    [
+      "elementchange_weapon",
+      "Ele_Wind"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Silence",
+      "200"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"MG_THUNDERSTORM\"",
+      "3",
+      "100"
+    ]
+  ],
+  "1485": "No Script",
+  "1487": [
+    "dmg_size_%",
+    "Size_All",
+    "50"
+  ],
+  "15001": "No Script",
+  "1501": "No Script",
+  "1502": "No Script",
+  "1503": "No Script",
+  "1504": "No Script",
+  "1505": "No Script",
+  "1506": "No Script",
+  "1507": "No Script",
+  "1508": "No Script",
+  "1509": "No Script",
+  "1510": "No Script",
+  "1511": "No Script",
+  "1512": "No Script",
+  "1513": "No Script",
+  "1514": "No Script",
+  "1515": "No Script",
+  "1516": "No Script",
+  "1517": "No Script",
+  "1518": "No Script",
+  "1519": "No Script",
+  "1520": "No Script",
+  "1521": "No Script",
+  "1522": [
+    "whileattacking_badstatus",
+    "Eff_Stun",
+    "1000"
+  ],
+  "1524": [
+    [
+      "dmg_race_%",
+      "RC_Undead",
+      "10"
+    ],
+    [
+      "unbreakable_weapon"
+    ]
+  ],
+  "1525": [
+    "resist_ranged_%",
+    "10"
+  ],
+  "1529": "No Script",
+  "1532": [
+    "whileattacking_badstatus",
+    "Eff_Stun",
+    "1000"
+  ],
+  "1536": [
+    "dmg_monstertype_%",
+    "Class_All",
+    "50"
+  ],
+  "1539": [
+    [
+      "dmg_race_%",
+      "RC_Undead",
+      "10"
+    ],
+    [
+      "unbreakable_weapon"
+    ]
+  ],
+  "1545": "No Script",
+  "1547": [
+    [
+      "dmg_skillid_%",
+      "\"MC_CARTREVOLUTION\"",
+      "25"
+    ],
+    [
+      "+str",
+      "2"
+    ]
+  ],
+  "1549": "No Script",
+  "1550": "No Script",
+  "1551": [
+    "+int",
+    "2"
+  ],
+  "1552": "No Script",
+  "1553": [
+    "elementchange_weapon",
+    "Ele_Water"
+  ],
+  "1554": [
+    "elementchange_weapon",
+    "Ele_Earth"
+  ],
+  "1555": [
+    "elementchange_weapon",
+    "Ele_Fire"
+  ],
+  "1556": [
+    "elementchange_weapon",
+    "Ele_Wind"
+  ],
+  "1558": [
+    "dmg_monsterid_%",
+    "1188",
+    "150"
+  ],
+  "1562": [
+    [
+      "+int",
+      "3"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"AL_BLESSING\"",
+      "3+(getskilllv(\"AL_BLESSING\")>3)*(getskilllv(\"AL_BLESSING\")-3)",
+      "20"
+    ]
+  ],
+  "1566": [
+    "dmg_monstertype_%",
+    "Class_All",
+    "50"
+  ],
+  "1568": [
+    "elementchange_weapon",
+    "Ele_Water"
+  ],
+  "1569": [
+    "elementchange_weapon",
+    "Ele_Earth"
+  ],
+  "1570": [
+    "elementchange_weapon",
+    "Ele_Fire"
+  ],
+  "1571": [
+    "elementchange_weapon",
+    "Ele_Wind"
+  ],
+  "1573": [
+    "+matk_%",
+    "15"
+  ],
+  "1581": "No Script",
+  "1582": "No Script",
+  "1599": "No Script",
+  "1601": [
+    "+matk_%",
+    "15"
+  ],
+  "1602": [
+    "+matk_%",
+    "15"
+  ],
+  "1603": [
+    "+matk_%",
+    "15"
+  ],
+  "16030": [
+    "+aspd_%",
+    "getrefine()/2"
+  ],
+  "16031": [
+    "+atk_flat",
+    "getrefine()*5"
+  ],
+  "16032": [
+    "skillspcost_%",
+    "getrefine()*-1"
+  ],
+  "1627": [
+    [
+      "+matk_%",
+      "15"
+    ],
+    [
+      "dmg_monstertype_%",
+      "Class_All",
+      "50"
+    ]
+  ],
+  "1639": [
+    "+matk_%",
+    "16"
+  ],
+  "1701": "No Script",
+  "1702": "No Script",
+  "1704": "No Script",
+  "1705": "No Script",
+  "1706": "No Script",
+  "1707": "No Script",
+  "1708": "No Script",
+  "1709": "No Script",
+  "1710": "No Script",
+  "1711": "No Script",
+  "1712": "No Script",
+  "1713": [
+    "+dex",
+    "2"
+  ],
+  "1714": "No Script",
+  "1715": [
+    "+dex",
+    "2"
+  ],
+  "1716": "No Script",
+  "1718": "No Script",
+  "1719": "No Script",
+  "1721": "No Script",
+  "1722": "No Script",
+  "1723": [
+    "+def_flat",
+    "2+3*(getrefine()>5)+2*(getrefine()>8)"
+  ],
+  "1726": "No Script",
+  "1727": "No Script",
+  "1728": [
+    "dmg_ranged_%",
+    "20"
+  ],
+  "1730": [
+    "resist_element_%",
+    "Ele_Fire",
+    "10"
+  ],
+  "1731": [
+    "whileattacking_badstatus",
+    "Eff_Freeze",
+    "1000"
+  ],
+  "1732": "No Script",
+  "1733": "No Script",
+  "1734": [
+    "dropitem_monster_%",
+    "1753",
+    "200"
+  ],
+  "1735": [
+    "dmg_monstertype_%",
+    "Class_All",
+    "50"
+  ],
+  "1736": [
+    "whileattacking_autospell",
+    "\"AC_DOUBLE\"",
+    "GetSkillLv(\"AC_DOUBLE\")",
+    "10"
+  ],
+  "1740": [
+    "cast_spell_on_skill",
+    "\"AC_DOUBLE\"",
+    "\"AC_CHARGEARROW\"",
+    "1",
+    "20"
+  ],
+  "1741": [
+    [
+      "+luk",
+      "-2"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Curse",
+      "400"
+    ]
+  ],
+  "1742": "No Script",
+  "1744": [
+    [
+      "dmg_skillid_%",
+      "\"AC_DOUBLE\"",
+      "25"
+    ],
+    [
+      "+dex",
+      "2"
+    ]
+  ],
+  "1801": "No Script",
+  "1802": "No Script",
+  "1803": "No Script",
+  "1804": "No Script",
+  "1805": "No Script",
+  "1806": "No Script",
+  "1807": "No Script",
+  "1808": "No Script",
+  "1809": [
+    "+str",
+    "2"
+  ],
+  "1810": [
+    "+str",
+    "2"
+  ],
+  "18100": [
+    "dmg_ranged_%",
+    "20"
+  ],
+  "1811": "No Script",
+  "1812": "No Script",
+  "1814": [
+    "+aspd_%",
+    "12"
+  ],
+  "1816": [
+    "+aspd_%",
+    "12"
+  ],
+  "1818": [
+    "whileattacking_autospell",
+    "\"SA_FLAMELAUNCHER\"",
+    "5",
+    "10"
+  ],
+  "1819": [
+    "whileattacking_autospell",
+    "\"SA_FROSTWEAPON\"",
+    "5",
+    "10"
+  ],
+  "1820": [
+    "whileattacking_autospell",
+    "\"SA_LIGHTNINGLOADER\"",
+    "5",
+    "10"
+  ],
+  "1821": [
+    "whileattacking_autospell",
+    "\"SA_SEISMICWEAPON\"",
+    "5",
+    "10"
+  ],
+  "1828": [
+    [
+      "+int",
+      "2"
+    ],
+    [
+      "dmg_skillid_%",
+      "\"MO_FINGEROFFENSIVE\"",
+      "25"
+    ]
+  ],
+  "1829": [
+    "dmg_size_%",
+    "Size_All",
+    "40"
+  ],
+  "18500": "No Script",
+  "18501": "No Script",
+  "18502": "No Script",
+  "18505": [
+    "+vit",
+    "1"
+  ],
+  "18506": "No Script",
+  "18507": "No Script",
+  "18596": [
+    "add_skill",
+    "\"WZ_HEAVENDRIVE\"",
+    "3"
+  ],
+  "18620": "No Script",
+  "1901": "No Script",
+  "1902": "No Script",
+  "1903": "No Script",
+  "1904": "No Script",
+  "1905": "No Script",
+  "1906": "No Script",
+  "1907": "No Script",
+  "1908": "No Script",
+  "1909": [
+    "+int",
+    "2"
+  ],
+  "1910": [
+    "+int",
+    "2"
+  ],
+  "1911": "No Script",
+  "1912": "No Script",
+  "1914": [
+    "elementchange_weapon",
+    "Ele_Fire"
+  ],
+  "1915": [
+    "elementchange_weapon",
+    "Ele_Water"
+  ],
+  "1916": [
+    "elementchange_weapon",
+    "Ele_Earth"
+  ],
+  "1917": [
+    "elementchange_weapon",
+    "Ele_Wind"
+  ],
+  "1921": [
+    "dmg_monstertype_%",
+    "Class_All",
+    "50"
+  ],
+  "1929": [
+    "dmg_size_%",
+    "Size_All",
+    "40"
+  ],
+  "1950": "No Script",
+  "19500": [
+    "+str",
+    "2"
+  ],
+  "19501": "No Script",
+  "19504": "No Script",
+  "19505": "No Script",
+  "19506": "No Script",
+  "19507": "No Script",
+  "1951": "No Script",
+  "1952": "No Script",
+  "1953": "No Script",
+  "1954": "No Script",
+  "1955": "No Script",
+  "1956": "No Script",
+  "1957": "No Script",
+  "1958": [
+    "+luk",
+    "3"
+  ],
+  "1959": [
+    "+luk",
+    "3"
+  ],
+  "1960": "No Script",
+  "1961": "No Script",
+  "1963": [
+    [
+      "elementchange_weapon",
+      "Ele_Poison"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Poison",
+      "5000"
+    ]
+  ],
+  "1965": [
+    "elementchange_weapon",
+    "Ele_Fire"
+  ],
+  "1966": [
+    "elementchange_weapon",
+    "Ele_Water"
+  ],
+  "1967": [
+    "elementchange_weapon",
+    "Ele_Earth"
+  ],
+  "1968": [
+    "+crit",
+    "20"
+  ],
+  "1969": [
+    "whileattacking_badstatus",
+    "Eff_Bleeding",
+    "300"
+  ],
+  "1971": [
+    "elementchange_weapon",
+    "Ele_Wind"
+  ],
+  "1973": [
+    [
+      "afterkill_spdrain",
+      "5"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"WZ_FROSTNOVA\"",
+      "3",
+      "50",
+      "1"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"NPC_WIDESILENCE\"",
+      "2",
+      "100"
+    ]
+  ],
+  "1975": [
+    "dmg_monstertype_%",
+    "Class_All",
+    "50"
+  ],
+  "1982": [
+    [
+      "+dex",
+      "2"
+    ],
+    [
+      "dmg_skillid_%",
+      "\"DC_THROWARROW\"",
+      "25"
+    ]
+  ],
+  "1983": [
+    "dmg_size_%",
+    "Size_All",
+    "40"
+  ],
+  "2101": "No Script",
+  "2102": "No Script",
+  "2103": "No Script",
+  "2104": "No Script",
+  "2105": "No Script",
+  "2106": "No Script",
+  "2107": [
+    "+mdef_flat",
+    "5"
+  ],
+  "2108": [
+    "+mdef_flat",
+    "5"
+  ],
+  "2112": "No Script",
+  "2114": [
+    "resist_size_%",
+    "Size_Large",
+    "5"
+  ],
+  "2116": [
+    "resist_race_%",
+    "RC_Demon",
+    "5"
+  ],
+  "2117": "No Script",
+  "2118": "No Script",
+  "2119": [
+    "+mdef_flat",
+    "5"
+  ],
+  "2120": [
+    "+mdef_flat",
+    "5"
+  ],
+  "2124": [
+    "+mdef_flat",
+    "2"
+  ],
+  "2126": [
+    "+mdef_flat",
+    "3"
+  ],
+  "2135": "No Script",
+  "2139": "No Script",
+  "2199": "No Script",
+  "2201": [
+    "resist_badstatus_%",
+    "Eff_Blind",
+    "500"
+  ],
+  "2202": [
+    "resist_badstatus_%",
+    "Eff_Blind",
+    "500"
+  ],
+  "2203": "No Script",
+  "2204": "No Script",
+  "2205": "No Script",
+  "2206": [
+    "+mdef_flat",
+    "5"
+  ],
+  "2207": [
+    "resist_race_%",
+    "RC_Plant",
+    "10"
+  ],
+  "2208": [
+    "+mdef_flat",
+    "3"
+  ],
+  "2209": [
+    "+mdef_flat",
+    "3"
+  ],
+  "2210": "No Script",
+  "2211": "No Script",
+  "2212": "No Script",
+  "2213": "No Script",
+  "2214": [
+    "+luk",
+    "2"
+  ],
+  "2215": "No Script",
+  "2216": "No Script",
+  "2217": "No Script",
+  "2218": [
+    "resist_badstatus_%",
+    "Eff_Silence",
+    "1000"
+  ],
+  "2219": [
+    "resist_badstatus_%",
+    "Eff_Silence",
+    "1000"
+  ],
+  "2220": "No Script",
+  "2221": "No Script",
+  "2222": "No Script",
+  "2223": "No Script",
+  "2224": "No Script",
+  "2225": "No Script",
+  "2226": "No Script",
+  "2227": "No Script",
+  "2228": "No Script",
+  "2229": "No Script",
+  "2230": [
+    "+mdef_flat",
+    "3"
+  ],
+  "2231": [
+    "+mdef_flat",
+    "3"
+  ],
+  "2232": [
+    "+mdef_flat",
+    "3"
+  ],
+  "2233": [
+    "+mdef_flat",
+    "3"
+  ],
+  "2234": [
+    "+int",
+    "2"
+  ],
+  "2235": [
+    "+int",
+    "2"
+  ],
+  "2237": "No Script",
+  "2239": "No Script",
+  "2240": "No Script",
+  "2241": "No Script",
+  "2242": [
+    "resist_badstatus_%",
+    "Eff_Blind",
+    "1000"
+  ],
+  "2243": [
+    "resist_badstatus_%",
+    "Eff_Blind",
+    "1500"
+  ],
+  "2244": [
+    "+mdef_flat",
+    "3"
+  ],
+  "2245": "No Script",
+  "2246": [
+    "unbreakable_helm"
+  ],
+  "2247": "No Script",
+  "2248": "No Script",
+  "2249": [
+    "+int",
+    "1"
+  ],
+  "2250": [
+    "+maxsp_flat",
+    "20"
+  ],
+  "2251": [
+    "+mdef_flat",
+    "3"
+  ],
+  "2252": [
+    "+maxsp_flat",
+    "100"
+  ],
+  "2253": [
+    "resist_race_%",
+    "RC_Insect",
+    "10"
+  ],
+  "2256": [
+    "+str",
+    "1"
+  ],
+  "2257": "No Script",
+  "2258": "No Script",
+  "2259": "No Script",
+  "2260": "No Script",
+  "2261": "No Script",
+  "2262": "No Script",
+  "2263": "No Script",
+  "2264": [
+    "resist_race_%",
+    "RC_Undead",
+    "10"
+  ],
+  "2265": [
+    "resist_badstatus_%",
+    "Eff_Silence",
+    "1500"
+  ],
+  "2266": "No Script",
+  "2267": [
+    "resist_race_%",
+    "RC_Insect",
+    "3"
+  ],
+  "2268": [
+    "resist_race_%",
+    "RC_Insect",
+    "3"
+  ],
+  "2269": [
+    "resist_race_%",
+    "RC_Plant",
+    "3"
+  ],
+  "2270": [
+    "resist_race_%",
+    "RC_Plant",
+    "3"
+  ],
+  "2271": "No Script",
+  "2272": "No Script",
+  "2273": [
+    "+int",
+    "1"
+  ],
+  "2274": [
+    [
+      "+agi",
+      "2"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Ghost",
+      "10"
+    ]
+  ],
+  "2275": "No Script",
+  "2276": "No Script",
+  "2277": [
+    "+int",
+    "1"
+  ],
+  "2278": "No Script",
+  "2279": "No Script",
+  "2280": [
+    "+agi",
+    "1"
+  ],
+  "2281": "No Script",
+  "2282": [
+    "resist_element_%",
+    "Ele_Holy",
+    "15"
+  ],
+  "2283": [
+    "resist_badstatus_%",
+    "Eff_Curse",
+    "1000"
+  ],
+  "2284": "No Script",
+  "2285": [
+    "+dex",
+    "3"
+  ],
+  "2286": "No Script",
+  "2287": [
+    "+str",
+    "1"
+  ],
+  "2288": "No Script",
+  "2290": "No Script",
+  "2292": [
+    "resist_element_%",
+    "Ele_Fire",
+    "10"
+  ],
+  "2293": "No Script",
+  "2294": "No Script",
+  "2295": [
+    "resist_badstatus_%",
+    "Eff_Blind",
+    "10000"
+  ],
+  "2296": [
+    "+dex",
+    "1"
+  ],
+  "2297": "No Script",
+  "2298": "No Script",
+  "2299": "No Script",
+  "2301": "No Script",
+  "2302": "No Script",
+  "2303": "No Script",
+  "2304": "No Script",
+  "2305": "No Script",
+  "2306": "No Script",
+  "2307": "No Script",
+  "2308": "No Script",
+  "2309": "No Script",
+  "2310": "No Script",
+  "2311": "No Script",
+  "2312": "No Script",
+  "2313": "No Script",
+  "2314": "No Script",
+  "2315": "No Script",
+  "2316": "No Script",
+  "2317": "No Script",
+  "2319": [
+    [
+      "+mdef_flat",
+      "5"
+    ],
+    [
+      "whileattacking_badstatus",
+      "Eff_Blind",
+      "300"
+    ]
+  ],
+  "2320": "No Script",
+  "2321": [
+    "+mdef_flat",
+    "10"
+  ],
+  "2322": [
+    "+mdef_flat",
+    "10"
+  ],
+  "2323": "No Script",
+  "2324": "No Script",
+  "2325": [
+    "+mdef_flat",
+    "5"
+  ],
+  "2326": [
+    "+mdef_flat",
+    "5"
+  ],
+  "2328": "No Script",
+  "2329": "No Script",
+  "2330": [
+    "+dex",
+    "1"
+  ],
+  "2331": [
+    "+dex",
+    "1"
+  ],
+  "2332": "No Script",
+  "2333": "No Script",
+  "2335": [
+    "+agi",
+    "1"
+  ],
+  "2336": [
+    "+agi",
+    "1"
+  ],
+  "2338": [
+    "+mdef_flat",
+    "15"
+  ],
+  "2339": "No Script",
+  "2340": "No Script",
+  "2341": "No Script",
+  "2342": "No Script",
+  "2344": [
+    "elementchange_armor",
+    "Ele_Fire"
+  ],
+  "2345": [
+    "elementchange_armor",
+    "Ele_Fire"
+  ],
+  "2346": [
+    "elementchange_armor",
+    "Ele_Water"
+  ],
+  "2347": [
+    "elementchange_armor",
+    "Ele_Water"
+  ],
+  "2348": [
+    "elementchange_armor",
+    "Ele_Wind"
+  ],
+  "2349": [
+    "elementchange_armor",
+    "Ele_Wind"
+  ],
+  "2350": [
+    "elementchange_armor",
+    "Ele_Earth"
+  ],
+  "2351": [
+    "elementchange_armor",
+    "Ele_Earth"
+  ],
+  "2352": "No Script",
+  "2353": "No Script",
+  "2355": [
+    "+mdef_flat",
+    "20"
+  ],
+  "2356": [
+    [
+      "+mdef_flat",
+      "5"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Blind",
+      "8000"
+    ]
+  ],
+  "2358": [
+    "+luk",
+    "4"
+  ],
+  "2371": "No Script",
+  "2393": "No Script",
+  "2396": [
+    "+maxhp_flat",
+    "500"
+  ],
+  "2399": [
+    "+mdef_flat",
+    "3"
+  ],
+  "2401": "No Script",
+  "2402": "No Script",
+  "2403": "No Script",
+  "2404": "No Script",
+  "2405": "No Script",
+  "2406": "No Script",
+  "2408": "No Script",
+  "2409": [
+    "+mdef_flat",
+    "5"
+  ],
+  "2411": "No Script",
+  "2412": "No Script",
+  "2413": "No Script",
+  "2414": "No Script",
+  "2416": [
+    "+maxhp_%",
+    "5"
+  ],
+  "2417": [
+    [
+      "+agi",
+      "2"
+    ],
+    [
+      "efficiency_itemgroup",
+      "IG_Potion",
+      "20"
+    ]
+  ],
+  "2420": [
+    "+maxhp_flat",
+    "100"
+  ],
+  "2422": [
+    "+mdef_flat",
+    "10"
+  ],
+  "2424": [
+    "resist_element_%",
+    "Ele_Water",
+    "5"
+  ],
+  "2432": [
+    "+mdef_flat",
+    "5"
+  ],
+  "2433": [
+    "+maxhp_flat",
+    "(BaseLevel*10)"
+  ],
+  "2446": [
+    "+maxhp_%",
+    "5"
+  ],
+  "2447": "No Script",
+  "2501": "No Script",
+  "2502": "No Script",
+  "2503": "No Script",
+  "2504": "No Script",
+  "2505": "No Script",
+  "2506": "No Script",
+  "2507": [
+    "+agi",
+    "1"
+  ],
+  "2510": [
+    "resist_element_%",
+    "Ele_Neutral",
+    "20"
+  ],
+  "2511": "No Script",
+  "2512": [
+    "resist_element_%",
+    "Ele_Neutral",
+    "10"
+  ],
+  "2513": "No Script",
+  "2514": "No Script",
+  "2515": "No Script",
+  "2517": [
+    "resist_element_%",
+    "Ele_Neutral",
+    "15"
+  ],
+  "2521": [
+    "+hprecovery_%",
+    "5"
+  ],
+  "2522": [
+    "+mdef_flat",
+    "1"
+  ],
+  "2523": [
+    "+mdef_flat",
+    "1"
+  ],
+  "2525": [
+    "+agi",
+    "1"
+  ],
+  "2526": "No Script",
+  "2527": [
+    "resist_race_%",
+    "RC_Dragon",
+    "15"
+  ],
+  "2528": [
+    "+mdef_flat",
+    "4"
+  ],
+  "2529": [
+    "+agi",
+    "2"
+  ],
+  "2530": [
+    "+agi",
+    "2"
+  ],
+  "2531": [
+    "whilehit_targetskill_%",
+    "\"NPC_STONESKIN\"",
+    "6",
+    "20"
+  ],
+  "2532": [
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"NPC_ANTIMAGIC\"",
+      "6",
+      "200",
+      "BF_MAGIC",
+      "0"
+    ]
+  ],
+  "2545": [
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"AL_HEAL\"",
+      "max(1",
+      "getskilllv(\"AL_HEAL\"))",
+      "20"
+    ]
+  ],
+  "2551": [
+    "+agi",
+    "2"
+  ],
+  "2552": [
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"NPC_ANTIMAGIC\"",
+      "6",
+      "200",
+      "BF_MAGIC",
+      "0"
+    ]
+  ],
+  "2601": [
+    "+str",
+    "2"
+  ],
+  "2602": [
+    "+int",
+    "2"
+  ],
+  "2603": [
+    "+vit",
+    "2"
+  ],
+  "2604": [
+    "+dex",
+    "2"
+  ],
+  "2605": [
+    "+agi",
+    "2"
+  ],
+  "2607": [
+    "+maxsp_flat",
+    "10"
+  ],
+  "2609": "No Script",
+  "2610": "No Script",
+  "2611": "No Script",
+  "2612": "No Script",
+  "2613": "No Script",
+  "2615": [
+    "+mdef_flat",
+    "3"
+  ],
+  "2616": [
+    "+crit",
+    "5"
+  ],
+  "2617": [
+    "+int",
+    "1"
+  ],
+  "2618": [
+    "+agi",
+    "1"
+  ],
+  "2619": [
+    "dmg_ranged_%",
+    "3"
+  ],
+  "2621": [
+    "+str",
+    "1"
+  ],
+  "2622": [
+    "+int",
+    "1"
+  ],
+  "2623": [
+    "+vit",
+    "1"
+  ],
+  "2624": [
+    "+dex",
+    "1"
+  ],
+  "2625": [
+    "+agi",
+    "1"
+  ],
+  "2627": "No Script",
+  "2628": "No Script",
+  "2631": "No Script",
+  "2636": [
+    "+luk",
+    "1"
+  ],
+  "2637": [
+    "+luk",
+    "1"
+  ],
+  "2641": [
+    "+str",
+    "2"
+  ],
+  "2642": "No Script",
+  "2643": "No Script",
+  "2645": [
+    "+mdef_flat",
+    "2"
+  ],
+  "2646": [
+    "+all_stats",
+    "3"
+  ],
+  "2647": [
+    "+maxhp_flat",
+    "10"
+  ],
+  "2652": [
+    [
+      "+crit",
+      "6"
+    ],
+    [
+      "whileattacking_selfbadstatus",
+      "Eff_Curse",
+      "50"
+    ]
+  ],
+  "2653": "No Script",
+  "2655": "No Script",
+  "2656": [
+    "+maxhp_flat",
+    "50"
+  ],
+  "2657": "No Script",
+  "2658": [
+    "+maxhp_flat",
+    "10"
+  ],
+  "2666": [
+    [
+      "+str",
+      "2"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Blind",
+      "1000"
+    ]
+  ],
+  "2668": "No Script",
+  "2669": [
+    "+maxsp_flat",
+    "10"
+  ],
+  "2670": [
+    "+flee",
+    "5"
+  ],
+  "2671": [
+    "dmg_ranged_%",
+    "3"
+  ],
+  "2672": "No Script",
+  "2674": "No Script",
+  "2675": [
+    "+all_stats",
+    "3"
+  ],
+  "2676": [
+    "dropitem_monster_%",
+    "7618",
+    "100"
+  ],
+  "2681": [
+    "+all_stats",
+    "3"
+  ],
+  "2682": [
+    "resist_element_%",
+    "Ele_Water",
+    "5"
+  ],
+  "2683": [
+    "resist_element_%",
+    "Ele_Fire",
+    "5"
+  ],
+  "2684": [
+    "resist_element_%",
+    "Ele_Wind",
+    "5"
+  ],
+  "2685": [
+    "resist_element_%",
+    "Ele_Earth",
+    "5"
+  ],
+  "2686": [
+    "+int",
+    "1"
+  ],
+  "2687": [
+    "resist_race_%",
+    "RC_Plant",
+    "3"
+  ],
+  "2688": [
+    "+crit",
+    "10"
+  ],
+  "2689": [
+    "+int",
+    "3"
+  ],
+  "2690": [
+    "+str",
+    "4"
+  ],
+  "2691": [
+    "+vit",
+    "4"
+  ],
+  "2692": [
+    "+dex",
+    "4"
+  ],
+  "2693": [
+    "+agi",
+    "4"
+  ],
+  "2695": [
+    "+mdef_flat",
+    "5"
+  ],
+  "2700": "No Script",
+  "2702": [
+    "+agi",
+    "2"
+  ],
+  "2704": [
+    "+mdef_flat",
+    "4"
+  ],
+  "2705": [
+    "dropitem_monster_%",
+    "12018",
+    "500"
+  ],
+  "2706": "No Script",
+  "2707": "No Script",
+  "2708": [
+    "whileattacking_autospell",
+    "\"MG_FIREBOLT\"",
+    "5",
+    "300"
+  ],
+  "2709": "No Script",
+  "2710": [
+    "+atk_flat",
+    "30"
+  ],
+  "2713": "No Script",
+  "2714": "No Script",
+  "2715": [
+    "resist_race_%",
+    "RC_Undead",
+    "1"
+  ],
+  "2716": [
+    "+maxsp_flat",
+    "20"
+  ],
+  "2717": "No Script",
+  "2718": "No Script",
+  "2732": [
+    "+crit",
+    "5"
+  ],
+  "2734": "No Script",
+  "2735": "No Script",
+  "2746": [
+    "+agi",
+    "3"
+  ],
+  "2747": [
+    "+dex",
+    "3"
+  ],
+  "2753": [
+    "expbonus_race_%",
+    "RC_Formless",
+    "15"
+  ],
+  "2754": [
+    "expbonus_race_%",
+    "RC_undead",
+    "15"
+  ],
+  "2755": [
+    "expbonus_race_%",
+    "RC_Brute",
+    "15"
+  ],
+  "2756": [
+    "expbonus_race_%",
+    "RC_Plant",
+    "15"
+  ],
+  "2757": [
+    "expbonus_race_%",
+    "RC_Insect",
+    "15"
+  ],
+  "2758": [
+    "expbonus_race_%",
+    "RC_Fish",
+    "15"
+  ],
+  "2759": [
+    "expbonus_race_%",
+    "RC_Demon",
+    "15"
+  ],
+  "2760": [
+    "expbonus_race_%",
+    "RC_DemiHuman",
+    "15"
+  ],
+  "2761": [
+    "expbonus_race_%",
+    "RC_Angel",
+    "15"
+  ],
+  "2762": [
+    "expbonus_race_%",
+    "RC_Dragon",
+    "15"
+  ],
+  "2764": "No Script",
+  "2773": [
+    "+all_stats",
+    "2"
+  ],
+  "2774": [
+    "+all_stats",
+    "1"
+  ],
+  "2775": "No Script",
+  "2776": "No Script",
+  "2777": [
+    "skillspcost_%",
+    "-5"
+  ],
+  "2778": [
+    "+int",
+    "2"
+  ],
+  "2784": [
+    "add_skill",
+    "\"ALL_WEWISH\"",
+    "1"
+  ],
+  "2791": [
+    "+hit",
+    "3"
+  ],
+  "2794": [
+    "+str",
+    "2"
+  ],
+  "2799": [
+    "+mdef_flat",
+    "1"
+  ],
+  "2800": [
+    "+agi",
+    "2"
+  ],
+  "2801": [
+    "+agi",
+    "1"
+  ],
+  "2802": "No Script",
+  "2803": [
+    "+int",
+    "3"
+  ],
+  "2804": [
+    "+dex",
+    "1"
+  ],
+  "2805": [
+    "+dex",
+    "1"
+  ],
+  "2806": [
+    "+dex",
+    "1"
+  ],
+  "2807": "No Script",
+  "2808": [
+    "+agi",
+    "3"
+  ],
+  "2809": [
+    "+dex",
+    "1"
+  ],
+  "2810": [
+    "+dex",
+    "1"
+  ],
+  "5001": [
+    "resist_badstatus_%",
+    "Eff_Curse",
+    "1000"
+  ],
+  "5004": [
+    "resist_badstatus_%",
+    "Eff_Poison",
+    "2000"
+  ],
+  "5005": [
+    "resist_badstatus_%",
+    "Eff_Poison",
+    "3000"
+  ],
+  "5006": "No Script",
+  "5008": "No Script",
+  "5010": "No Script",
+  "5011": "No Script",
+  "5012": "No Script",
+  "5014": "No Script",
+  "5015": "No Script",
+  "5016": "No Script",
+  "5017": [
+    "resist_element_%",
+    "Ele_Dark",
+    "-15"
+  ],
+  "5018": [
+    "+agi",
+    "1"
+  ],
+  "5019": [
+    "+vit",
+    "1"
+  ],
+  "5020": [
+    "+mdef_flat",
+    "3"
+  ],
+  "5023": "No Script",
+  "5024": "No Script",
+  "5026": [
+    "+dex",
+    "1"
+  ],
+  "5028": "No Script",
+  "5029": "No Script",
+  "5030": "No Script",
+  "5031": [
+    "+dex",
+    "2"
+  ],
+  "5032": "No Script",
+  "5033": "No Script",
+  "5034": "No Script",
+  "5035": "No Script",
+  "5036": "No Script",
+  "5037": "No Script",
+  "5039": "No Script",
+  "5040": "No Script",
+  "5041": "No Script",
+  "5042": "No Script",
+  "5043": "No Script",
+  "5044": [
+    "+vit",
+    "1"
+  ],
+  "5046": "No Script",
+  "5047": "No Script",
+  "5048": "No Script",
+  "5049": "No Script",
+  "5050": "No Script",
+  "5051": "No Script",
+  "5052": "No Script",
+  "5053": [
+    "+str",
+    "2"
+  ],
+  "5054": "No Script",
+  "5055": "No Script",
+  "5056": "No Script",
+  "5057": "No Script",
+  "5058": [
+    [
+      "+mdef_flat",
+      "15"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Curse",
+      "3000"
+    ]
+  ],
+  "5059": "No Script",
+  "5060": [
+    "+luk",
+    "1"
+  ],
+  "5061": "No Script",
+  "5062": [
+    "+agi",
+    "1"
+  ],
+  "5063": "No Script",
+  "5064": "No Script",
+  "5065": [
+    "dmg_race_%",
+    "RC_Fish",
+    "10"
+  ],
+  "5067": [
+    "+agi",
+    "1"
+  ],
+  "5068": [
+    "+str",
+    "1"
+  ],
+  "5070": [
+    "+str",
+    "2"
+  ],
+  "5071": [
+    "+dex",
+    "1"
+  ],
+  "5073": [
+    "+dex",
+    "2"
+  ],
+  "5074": [
+    "+str",
+    "1"
+  ],
+  "5075": "No Script",
+  "5076": [
+    "+luk",
+    "1"
+  ],
+  "5077": "No Script",
+  "5078": [
+    "+vit",
+    "1"
+  ],
+  "5079": "No Script",
+  "5080": "No Script",
+  "5082": "No Script",
+  "5083": [
+    "+mdef_flat",
+    "10"
+  ],
+  "5084": [
+    "resist_badstatus_%",
+    "Eff_Sleep",
+    "2000"
+  ],
+  "5085": "No Script",
+  "5086": [
+    "resist_badstatus_%",
+    "Eff_Blind",
+    "5000"
+  ],
+  "5087": "No Script",
+  "5088": "No Script",
+  "5089": "No Script",
+  "5090": "No Script",
+  "5091": "No Script",
+  "5092": "No Script",
+  "5093": [
+    "+maxsp_flat",
+    "100"
+  ],
+  "5096": "No Script",
+  "5097": "No Script",
+  "5101": "No Script",
+  "5102": "No Script",
+  "5106": [
+    "+luk",
+    "1"
+  ],
+  "5107": "No Script",
+  "5108": "No Script",
+  "5109": "No Script",
+  "5110": "No Script",
+  "5111": [
+    "dropitem_monster_%",
+    "605",
+    "100"
+  ],
+  "5112": [
+    "+all_stats",
+    "1"
+  ],
+  "5113": "No Script",
+  "5114": "No Script",
+  "5115": [
+    "resist_badstatus_%",
+    "Eff_Freeze",
+    "1000"
+  ],
+  "5116": [
+    "whileattacking_autospell",
+    "\"SM_PROVOKE\"",
+    "3",
+    "30"
+  ],
+  "5117": [
+    "resist_race_%",
+    "RC_Plant",
+    "2"
+  ],
+  "5118": "No Script",
+  "5119": [
+    "+all_stats",
+    "1"
+  ],
+  "5120": "No Script",
+  "5122": [
+    "+str",
+    "2"
+  ],
+  "5125": [
+    "+sprecovery_%",
+    "5"
+  ],
+  "5126": [
+    "+int",
+    "2"
+  ],
+  "5130": [
+    [
+      "whilehit_badstatus_%",
+      "Eff_Silence",
+      "500"
+    ],
+    [
+      "+mdef_flat",
+      "1"
+    ]
+  ],
+  "5133": [
+    "reflect_melee_orclord",
+    "5"
+  ],
+  "5134": [
+    "resist_race_%",
+    "RC_Demon",
+    "5"
+  ],
+  "5135": [
+    "+maxsp_flat",
+    "50"
+  ],
+  "5136": "No Script",
+  "5141": [
+    "+str",
+    "1"
+  ],
+  "5143": [
+    "resist_badstatus_%",
+    "Eff_Silence",
+    "3000"
+  ],
+  "5144": [
+    "+luk",
+    "5"
+  ],
+  "5145": "No Script",
+  "5147": "No Script",
+  "5148": [
+    "+int",
+    "2"
+  ],
+  "5149": [
+    "+int",
+    "2"
+  ],
+  "5150": [
+    "+movespeed_%",
+    "25"
+  ],
+  "5152": [
+    [
+      "resist_badstatus_%",
+      "Eff_Stun",
+      "1000"
+    ],
+    [
+      "+int",
+      "1"
+    ]
+  ],
+  "5153": [
+    "+flee",
+    "5"
+  ],
+  "5154": "No Script",
+  "5155": [
+    "+atk_flat",
+    "20"
+  ],
+  "5156": [
+    "+matk_%",
+    "1"
+  ],
+  "5157": "No Script",
+  "5158": [
+    "+mdef_flat",
+    "3"
+  ],
+  "5159": [
+    "unbreakable_helm"
+  ],
+  "5160": [
+    "+str",
+    "1"
+  ],
+  "5161": "No Script",
+  "5162": [
+    "resist_element_%",
+    "Ele_Dark",
+    "-15"
+  ],
+  "5163": [
+    "+vit",
+    "1"
+  ],
+  "5164": [
+    "+int",
+    "1"
+  ],
+  "5165": [
+    "+int",
+    "1"
+  ],
+  "5166": [
+    "+str",
+    "2"
+  ],
+  "5167": [
+    "resist_race_%",
+    "RC_Undead",
+    "10"
+  ],
+  "5168": "No Script",
+  "5171": [
+    "+mdef_flat",
+    "5"
+  ],
+  "5178": [
+    "+all_stats",
+    "1"
+  ],
+  "5179": [
+    "+int",
+    "2"
+  ],
+  "5180": [
+    "+vit",
+    "1"
+  ],
+  "5181": [
+    "+str",
+    "2"
+  ],
+  "5184": [
+    "resist_element_%",
+    "Ele_Water",
+    "5"
+  ],
+  "5190": "No Script",
+  "5192": [
+    "+mdef_flat",
+    "3"
+  ],
+  "5193": [
+    "+mdef_flat",
+    "3"
+  ],
+  "5194": [
+    "+mdef_flat",
+    "3"
+  ],
+  "5195": [
+    "+mdef_flat",
+    "3"
+  ],
+  "5196": [
+    "+mdef_flat",
+    "3"
+  ],
+  "5197": [
+    "+mdef_flat",
+    "3"
+  ],
+  "5199": "No Script",
+  "5200": "No Script",
+  "5201": "No Script",
+  "5202": [
+    "resist_race_%",
+    "RC_Demon",
+    "5"
+  ],
+  "5203": [
+    "+movespeed_%",
+    "25"
+  ],
+  "5206": [
+    "resist_race_%",
+    "RC_Plant",
+    "3"
+  ],
+  "5207": [
+    [
+      "+luk",
+      "1"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Holy",
+      "5"
+    ]
+  ],
+  "5209": "No Script",
+  "5214": [
+    [
+      "+dex",
+      "2"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"AL_INCAGI\"",
+      "1",
+      "50"
+    ]
+  ],
+  "5217": [
+    "+str",
+    "2"
+  ],
+  "5218": [
+    "+int",
+    "2"
+  ],
+  "5221": [
+    "+flee",
+    "5"
+  ],
+  "5223": [
+    "+agi",
+    "2"
+  ],
+  "5230": [
+    [
+      "resist_badstatus_%",
+      "Eff_Curse",
+      "3000"
+    ],
+    [
+      "+mdef_flat",
+      "15"
+    ]
+  ],
+  "5231": [
+    [
+      "resist_badstatus_%",
+      "Eff_Curse",
+      "3000"
+    ],
+    [
+      "+mdef_flat",
+      "15"
+    ]
+  ],
+  "5232": [
+    [
+      "resist_badstatus_%",
+      "Eff_Curse",
+      "3000"
+    ],
+    [
+      "+mdef_flat",
+      "15"
+    ]
+  ],
+  "5233": [
+    [
+      "resist_badstatus_%",
+      "Eff_Curse",
+      "3000"
+    ],
+    [
+      "+mdef_flat",
+      "15"
+    ]
+  ],
+  "5234": [
+    [
+      "resist_badstatus_%",
+      "Eff_Curse",
+      "3000"
+    ],
+    [
+      "+mdef_flat",
+      "15"
+    ]
+  ],
+  "5235": [
+    "+luk",
+    "1"
+  ],
+  "5236": [
+    "+luk",
+    "1"
+  ],
+  "5237": [
+    "+luk",
+    "1"
+  ],
+  "5243": [
+    "resist_badstatus_%",
+    "Eff_Freeze",
+    "1000"
+  ],
+  "5244": [
+    "resist_badstatus_%",
+    "Eff_Blind",
+    "10000"
+  ],
+  "5245": [
+    "resist_badstatus_%",
+    "Eff_Blind",
+    "500"
+  ],
+  "5248": [
+    "resist_badstatus_%",
+    "Eff_Blind",
+    "10000"
+  ],
+  "5249": [
+    "resist_badstatus_%",
+    "Eff_Blind",
+    "10000"
+  ],
+  "5250": "No Script",
+  "5251": "No Script",
+  "5255": [
+    [
+      "+luk",
+      "3"
+    ],
+    [
+      "whileattacking_autospell",
+      "\"BS_GREED\"",
+      "1",
+      "50"
+    ]
+  ],
+  "5257": [
+    [
+      "+mdef_flat",
+      "2"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"HP_ASSUMPTIO\"",
+      "1",
+      "10"
+    ]
+  ],
+  "5264": [
+    "+all_stats",
+    "2"
+  ],
+  "5265": [
+    "+dex",
+    "4"
+  ],
+  "5267": [
+    "+agi",
+    "3"
+  ],
+  "5270": [
+    "+perfectdodge",
+    "5"
+  ],
+  "5271": [
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "resist_allmonster_%",
+      "Class_Boss",
+      "getrefine()"
+    ]
+  ],
+  "5272": [
+    "whileattacking_autospell",
+    "\"SM_PROVOKE\"",
+    "5",
+    "50"
+  ],
+  "5279": [
+    [
+      "+mdef_flat",
+      "15"
+    ],
+    [
+      "resist_badstatus_%",
+      "Eff_Curse",
+      "3000"
+    ]
+  ],
+  "5280": [
+    "+str",
+    "1"
+  ],
+  "5282": "No Script",
+  "5285": [
+    "+agi",
+    "2"
+  ],
+  "5287": [
+    "+vit",
+    "1"
+  ],
+  "5288": [
+    "+int",
+    "1"
+  ],
+  "5292": [
+    "resist_race_%",
+    "RC_Dragon",
+    "5"
+  ],
+  "5294": [
+    [
+      "+agi",
+      "3"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Ghost",
+      "-10"
+    ]
+  ],
+  "5295": [
+    "+mdef_flat",
+    "4"
+  ],
+  "5297": [
+    [
+      "+all_stats",
+      "1"
+    ],
+    [
+      "regularly_recover_sp",
+      "2",
+      "10000"
+    ]
+  ],
+  "5299": [
+    "whileattacking_autospell",
+    "\"DC_SCREAM\"",
+    "1",
+    "50"
+  ],
+  "5300": [
+    "+maxhp_flat",
+    "100"
+  ],
+  "5301": "No Script",
+  "5302": "No Script",
+  "5305": [
+    "+atk_flat",
+    "5"
+  ],
+  "5307": [
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"DC_WINKCHARM\"",
+      "1",
+      "50"
+    ]
+  ],
+  "5308": [
+    "+movespeed2_%",
+    "25"
+  ],
+  "5309": [
+    "add_skill",
+    "\"RG_GRAFFITI\"",
+    "1"
+  ],
+  "5310": [
+    [
+      "resist_element_%",
+      "Ele_Dark",
+      "10"
+    ],
+    [
+      "add_skill",
+      "\"MG_SIGHT\"",
+      "1"
+    ]
+  ],
+  "5311": [
+    "+mdef_flat",
+    "15"
+  ],
+  "5315": [
+    "add_skill",
+    "\"WZ_ESTIMATION\"",
+    "1"
+  ],
+  "5316": [
+    "resist_element_%",
+    "Ele_Water",
+    "3"
+  ],
+  "5317": [
+    "whileattacking_autospell",
+    "\"WZ_WATERBALL\"",
+    "3",
+    "50"
+  ],
+  "5318": [
+    "+all_stats",
+    "3"
+  ],
+  "5319": [
+    "+luk",
+    "3"
+  ],
+  "5320": [
+    [
+      "+all_stats",
+      "2"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"AL_HEAL\"",
+      "1",
+      "50",
+      "0"
+    ]
+  ],
+  "5321": "No Script",
+  "5323": [
+    "+all_stats",
+    "2"
+  ],
+  "5328": [
+    "+str",
+    "1"
+  ],
+  "5332": [
+    "+perfectdodge",
+    "3"
+  ],
+  "5336": "No Script",
+  "5337": "No Script",
+  "5338": "No Script",
+  "5339": "No Script",
+  "5346": "No Script",
+  "5347": "No Script",
+  "5348": [
+    "+mdef_flat",
+    "3"
+  ],
+  "5349": "No Script",
+  "5350": [
+    "+str",
+    "1"
+  ],
+  "5351": [
+    "resist_race_%",
+    "RC_Insect",
+    "10"
+  ],
+  "5352": "No Script",
+  "5354": [
+    "cast_rate_%",
+    "-5"
+  ],
+  "5355": [
+    "cast_rate_%",
+    "-5"
+  ],
+  "5362": [
+    "+matk_%",
+    "1"
+  ],
+  "5365": [
+    [
+      "resist_badstatus_%",
+      "Eff_Stun",
+      "500"
+    ],
+    [
+      "add_skill",
+      "\"HT_FLASHER\"",
+      "1"
+    ]
+  ],
+  "5366": [
+    "+all_stats",
+    "5"
+  ],
+  "5367": [
+    [
+      "+mdef_flat",
+      "3"
+    ],
+    [
+      "resist_race_%",
+      "RC_Demon",
+      "10"
+    ]
+  ],
+  "5368": [
+    "dropitem_monster_%",
+    "12280",
+    "300"
+  ],
+  "5369": [
+    "dropitem_monster_%",
+    "12279",
+    "300"
+  ],
+  "5370": [
+    "+int",
+    "1"
+  ],
+  "5375": [
+    [
+      "+str",
+      "2"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"BS_WEAPONPERFECT\"",
+      "3",
+      "10"
+    ]
+  ],
+  "5376": [
+    [
+      "+maxsp_flat",
+      "120"
+    ],
+    [
+      "whileattacking_selfbadstatus",
+      "Eff_Curse",
+      "300"
+    ]
+  ],
+  "5378": [
+    [
+      "+agi",
+      "3"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"AL_INCAGI\"",
+      "5",
+      "10"
+    ]
+  ],
+  "5380": [
+    "whileattacking_autospell",
+    "\"SA_FROSTWEAPON\"",
+    "1",
+    "5"
+  ],
+  "5385": [
+    "add_skill",
+    "\"TF_HIDING\"",
+    "1"
+  ],
+  "5387": [
+    "+mdef_flat",
+    "5"
+  ],
+  "5388": [
+    [
+      "add_skill",
+      "\"TF_DOUBLE\"",
+      "5"
+    ],
+    [
+      "whileattacking_doubleattack_%",
+      "25"
+    ]
+  ],
+  "5390": [
+    "resist_badstatus_%",
+    "Eff_Freeze",
+    "3000"
+  ],
+  "5391": [
+    [
+      "+maxhp_flat",
+      "100"
+    ],
+    [
+      "dropitem_monster_%",
+      "617",
+      "10"
+    ]
+  ],
+  "5392": [
+    "+luk",
+    "2"
+  ],
+  "5394": "No Script",
+  "5397": [
+    [
+      "resist_element_%",
+      "Ele_Water",
+      "10"
+    ],
+    [
+      "unbreakable_helm",
+      "0"
+    ]
+  ],
+  "5399": [
+    [
+      "+vit",
+      "3"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"DC_SCREAM\"",
+      "5",
+      "30"
+    ]
+  ],
+  "5400": [
+    "+luk",
+    "1"
+  ],
+  "5404": [
+    "whilehit_targetskill_%",
+    "\"AC_CONCENTRATION\"",
+    "2",
+    "7",
+    "0"
+  ],
+  "5405": [
+    "reflect_melee_orclord",
+    "1"
+  ],
+  "5407": [
+    "+maxsp_flat",
+    "30"
+  ],
+  "5411": [
+    "+dex",
+    "2"
+  ],
+  "5412": [
+    "unbreakable_helm",
+    "0"
+  ],
+  "5413": [
+    "resist_element_%",
+    "Ele_Wind",
+    "10"
+  ],
+  "5414": [
+    [
+      "resist_element_%",
+      "Ele_Fire",
+      "10"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"MG_FIREBALL\"",
+      "5",
+      "100",
+      "1"
+    ]
+  ],
+  "5419": [
+    [
+      "+vit",
+      "1"
+    ],
+    [
+      "resist_race_%",
+      "RC_Plant",
+      "5"
+    ]
+  ],
+  "5424": "No Script",
+  "5425": "No Script",
+  "5426": [
+    "+luk",
+    "1"
+  ],
+  "5427": [
+    "+agi",
+    "1"
+  ],
+  "5430": [
+    [
+      "resist_element_%",
+      "Ele_Fire",
+      "20"
+    ],
+    [
+      "add_skill",
+      "\"MG_FIREBOLT\"",
+      "5"
+    ]
+  ],
+  "5431": [
+    [
+      "whileattacking_autospell",
+      "\"MC_LOUD\"",
+      "1",
+      "30"
+    ],
+    [
+      "+aspd_%",
+      "5"
+    ]
+  ],
+  "5432": "No Script",
+  "5433": "No Script",
+  "5435": "No Script",
+  "5438": [
+    "+maxsp_flat",
+    "20"
+  ],
+  "5439": [
+    "+maxsp_flat",
+    "20"
+  ],
+  "5440": [
+    "+maxsp_flat",
+    "20"
+  ],
+  "5441": [
+    "+maxsp_flat",
+    "20"
+  ],
+  "5443": [
+    [
+      "+mdef_flat",
+      "2"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"PR_STRECOVERY\"",
+      "1",
+      "20",
+      "0"
+    ]
+  ],
+  "5444": [
+    "+crit",
+    "6"
+  ],
+  "5445": [
+    "+maxsp_flat",
+    "5"
+  ],
+  "5448": "No Script",
+  "5449": "No Script",
+  "5450": "No Script",
+  "5461": [
+    [
+      "+dex",
+      "3"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Ghost",
+      "20"
+    ]
+  ],
+  "5464": [
+    [
+      "+int",
+      "2"
+    ],
+    [
+      "add_skill",
+      "\"PR_MAGNIFICAT\"",
+      "3"
+    ]
+  ],
+  "5477": [
+    "add_skill",
+    "\"SM_BASH\"",
+    "1"
+  ],
+  "5482": [
+    "+str",
+    "3"
+  ],
+  "5486": [
+    "+all_stats",
+    "2"
+  ],
+  "5487": [
+    "+luk",
+    "2"
+  ],
+  "5489": [
+    "+dex",
+    "2"
+  ],
+  "5491": [
+    [
+      "+str",
+      "2"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Fire",
+      "10"
+    ]
+  ],
+  "5494": [
+    "+str",
+    "5"
+  ],
+  "5496": [
+    "+luk",
+    "4"
+  ],
+  "5497": [
+    "+str",
+    "2"
+  ],
+  "5499": [
+    "add_skill",
+    "\"SM_PROVOKE\"",
+    "1"
+  ],
+  "5504": [
+    "+mdef_flat",
+    "10"
+  ],
+  "5511": [
+    "+sprecovery_%",
+    "8"
+  ],
+  "5516": [
+    "+dex",
+    "1"
+  ],
+  "5517": [
+    "+dex",
+    "1"
+  ],
+  "5519": [
+    "+int",
+    "2"
+  ],
+  "5521": [
+    "cast_delay",
+    "-3"
+  ],
+  "5522": "No Script",
+  "5523": [
+    "+dex",
+    "1"
+  ],
+  "5524": [
+    "+vit",
+    "1"
+  ],
+  "5528": [
+    "+agi",
+    "1"
+  ],
+  "5529": [
+    [
+      "+dex",
+      "3"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Neutral",
+      "5"
+    ],
+    [
+      "add_skill",
+      "\"WZ_FROSTNOVA\"",
+      "1"
+    ]
+  ],
+  "5530": "No Script",
+  "5532": [
+    "reflect_melee_orclord",
+    "1"
+  ],
+  "5533": [
+    "+all_stats",
+    "1"
+  ],
+  "5536": [
+    "dropitem_monster_%",
+    "6187",
+    "1000"
+  ],
+  "5537": [
+    "+agi",
+    "3"
+  ],
+  "5538": [
+    "+dex",
+    "3"
+  ],
+  "5539": [
+    [
+      "+mdef_flat",
+      "2"
+    ],
+    [
+      "add_skill",
+      "\"MC_LOUD\"",
+      "1"
+    ]
+  ],
+  "5548": [
+    "+luk",
+    "1"
+  ],
+  "5554": [
+    [
+      "whileattacking_autospell",
+      "\"SM_PROVOKE\"",
+      "5",
+      "10"
+    ],
+    [
+      "unbreakable_helm"
+    ]
+  ],
+  "5555": [
+    [
+      "+agi",
+      "1"
+    ],
+    [
+      "whilehit_targetskill_%",
+      "\"AL_HEAL\"",
+      "3",
+      "10"
+    ]
+  ],
+  "5557": [
+    "+agi",
+    "3"
+  ],
+  "5558": [
+    "dropitem_monster_%",
+    "510",
+    "RC_Plant",
+    "500"
+  ],
+  "5559": "No Script",
+  "5568": [
+    "+int",
+    "2"
+  ],
+  "5572": [
+    "+vit",
+    "2"
+  ],
+  "5573": "No Script",
+  "5575": "No Script",
+  "5577": [
+    "+str",
+    "3"
+  ],
+  "5578": [
+    "+agi",
+    "2"
+  ],
+  "5579": [
+    "+agi",
+    "2"
+  ],
+  "5583": "No Script",
+  "5585": "No Script",
+  "5586": "No Script",
+  "5587": "No Script",
+  "5590": "No Script",
+  "5593": "No Script",
+  "5594": "No Script",
+  "5596": [
+    "+mdef_flat",
+    "2"
+  ],
+  "5597": [
+    "+mdef_flat",
+    "2"
+  ],
+  "5603": [
+    "+all_stats",
+    "3"
+  ],
+  "5604": [
+    "+all_stats",
+    "2"
+  ],
+  "5605": [
+    "+all_stats",
+    "1"
+  ],
+  "5653": "No Script",
+  "5658": [
+    "whileattacking_autospell",
+    "\"SA_FLAMELAUNCHER\"",
+    "1",
+    "5"
+  ],
+  "5659": [
+    "whileattacking_autospell",
+    "\"SA_SEISMICWEAPON\"",
+    "1",
+    "5"
+  ],
+  "5660": [
+    "whileattacking_autospell",
+    "\"SA_LIGHTNINGLOADER\"",
+    "1",
+    "5"
+  ],
+  "5667": "No Script",
+  "5668": [
+    "+mdef_flat",
+    "5"
+  ],
+  "5671": "No Script",
+  "5681": [
+    "+mdef_flat",
+    "3"
+  ],
+  "5683": "No Script",
+  "5684": "No Script",
+  "5685": "No Script",
+  "5686": "No Script",
+  "5687": "No Script",
+  "5691": [
+    [
+      "+dex",
+      "1"
+    ],
+    [
+      "resist_element_%",
+      "Ele_Poison",
+      "20"
+    ]
+  ],
+  "5692": [
+    "+dex",
+    "1"
+  ],
+  "5741": "No Script",
+  "5742": [
+    "+luk",
+    "1"
+  ],
+  "5775": "No Script",
+  "5781": "No Script",
+  "5786": [
+    "+luk",
+    "1"
+  ],
+  "5788": "No Script",
+  "5792": "No Script",
+  "5794": "No Script",
+  "5796": "No Script",
+  "5797": "No Script",
+  "5798": "No Script",
+  "5799": "No Script",
+  "5802": "No Script",
+  "5803": [
+    "dropitem_monster_%",
+    "608",
+    "100"
+  ],
+  "5804": "No Script",
+  "5806": "No Script",
+  "5807": "No Script",
+  "5809": [
+    "+all_stats",
+    "5"
+  ],
+  "5811": "No Script",
+  "5812": "No Script",
+  "5818": [
+    "+all_stats",
+    "3"
+  ],
+  "5819": [
+    "+all_stats",
+    "3"
+  ],
+  "5821": [
+    "+expbonus_all%",
+    "Class_All",
+    "5"
+  ],
+  "5824": "No Script",
+  "5827": "No Script",
+  "5844": [
+    "+all_stats",
+    "3"
+  ],
+  "5846": [
+    "+mdef_flat",
+    "5"
+  ],
+  "5851": "No Script",
+  "5859": [
+    "+all_stats",
+    "1"
+  ],
+  "9001": "No Script",
+  "9002": "No Script",
+  "9003": "No Script",
+  "9004": "No Script",
+  "9005": "No Script",
+  "9006": "No Script",
+  "9007": "No Script",
+  "9008": "No Script",
+  "9009": "No Script",
+  "9010": "No Script",
+  "9011": "No Script",
+  "9012": "No Script",
+  "9013": "No Script",
+  "9014": "No Script",
+  "9015": "No Script",
+  "9016": "No Script",
+  "9017": "No Script",
+  "9018": "No Script",
+  "9019": "No Script",
+  "9020": "No Script",
+  "9021": "No Script",
+  "9022": "No Script",
+  "9023": "No Script",
+  "9024": "No Script",
+  "9025": "No Script",
+  "9026": "No Script",
+  "9027": "No Script",
+  "9028": "No Script",
+  "9029": "No Script",
+  "9030": "No Script",
+  "9031": "No Script",
+  "9032": "No Script",
+  "9033": "No Script",
+  "9034": "No Script",
+  "9035": "No Script",
+  "9036": "No Script",
+  "9037": "No Script",
+  "9038": "No Script",
+  "9039": "No Script",
+  "9040": "No Script",
+  "9041": "No Script",
+  "9042": "No Script",
+  "9043": "No Script",
+  "9044": "No Script",
+  "9045": "No Script",
+  "9046": "No Script",
+  "9047": "No Script",
+  "9048": "No Script",
+  "9049": "No Script",
+  "9050": "No Script",
+  "9051": "No Script",
+  "9052": "No Script",
+  "9053": "No Script",
+  "9054": "No Script",
+  "9055": "No Script",
+  "9056": "No Script"
+}

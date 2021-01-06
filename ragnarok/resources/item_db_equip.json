@@ -12504,7 +12504,8 @@
 			"WeaponLevel": 4,
 			"EquipLevelMin": 48,
 			"Refineable": true,
-			"Script": "bonus bAtkEle,Ele_Holy; bonus bInt,5; skill \"AL_CURE\",1; skill \"AL_HEAL\",1; bonus2 bResEff,Eff_Poison,5000; bonus2 bResEff,Eff_Curse,5000; bonus2 bResEff,Eff_Silence,5000; bonus2 bResEff,Eff_Confusion,5000; bonus2 bResEff,Eff_Blind,5000;\n"
+			"Script": "bonus bAtkEle,Ele_Holy; bonus bInt,5; skill \"AL_CURE\",1; skill \"AL_HEAL\",1; 
+,Eff_Poison,5000; bonus2 bResEff,Eff_Curse,5000; bonus2 bResEff,Eff_Silence,5000; bonus2 bResEff,Eff_Confusion,5000; bonus2 bResEff,Eff_Blind,5000;\n"
 		},
 		{
 			"Id": 1721,
@@ -19382,7 +19383,7 @@
 			},
 			"EquipLevelMin": 55,
 			"Refineable": true,
-			"Script": "bonus2 bResEff,Eff_Stun,3000; bonus2 bResEff,Eff_Freeze,3000;\n"
+			"Script": "bonus2 bResEff,Eff_Stun,3000; bonus2 bResEff, Eff_Freeze, 3001;\n"
 		},
 		{
 			"Id": 2365,
@@ -33909,7 +33910,7 @@
 			},
 			"Refineable": true,
 			"View": 395,
-			"Script": "bonus2 bResEff, Eff_Freeze, 3000;\n"
+			"Script": "bonus2 bResEff,Eff_Freeze,3000;\n"
 		},
 		{
 			"Id": 5391,
@@ -34040,7 +34041,7 @@
 				"NoSell": true,
 				"NoGuildStorage": true
 			},
-			"Script": "bonus2 bSubEle,Ele_Water, 10; bonus bUnbreakableHelm, 0;\n"
+			"Script": "bonus2 bSubEle,Ele_Water,10; bonus bUnbreakableHelm,0;\n"
 		},
 		{
 			"Id": 5398,
@@ -34140,7 +34141,7 @@
 				"NoSell": true,
 				"NoGuildStorage": true
 			},
-			"Script": "bonus bInt,1; bonus bMdef,2; bonus bUnbreakableHelm, 0;\n"
+			"Script": "bonus bInt,1; bonus bMdef,2; bonus bUnbreakableHelm,0;\n"
 		},
 		{
 			"Id": 5402,
@@ -34161,7 +34162,7 @@
 				"NoSell": true,
 				"NoGuildStorage": true
 			},
-			"Script": "bonus bUnbreakableHelm, 0; bonus bFlee2, 3;\n"
+			"Script": "bonus bUnbreakableHelm,0; bonus bFlee2,3;\n"
 		},
 		{
 			"Id": 5403,
@@ -34344,7 +34345,7 @@
 				"Head_Low": true
 			},
 			"View": 414,
-			"Script": "bonus bUnbreakableHelm, 0;\n"
+			"Script": "bonus bUnbreakableHelm,0;\n"
 		},
 		{
 			"Id": 5413,
@@ -34358,7 +34359,7 @@
 				"Head_Top": true
 			},
 			"View": 415,
-			"Script": "bonus2 bSubEle,Ele_Wind, 10;\n"
+			"Script": "bonus2 bSubEle,Ele_Wind,10;\n"
 		},
 		{
 			"Id": 5414,
@@ -35207,7 +35208,7 @@
 				"NoMail": true,
 				"NoAuction": true
 			},
-			"Script": "bonus bDex,3; bonus2 bSubEle,Ele_Ghost, 20;\n"
+			"Script": "bonus bDex,3; bonus2 bSubEle,Ele_Ghost,20;\n"
 		},
 		{
 			"Id": 5462,
@@ -35277,7 +35278,7 @@
 				"NoMail": true,
 				"NoAuction": true
 			},
-			"Script": "bonus bInt,2; skill \"PR_MAGNIFICAT\", 3;\n"
+			"Script": "bonus bInt,2; skill \"PR_MAGNIFICAT\",3;\n"
 		},
 		{
 			"Id": 5476,
@@ -35480,7 +35481,7 @@
 			},
 			"Refineable": true,
 			"View": 395,
-			"Script": "bonus bAllStats, 2;\n"
+			"Script": "bonus bAllStats,2;\n"
 		},
 		{
 			"Id": 5487,
@@ -35570,7 +35571,7 @@
 				"NoMail": true,
 				"NoAuction": true
 			},
-			"Script": "bonus bStr,2; bonus2 bSubEle,Ele_Fire, 10;\n"
+			"Script": "bonus bStr,2; bonus2 bSubEle,Ele_Fire,10;\n"
 		},
 		{
 			"Id": 5492,
@@ -36544,7 +36545,7 @@
 				"NoSell": true,
 				"NoGuildStorage": true
 			},
-			"Script": "bonus bMdef,2; skill \"MC_LOUD\", 1;\n"
+			"Script": "bonus bMdef,2; skill \"MC_LOUD\",1;\n"
 		},
 		{
 			"Id": 5540,
@@ -37529,7 +37530,7 @@
 				"NoMail": true,
 				"NoAuction": true
 			},
-			"Script": "bonus bAllStats, 3;\n"
+			"Script": "bonus bAllStats,3;\n"
 		},
 		{
 			"Id": 5604,
@@ -37555,7 +37556,7 @@
 				"NoMail": true,
 				"NoAuction": true
 			},
-			"Script": "bonus bAllStats, 2;\n"
+			"Script": "bonus bAllStats,2;\n"
 		},
 		{
 			"Id": 5605,
@@ -37581,7 +37582,7 @@
 				"NoMail": true,
 				"NoAuction": true
 			},
-			"Script": "bonus bAllStats, 1;\n"
+			"Script": "bonus bAllStats,1;\n"
 		},
 		{
 			"Id": 5653,
@@ -38552,7 +38553,7 @@
 				"NoMail": true,
 				"NoAuction": true
 			},
-			"Script": "bonus bAllStats, 3;\n"
+			"Script": "bonus bAllStats,3;\n"
 		},
 		{
 			"Id": 5819,
@@ -38576,7 +38577,7 @@
 				"NoMail": true,
 				"NoAuction": true
 			},
-			"Script": "bonus bAllStats, 3;\n"
+			"Script": "bonus bAllStats,3;\n"
 		},
 		{
 			"Id": 5821,
