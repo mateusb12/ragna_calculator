@@ -2,12 +2,14 @@ import os
 import pandas as pd
 from typing import List
 
-from ragnarok.main.gear_query import dict_name_to_dict_id, is_equipable
+from ragnarok.main.gear_query import dict_name_to_dict_id, is_equipable, unnest_list
 from ragnarok.main.exporter import equip_db, job70, shield_db, shoes_db, armor_db, robe_db, accessory_db, \
     hat_db, weapon_db, adjective_list, job_adapt, card_db
 
 from ragnarok.model.dead_gear import dead_gear_list as nullgear
 from ragnarok.model.dead_gear import dead_card as nullcard
+
+from itertools import chain
 
 
 # nullcard = 4700
@@ -36,6 +38,8 @@ class BaseGear:
             self.gender = gd['Gender']
         self.locations = gd['Locations']
         self.script = gd['Script']
+        if 'Script_adapted' in gd:
+            self.script_adapted = gd['Script_adapted']
         self.weight = gd['Weight']
         self.slots = gd['Slots']
         self.jobs = gd['Jobs']
@@ -558,30 +562,38 @@ class PlayerGear:
 
     def script_summary(self):
         script_dict = dict()
+        flat_script = []
         for g in self.gear_summary:
             aux = self.gear_summary[g]
+            if aux.card == None:
+                aux.card = card_db[4700]
             if not isinstance(aux, Weapon):
                 if aux.class_type not in script_dict:
-                    script_dict[aux.class_type] = {'Gear': (aux.name, aux.script),
-                                                   'Card': (aux.card['Name'], aux.card['Script'])}
+                    script_dict[aux.class_type] = {'Gear': (aux.name, aux.script_adapted),
+                                                   'Card': (aux.card['Name'], aux.card['Script_adapted'])}
                 else:
                     if "{}2".format(aux.class_type) not in script_dict:
-                        script_dict["{}2".format(aux.class_type)] = {'Gear': (aux.name, aux.script),
-                                                                     'Card': (aux.card['Name'], aux.card['Script'])}
+                        script_dict["{}2".format(aux.class_type)] = {'Gear': (aux.name, aux.script_adapted),
+                                                                     'Card': (aux.card['Name'], aux.card['Script_adapted'])}
                     else:
-                        script_dict["{}3".format(aux.class_type)] = {'Gear': (aux.name, aux.script),
-                                                                     'Card': (aux.card['Name'], aux.card['Script'])}
+                        script_dict["{}3".format(aux.class_type)] = {'Gear': (aux.name, aux.script_adapted),
+                                                                     'Card': (aux.card['Name'], aux.card['Script_adapted'])}
+                flat_script.append(aux.card['Script_adapted'])
             else:
                 wcs = {"card1": "", "card2": "", "card3": "", "card4": ""}
                 if aux.card:
-                    wcs["card1"] = (aux.card['Name'], aux.card['Script'])
+                    wcs["card1"] = (aux.card['Name'], aux.card['Script_adapted'])
                 if aux.card2:
-                    wcs["card2"] = (aux.card2['Name'], aux.card2['Script'])
+                    wcs["card2"] = (aux.card2['Name'], aux.card2['Script_adapted'])
                 if aux.card3:
-                    wcs["card3"] = (aux.card3['Name'], aux.card3['Script'])
+                    wcs["card3"] = (aux.card3['Name'], aux.card3['Script_adapted'])
                 if aux.card4:
-                    wcs["card4"] = (aux.card4['Name'], aux.card4['Script'])
+                    wcs["card4"] = (aux.card4['Name'], aux.card4['Script_adapted'])
                 script_dict['Weapon'] = {"Gear": (aux.name, aux.script), "Card": wcs}
+                flat_script.append(aux.card['Script_adapted'])
+        flat_script = [a for a in flat_script if a != "No Script"]
+        flat_script = unnest_list(flat_script)
+        script_dict['Flat_list'] = flat_script
         return script_dict
 
 
@@ -594,13 +606,13 @@ def analyse_script(script_dict: dict):
 text_dict = {"headgear1": ("Valkyrie Feather Band [1]", "4", "Elder Willow Card"),
              "headgear2": ("Red Glasses", 0, "(No Card)"),
              "headgear3": ('Rainbow Scarf', 0, "(No Card)"),
-             "shield": ('Guard [1]', '7', "Thara Frog Card"),
+             "shield": ('Guard [1]', '7', "Ambernite Card"),
              "shoes": ('Crystal Pumps', '4', "(No Card)"),
-             "armor": ("Formal Suit [1]", "7", "Peco Peco Card"),
+             "armor": ("Formal Suit [1]", "7", "Dokebi Card"),
              "robe": ("Muffler [1]", "7", "Raydric Card"),
-             "accessory1": ("Glove [1]", 0, "Gargoyle Card"),
+             "accessory1": ("Glove [1]", 0, "Zerom Card"),
              'accessory2': ("Earring [1]", 0, "Zerom Card"),
-             'weapon': ("Gakkung Bow", 0, "(No Card)", "(No Card)", "(No Card)", "(No Card)")}
+             'weapon': ("Knife [4]", 0, "(No Card)", "(No Card)", "(No Card)", "(No Card)")}
 
 # Muramash
 
@@ -610,16 +622,13 @@ pe = PlayerGear(gear_dict, 'hunter', 99)
 pe.print_gear()
 print('')
 
-# print('oi')
-# print(pe.total_defense())
-#
-# headnames = pe.return_hat_dict_names()
-# print('headnames... {}'.format(headnames))
+ttk = pe.script_summary()
+for i in ttk:
+    print(i, ttk[i])
+print('')
 
-# ttk = pe.script_summary()
-# for i in ttk:
-#     print(i, ttk[i])
-# print('')
+for w in ttk['Flat_list']:
+    print(w)
 
 # for p in range(4001, 4500):
 #     if p in card_db:
@@ -644,3 +653,4 @@ print('')
 # print(list(pe.export_id_table().values()))
 
 # print(pe.weapon.export_text())
+

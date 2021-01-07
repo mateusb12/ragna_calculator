@@ -1,4 +1,4 @@
-from typing import Tuple
+from typing import Tuple, List
 
 from ragnarok.model.dead_gear import dead_gear_list as nullgear
 from ragnarok.model.dead_gear import dead_card as nullcard
@@ -382,6 +382,16 @@ def generate_equipable_weapons_old(player_class: str, player_level: int) -> dict
             final_weapon_positions["weapon_item-{}".format(e)] = {"disabled": ""}
 
     return {'list': final_weapon_list, 'positions': final_weapon_positions}
+
+
+def unnest_list(nested: List) -> List:
+    nested_copy = nested.copy()
+    for element in nested:
+        if any(isinstance(q, list) for q in element):
+            for g in element:
+                nested_copy.append(g)
+            nested_copy.remove(element)
+    return nested_copy
 
 
 def generate_equipable_weapons(player_class: str, player_level: int) -> list:

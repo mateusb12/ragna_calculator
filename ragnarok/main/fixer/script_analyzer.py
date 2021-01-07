@@ -5,7 +5,7 @@ import time
 
 import pandas as pd
 
-from main.exporter import card_db
+from main.exporter import card_db, equip_db
 
 
 def categorize_scripts(input_path: str):
@@ -61,8 +61,6 @@ def default_analyser(script: str, script_json: pd.DataFrame):
     if len(first_trim) == 3 and first_trim[-1] == "1":
         first_trim[-2] = first_trim[-2] + first_trim[-1]
         first_trim.pop()
-    print('beee {}'.format(script))
-    print('waaa {} ({})'.format(first_trim, len(first_trim)))
     for q in range(len(first_trim)):
         if q % 2 == 0:
             bonus_dict[first_trim[q]] = first_trim[q + 1]
@@ -89,8 +87,6 @@ def repeated_analyser(script: str, script_json: pd.DataFrame):
     first_trim = list(filter(None, first_trim))
     bonus_dict = {"bonus_extra": [], "bonus2_extra": [], "bonus3_extra": [], "bonus4_extra": [], "skill_extra": []}
     output_adapt = []
-    print('kkkk {}'.format(script))
-    print('waa man {}'.format(first_trim))
     for q in range(len(first_trim)):
         if q % 2 == 0:
             if first_trim[q] in bonus_dict:
@@ -154,7 +150,6 @@ def begin_analyser(script: str, script_json: pd.DataFrame):
 def displaced_analyser(script: str, script_json: pd.DataFrame):
     if not script:
         return 'No Script'
-    print('isso ta estranho {}'.format(script))
     first_trim = script.replace(" ", ";").replace(";{", "").replace(";;", ";").replace("}", "&") \
         .replace("if(", "if&").replace(";else", "else&").replace(");", "&").replace("){", "&") \
         .replace(";if", "&if").split("&")
@@ -169,7 +164,6 @@ def displaced_analyser(script: str, script_json: pd.DataFrame):
                 second_trim.insert(q - 1, "normal")
     if "normal" not in second_trim:
         second_trim.insert(0, "normal")
-    print('pão com maionese {}\n'.format(second_trim))
     for w in range(len(second_trim)):
         if second_trim[w] == "normal":
             if_else_dict['normal'] = analyse_small_script(second_trim[w + 1], script_json)
@@ -224,8 +218,6 @@ def multipleif_analyser(script: str, script_json: pd.DataFrame):
                     else:
                         wd["crowded"] = False
                 if_else_dict[wd["new_tag"]] = aux_then
-    print('sacanagem {}'.format(script))
-    print('sacanagem {}\n'.format(if_else_dict))
     return if_else_dict
 
 
@@ -245,8 +237,6 @@ def autobonus_analyser(script: str, script_json: pd.DataFrame):
             first_trim.insert(q + 4, "visual_effect")
     if "normal" not in first_trim:
         first_trim.insert(0, "normal")
-    print('haha {}'.format(script))
-    print('cara nao da {}\n'.format(first_trim))
     for w in range(len(first_trim)):
         if first_trim[w] == "normal":
             if_else_dict['normal'] = analyse_small_script(first_trim[w + 1], script_json)
@@ -351,8 +341,10 @@ def assemble_json(input_file: str, output_file: str, **kwargs):
     print("JSON successfully dumped!")
 
     merge_card = kwargs.get('merge_card')
+    merge_gear = kwargs.get('merge_gear')
     if merge_card:
         card_db_copy = card_db.copy()
+        print(final_dict)
         for q in final_dict.keys():
             card_db_copy[int(q)]['Script_adapted'] = final_dict[q]
         final_dict = {"Header": {"Type": "ITEM_DB", "Version": 1}, "Body": {"Body2": list(card_db_copy.values())}}
@@ -362,7 +354,17 @@ def assemble_json(input_file: str, output_file: str, **kwargs):
         json.dump(final_dict, b_file, indent=2)
         b_file.close()
 
+    if merge_gear:
+        gear_db_copy = equip_db.copy()
+        for q in final_dict.keys():
+            gear_db_copy[int(q)]['Script_adapted'] = final_dict[q]
+        final_dict = {"Header": {"Type": "ITEM_DB", "Version": 1}, "Body": {"Body2": list(gear_db_copy.values())}}
+        adapted_table_path = os.path.abspath(
+            os.path.join(os.path.dirname(__file__), '..', '..', 'resources', "scripts", output_file))
+        b_file = open(adapted_table_path, "w")
+        json.dump(final_dict, b_file, indent=2)
+        b_file.close()
 
-assemble_json("gear_script_table.json", "gear_adapted_table.json", merge_card=False)
 
-# assemble_json("gear_script_table.json", "adapted_gear_table.json")
+assemble_json("gear_script_table.json", "gear_adapted_table.json", merge_gear=True)
+# assemble_json("card_script_table.json", "card_adapted_table.json", merge_card=True)

@@ -2,9 +2,10 @@ import math
 from dataclasses import dataclass
 import pandas as pd
 import numpy as np
-from typing import List
+from typing import List, Optional
 import os
 
+from ragnarok.model.equip_model import PlayerGear
 from ragnarok.main.gear_query import void_gear
 from ragnarok.main.gear_query import void_gear
 from ragnarok.main.exporter import job70
@@ -12,7 +13,7 @@ from ragnarok.main.exporter import job70
 
 class PlayerBuild:
     def __init__(self, job_bonuses_list: pd.DataFrame, base_level: int, job_level: int,
-                 current_job: str, stat_build: List[int], playergear=void_gear):
+                 current_job: str, stat_build: List[int], playergear: Optional[PlayerGear] = void_gear):
 
         self.job_bonuses_list = job_bonuses_list
         self.base_level = base_level
@@ -40,6 +41,7 @@ class PlayerBuild:
         self.cost_list = []
         self.possible_points = []
         self.playergear = playergear
+        self.script_dict = playergear.script_summary()
 
         # arquivos
         self.hp_df = pd.read_csv(os.path.abspath(
@@ -139,7 +141,7 @@ class PlayerBuild:
 
         # Defesa
         # self.def_hard = 20
-        self.def_hard = self.playergear.total_defense()
+        self.def_hard = self.calculate_hard_defense()
         self.def_soft = 100
 
         # Ataque mágico
@@ -165,6 +167,20 @@ class PlayerBuild:
         if self.current_job in job70:
             max_hp -= 1
         return max_hp
+
+    def calculate_hard_defense(self) -> int:
+        hard_def = 0
+        hard_def += self.playergear.total_defense()
+        hard_def_a = 0
+        hard_def_b = 0
+
+        for element in self.script_dict['Flat_list']:
+            if element[0] == "+def_flat":
+                hard_def_a += int(element[1])
+
+        hard_def += hard_def_a
+        hard_def = math.floor(hard_def * (1 + (hard_def_b / 100)))
+        return hard_def
 
     def calculate_max_sp(self) -> int:
         base_sp = 10
