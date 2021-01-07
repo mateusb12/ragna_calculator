@@ -138,6 +138,7 @@ class PlayerBuild:
         self.atk_bonus = 0
 
         # Defesa
+        # self.def_hard = 20
         self.def_hard = self.playergear.total_defense()
         self.def_soft = 100
 

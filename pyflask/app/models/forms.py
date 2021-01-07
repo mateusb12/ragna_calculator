@@ -162,10 +162,22 @@ def calc_dynamic_select(input_form):
     form.accessory1_card_list.choices = sorted(get_cardlist_by_name(form.accessory1_item.data))
     form.accessory2_card_list.choices = sorted(get_cardlist_by_name(form.accessory2_item.data))
 
+    weapon_template = [form.weapon_item.data, form.weapon_refine.data,
+                       "(No Card)", "(No Card)", "(No Card)", "(No Card)"]
+
+    if form.weapon_card_1:
+        weapon_template[2] = form.weapon_card_1.data
+    if form.weapon_card_2:
+        weapon_template[3] = form.weapon_card_2.data
+    if form.weapon_card_3:
+        weapon_template[4] = form.weapon_card_3.data
+    if form.weapon_card_4:
+        weapon_template[5] = form.weapon_card_4.data
+
     text_dict = {"headgear1": (form.headtop_item.data, form.headtop_refine.data, form.headtop_card_list.data),
                  "headgear2": (form.headmid_item.data, form.headmid_refine.data, form.headmid_card_list.data),
                  "headgear3": (form.headmid_item.data, form.headmid_refine.data, form.headmid_card_list.data),
-                 "weapon": None,
+                 "weapon": tuple(weapon_template),
                  "shield": (form.shield_item.data, form.shield_refine.data, form.shield_card_list.data),
                  "shoes": (form.shoes_item.data, form.shoes_refine.data, form.shoes_card_list.data),
                  "armor": (form.armor_item.data, form.armor_refine.data, form.armor_card_list.data),
@@ -175,12 +187,12 @@ def calc_dynamic_select(input_form):
 
     gear_dict = dict_name_to_dict_id(text_dict)
     pe = PlayerGear(gear_dict, form.class_name.data, form.job_level.data)
-    if '(No Headtop)' in form.headtop_item.data:
-        pe.unequip_noble_hats()
-        headnames = pe.return_hat_dict_names()
-        form.headtop_item.data = headnames['headtop']
-        form.headmid_item.data = headnames['headmid']
-        form.headlow_item.data = headnames['headlow']
+    # if '(No Headtop)' in form.headtop_item.data:
+    #     pe.unequip_noble_hats()
+    #     headnames = pe.return_hat_dict_names()
+    #     form.headtop_item.data = headnames['headtop']
+    #     form.headmid_item.data = headnames['headmid']
+    #     form.headlow_item.data = headnames['headlow']
 
     headnames = pe.return_hat_dict_names()
 
@@ -188,6 +200,10 @@ def calc_dynamic_select(input_form):
         form.headtop_item.data = headnames['headtop']
         form.headmid_item.data = headnames['headmid']
         form.headlow_item.data = headnames['headlow']
+
+    if pe.weapon:
+        if pe.weapon.two_handed:
+            form.shield_item.data = "(No Shield)"
 
     form.base_level.default = '57'
 

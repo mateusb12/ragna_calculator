@@ -54,7 +54,7 @@ class BaseGear:
 
     def __str__(self):
         str_base = "[{}] → ".format(self.class_type)
-        if self.refining != 0:
+        if self.refining != 0 and self.refining is not None:
             str_base += "+{} ".format(self.refining)
         str_base += "{}".format(self.name)
         if self.slots != 0:
@@ -79,8 +79,12 @@ class BaseGear:
         return str_base
 
     def export_info(self) -> dict:
-        return {'id': self.id, 'refine': int(self.refining), 'card': self.card['Id'],
-                'name': self.name, 'defense': int(self.defense)}
+        if self.card:
+            return {'id': self.id, 'refine': int(self.refining), 'card': self.card['Id'],
+                    'name': self.name, 'defense': int(self.defense)}
+        else:
+            return {'id': self.id, 'refine': int(self.refining), 'card': "4700",
+                    'name': self.name, 'defense': int(self.defense)}
 
     def is_dead_gear(self):
         if self.id in nullgear:
@@ -209,6 +213,10 @@ class Weapon(BaseGear):
         super().__init__(gd)
         self.gear_type = "right_hand"
         self.class_type = "Weapon"
+        self.subtype = gd['SubType']
+        self.subtype_list = ("2hSword", "2hSpear", "2hAxe", "2hStaff", "Katar", "Huuma", "Bow", "Revolver",
+                             "Rifle", "Shotgun", "Gatling", "Grenade")
+        self.two_handed = self.subtype in self.subtype_list
 
     def remaining_slots(self):
         cardlist = []
@@ -323,8 +331,6 @@ class PlayerGear:
         if not equipable[0]:
             raise Exception("{}".format(equipable[1]))
 
-        if isinstance(item, Weapon):
-            self.weapon = item
         if isinstance(item, Shield):
             self.shield = item
         if isinstance(item, Shoes):
@@ -355,6 +361,10 @@ class PlayerGear:
                 self.headlow = item
                 self.headmid = item
                 self.headtop = item
+        if isinstance(item, Weapon):
+            self.weapon = item
+            if item.two_handed:
+                self.shield = Shield(equip_db[2139])
 
     def is_equipable(self, item: BaseGear):
         if item:
@@ -590,20 +600,26 @@ text_dict = {"headgear1": ("Valkyrie Feather Band [1]", "4", "Elder Willow Card"
              "robe": ("Muffler [1]", "7", "Raydric Card"),
              "accessory1": ("Glove [1]", 0, "Gargoyle Card"),
              'accessory2': ("Earring [1]", 0, "Zerom Card"),
-             'weapon': ("Spectral Spear", 0, "(No Card)", "(No Card)", "(No Card)", "(No Card)")}
+             'weapon': ("Gakkung Bow", 0, "(No Card)", "(No Card)", "(No Card)", "(No Card)")}
 
 # Muramash
 
 gear_dict = dict_name_to_dict_id(text_dict)
 
-pe = PlayerGear(gear_dict, 'knight', 99)
+pe = PlayerGear(gear_dict, 'hunter', 99)
 pe.print_gear()
 print('')
 
-ttk = pe.script_summary()
-for i in ttk:
-    print(i, ttk[i])
-print('')
+# print('oi')
+# print(pe.total_defense())
+#
+# headnames = pe.return_hat_dict_names()
+# print('headnames... {}'.format(headnames))
+
+# ttk = pe.script_summary()
+# for i in ttk:
+#     print(i, ttk[i])
+# print('')
 
 # for p in range(4001, 4500):
 #     if p in card_db:
@@ -616,7 +632,6 @@ print('')
 #             print('name = {}'.format(name))
 #             print('script: {}analysis: {}'.format(p_script, p_analysis))
 #             print('')
-
 
 
 # # pe.equip_item(pe.create_item_with_id(2104))
