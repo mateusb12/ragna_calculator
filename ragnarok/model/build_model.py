@@ -54,12 +54,13 @@ class PlayerBuild:
         # classes
 
         # incremento dos atributos de acordo com o nível atual de classe
-        self.str_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['STR'])
-        self.agi_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['AGI'])
-        self.vit_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['VIT'])
-        self.int_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['INT'])
-        self.dex_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['DEX'])
-        self.luk_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['LUK'])
+        att_book = self.script_corestat_bonus()
+        self.str_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['STR']) + att_book["str"]
+        self.agi_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['AGI']) + att_book["agi"]
+        self.vit_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['VIT']) + att_book["vit"]
+        self.int_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['INT']) + att_book["int"]
+        self.dex_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['DEX']) + att_book["dex"]
+        self.luk_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['LUK']) + att_book["luk"]
 
         # somatórios de status
         self.str += self.str_bonus
@@ -70,8 +71,10 @@ class PlayerBuild:
         self.luk += self.luk_bonus
 
         # esquiva, precisão, crítico e bônus de regen
-        self.flee_bonuses = 0
-        self.hit_bonuses = 0
+        flee_book = self.script_flee()
+        self.flee_bonuses = flee_book["flee"]
+        self.perfect_dodge_bonuses = flee_book["perfect_flee"]
+        self.hit_bonuses = self.script_hit()
         self.crit_bonuses = 0
         self.hpr_mod = 0
         self.spr_mod = 0
@@ -90,7 +93,6 @@ class PlayerBuild:
 
         # esquiva
         self.flee = self.agi + self.flee_bonuses + self.base_level
-        self.perfect_dodge_bonuses = 0
         self.perfect_flee = 1 + math.floor(1 / 10 * self.luk) + self.perfect_dodge_bonuses
         self.true_perfect_flee = 1 + 1 / 10 * self.luk + self.perfect_dodge_bonuses
 
@@ -131,6 +133,8 @@ class PlayerBuild:
             if self.attribute_balance == 0:
                 possible_stat = 0
             self.possible_points.append(possible_stat)
+            self.possible_points = [(x * 0 if x == y else y) for x, y in zip(self.stat_build, self.possible_points)]
+            self.possible_points = [(x * 0 if x > y else y) for x, y in zip(self.stat_build, self.possible_points)]
 
         # ASPD
         self.aspd = 172
@@ -140,17 +144,17 @@ class PlayerBuild:
         self.atk_bonus = 0
 
         # Defesa
-        # self.def_hard = 20
-        self.def_hard = self.calculate_hard_defense()
-        self.def_soft = 100
+        self.def_hard = self.script_hard_defense()
+        self.def_soft = self.script_soft_defense()
+
+        # Defesa mágica
+        mdef_book = self.script_magic_defense()
+        self.mdef_hard = mdef_book['hard']
+        self.mdef_soft = mdef_book['soft']
 
         # Ataque mágico
         self.matk_min = 20
         self.matk_max = 25
-
-        # Defesa mágica
-        self.mdef_hard = 2
-        self.mdef_soft = 5
 
     def calculate_base_hp(self):
         hp_job_a = self.job_bonuses_list[self.current_job]['HP_JOB_A']
@@ -168,20 +172,6 @@ class PlayerBuild:
             max_hp -= 1
         return max_hp
 
-    def calculate_hard_defense(self) -> int:
-        hard_def = 0
-        hard_def += self.playergear.total_defense()
-        hard_def_a = 0
-        hard_def_b = 0
-
-        for element in self.script_dict['Flat_list']:
-            if element[0] == "+def_flat":
-                hard_def_a += int(element[1])
-
-        hard_def += hard_def_a
-        hard_def = math.floor(hard_def * (1 + (hard_def_b / 100)))
-        return hard_def
-
     def calculate_max_sp(self) -> int:
         base_sp = 10
         base_sp += math.floor(self.base_level * self.job_bonuses_list[self.current_job]['SP_JOB'])
@@ -191,6 +181,79 @@ class PlayerBuild:
         max_sp = math.floor(max_sp * (1 + (self.sp_mod_b * 0.01)))
         max_sp = math.floor(max_sp * self.trans_mod)
         return max_sp
+
+    def script_hard_defense(self) -> int:
+        hard_def = 0
+        hard_def += self.playergear.total_defense()
+        hard_def_a = 0
+        hard_def_b = 0
+
+        for element in self.script_dict['Flat_list']:
+            if element[0] == "+def_flat":
+                hard_def_a += int(element[1])
+            if element[0] == "+def_%":
+                hard_def_b += int(element[1])
+
+        hard_def += hard_def_a
+        hard_def = math.floor(hard_def * (1 + (hard_def_b / 100)))
+        return hard_def
+
+    def script_soft_defense(self) -> int:
+        soft_def = 0
+        soft_def += self.vit
+        soft_def_a = 0
+        soft_def_b = 0
+
+        for element in self.script_dict['Flat_list']:
+            if element[0] == "+softdef_%":
+                soft_def_b += int(element[1])
+
+        soft_def += soft_def_a
+        soft_def = math.floor(soft_def * (1 + (soft_def_b / 100)))
+        return soft_def
+
+    def script_magic_defense(self) -> dict:
+        hard_mdef = 0
+        hard_mdef_a = 0
+        for element in self.script_dict['Flat_list']:
+            if element[0] == "+mdef_flat":
+                hard_mdef_a += int(element[1])
+        hard_mdef += hard_mdef_a
+
+        return {"hard": hard_mdef, "soft": self.int}
+
+    def script_flee(self) -> dict:
+        flee_dict = {"flee": 0, "perfect_flee": 0}
+        for element in self.script_dict['Flat_list']:
+            if element[0] == "+flee":
+                flee_dict["flee"] += int(element[1])
+            if element[0] == "+perfectdodge":
+                flee_dict["perfect_flee"] += int(element[1])
+        return flee_dict
+
+    def script_corestat_bonus(self) -> dict:
+        corestat_book = {"str": 0, "agi": 0, "vit": 0, "int": 0, "dex": 0, "luk": 0}
+        for element in self.script_dict['Flat_list']:
+            if element[0] == "+str":
+                corestat_book["str"] += int(element[1])
+            if element[0] == "+agi":
+                corestat_book["agi"] += int(element[1])
+            if element[0] == "+vit":
+                corestat_book["vit"] += int(element[1])
+            if element[0] == "+dex":
+                corestat_book["dex"] += int(element[1])
+            if element[0] == "+luk":
+                corestat_book["luk"] += int(element[1])
+        return corestat_book
+
+    def script_hit(self) -> int:
+        core_hit = 0
+        for element in self.script_dict['Flat_list']:
+            if element[0] == "+hit":
+                core_hit += int(element[1])
+        return core_hit
+
+
 
     @staticmethod
     def evaluate_stat_bonus(job_level: int, stat_array: List[int]) -> int:

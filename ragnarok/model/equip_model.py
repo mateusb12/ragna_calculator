@@ -578,6 +578,7 @@ class PlayerGear:
                     else:
                         script_dict["{}3".format(aux.class_type)] = {'Gear': (aux.name, aux.script_adapted),
                                                                      'Card': (aux.card['Name'], aux.card['Script_adapted'])}
+                flat_script.append(aux.script_adapted)
                 flat_script.append(aux.card['Script_adapted'])
             else:
                 wcs = {"card1": "", "card2": "", "card3": "", "card4": ""}
@@ -589,7 +590,8 @@ class PlayerGear:
                     wcs["card3"] = (aux.card3['Name'], aux.card3['Script_adapted'])
                 if aux.card4:
                     wcs["card4"] = (aux.card4['Name'], aux.card4['Script_adapted'])
-                script_dict['Weapon'] = {"Gear": (aux.name, aux.script), "Card": wcs}
+                script_dict['Weapon'] = {"Gear": (aux.name, aux.script_adapted), "Card": wcs}
+                flat_script.append(aux.script_adapted)
                 flat_script.append(aux.card['Script_adapted'])
         flat_script = [a for a in flat_script if a != "No Script"]
         flat_script = unnest_list(flat_script)
@@ -610,9 +612,9 @@ text_dict = {"headgear1": ("Valkyrie Feather Band [1]", "4", "Elder Willow Card"
              "shoes": ('Crystal Pumps', '4', "(No Card)"),
              "armor": ("Formal Suit [1]", "7", "Dokebi Card"),
              "robe": ("Muffler [1]", "7", "Raydric Card"),
-             "accessory1": ("Glove [1]", 0, "Zerom Card"),
+             "accessory1": ("Glove [1]", 0, "Mantis Card"),
              'accessory2': ("Earring [1]", 0, "Zerom Card"),
-             'weapon': ("Knife [4]", 0, "(No Card)", "(No Card)", "(No Card)", "(No Card)")}
+             'weapon': ("Grimtooth", 0, "(No Card)", "(No Card)", "(No Card)", "(No Card)")}
 
 # Muramash
 

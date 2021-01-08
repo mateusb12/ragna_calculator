@@ -141,7 +141,6 @@ def calcframe():
     if request.method == 'POST' and request.form:
         calc_dynamic_select(form)
         fill_calc_with_json(form)
-        # fill_calc_with_json(form)
         gear_dict = dict_name_to_dict_id(normalize_form_values(pi))
         calc_gear = PlayerGear(gear_dict, pi['class_name'], int(pi['base_level']))
         p1 = PlayerBuild(jbl, int(pi['base_level']), int(pi['job_level']), uncapitalize(pi['class_name']),

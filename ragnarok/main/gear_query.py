@@ -457,3 +457,9 @@ void_gear = dict_name_to_dict_id(void_dict)
 
 # print('')
 # print('')
+list_a = [28, 12, 93, 58, 40, 54]
+list_b = [40, 28, 92, 58, 50, 62]
+
+list_c = [(x * 0 if x == y else y) for x, y in zip(list_a, list_b)]
+list_c = [(x * 0 if x > y else y) for x, y in zip(list_a, list_c)]
+print(list_c)
