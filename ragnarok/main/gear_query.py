@@ -11,6 +11,8 @@ def is_equipable(player_job: str, player_level: int, ch: dict):
     current_job = player_job.lower()
     if current_job == 'super_novice':
         current_job = 'SuperNovice'
+    if current_job == "swordsman":
+        current_job = "Swordman"
     if 'Upper' in ch['Classes'].keys():
         if current_job not in job70:
             return False, 'Transclass only'
@@ -46,6 +48,9 @@ def generate_equipable_gear(player_class: str, player_level: int) -> dict:
     equipable_armor = set()
     equipable_robe = set()
     equipable_accessory = set()
+
+    if player_class.lower() == "swordsman":
+        player_class = "Swordman"
 
     for a in hat_db:
         aux = is_equipable(player_class, player_level, hat_db[a])
@@ -135,19 +140,6 @@ def retrieve_id_by_name(gear_name: str):
                 else:
                     possible_ids.append(equip_db[j]['Id'])
         return max(possible_ids)
-
-        # for k in equip_db.values():
-        #     if k['Name'].lower() == gear_name[0].lower():
-        #         plausible_ids[k['Id']] = k['Slots']
-        # print('plausible_ids = {}'.format(plausible_ids))
-        # # if ' [1]' in original_name:
-        # if any(x in original_name for x in [' [1]', ' [2]', ' [3]', ' [4]']):
-        #     for g_id, g_slot in plausible_ids.items():  # for name, age in dictionary.iteritems():  (for Python 2.x)
-        #         if g_slot == gear_name[1]:
-        #             return g_id
-        # else:
-        #     # mudar para minimo
-        #     return min(plausible_ids, key=plausible_ids.get)
 
 
 def retrieve_card_id_by_name(card_name: str):
@@ -311,7 +303,6 @@ def normalize_form_values(pi: dict) -> dict:
               ('accessory1', 'accessory1'), ('accessory2', 'accessory2'), ('weapon', 'weapon')]:
         if q[0] is not 'weapon':
             item_t = normalize_form_values_tuple_gen(q[1], q[0], pi)
-            # print('item_t = {}'.format(item_t))
             p1_gear[item_t['key']] = item_t['tuple']
         else:
             item_t = normalize_form_values_tuple_gen_for_weapon(q[1], q[0], pi)
@@ -457,9 +448,5 @@ void_gear = dict_name_to_dict_id(void_dict)
 
 # print('')
 # print('')
-list_a = [28, 12, 93, 58, 40, 54]
-list_b = [40, 28, 92, 58, 50, 62]
 
-list_c = [(x * 0 if x == y else y) for x, y in zip(list_a, list_b)]
-list_c = [(x * 0 if x > y else y) for x, y in zip(list_a, list_c)]
-print(list_c)
+print(generate_equipable_weapons("Swordsman", 99))

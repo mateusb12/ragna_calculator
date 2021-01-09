@@ -52,15 +52,15 @@ class PlayerBuild:
         self.max_job = self.job_bonuses_list[current_job]['MAX_JOB']
 
         # classes
+        self.u_dict = self.universal_script()
 
         # incremento dos atributos de acordo com o nível atual de classe
-        att_book = self.script_corestat_bonus()
-        self.str_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['STR']) + att_book["str"]
-        self.agi_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['AGI']) + att_book["agi"]
-        self.vit_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['VIT']) + att_book["vit"]
-        self.int_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['INT']) + att_book["int"]
-        self.dex_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['DEX']) + att_book["dex"]
-        self.luk_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['LUK']) + att_book["luk"]
+        self.str_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['STR']) + self.u_dict["+str"]
+        self.agi_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['AGI']) + self.u_dict["+agi"]
+        self.vit_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['VIT']) + self.u_dict["+vit"]
+        self.int_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['INT']) + self.u_dict["+int"]
+        self.dex_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['DEX']) + self.u_dict["+dex"]
+        self.luk_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['LUK']) + self.u_dict["+luk"]
 
         # somatórios de status
         self.str += self.str_bonus
@@ -71,24 +71,23 @@ class PlayerBuild:
         self.luk += self.luk_bonus
 
         # esquiva, precisão, crítico e bônus de regen
-        flee_book = self.script_flee()
-        self.flee_bonuses = flee_book["flee"]
-        self.perfect_dodge_bonuses = flee_book["perfect_flee"]
-        self.hit_bonuses = self.script_hit()
-        self.crit_bonuses = 0
-        self.hpr_mod = 0
-        self.spr_mod = 0
+        self.flee_bonuses = self.u_dict["+flee"]
+        self.perfect_dodge_bonuses = self.u_dict["+perfectdodge"]
+        self.hit_bonuses = self.u_dict["+hit"]
+        self.crit_bonuses = self.u_dict["+crit"]
+        self.hpr_mod = self.u_dict['+hprecovery_%']
+        self.spr_mod = self.u_dict['+sprecovery_%']
 
         # cálculo do HP
         self.trans_mod = self.job_bonuses_list[current_job]['TRANS_MOD']
-        self.additive_modifiers = 0
-        self.multiplicative_modifiers = 0
+        self.additive_modifiers = self.u_dict["+maxhp_flat"]
+        self.multiplicative_modifiers = self.u_dict["+maxhp_%"]
         self.base_hp = list(self.hp_df[self.current_job])[self.base_level]
         self.max_hp = self.calculate_max_hp()
 
         # cálculo do SP
-        self.sp_mod_a = 0
-        self.sp_mod_b = 0
+        self.sp_mod_a = self.u_dict["+maxsp_flat"]
+        self.sp_mod_b = self.u_dict["+maxsp_%"]
         self.max_sp = self.calculate_max_sp()
 
         # esquiva
@@ -145,16 +144,17 @@ class PlayerBuild:
 
         # Defesa
         self.def_hard = self.script_hard_defense()
-        self.def_soft = self.script_soft_defense()
+        self.def_soft = math.floor(self.vit * (1 + (self.u_dict['+softdef_%'] / 100)))
 
         # Defesa mágica
-        mdef_book = self.script_magic_defense()
-        self.mdef_hard = mdef_book['hard']
-        self.mdef_soft = mdef_book['soft']
+        self.mdef_hard = self.u_dict["+mdef_flat"]
+        self.mdef_soft = self.int
 
         # Ataque mágico
         self.matk_min = 20
         self.matk_max = 25
+
+        print('cara? {}'.format(self.universal_script()))
 
     def calculate_base_hp(self):
         hp_job_a = self.job_bonuses_list[self.current_job]['HP_JOB_A']
@@ -185,73 +185,26 @@ class PlayerBuild:
     def script_hard_defense(self) -> int:
         hard_def = 0
         hard_def += self.playergear.total_defense()
-        hard_def_a = 0
-        hard_def_b = 0
-
-        for element in self.script_dict['Flat_list']:
-            if element[0] == "+def_flat":
-                hard_def_a += int(element[1])
-            if element[0] == "+def_%":
-                hard_def_b += int(element[1])
+        hard_def_a = self.u_dict['+def_flat']
+        hard_def_b = self.u_dict['+def_%']
 
         hard_def += hard_def_a
         hard_def = math.floor(hard_def * (1 + (hard_def_b / 100)))
         return hard_def
 
-    def script_soft_defense(self) -> int:
-        soft_def = 0
-        soft_def += self.vit
-        soft_def_a = 0
-        soft_def_b = 0
+    def universal_script(self) -> dict:
+        key_list = [j[0] for j in self.script_dict['Flat_list']]
+        key_list += ["+str", "+agi", "+vit", "+int", "+dex", "+luk", "+def_flat", "+def_%", "+softdef_%", "+mdef_flat",
+                     "+flee", "+perfectdodge", "+hit", "+hprecovery_%", "+sprecovery_%", "+crit",
+                     "+maxhp_flat", "+maxsp_flat", "+maxhp_%", "+maxsp_%"]
+        key_dict = dict.fromkeys(set(key_list), 0)
+        forbidden_list = ("whenhit_badstatus", "afterkill_drainsp", "resist_element_%")
 
         for element in self.script_dict['Flat_list']:
-            if element[0] == "+softdef_%":
-                soft_def_b += int(element[1])
+            if element[0] not in forbidden_list:
+                key_dict[element[0]] += int(element[1])
 
-        soft_def += soft_def_a
-        soft_def = math.floor(soft_def * (1 + (soft_def_b / 100)))
-        return soft_def
-
-    def script_magic_defense(self) -> dict:
-        hard_mdef = 0
-        hard_mdef_a = 0
-        for element in self.script_dict['Flat_list']:
-            if element[0] == "+mdef_flat":
-                hard_mdef_a += int(element[1])
-        hard_mdef += hard_mdef_a
-
-        return {"hard": hard_mdef, "soft": self.int}
-
-    def script_flee(self) -> dict:
-        flee_dict = {"flee": 0, "perfect_flee": 0}
-        for element in self.script_dict['Flat_list']:
-            if element[0] == "+flee":
-                flee_dict["flee"] += int(element[1])
-            if element[0] == "+perfectdodge":
-                flee_dict["perfect_flee"] += int(element[1])
-        return flee_dict
-
-    def script_corestat_bonus(self) -> dict:
-        corestat_book = {"str": 0, "agi": 0, "vit": 0, "int": 0, "dex": 0, "luk": 0}
-        for element in self.script_dict['Flat_list']:
-            if element[0] == "+str":
-                corestat_book["str"] += int(element[1])
-            if element[0] == "+agi":
-                corestat_book["agi"] += int(element[1])
-            if element[0] == "+vit":
-                corestat_book["vit"] += int(element[1])
-            if element[0] == "+dex":
-                corestat_book["dex"] += int(element[1])
-            if element[0] == "+luk":
-                corestat_book["luk"] += int(element[1])
-        return corestat_book
-
-    def script_hit(self) -> int:
-        core_hit = 0
-        for element in self.script_dict['Flat_list']:
-            if element[0] == "+hit":
-                core_hit += int(element[1])
-        return core_hit
+        return key_dict
 
 
 

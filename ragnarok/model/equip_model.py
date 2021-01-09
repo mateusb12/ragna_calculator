@@ -609,7 +609,7 @@ text_dict = {"headgear1": ("Valkyrie Feather Band [1]", "4", "Elder Willow Card"
              "headgear2": ("Red Glasses", 0, "(No Card)"),
              "headgear3": ('Rainbow Scarf', 0, "(No Card)"),
              "shield": ('Guard [1]', '7', "Ambernite Card"),
-             "shoes": ('Crystal Pumps', '4', "(No Card)"),
+             "shoes": ('Sandals [1]', '4', "Zombie Card"),
              "armor": ("Formal Suit [1]", "7", "Dokebi Card"),
              "robe": ("Muffler [1]", "7", "Raydric Card"),
              "accessory1": ("Glove [1]", 0, "Mantis Card"),
