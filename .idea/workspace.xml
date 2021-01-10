@@ -6,9 +6,9 @@
       <change beforePath="$PROJECT_DIR$/pyflask/app/databases/db_operations.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/databases/db_operations.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyflask/app/static/assets/custom.png" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/static/assets/custom.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyflask/app/static/assets/equip_custom.png" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/static/assets/equip_custom.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ragnarok/main/gear_query.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/main/gear_query.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ragnarok/model/build_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/model/build_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ragnarok/resources/interface/interface_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/ragnarok/resources/interface/interface_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/static/css/sign_up.css" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/static/css/sign_up.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/templates/calculator_frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/templates/calculator_frame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyflask/app/templates/sign_up.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyflask/app/templates/sign_up.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +48,7 @@
       <recent name="E:\Meus Documentos\Documentos\GitHub\ragna_calculator\flasktest" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.gear_query">
+  <component name="RunManager" selected="Python.db_operations">
     <configuration name="build_model" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="testecalc" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -185,8 +185,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.gear_query" />
         <item itemvalue="Python.db_operations" />
+        <item itemvalue="Python.gear_query" />
         <item itemvalue="Python.exporter" />
         <item itemvalue="Python.build_model" />
         <item itemvalue="Python.equip_model" />

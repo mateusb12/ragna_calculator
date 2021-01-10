@@ -1,25 +1,50 @@
+import json
+from typing import Tuple, List
+
+import requests
+
 from app.models.tables import FireUser
 from random import choice
 
 import pyrebase
 
+config = {
+    "apiKey": "AIzaSyDsPdZW45qT8jBQp0EAuGIJe4LDZeKSTBw",
+    "authDomain": "ragnacalculator.firebaseapp.com",
+    "databaseURL": "https://ragnacalculator-default-rtdb.firebaseio.com",
+    "projectId": "ragnacalculator",
+    "storageBucket": "ragnacalculator.appspot.com",
+    "messagingSenderId": "334339512481",
+    "appId": "1:334339512481:web:bc9ca3c8b113e59ea2f8e0",
+    "measurementId": "G-WHMMME1PPS"
+}
+
 
 def start_db():
-    config = {
-        "apiKey": "AIzaSyDsPdZW45qT8jBQp0EAuGIJe4LDZeKSTBw",
-        "authDomain": "ragnacalculator.firebaseapp.com",
-        "databaseURL": "https://ragnacalculator-default-rtdb.firebaseio.com",
-        "projectId": "ragnacalculator",
-        "storageBucket": "ragnacalculator.appspot.com",
-        "messagingSenderId": "334339512481",
-        "appId": "1:334339512481:web:bc9ca3c8b113e59ea2f8e0",
-        "measurementId": "G-WHMMME1PPS"
-    }
     firebase_instance = pyrebase.initialize_app(config)
     return firebase_instance.database()
 
 
+def auth_login(login_str: str, password_str: str):
+    firebase_instance = pyrebase.initialize_app(config)
+    # create authentication
+    auth = firebase_instance.auth()
+
+    # and authenticate the user
+    user = auth.sign_in_with_email_and_password(login_str, password_str)
+    print("User Created Successfully")
+    return user
+
+
 db = start_db()
+# data = {"age": 40, "address": "New York", "employed": True, "name": "John Smith"}
+# db.child("people").push(data)
+# fu = FireBaseUser()
+# auth_db = fu.auth_create_user("gigigogolelel", "phoenix@gmail.com", "123456")
+# # auth_db = fu.create("mateusb12", "mateus_b09@hotmail.com", "c139ea31")
+# print('oiiiii {}'.format(auth_db))
+# my_data = {"name": "Parwiz Forogh"}
+# db.child("users").child("OwnKey").set(my_data)
 
 db_list = db.child("users").get().val()
 if db_list:
@@ -33,6 +58,44 @@ int_id_list = list(db_list.keys())
 class User:
     @staticmethod
     def create(username: str, password: str, email: str):
+        inner_config = {
+            "apiKey": "AIzaSyDsPdZW45qT8jBQp0EAuGIJe4LDZeKSTBw",
+            "authDomain": "ragnacalculator.firebaseapp.com",
+            "databaseURL": "https://ragnacalculator-default-rtdb.firebaseio.com",
+            "projectId": "ragnacalculator",
+            "storageBucket": "ragnacalculator.appspot.com",
+            "messagingSenderId": "334339512481",
+            "appId": "1:334339512481:web:bc9ca3c8b113e59ea2f8e0",
+            "measurementId": "G-WHMMME1PPS"
+        }
+        firebase_instance = pyrebase.initialize_app(inner_config)
+        auth = firebase_instance.auth()
+        email_flag = None
+        username_flag = not UserTools.username_existing_check(username)
+        try:
+            user = auth.create_user_with_email_and_password(email, password)
+            print("User Created Successfully")
+            email_flag = True, user
+        except requests.HTTPError as e:
+            error_json = e.args[1]
+            error = json.loads(error_json)['error']['message']
+            if error == "EMAIL_EXISTS":
+                email_flag = False, "Email already exists"
+        if email_flag and username_flag:
+            id_base = 500
+            creation_id = UserTools.generate_id() + id_base
+            aux = {"id": creation_id,
+                   "username": username,
+                   "password": password,
+                   "email": email}
+
+            db.child("users").child(creation_id).set(aux)
+            return True
+        else:
+            return UserTools.existing_reason(username, email)
+
+    @staticmethod
+    def create_old(username: str, password: str, email: str):
         if not UserTools.existing_check(username, email):
             id_base = 500
             creation_id = UserTools.generate_id() + id_base
@@ -121,6 +184,15 @@ class UserTools:
         if db_list:
             for i in db_list.values():
                 if username == i['username'] or email == i['email']:
+                    return True
+            return False
+        return None
+
+    @staticmethod
+    def username_existing_check(username: str):
+        if db_list:
+            for i in db_list.values():
+                if username == i['username']:
                     return True
             return False
         return None

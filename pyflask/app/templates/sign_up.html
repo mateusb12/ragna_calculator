@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="shortcut icon" href="#" />
+    <link rel="shortcut icon" href="#"/>
     <link href="{{ url_for('static', filename='css/sign_up.css') }}" rel="stylesheet">
     <meta charset="UTF-8">
     <title>Sign-up</title>
@@ -34,6 +34,7 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
+
 
 
 
@@ -87,7 +88,7 @@
         </div>
         <div class="form-group">
             <label>Confirm email</label>
-            {{ form.email_confirm(class="form-control",  placeholder="Confirm your e-mail") }}
+            {{ form.email_confirm(class="form-control", placeholder="Confirm your e-mail") }}
             {% if form.errors.email_confirm %}
             <div class="alert alert-danger" role="alert"> {{ form.errors.email_confirm}}</div>
             {% endif %}
@@ -95,9 +96,11 @@
         <div class="checkbox">
             <label>Remember me</label>
         </div>
-        <button type="submit" class="btn btn-default">
-            Submit
-        </button>
+        <div class='login-buttons'>
+            <button type="submit" class="btn btn-default">
+                Submit
+            </button>
+        </div>
         {% for field in form.errors %}
         {% for error in form.errors[field] %}
         <div class="error">{{ error }}</div>
