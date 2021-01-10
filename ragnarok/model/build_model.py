@@ -6,7 +6,7 @@ from typing import List, Optional
 import os
 
 from ragnarok.model.equip_model import PlayerGear
-from ragnarok.main.gear_query import void_gear
+from ragnarok.main.gear_query import void_gear, generate_aspd_table
 from ragnarok.main.gear_query import void_gear
 from ragnarok.main.exporter import job70
 
@@ -136,7 +136,7 @@ class PlayerBuild:
             self.possible_points = [(x * 0 if x > y else y) for x, y in zip(self.stat_build, self.possible_points)]
 
         # ASPD
-        self.aspd = 172
+        self.aspd = self.calculate_aspd()
 
         # Ataque
         self.atk_base = 109
@@ -154,7 +154,7 @@ class PlayerBuild:
         self.matk_min = 20
         self.matk_max = 25
 
-        print('cara? {}'.format(self.universal_script()))
+        print('cara? {}'.format(self.calculate_aspd()))
 
     def calculate_base_hp(self):
         hp_job_a = self.job_bonuses_list[self.current_job]['HP_JOB_A']
@@ -205,6 +205,19 @@ class PlayerBuild:
                 key_dict[element[0]] += int(element[1])
 
         return key_dict
+
+    def calculate_aspd(self) -> str:
+        aspd_table = generate_aspd_table()
+        adapted_job = self.current_job
+        weapon_type = self.playergear.weapon.subtype
+        if self.playergear.weapon.name == "(No Weapon)":
+            weapon_type = "Unarmed"
+        if self.current_job in [x.lower() for x in aspd_table["job_adapt"].keys()]:
+            adapted_job = aspd_table["job_adapt"][self.current_job]
+        aspd_bonuses = 0
+        wd = 50 * aspd_table[adapted_job][weapon_type]
+        aspd = 200-(wd-(((wd/25*self.agi)+(wd/100*self.dex))/10)*(1-aspd_bonuses))
+        return round(aspd, 1)
 
 
 

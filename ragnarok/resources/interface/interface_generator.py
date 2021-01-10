@@ -75,7 +75,7 @@ class InterfaceGenerator:
         draw.text((x + 200, y), "{} +{}".format(build.def_hard, build.def_soft), "black", font=font)
         draw.text((x + 200, y + 16), "{} +{}".format(build.mdef_hard, build.mdef_soft), "black", font=font)
         draw.text((x + 200, y + 32), "{} +{}".format(build.flee, build.perfect_dodge), "black", font=font)
-        draw.text((x + 215, y + 48), "177".format(build.aspd), "black", font=font)
+        draw.text((x + 205, y + 47), "{}".format(build.aspd), "black", font=font)
 
         draw.text((x + 215, y + 64), "{}".format(build.attribute_balance), "black", font=font)
 
@@ -98,7 +98,8 @@ class InterfaceGenerator:
             icon_path = os.path.abspath(os.path.join(os.path.dirname(__file__),
                                                      'interface', 'icon_{}.png'.format(icon_id)))
             if not os.path.isfile(icon_path):
-                response = requests.get("https://file5s.ratemyserver.net/items/small/{}.gif".format(icon_id))
+                # response = requests.get("https://file5s.ratemyserver.net/items/small/{}.gif".format(icon_id))
+                response = requests.get("http://db.irowiki.org/image/item/{}.png".format(icon_id))
                 icon_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'icons', 'icon_{}.png'.format(icon_id)))
                 file = open(icon_path, "wb")
                 file.write(response.content)

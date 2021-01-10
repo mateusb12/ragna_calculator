@@ -15,8 +15,8 @@ def start_db():
         "appId": "1:334339512481:web:bc9ca3c8b113e59ea2f8e0",
         "measurementId": "G-WHMMME1PPS"
     }
-    firebase = pyrebase.initialize_app(config)
-    return firebase.database()
+    firebase_instance = pyrebase.initialize_app(config)
+    return firebase_instance.database()
 
 
 db = start_db()
