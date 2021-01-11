@@ -42,6 +42,10 @@ class PlayerBuild:
         self.possible_points = []
         self.playergear = playergear
         self.script_dict = playergear.script_summary()
+        self.whileattacking_dict = {"autospell": {}, "badstatus": {}, "breakarmor_%": {}, "breakweapon_%": {},
+                                    "coma": {}, "coma_race": {}, "dead_branch": {}, "double_attack_%": {},
+                                    "drainsp_race": {}, "selfbadstatus": {}, "selfdrainsp": {}, "suck_hp_%": {},
+                                    "suck_sp_%": {}, "vanishsp": {}, "voidscript": {"void": 0}}
 
         # arquivos
         self.hp_df = pd.read_csv(os.path.abspath(
@@ -55,12 +59,18 @@ class PlayerBuild:
         self.u_dict = self.universal_script()
 
         # incremento dos atributos de acordo com o nível atual de classe
-        self.str_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['STR']) + self.u_dict["+str"]
-        self.agi_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['AGI']) + self.u_dict["+agi"]
-        self.vit_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['VIT']) + self.u_dict["+vit"]
-        self.int_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['INT']) + self.u_dict["+int"]
-        self.dex_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['DEX']) + self.u_dict["+dex"]
-        self.luk_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['LUK']) + self.u_dict["+luk"]
+        self.str_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['STR']) + \
+                         self.u_dict["+str"]
+        self.agi_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['AGI']) + \
+                         self.u_dict["+agi"]
+        self.vit_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['VIT']) + \
+                         self.u_dict["+vit"]
+        self.int_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['INT']) + \
+                         self.u_dict["+int"]
+        self.dex_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['DEX']) + \
+                         self.u_dict["+dex"]
+        self.luk_bonus = self.evaluate_stat_bonus(self.job_level, self.job_bonuses_list[current_job]['LUK']) + \
+                         self.u_dict["+luk"]
 
         # somatórios de status
         self.str += self.str_bonus
@@ -154,7 +164,7 @@ class PlayerBuild:
         self.matk_min = 20
         self.matk_max = 25
 
-        print('cara? {}'.format(self.calculate_aspd()))
+        self.whileattacking_dict = dict((k, v) for k, v in self.whileattacking_dict.items() if v)
 
     def calculate_base_hp(self):
         hp_job_a = self.job_bonuses_list[self.current_job]['HP_JOB_A']
@@ -198,11 +208,16 @@ class PlayerBuild:
                      "+flee", "+perfectdodge", "+hit", "+hprecovery_%", "+sprecovery_%", "+crit",
                      "+maxhp_flat", "+maxsp_flat", "+maxhp_%", "+maxsp_%"]
         key_dict = dict.fromkeys(set(key_list), 0)
-        forbidden_list = ("whenhit_badstatus", "afterkill_drainsp", "resist_element_%")
+        forbidden_list = ("whenhit_badstatus", "afterkill_drainsp", "resist_element_%", "unbreakable_weapon",
+                          "whileattacking_selfbadstatus")
 
         for element in self.script_dict['Flat_list']:
             if element[0] not in forbidden_list:
                 key_dict[element[0]] += int(element[1])
+            else:
+                sliced_script = element[0].split("_")
+                if sliced_script[0] == "whileattacking":
+                    self.whileattacking_dict[sliced_script[1]][element[1]] = element[2]
 
         return key_dict
 
@@ -216,10 +231,8 @@ class PlayerBuild:
             adapted_job = aspd_table["job_adapt"][self.current_job]
         aspd_bonuses = 0
         wd = 50 * aspd_table[adapted_job][weapon_type]
-        aspd = 200-(wd-(((wd/25*self.agi)+(wd/100*self.dex))/10)*(1-aspd_bonuses))
+        aspd = 200 - (wd - (((wd / 25 * self.agi) + (wd / 100 * self.dex)) / 10) * (1 - aspd_bonuses))
         return round(aspd, 1)
-
-
 
     @staticmethod
     def evaluate_stat_bonus(job_level: int, stat_array: List[int]) -> int:

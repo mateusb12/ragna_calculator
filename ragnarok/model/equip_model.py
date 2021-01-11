@@ -296,6 +296,9 @@ class PlayerGear:
         if self.job.lower() == 'super_novice':
             self.job = 'SuperNovice'
 
+        if self.job.lower() == "swordsman":
+            self.job = "swordman"
+
         self.gt = self.create_gear_table(gear_input)
         for w in self.gt:
             if not isinstance(w, Headgear):

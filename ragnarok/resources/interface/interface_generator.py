@@ -77,7 +77,12 @@ class InterfaceGenerator:
         draw.text((x + 200, y + 32), "{} +{}".format(build.flee, build.perfect_dodge), "black", font=font)
         draw.text((x + 205, y + 47), "{}".format(build.aspd), "black", font=font)
 
-        draw.text((x + 215, y + 64), "{}".format(build.attribute_balance), "black", font=font)
+        if build.attribute_balance > 1000:
+            draw.text((x + 205, y + 64), "{}".format(build.attribute_balance), "black", font=font)
+        elif build.attribute_balance > 100:
+            draw.text((x + 210, y + 64), "{}".format(build.attribute_balance), "black", font=font)
+        else:
+            draw.text((x + 220, y + 64), "{}".format(build.attribute_balance), "black", font=font)
 
         draw.text((x + 242, y - 1), "MaxHP", (68, 91, 131), font=font_tahoma_bold)
         draw.text((x + 242, y + 15), "MaxSP", (68, 91, 131), font=font_tahoma_bold)
@@ -85,8 +90,8 @@ class InterfaceGenerator:
         draw.text((x + 242, y + 47), "SP_Regen", (68, 91, 131), font=font_tahoma_bold)
         draw.text((x + 242, y + 63), "Mov_speed", (68, 91, 131), font=font_tahoma_bold)
 
-        draw.text((x + 290, y), "{}".format(build.max_hp), "black", font=font)
-        draw.text((x + 290, y + 16), "{}".format(build.max_sp), "black", font=font)
+        draw.text((x + 290, y - 1), "{}".format(build.max_hp), "black", font=font)
+        draw.text((x + 290, y + 15), "{}".format(build.max_sp), "black", font=font)
         draw.text((x + 300, y + 32), "{}".format(build.hp_regen), "black", font=font)
         draw.text((x + 300, y + 48), "{}".format(build.sp_regen), "black", font=font)
         draw.text((x + 300, y + 64), "100%", "black", font=font)
@@ -163,6 +168,8 @@ class InterfaceGenerator:
         if pe.weapon:
             if not pe.weapon.is_dead_gear():
                 draw_multiline('{}'.format(pe.weapon.export_text()), 35, 52, font_db[12])
+        if pe.weapon.two_handed:
+            draw_multiline('{}'.format(pe.weapon.export_text()), 175, 53, font_db[12])
         if pe.robe:
             if not pe.robe.is_dead_gear():
                 textline = pe.robe.export_text()
@@ -227,6 +234,9 @@ class InterfaceGenerator:
         draw_icon(gear_ids['shoes'], 250, 79)
         draw_icon(gear_ids['accessory1'], 5, 107)
         draw_icon(gear_ids['accessory2'], 248, 107)
+
+        if pe.weapon.two_handed:
+            draw_icon(gear_ids['weapon'], 250, 52)
 
         chosen_sex = sex
         job = pe.job

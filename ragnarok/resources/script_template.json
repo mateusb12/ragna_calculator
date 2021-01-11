@@ -122,30 +122,6 @@
 						[
 						"whileattacking_breakweapon_%"
 						],
-		"baddeff2":
-						[
-						"whileattacking_selfbadstatus"
-						],
-		"bdoublerate":
-						[
-						"whileattacking_doubleattack_%"
-						],
-		"bhpdrainrate":
-						[
-						"whileattacking_suck_hp_%"
-						],
-		"bspdrainrate":
-						[
-						"whileattacking_suck_sp_%"
-						],
-		"bspdrainvalue":
-						[
-						"whileattacking_selfdrainsp"
-						],
-		"bspvanishrate":
-						[
-						"whileattacking_vanishsp"
-						],
 		"bcomaclass":
 						[
 						"whileattacking_coma"
@@ -158,9 +134,33 @@
 						[
 						"whileattacking_deadbranch"
 						],
+		"bdoublerate":
+						[
+						"whileattacking_doubleattack_%"
+						],
 		"bspdrainvaluerace":
 						[
 						"whileattacking_drainsp_race"
+						],
+		"baddeff2":
+						[
+						"whileattacking_selfbadstatus"
+						],
+		"bspdrainvalue":
+						[
+						"whileattacking_selfdrainsp"
+						],
+		"bhpdrainrate":
+						[
+						"whileattacking_suck_hp_%"
+						],
+		"bspdrainrate":
+						[
+						"whileattacking_suck_sp_%"
+						],
+		"bspvanishrate":
+						[
+						"whileattacking_vanishsp"
 						],
 		"bautospellwhenhit":
 						[

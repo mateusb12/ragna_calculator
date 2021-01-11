@@ -72,54 +72,12 @@ script_set = set()
 first_param_set = set()
 second_param_set = set()
 
-# script_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'resources', "script_template.json"))
-# script_json = pd.read_json(r'{}'.format(script_path))
+# atk_dict = {"autospell": {}, "badstatus": {}, "breakarmor_%": {}, "breakweapon_%": {},
+#             "coma": {}, "coma_race": {}, "dead_branch": {}, "double_attack_%": {},
+#             "drainsp_race": {}, "selfbadstatus": {}, "selfdrainsp": {}, "suck_hp_%": {},
+#             "suck_sp_%": {}, "vanishsp": {}}
 #
-# for i in equip_db:
-#     aux = equip_db[i]
-#     if 'Script' not in aux:
-#         pass
-#     else:
-#         script = str(equip_db[i]['Script'])
-#         fragmented = script.split(';')
+# atk_dict["coma_race"]["Demi_human"] = 10
 #
-#         sliced = fragmented[0].split(' ')
-#         formatted = sliced
-#         first_param = sliced[0]
-#
-#         if first_param == '/*':
-#             first_param = fragmented[0].split(' ')[1]
-#         if first_param == '0':
-#             first_param = "No Script"
-#             formatted = ["No Script"]
-#         if first_param[0:2] == 'if':
-#             aux_list = fragmented[0].split(' ')[2:]
-#
-#         if len(formatted) != 1:
-#             if formatted[0] == 'bonus':
-#                 second_param_set.add(formatted[1])
-#
-#         first_param_set.add(first_param)
-#         for q in fragmented:
-#             script_set.add(q)
-#
-# for h in sorted(second_param_set):
-#     print(h)
-# print('')
-#
-# script = "bonus bFlee2,10; if(getrefine()>8) ; bonus bCastrate,-20; bonus bDelayRate,-20; \n"
-# first_split = script.split(';')
-# first_split = [s.replace('\n', '') for s in first_split]
-# print(first_split)
-# first_split_trimmed = first_split.copy()
-#
-# if "if(" in script:
-#     for mk in range(len(first_split)):
-#         print(mk, first_split[mk])
-#         if "if(" in first_split[mk]:
-#             first_split_trimmed[mk + 2] = (first_split[mk + 2] + first_split[mk]).replace(';', ',')
-#             del first_split_trimmed[mk]
-#
-# print(first_split_trimmed)
-
-
+# atk_dict = dict((k, v) for k, v in atk_dict.items() if v)
+# print(atk_dict)

@@ -526,7 +526,7 @@ def generate_aspd_table() -> dict:
                          "Bow": None, "Katar": None, "Book": 1, "Knuckle": None, "Musical": None, "Whip": None,
                          "Revolver": None, "Rifle": None, "Gatling": None, "Shotgun": None, "Grenade": None,
                          "Huuma": None},
-         "job_adapt": {"super_novice": "novice", "lord_knight": "knight", "high_priest": "priest",
+         "job_adapt": {"super_novice": "novice", "swordsman": "swordman", "lord_knight": "knight", "high_priest": "priest",
                        "high_wizard": "wizard", "whitesmith": "blacksmith", "sniper": "hunter",
                        "assassin_cross": "assassin", "paladin": "crusader", "stalker": "rogue", "professor": "sage",
                        "creator": "alchemist", "champion": "monk", "clown": "bard", "gypsy": "dancer"}}
@@ -565,4 +565,5 @@ void_gear = dict_name_to_dict_id(void_dict)
 # print('')
 # print('')
 
-print(generate_equipable_weapons("Super_novice", 99))
+# print(generate_equipable_weapons("Swordsman", 99))
+print(is_equipable("Swordman", 99, equip_db[1231]))
