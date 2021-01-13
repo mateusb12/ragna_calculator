@@ -14,4 +14,11 @@ function forceRender2(){
 	return src;
 }
 
+function forceRender3(){
+	var timestamp = new Date().getTime();
+	var select_value = document.getElementById("picDD").value;
+	var src = "static/assets/" + select_value + ".png?t=" + timestamp;
+	document.getElementById("other_info_img").src=src;
+}
+
 console.log('Autorefresh.js executed!')

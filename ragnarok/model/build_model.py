@@ -61,6 +61,7 @@ class PlayerBuild:
                             "resist_size_%": self.blank_sizes,
                             "resist_allmonster_%": self.blank_monstertype,
                             "resist_badstatus_%": self.blank_badstatus,
+                            "duration_badstatus_%": self.blank_badstatus,
                             "resist_melee_%": 0,
                             "resist_ranged_%": 0}
 

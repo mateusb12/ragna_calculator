@@ -247,47 +247,158 @@ class InterfaceGenerator:
         img.save(out_file)
 
     def generate_resistance_details(self):
-        resist_races = {"RC_Formless": 0, "RC_Undead": 0, "RC_Brute": 0, "RC_Plant": 0, "RC_Insect": 0,
-                        "RC_Fish": 0, "RC_Demon": 0, "RC_DemiHuman": 0, "RC_Player": 0, "RC_Angel": 0,
-                        "RC_Dragon": 0}
-        resist_elements = {"Ele_Neutral": 0, "Ele_Water": 0, "Ele_Earth": 0, "Ele_Fire": 0, "Ele_Wind": 0,
-                           "Ele_Poison": 0, "Ele_Holy": 0, "Ele_Dark": 0, "Ele_Ghost": 0, "Ele_Undead": 0}
-        resist_badstatus = {"Eff_Poison": 0, "Eff_Stun": 0, "Eff_Freeze": 0, "Eff_Curse": 0, "Eff_Blind": 0,
-                            "Eff_Sleep": 0, "Eff_Silence": 0, "Eff_Confusion": 0, "Eff_Bleeding": 0, "Eff_Stone": 0}
-        resist_sizes = {"Size_Small": 0, "Size_Medium": 0, "Size_Large": 0}
-        resist_monstertype = {"Class_Normal": 0, "Class_Boss": 0}
+        resist_races = {"RC_Formless": 5, "RC_Undead": 100, "RC_Brute": 100, "RC_Plant": 100, "RC_Insect": 100,
+                        "RC_Fish": 100, "RC_Demon": 100, "RC_DemiHuman": 100, "RC_Player": 100, "RC_Angel": 100,
+                        "RC_Dragon": 100}
+        resist_elements = {"Ele_Neutral": 5, "Ele_Water": 100, "Ele_Earth": 100, "Ele_Fire": 100, "Ele_Wind": 100,
+                           "Ele_Poison": 100, "Ele_Holy": 100, "Ele_Dark": 100, "Ele_Ghost": 100, "Ele_Undead": 100}
+        resist_badstatus = {"Eff_Poison": 100, "Eff_Stun": 5, "Eff_Freeze": 100, "Eff_Curse": 100, "Eff_Blind": 100,
+                            "Eff_Sleep": 100, "Eff_Silence": 100, "Eff_Confusion": 100, "Eff_Bleeding": 100,
+                            "Eff_Stone": 100}
+        resist_sizes = {"Size_Small": 100, "Size_Medium": 100, "Size_Large": 100}
+        resist_monstertype = {"Class_Normal": 100, "Class_Boss": 100}
+        duration_badstatus = {"Eff_Poison": 0.95, "Eff_Stun": 0.95, "Eff_Freeze": 0.95, "Eff_Curse": 0.95,
+                              "Eff_Blind": 0.95, "Eff_Sleep": 0.95, "Eff_Silence": 0.95, "Eff_Confusion": 0.95,
+                              "Eff_Bleeding": 0.95, "Eff_Stone": 0.95}
 
-        resistance_dict = {"resist_element_%": resist_elements,
-                           "resist_race_%": resist_races,
-                           "resist_size_%": resist_sizes,
-                           "resist_allmonster_%": resist_monstertype,
-                           "resist_badstatus_%": resist_badstatus,
-                           "resist_melee_%": 0,
-                           "resist_ranged_%": 0}
+        rd = {"resist_element_%": resist_elements,
+              "resist_race_%": resist_races,
+              "resist_size_%": resist_sizes,
+              "resist_allmonster_%": resist_monstertype,
+              "resist_badstatus_%": resist_badstatus,
+              "duration_badstatus": duration_badstatus,
+              "resist_melee_%": 0,
+              "resist_ranged_%": 0}
         p1 = self.input_player
 
         in_file = (os.path.abspath(os.path.join(os.path.dirname(__file__), 'blank_resistance.png')))
         out_file = (os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..',
-                                                 'pyflask', 'app', 'static', 'assets', 'custom.png')))
+                                                 'pyflask', 'app', 'static', 'assets', 'player_resistance.png')))
         font_file = (os.path.abspath(os.path.join(os.path.dirname(__file__), 'Sans-serif.ttf')))
 
         font = ImageFont.truetype(font_file, 10)
         font_tahoma_bold = ImageFont.truetype((
-            os.path.abspath(os.path.join(os.path.dirname(__file__), 'Tahoma-bold.ttf'))), 10)
+            os.path.abspath(os.path.join(os.path.dirname(__file__), 'Tahoma-bold.ttf'))), 11)
 
         img = Image.open(in_file)
         draw = ImageDraw.Draw(img)
+
         x = 38
         y = 6
 
-        draw.text((x, y), "{} +{}".format(p1.core_str, p1.str_bonus), "black", font=font)
-        draw.text((x, y + 16), "{} +{}".format(p1.core_agi, p1.agi_bonus), "black", font=font)
-        draw.text((x, y + 32), "{} +{}".format(p1.core_vit, p1.vit_bonus), "black", font=font)
-        draw.text((x, y + 48), "{} +{}".format(p1.core_int, p1.int_bonus), "black", font=font)
-        draw.text((x, y + 64), "{} +{}".format(p1.core_dex, p1.dex_bonus), "black", font=font)
-        draw.text((x, y + 80), "{} +{}".format(p1.core_luk, p1.luk_bonus), "black", font=font)
+        draw.text((x - 30, y - 1), "Neutral", "DarkSlateGray", font=font_tahoma_bold)
+        draw.text((x - 30, y + 15), "Water", "Blue", font=font_tahoma_bold)
+        draw.text((x - 30, y + 31), "Earth", "Brown", font=font_tahoma_bold)
+        draw.text((x - 30, y + 47), "Fire", "Red", font=font_tahoma_bold)
+        draw.text((x - 30, y + 63), "Wind", "Green", font=font_tahoma_bold)
+        draw.text((x - 30, y + 79), "Poison", "Purple", font=font_tahoma_bold)
+        draw.text((x - 30, y + 95), "Holy", "DarkOrange", font=font_tahoma_bold)
+        draw.text((x - 30, y + 111), "Shadow", "Black", font=font_tahoma_bold)
+        draw.text((x - 30, y + 127), "Ghost", "SlateBlue", font=font_tahoma_bold)
+        draw.text((x - 30, y + 143), "Undead", "Indigo", font=font_tahoma_bold)
+
+        draw.text((x + 25, y), "{}%".format(rd["resist_element_%"]["Ele_Neutral"]), "black", font=font)
+        draw.text((x + 25, y + 16), "{}%".format(rd["resist_element_%"]["Ele_Water"]), "black", font=font)
+        draw.text((x + 25, y + 32), "{}%".format(rd["resist_element_%"]["Ele_Earth"]), "black", font=font)
+        draw.text((x + 25, y + 48), "{}%".format(rd["resist_element_%"]["Ele_Fire"]), "black", font=font)
+        draw.text((x + 25, y + 64), "{}%".format(rd["resist_element_%"]["Ele_Wind"]), "black", font=font)
+        draw.text((x + 25, y + 80), "{}%".format(rd["resist_element_%"]["Ele_Poison"]), "black", font=font)
+        draw.text((x + 25, y + 96), "{}%".format(rd["resist_element_%"]["Ele_Holy"]), "black", font=font)
+        draw.text((x + 25, y + 112), "{}%".format(rd["resist_element_%"]["Ele_Dark"]), "black", font=font)
+        draw.text((x + 25, y + 128), "{}%".format(rd["resist_element_%"]["Ele_Ghost"]), "black", font=font)
+        draw.text((x + 25, y + 144), "{}%".format(rd["resist_element_%"]["Ele_Undead"]), "black", font=font)
+
+        x += 100
+        draw.text((x - 30, y - 1), "Formless", "DarkSlateGray", font=font_tahoma_bold)
+        draw.text((x - 30, y + 15), "Undead", "Indigo", font=font_tahoma_bold)
+        draw.text((x - 30, y + 31), "Brute", "Brown", font=font_tahoma_bold)
+        draw.text((x - 30, y + 47), "Plant", "DarkSeaGreen", font=font_tahoma_bold)
+        draw.text((x - 30, y + 63), "Insect", "Green", font=font_tahoma_bold)
+        draw.text((x - 30, y + 79), "Fish", "Blue", font=font_tahoma_bold)
+        draw.text((x - 30, y + 95), "Demon", "Red", font=font_tahoma_bold)
+        draw.text((x - 30, y + 111), "Humanoid", "Black", font=font_tahoma_bold)
+        draw.text((x - 30, y + 127), "Angel", "DarkOrange", font=font_tahoma_bold)
+        draw.text((x - 30, y + 143), "Dragon", "LimeGreen", font=font_tahoma_bold)
+
+        x += 5
+        draw.text((x + 25, y), "{}%".format(rd["resist_race_%"]["RC_Formless"]), "black", font=font)
+        draw.text((x + 25, y + 16), "{}%".format(rd["resist_race_%"]["RC_Undead"]), "black", font=font)
+        draw.text((x + 25, y + 32), "{}%".format(rd["resist_race_%"]["RC_Brute"]), "black", font=font)
+        draw.text((x + 25, y + 48), "{}%".format(rd["resist_race_%"]["RC_Plant"]), "black", font=font)
+        draw.text((x + 25, y + 64), "{}%".format(rd["resist_race_%"]["RC_Insect"]), "black", font=font)
+        draw.text((x + 25, y + 80), "{}%".format(rd["resist_race_%"]["RC_Fish"]), "black", font=font)
+        draw.text((x + 25, y + 96), "{}%".format(rd["resist_race_%"]["RC_Demon"]), "black", font=font)
+        draw.text((x + 25, y + 112), "{}%".format(rd["resist_race_%"]["RC_DemiHuman"]), "black", font=font)
+        draw.text((x + 25, y + 128), "{}%".format(rd["resist_race_%"]["RC_Angel"]), "black", font=font)
+        draw.text((x + 25, y + 144), "{}%".format(rd["resist_race_%"]["RC_Dragon"]), "black", font=font)
+
+        x += 100
+        draw.text((x - 30, y - 1), "Stun", (68, 91, 131), font=font_tahoma_bold)
+        draw.text((x - 30, y + 15), "Curse", (68, 91, 131), font=font_tahoma_bold)
+        draw.text((x - 30, y + 31), "Silence", (68, 91, 131), font=font_tahoma_bold)
+        draw.text((x - 30, y + 47), "Sleep", (68, 91, 131), font=font_tahoma_bold)
+        draw.text((x - 30, y + 63), "Freeze", (68, 91, 131), font=font_tahoma_bold)
+        draw.text((x - 30, y + 79), "Stone", (68, 91, 131), font=font_tahoma_bold)
+        draw.text((x - 30, y + 95), "Blind", (68, 91, 131), font=font_tahoma_bold)
+        draw.text((x - 30, y + 111), "Chaos", (68, 91, 131), font=font_tahoma_bold)
+        draw.text((x - 30, y + 127), "Bleeding", (68, 91, 131), font=font_tahoma_bold)
+        draw.text((x - 30, y + 143), "Poison", (68, 91, 131), font=font_tahoma_bold)
+
+        draw.text((x + 25, y), "{}%".format(rd["resist_badstatus_%"]["Eff_Stun"]), "black", font=font)
+        draw.text((x + 25, y + 16), "{}%".format(rd["resist_badstatus_%"]["Eff_Curse"]), "black", font=font)
+        draw.text((x + 25, y + 32), "{}%".format(rd["resist_badstatus_%"]["Eff_Silence"]), "black", font=font)
+        draw.text((x + 25, y + 48), "{}%".format(rd["resist_badstatus_%"]["Eff_Sleep"]), "black", font=font)
+        draw.text((x + 25, y + 64), "{}%".format(rd["resist_badstatus_%"]["Eff_Freeze"]), "black", font=font)
+        draw.text((x + 25, y + 80), "{}%".format(rd["resist_badstatus_%"]["Eff_Stone"]), "black", font=font)
+        draw.text((x + 25, y + 96), "{}%".format(rd["resist_badstatus_%"]["Eff_Blind"]), "black", font=font)
+        draw.text((x + 25, y + 112), "{}%".format(rd["resist_badstatus_%"]["Eff_Confusion"]), "black", font=font)
+        draw.text((x + 25, y + 128), "{}%".format(rd["resist_badstatus_%"]["Eff_Bleeding"]), "black", font=font)
+        draw.text((x + 25, y + 144), "{}%".format(rd["resist_badstatus_%"]["Eff_Poison"]), "black", font=font)
+
+        x += 100
+        draw.text((x - 30, y - 1), "Stun", (68, 91, 131), font=font_tahoma_bold)
+        draw.text((x - 30, y + 15), "Curse", (68, 91, 131), font=font_tahoma_bold)
+        draw.text((x - 30, y + 31), "Silence", (68, 91, 131), font=font_tahoma_bold)
+        draw.text((x - 30, y + 47), "Sleep", (68, 91, 131), font=font_tahoma_bold)
+        draw.text((x - 30, y + 63), "Freeze", (68, 91, 131), font=font_tahoma_bold)
+        draw.text((x - 30, y + 79), "Stone", (68, 91, 131), font=font_tahoma_bold)
+        draw.text((x - 30, y + 95), "Blind", (68, 91, 131), font=font_tahoma_bold)
+        draw.text((x - 30, y + 111), "Chaos", (68, 91, 131), font=font_tahoma_bold)
+        draw.text((x - 30, y + 127), "Bleeding", (68, 91, 131), font=font_tahoma_bold)
+        draw.text((x - 30, y + 143), "Poison", (68, 91, 131), font=font_tahoma_bold)
+
+        draw.text((x + 25, y), "{}s".format(rd["duration_badstatus"]["Eff_Stun"]), "black", font=font)
+        draw.text((x + 25, y + 16), "{}s".format(rd["duration_badstatus"]["Eff_Curse"]), "black", font=font)
+        draw.text((x + 25, y + 32), "{}s".format(rd["duration_badstatus"]["Eff_Silence"]), "black", font=font)
+        draw.text((x + 25, y + 48), "{}s".format(rd["duration_badstatus"]["Eff_Sleep"]), "black", font=font)
+        draw.text((x + 25, y + 64), "{}s".format(rd["duration_badstatus"]["Eff_Freeze"]), "black", font=font)
+        draw.text((x + 25, y + 80), "{}s".format(rd["duration_badstatus"]["Eff_Stone"]), "black", font=font)
+        draw.text((x + 25, y + 96), "{}s".format(rd["duration_badstatus"]["Eff_Blind"]), "black", font=font)
+        draw.text((x + 25, y + 112), "{}s".format(rd["duration_badstatus"]["Eff_Confusion"]), "black", font=font)
+        draw.text((x + 25, y + 128), "{}s".format(rd["duration_badstatus"]["Eff_Bleeding"]), "black", font=font)
+        draw.text((x + 25, y + 144), "{}s".format(rd["duration_badstatus"]["Eff_Poison"]), "black", font=font)
+
+        x += 100
+        draw.text((x - 30, y - 1), "Small", (68, 91, 131), font=font_tahoma_bold)
+        draw.text((x - 30, y + 15), "Medium", (68, 91, 131), font=font_tahoma_bold)
+        draw.text((x - 30, y + 31), "Large", (68, 91, 131), font=font_tahoma_bold)
+
+        draw.text((x - 30, y + 63), "Normal", (68, 91, 131), font=font_tahoma_bold)
+        draw.text((x - 30, y + 79), "Boss", (68, 91, 131), font=font_tahoma_bold)
+
+        draw.text((x - 30, y + 111), "Ranged", (68, 91, 131), font=font_tahoma_bold)
+
+        draw.text((x + 25, y), "{}%".format(rd["resist_size_%"]["Size_Small"]), "black", font=font)
+        draw.text((x + 25, y + 16), "{}%".format(rd["resist_size_%"]["Size_Medium"]), "black", font=font)
+        draw.text((x + 25, y + 32), "{}%".format(rd["resist_size_%"]["Size_Large"]), "black", font=font)
+
+        draw.text((x + 25, y + 64), "{}%".format(rd["resist_allmonster_%"]["Class_Normal"]), "black", font=font)
+        draw.text((x + 25, y + 80), "{}%".format(rd["resist_allmonster_%"]["Class_Boss"]), "black", font=font)
+
+        draw.text((x + 25, y + 112), "{}%".format(rd["resist_ranged_%"]), "black", font=font)
 
         img.show()
+        img.save(out_file)
 
 
 # tt = {"headgear1": ('(No Headtop)', 0, 0),

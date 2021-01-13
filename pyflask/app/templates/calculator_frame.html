@@ -54,12 +54,6 @@
             });
         });
 
-        function forceRender3(){
-            var timestamp = new Date().getTime();
-            var select_value = document.getElementById("picDD").value;
-            var src = "static/assets/" + select_value + ".png?t=" + timestamp;
-            document.getElementById("other_info_img").src=src;
-        }
 
 </script>
 
@@ -438,16 +432,22 @@
                     </tbody>
                 </table>
                 <h2>caralho</h2>
-                <select class="form-control" id="picDD" onChange="forceRender3()" style="width: 200px">
-                    <option value="player_resistance">Player Resistance</option>
-                    <option value="weight_limit">Weight Limit</option>
-                    <option value="3">c</option>
-                    <option value="4">d</option>
-                    <option value="5">e</option>
-                    <option value="6">f</option>
-                </select>
+                <div class="collapse_menu">
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
+                            aria-expanded="false" aria-controls="collapseExample">
+                        Extra Info
+                    </button>
+                    <div class="collapse" id="collapseExample">
+                        <div class="card card-body">
+                            <select class="form-control" id="picDD" onChange="forceRender3()" style="width: 200px">
+                                <option value="player_resistance">Player Resistance</option>
+                                <option value="weight_limit">Weight Limit</option>
+                            </select>
 
-                <img id="other_info_img" src="a"/>
+                            <img id="other_info_img" src="static/assets/player_resistance.png" width="70%" height="70%"/>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
