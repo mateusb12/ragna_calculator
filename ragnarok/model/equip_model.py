@@ -622,7 +622,6 @@ text_dict = {"headgear1": ("Valkyrie Feather Band [1]", "4", "Elder Willow Card"
 # Muramash
 
 gear_dict = dict_name_to_dict_id(text_dict)
-
 pe = PlayerGear(gear_dict, 'hunter', 99)
 pe.print_gear()
 print('')

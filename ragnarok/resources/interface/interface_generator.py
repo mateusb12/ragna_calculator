@@ -105,7 +105,8 @@ class InterfaceGenerator:
             if not os.path.isfile(icon_path):
                 # response = requests.get("https://file5s.ratemyserver.net/items/small/{}.gif".format(icon_id))
                 response = requests.get("http://db.irowiki.org/image/item/{}.png".format(icon_id))
-                icon_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'icons', 'icon_{}.png'.format(icon_id)))
+                icon_path = os.path.abspath(
+                    os.path.join(os.path.dirname(__file__), 'icons', 'icon_{}.png'.format(icon_id)))
                 file = open(icon_path, "wb")
                 file.write(response.content)
                 file.close()
@@ -123,10 +124,6 @@ class InterfaceGenerator:
             return need_download
 
     def generate_equip_details(self, text_dict: dict, sex: str):
-        # gear_dict = dict_name_to_dict_id(text_dict)
-        #
-        # print('meu deus {}'.format(gear_dict))
-
         pe = PlayerGear(text_dict, self.input_player.current_job, self.input_player.base_level)
 
         in_file = (os.path.abspath(os.path.join(os.path.dirname(__file__), 'equip_window.png')))
@@ -144,11 +141,6 @@ class InterfaceGenerator:
             font_db.append(None)
         for i in range(10, 21):
             font_db.append(ImageFont.truetype(font_file, i))
-
-        font_tahoma_bold = ImageFont.truetype((
-            os.path.abspath(os.path.join(os.path.dirname(__file__), 'Tahoma-bold.ttf'))), 10)
-
-        import textwrap
 
         def draw_multiline(textstring: str, tx: int, ty: int, tfont: ImageFont):
             if len(textstring) <= 11:
@@ -215,12 +207,9 @@ class InterfaceGenerator:
         gear_ids = pe.export_id_table()
 
         def draw_icon(icon_id: int, icon_x: int, icon_y: int):
-            # icon_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'interface', 'icon_{}.png'
-            #                                      .format(icon_id)))
             if icon_id is not None and not is_id_dead_id(icon_id):
                 icon_path = (
                     os.path.abspath(os.path.join(os.path.dirname(__file__), 'icons', 'icon_{}.png'.format(icon_id))))
-                # foreground = Image.open('icons/icon_{}.png'.format(icon_id)).convert("RGBA")
                 foreground = Image.open(icon_path).convert("RGBA")
                 img.paste(foreground, (icon_x, icon_y), foreground)
 
@@ -257,8 +246,50 @@ class InterfaceGenerator:
 
         img.save(out_file)
 
+    def generate_resistance_details(self):
+        resist_races = {"RC_Formless": 0, "RC_Undead": 0, "RC_Brute": 0, "RC_Plant": 0, "RC_Insect": 0,
+                        "RC_Fish": 0, "RC_Demon": 0, "RC_DemiHuman": 0, "RC_Player": 0, "RC_Angel": 0,
+                        "RC_Dragon": 0}
+        resist_elements = {"Ele_Neutral": 0, "Ele_Water": 0, "Ele_Earth": 0, "Ele_Fire": 0, "Ele_Wind": 0,
+                           "Ele_Poison": 0, "Ele_Holy": 0, "Ele_Dark": 0, "Ele_Ghost": 0, "Ele_Undead": 0}
+        resist_badstatus = {"Eff_Poison": 0, "Eff_Stun": 0, "Eff_Freeze": 0, "Eff_Curse": 0, "Eff_Blind": 0,
+                            "Eff_Sleep": 0, "Eff_Silence": 0, "Eff_Confusion": 0, "Eff_Bleeding": 0, "Eff_Stone": 0}
+        resist_sizes = {"Size_Small": 0, "Size_Medium": 0, "Size_Large": 0}
+        resist_monstertype = {"Class_Normal": 0, "Class_Boss": 0}
 
-# igen = InterfaceGenerator(PlayerBuild(jbl, 96, 50, 'crusader', [9, 1, 99, 1, 99, 1]))
+        resistance_dict = {"resist_element_%": resist_elements,
+                           "resist_race_%": resist_races,
+                           "resist_size_%": resist_sizes,
+                           "resist_allmonster_%": resist_monstertype,
+                           "resist_badstatus_%": resist_badstatus,
+                           "resist_melee_%": 0,
+                           "resist_ranged_%": 0}
+        p1 = self.input_player
+
+        in_file = (os.path.abspath(os.path.join(os.path.dirname(__file__), 'blank_resistance.png')))
+        out_file = (os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..',
+                                                 'pyflask', 'app', 'static', 'assets', 'custom.png')))
+        font_file = (os.path.abspath(os.path.join(os.path.dirname(__file__), 'Sans-serif.ttf')))
+
+        font = ImageFont.truetype(font_file, 10)
+        font_tahoma_bold = ImageFont.truetype((
+            os.path.abspath(os.path.join(os.path.dirname(__file__), 'Tahoma-bold.ttf'))), 10)
+
+        img = Image.open(in_file)
+        draw = ImageDraw.Draw(img)
+        x = 38
+        y = 6
+
+        draw.text((x, y), "{} +{}".format(p1.core_str, p1.str_bonus), "black", font=font)
+        draw.text((x, y + 16), "{} +{}".format(p1.core_agi, p1.agi_bonus), "black", font=font)
+        draw.text((x, y + 32), "{} +{}".format(p1.core_vit, p1.vit_bonus), "black", font=font)
+        draw.text((x, y + 48), "{} +{}".format(p1.core_int, p1.int_bonus), "black", font=font)
+        draw.text((x, y + 64), "{} +{}".format(p1.core_dex, p1.dex_bonus), "black", font=font)
+        draw.text((x, y + 80), "{} +{}".format(p1.core_luk, p1.luk_bonus), "black", font=font)
+
+        img.show()
+
+
 # tt = {"headgear1": ('(No Headtop)', 0, 0),
 #       "headgear2": ('Sunglasses [1]', 0, 'Willow Card'),
 #       "headgear3": ('Cigarette', 0, 0),
@@ -269,6 +300,22 @@ class InterfaceGenerator:
 #       "robe": ('Hood [1]', 0, 'Condor Card'),
 #       "accessory1": ('Clip [1]', 0, 'Sage Worm Card'),
 #       "accessory2": ('Silver Ring', 0, 0)}
+
+tt = {"headgear1": ("Ribbon [1]", "4", "Elder Willow Card"),
+      "headgear2": ("Sunglasses", 0, "(No Card)"),
+      "headgear3": ('Flu Mask', 0, "(No Card)"),
+      "shield": ('Guard [1]', '7', "Ambernite Card"),
+      "shoes": ('Sandals [1]', '4', "(No Card)"),
+      "armor": ("Formal Suit [1]", "7", "(No Card)"),
+      "robe": ("Muffler [1]", "7", "Raydric Card"),
+      "accessory1": ("Glove [1]", 0, "Mantis Card"),
+      'accessory2': ("Earring [1]", 0, "Zerom Card"),
+      'weapon': ("Grimtooth", 0, "(No Card)", "(No Card)", "(No Card)", "(No Card)")}
+
+gear_dict = dict_name_to_dict_id(tt)
+pg = PlayerGear(gear_dict, 'hunter', 99)
+igen = InterfaceGenerator(PlayerBuild(jbl, 96, 50, 'hunter', [9, 1, 99, 1, 99, 1], pg))
 # igen.generate_equip_details(tt, 'female')
 # igen.generate_interface()
 
+igen.generate_resistance_details()

@@ -12,7 +12,8 @@ from app import app
 from app.models.forms import LoginForm, RegisterForm, CalculatorForm, calc_dynamic_select, fill_calc_with_json
 
 from ragnarok.main.gear_query import is_refineable, has_slots, has_slots_by_name, is_refineable_by_name, \
-    normalize_form_values, generate_equipable_weapons_old, has_multiple_slots, dict_name_to_dict_id
+    normalize_form_values, generate_equipable_weapons_old, has_multiple_slots, dict_name_to_dict_id, \
+    retrieve_card_id_by_name
 
 from ragnarok.model.statuspoints_evaluator import attribute_balance
 from ragnarok.model.build_model import PlayerBuild
@@ -28,7 +29,7 @@ def open_json(filename):
     return pd.read_json(cur_path)
 
 
-from ragnarok.main.exporter import jbl, uncapitalize
+from ragnarok.main.exporter import jbl, uncapitalize, card_db
 
 
 @app.route("/index/<user>")
@@ -151,6 +152,7 @@ def calcframe():
         igen = InterfaceGenerator(p1)
         igen.generate_interface()
         igen.generate_equip_details(gear_dict, pi['player_gender'].lower())
+        pi["temporary"] = card_db[retrieve_card_id_by_name(pi["headtop_card_list"])]["Script_adapted"]
 
     return render_template('calculator_frame.html',
                            form=form,

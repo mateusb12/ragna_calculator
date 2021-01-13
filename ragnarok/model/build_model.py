@@ -46,6 +46,26 @@ class PlayerBuild:
                                     "coma": {}, "coma_race": {}, "dead_branch": {}, "double_attack_%": {},
                                     "drainsp_race": {}, "selfbadstatus": {}, "selfdrainsp": {}, "suck_hp_%": {},
                                     "suck_sp_%": {}, "vanishsp": {}, "voidscript": {"void": 0}}
+        self.blank_races = {"RC_Formless": 0, "RC_Undead": 0, "RC_Brute": 0, "RC_Plant": 0, "RC_Insect": 0,
+                            "RC_Fish": 0, "RC_Demon": 0, "RC_DemiHuman": 0, "RC_Player": 0, "RC_Angel": 0,
+                            "RC_Dragon": 0}
+        self.blank_elements = {"Ele_Neutral": 0, "Ele_Water": 0, "Ele_Earth": 0, "Ele_Fire": 0, "Ele_Wind": 0,
+                               "Ele_Poison": 0, "Ele_Holy": 0, "Ele_Dark": 0, "Ele_Ghost": 0, "Ele_Undead": 0}
+        self.blank_badstatus = {"Eff_Poison": 0, "Eff_Stun": 0, "Eff_Freeze": 0, "Eff_Curse": 0, "Eff_Blind": 0,
+                                "Eff_Sleep": 0, "Eff_Silence": 0, "Eff_Confusion": 0, "Eff_Bleeding": 0, "Eff_Stone": 0}
+        self.blank_sizes = {"Size_Small": 0, "Size_Medium": 0, "Size_Large": 0}
+        self.blank_monstertype = {"Class_Normal": 0, "Class_Boss": 0}
+
+        self.resist_dict = {"resist_element_%": self.blank_races,
+                            "resist_race_%": self.blank_races,
+                            "resist_size_%": self.blank_sizes,
+                            "resist_allmonster_%": self.blank_monstertype,
+                            "resist_badstatus_%": self.blank_badstatus,
+                            "resist_melee_%": 0,
+                            "resist_ranged_%": 0}
+
+        self.afterkill_dict = {"afterkill_hpdrain": 0, "afterkill_spdrain": 0,
+                               "afterkill_spdrain_race": 0, "afterkill_stealzenny": 0}
 
         # arquivos
         self.hp_df = pd.read_csv(os.path.abspath(
@@ -166,6 +186,8 @@ class PlayerBuild:
 
         self.whileattacking_dict = dict((k, v) for k, v in self.whileattacking_dict.items() if v)
 
+        print('caralho? {}'.format(self.u_dict))
+
     def calculate_base_hp(self):
         hp_job_a = self.job_bonuses_list[self.current_job]['HP_JOB_A']
         hp_job_b = self.job_bonuses_list[self.current_job]['HP_JOB_B']
@@ -209,7 +231,7 @@ class PlayerBuild:
                      "+maxhp_flat", "+maxsp_flat", "+maxhp_%", "+maxsp_%"]
         key_dict = dict.fromkeys(set(key_list), 0)
         forbidden_list = ("whenhit_badstatus", "afterkill_drainsp", "resist_element_%", "unbreakable_weapon",
-                          "whileattacking_selfbadstatus")
+                          "whileattacking_selfbadstatus", "resist_badstatus_%")
 
         for element in self.script_dict['Flat_list']:
             if element[0] not in forbidden_list:
@@ -218,6 +240,9 @@ class PlayerBuild:
                 sliced_script = element[0].split("_")
                 if sliced_script[0] == "whileattacking":
                     self.whileattacking_dict[sliced_script[1]][element[1]] = element[2]
+                if element[0] == "resist_badstatus_%":
+                    self.blank_badstatus[element[1]] += int(element[2])
+                    print("elementow: {} {}".format(element, self.blank_badstatus))
 
         return key_dict
 

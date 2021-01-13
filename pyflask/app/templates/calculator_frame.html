@@ -3,10 +3,13 @@
 <head>
     <link rel="shortcut icon" href="#"/>
     <link href="{{ url_for('static', filename='css/frames/calculator_frame.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='css/bstrap/bootstrap.min.css') }}" rel="stylesheet">
     <meta charset="UTF-8">
     <title>Calculator frame</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="static/js/bootstrap.bundle.js"></script>
+    <link href="{{ url_for('static', filename='css/bstrap/bootstrap.min.css') }}" rel="stylesheet">
+
     <script src="static/js/selection_rules.js"></script>
     <script src="static/js/autoscroll.js"></script>
     <script src="static/js/autorefresh.js"></script>
@@ -50,6 +53,14 @@
             return false;
             });
         });
+
+        function forceRender3(){
+            var timestamp = new Date().getTime();
+            var select_value = document.getElementById("picDD").value;
+            var src = "static/assets/" + select_value + ".png?t=" + timestamp;
+            document.getElementById("other_info_img").src=src;
+        }
+
 </script>
 
 
@@ -92,7 +103,10 @@
                                 </tr>
                                 <tr>
                                     <td class="thin2">Placeholder</td>
-                                    <td class="thin3"> <button type="button" class="refresh_button" onClick="forceSubmit()">Refresh</button> </td>
+                                    <td class="thin3">
+                                        <button type="button" class="refresh_button" onClick="forceSubmit()">Refresh
+                                        </button>
+                                    </td>
                                     <td class="thin3"> Select Placeholder 6</td>
                                 </tr>
                                 </tbody>
@@ -423,9 +437,18 @@
                     </tr>
                     </tbody>
                 </table>
+                <h2>caralho</h2>
+                <select class="form-control" id="picDD" onChange="forceRender3()" style="width: 200px">
+                    <option value="player_resistance">Player Resistance</option>
+                    <option value="weight_limit">Weight Limit</option>
+                    <option value="3">c</option>
+                    <option value="4">d</option>
+                    <option value="5">e</option>
+                    <option value="6">f</option>
+                </select>
 
+                <img id="other_info_img" src="a"/>
             </div>
-
         </div>
     </div>
 
@@ -433,6 +456,7 @@
 </form>
 
 <br><br>
+<h3>{{player_info["temporary"]}}</h3>
 <h3>{{form}}</h3>
 <h3>{{player_info}}</h3>
 

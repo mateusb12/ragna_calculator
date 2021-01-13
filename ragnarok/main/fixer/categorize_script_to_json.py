@@ -10,7 +10,8 @@ def generate_script_types(main_db: dict, output_file: str):
     script_table_path = os.path.abspath(
         os.path.join(os.path.dirname(__file__), '..', '..', 'resources', "scripts", output_file))
 
-    data = {"Begin": {}, "Displaced": {}, "Default": {}, "Repeated": {}, "Autobonus": {}, "MultipleIf": {}, "MultipleDisplaced": {}}
+    data = {"Begin": {}, "Displaced": {}, "Default": {}, "Repeated": {}, "Autobonus": {}, "MultipleIf": {},
+            "MultipleDisplaced": {}}
 
     for qh in main_db:
         view_name = main_db[qh]['Name']
